@@ -20,11 +20,11 @@
 - [x] **更新 Prompt**：確保 API 呼叫時會參考 `topics.json` 中的固定主題。
 
 ## 4. GitHub Pages 部署與存檔 (Deployment & Archive)
-- [ ] **部署設定**：確保 `index.html` 指向最新的 `daily_dashboard_rendered.html`。
-- [ ] **存檔引擎 (Archive Engine)**：
-    - [ ] 每次執行前，將舊的 `.html` 內容提取純文字摘要。
-    - [ ] 將純文字存入 `archive/YYYY-MM-DD.txt` 或資料庫。
-    - [ ] 提交存檔檔案至 GitHub。
+- [x] **部署設定**：確保 `index.html` 指向最新的 `daily_dashboard_rendered.html`。
+- [x] **存檔引擎 (Archive Engine)**：
+    - [x] 每次執行前，將舊的 `.html` 內容提取純文字摘要。
+    - [x] 將純文字存入 `archive/YYYY-MM-DD.txt` 或資料庫。
+    - [x] 提交存檔檔案至 GitHub。
 
 ---
 *註：此清單將隨開發進度持續更新。*

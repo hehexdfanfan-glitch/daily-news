@@ -36,6 +36,10 @@ jobs:
             gh issue create --title "💡 每週主題建議報告 $(date +'%Y-%m-%d')" --body-file topic_recommendation.md || echo "Failed to create issue (perhaps issue already exists or lack of permissions)"
           fi
 
+      - name: Archive Current Dashboard
+        run: |
+          python step4_archive.py
+
       - name: Generate Intelligence Data
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
@@ -55,6 +59,6 @@ jobs:
       - name: Commit and Push Changes
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "Auto-update: Global Strategic Briefing Dashboard"
+          commit_message: "Auto-update: Global Strategic Briefing Dashboard & Archive"
           branch: main
-          file_pattern: '*.json *.html'
+          file_pattern: '*.json *.html archive/*.txt topic_recommendation.md'
