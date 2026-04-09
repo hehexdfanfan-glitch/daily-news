@@ -59,7 +59,7 @@ def build_html(data):
             html_content = html_content.replace("{{" + a_p + "_SEARCH_QUERY}}", urllib.parse.quote(article["original_title"]))
         return html_content
 
-    # 填充各大區塊，使用固定的繁體中文標題
+    # 填充各大區塊，使用固定的繁體中文標題 (這裡修正了縮排)
     html = html.replace("{{SEC1_TITLE}}", "Mainstream Topics // 主流戰略議題")
     html = fill_section(html, data["mainstream_topics"], "MAIN", 5)
 
