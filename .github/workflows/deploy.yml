@@ -30,17 +30,14 @@ jobs:
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: |
-          cd daily-static-site
           python step1_generate.py
 
       - name: Crawl Images
         run: |
-          cd daily-static-site
           python step2_crawl.py
 
       - name: Render HTML Dashboard
         run: |
-          cd daily-static-site
           python step3_render.py
           # 為了方便 GitHub Pages 讀取，將結果覆蓋到 index.html
           cp daily_dashboard_rendered.html index.html
@@ -50,4 +47,4 @@ jobs:
         with:
           commit_message: "Auto-update: Global Strategic Briefing Dashboard"
           branch: main
-          file_pattern: 'daily-static-site/*.json daily-static-site/*.html'
+          file_pattern: '*.json *.html'
