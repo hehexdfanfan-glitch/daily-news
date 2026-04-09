@@ -51,15 +51,19 @@ def build_html(data):
         with open("template.html", "r", encoding="utf-8") as f:
             html = f.read()
     except FileNotFoundError:
-        print("❌ 找不到 template.html")
+        print("Error: template.html not found")
         sys.exit(1)
 
     html = html.replace("{{DATE_TODAY}}", data["date_today"])
     html = html.replace("{{TIME_NOW}}", data["time_now"])
+    
+    # Fill Sections
     html = html.replace("{{SEC1_TITLE}}", "Mainstream Topics // 主流戰略議題")
     html = fill_section(html, data["mainstream_topics"], "MAIN", 5)
+    
     html = html.replace("{{SEC2_TITLE}}", "Wildcard Topics // 潛在重大議題")
     html = fill_section(html, data["wildcard_topics"], "WILD", 3)
+    
     html = html.replace("{{SEC3_TITLE}}", "Business & Finance // 全球商業與金融趨勢")
     html = fill_finance(html, data["business_finance_taiwan"], "FIN_TW")
     html = fill_finance(html, data["business_finance_global"], "FIN_GL")
@@ -67,18 +71,19 @@ def build_html(data):
     output_filename = "daily_dashboard_rendered.html"
     with open(output_filename, "w", encoding="utf-8") as f:
         f.write(html)
-    print(f"✅ Step 3 完成！最終報告輸出為：{output_filename}")
+    print(f"Step 3 Success: Generated {output_filename}")
 
 def main():
     for filename in ["enriched_intelligence.json", "raw_intelligence.json"]:
         try:
             with open(filename, "r", encoding="utf-8") as f:
                 data = json.load(f)
-                print(f"🔨 Step 3: 正在讀取 {filename}...")
+                print(f"Rendering {filename}...")
                 build_html(data)
                 return
-        except FileNotFoundError: continue
-    print("❌ 錯誤：找不到任何 JSON 資料檔案。")
+        except FileNotFoundError:
+            continue
+    print("Error: No data files found.")
 
 if __name__ == "__main__":
     main()
