@@ -1,6 +1,7 @@
 import os
 import sys
 import json
+import time
 from datetime import datetime, timedelta, timezone
 from google import genai
 from google.genai import types
@@ -48,33 +49,45 @@ def main():
     - 欄位 front_title, back_title, back_summary, badge_text, topic_title, risk_reason, topic_summary 必須為繁體中文。
     """
 
-    try:
-        response = client.models.generate_content(
-            model='gemini-2.5-flash',
-            contents=prompt,
-            config=types.GenerateContentConfig(
-                response_mime_type="application/json",
-                response_schema=DashboardData,
-            ),
-        )
-        
-        if not response.text:
-            print("❌ 錯誤：API 回傳空內容。")
-            return
+    while True:
+        try:
+            response = client.models.generate_content(
+                model='gemini-2.5-flash',
+                contents=prompt,
+                config=types.GenerateContentConfig(
+                    response_mime_type="application/json",
+                    response_schema=DashboardData,
+                ),
+            )
+            
+            if not response.text:
+                print("⚠️ API 回傳空內容，3 秒後重試...")
+                time.sleep(3)
+                continue
 
-        data = json.loads(response.text)
-        
-        # 強制覆蓋為真實的日期與時間
-        data["date_today"] = date_today
-        data["time_now"] = time_now
-        
-        with open("raw_intelligence.json", "w", encoding="utf-8") as f:
-            json.dump(data, f, ensure_ascii=False, indent=4)
-        
-        print(f"✅ Step 1 完成！當前時間：{date_today} {time_now}")
-        
-    except Exception as e:
-        print(f"❌ Step 1 失敗：{e}")
+            data = json.loads(response.text)
+            break # 成功獲取資料，跳出循環
+
+        except Exception as e:
+            error_msg = str(e)
+            if "503" in error_msg or "Service Unavailable" in error_msg:
+                print("🚧 Gemini 總部暫時通訊中斷 (503)，10 秒後重新連線...")
+                time.sleep(10)
+            elif "429" in error_msg or "Quota" in error_msg:
+                print("⏳ 達到 API 配額上限 (429)，等待 30 秒後重試...")
+                time.sleep(30)
+            else:
+                print(f"❌ Step 1 發生非預期錯誤：{e}")
+                sys.exit(1)
+
+    # 強制覆蓋為真實的日期與時間
+    data["date_today"] = date_today
+    data["time_now"] = time_now
+    
+    with open("raw_intelligence.json", "w", encoding="utf-8") as f:
+        json.dump(data, f, ensure_ascii=False, indent=4)
+    
+    print(f"✅ Step 1 完成！當前時間：{date_today} {time_now}")
 
 if __name__ == "__main__":
     main()

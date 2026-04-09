@@ -1,6 +1,7 @@
 import os
 import sys
 import json
+import time
 from datetime import datetime, timedelta, timezone
 from google import genai
 from google.genai import types
@@ -40,23 +41,35 @@ def main():
     請以繁體中文撰寫，格式為 Markdown，無需任何 Markdown 語法區塊標籤（如 ```markdown），直接輸出純文字內容即可。
     """
 
-    try:
-        response = client.models.generate_content(
-            model='gemini-2.5-flash',
-            contents=prompt
-        )
-        
-        if not response.text:
-            print("❌ 錯誤：API 回傳空內容。")
-            return
+    while True:
+        try:
+            response = client.models.generate_content(
+                model='gemini-2.5-flash',
+                contents=prompt
+            )
+            
+            if not response.text:
+                print("⚠️ API 回傳空內容，3 秒後重試...")
+                time.sleep(3)
+                continue
+            
+            with open("topic_recommendation.md", "w", encoding="utf-8") as f:
+                f.write(response.text)
+            
+            print("✅ Step 0 完成！產出推薦報告：topic_recommendation.md")
+            break
 
-        with open("topic_recommendation.md", "w", encoding="utf-8") as f:
-            f.write(response.text)
-        
-        print("✅ Step 0 完成！產出推薦報告：topic_recommendation.md")
-        
-    except Exception as e:
-        print(f"❌ Step 0 失敗：{e}")
+        except Exception as e:
+            error_msg = str(e)
+            if "503" in error_msg or "Service Unavailable" in error_msg:
+                print("🚧 Gemini 總部暫時通訊中斷 (503)，10 秒後重新連線...")
+                time.sleep(10)
+            elif "429" in error_msg or "Quota" in error_msg:
+                print("⏳ 達到 API 配額上限 (429)，等待 30 秒後重試...")
+                time.sleep(30)
+            else:
+                print(f"❌ Step 0 發生非預期錯誤：{e}")
+                sys.exit(1)
 
 if __name__ == "__main__":
     main()
