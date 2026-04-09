@@ -26,6 +26,16 @@ jobs:
           python -m pip install --upgrade pip
           pip install google-genai requests beautifulsoup4 pydantic
 
+      - name: Weekly Topic Recommendation (Monday Only)
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          python step0_recommend_topics.py
+          if [ -f "topic_recommendation.md" ]; then
+            gh issue create --title "💡 每週主題建議報告 $(date +'%Y-%m-%d')" --body-file topic_recommendation.md || echo "Failed to create issue (perhaps issue already exists or lack of permissions)"
+          fi
+
       - name: Generate Intelligence Data
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}

@@ -12,12 +12,12 @@
 - [x] **更新模板注入**：修改 `make_dashboard.py`，將 `{{IMAGE_URL}}` 佔位符替換為實際抓到的連結。
 
 ## 3. 主題管理與推薦系統 (Topic Management)
-- [ ] **持久化儲存**：建立 `topics.json` 用於存儲目前的 5 個固定主流議題。
-- [ ] **週一推薦邏輯**：
-    - [ ] 檢查當天是否為週一。
-    - [ ] 若為週一，呼叫 Gemini 額外生成「主題建議報告」。
-    - [ ] 建立互動機制（如 GitHub Issue 或簡易 Web 確認）供使用者決定是否更換。
-- [ ] **更新 Prompt**：確保 API 呼叫時會參考 `topics.json` 中的固定主題。
+- [x] **持久化儲存**：建立 `topics.json` 用於存儲目前的 5 個固定主流議題。
+- [x] **週一推薦邏輯**：
+    - [x] 檢查當天是否為週一。
+    - [x] 若為週一，呼叫 Gemini 額外生成「主題建議報告」。
+    - [x] 建立互動機制（如 GitHub Issue 或簡易 Web 確認）供使用者決定是否更換。
+- [x] **更新 Prompt**：確保 API 呼叫時會參考 `topics.json` 中的固定主題。
 
 ## 4. GitHub Pages 部署與存檔 (Deployment & Archive)
 - [ ] **部署設定**：確保 `index.html` 指向最新的 `daily_dashboard_rendered.html`。
