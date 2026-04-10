@@ -40,7 +40,6 @@ python step4_archive.py     # 資料存檔
 ## 目錄結構
 ```text
 C:\Users\royma\CLI\daily-static-site\
-├── archive/               # 歷史情資 TXT 存檔
 ├── database.py            # SQLite 資料庫操作核心
 ├── intelligence.db        # 長期情資資料庫 (SQLite)
 ├── models.py              # Pydantic 資料模型定義
@@ -49,6 +48,7 @@ C:\Users\royma\CLI\daily-static-site\
 ├── step3_render.py        # Jinja2 模板渲染引擎
 ├── step4_archive.py       # 自動存檔與資料庫同步
 ├── template.html          # Jinja2 佈局模板
+├── legacy_and_tools/      # 過時腳本與本地工具 (排除同步)
 └── TODO.md                # 研發進度追蹤
 ```
 

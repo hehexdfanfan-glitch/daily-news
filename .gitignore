@@ -1,0 +1,25 @@
+# Python 相關
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+ENV/
+
+# 專案特定工具與過時檔案 (依據用戶指示排除)
+legacy_and_tools/
+available_models.json
+list_models.py
+
+# 臨時資料與紀錄
+*.json
+!topics.json
+.geminiignore
+
+# 資料庫 (根據需求決定是否同步，此處預設同步以利 GitHub Actions 讀取)
+# 若不希望同步 db，請取消下方註釋
+# *.db
+
+# 系統檔案
+.DS_Store
+Thumbs.db
