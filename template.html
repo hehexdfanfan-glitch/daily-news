@@ -2,377 +2,250 @@
 <html lang="zh-TW">
 <head>
     <meta charset="UTF-8">
-    <title>Global Strategic Intelligence Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Strategic Intelligence Dashboard v2</title>
     <style>
         :root {
-            --bg-base-gradient: radial-gradient(circle at 50% 0%, #152238 0%, #0b1120 60%, #05080f 100%);
-            --card-bg: rgba(22, 32, 50, 0.45);
-            --card-border: rgba(255, 255, 255, 0.08);
-            --card-border-hover: rgba(56, 189, 248, 0.4);
-            --text-main: #e2e8f0;
+            --bg-base-gradient: radial-gradient(circle at 50% 0%, #0f172a 0%, #020617 100%);
+            --card-bg: rgba(30, 41, 59, 0.7);
+            --card-border: rgba(255, 255, 255, 0.1);
+            --card-border-hover: rgba(56, 189, 248, 0.5);
+            --text-main: #cbd5e1;
             --text-muted: #94a3b8;
             --text-heading: #f8fafc;
             --accent-blue: #38bdf8;
             --risk-high: #ef4444;    
-            --risk-med-high: #f97316; 
             --risk-med: #eab308;     
             --risk-low: #10b981;     
+            --glass-bg: rgba(15, 23, 42, 0.8);
+            --glass-border: rgba(255, 255, 255, 0.05);
         }
 
         * { box-sizing: border-box; }
-
-        html { scroll-behavior: smooth; }
-
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang TC", sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang TC", sans-serif;
             background: var(--bg-base-gradient);
             background-attachment: fixed;
             color: var(--text-main);
             margin: 0;
-            padding: 25px 35px 25px 70px;
-            line-height: 1.4;
+            padding: 20px 20px 20px 80px;
+            line-height: 1.6;
+            overflow-x: hidden;
         }
 
+        /* 導覽列優化 */
         .tactical-sidebar {
-            position: fixed; top: 50%; left: 15px; transform: translateY(-50%);
-            display: flex; flex-direction: column; gap: 12px; z-index: 1000;
+            position: fixed; top: 0; left: 0; bottom: 0; width: 60px;
+            background: var(--glass-bg); backdrop-filter: blur(10px);
+            border-right: 1px solid var(--glass-border);
+            display: flex; flex-direction: column; align-items: center; justify-content: center;
+            gap: 20px; z-index: 1000;
         }
-
         .nav-block {
-            width: 10px; height: 40px; border-radius: 2px;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            cursor: pointer; border: none; opacity: 0.6; display: block;
+            width: 12px; height: 40px; border-radius: 6px;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            cursor: pointer; opacity: 0.5;
         }
+        .nav-block:hover { opacity: 1; transform: scaleX(1.5); box-shadow: 0 0 20px currentColor; }
+        .nav-main { background: var(--risk-high); color: var(--risk-high); }
+        .nav-wild { background: var(--risk-med); color: var(--risk-med); }
+        .nav-finance { background: var(--accent-blue); color: var(--accent-blue); }
 
-        .nav-block:hover { width: 18px; opacity: 1; box-shadow: 0 0 15px currentColor; }
-        .nav-main { background-color: var(--risk-high); color: var(--risk-high); }
-        .nav-wild { background-color: var(--risk-med); color: var(--risk-med); }
-        .nav-finance { background-color: var(--accent-blue); color: var(--accent-blue); }
-
-        .dashboard-container { max-width: 1300px; margin: 0 auto; }
+        .dashboard-container { max-width: 1400px; margin: 0 auto; }
 
         header {
-            display: flex; justify-content: space-between; align-items: flex-end;
-            border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 10px; margin-bottom: 20px;
+            display: flex; justify-content: space-between; align-items: center;
+            padding-bottom: 20px; margin-bottom: 40px;
+            border-bottom: 1px solid var(--glass-border);
         }
-
         header h1 {
-            margin: 0; font-size: 22px; font-weight: 600; letter-spacing: 2px;
-            color: var(--text-heading); text-transform: uppercase; text-shadow: 0 2px 8px rgba(56, 189, 248, 0.3);
+            margin: 0; font-size: 28px; font-weight: 800; letter-spacing: -0.5px;
+            background: linear-gradient(to right, #fff, var(--accent-blue));
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
         }
+        .header-meta { text-align: right; font-family: 'JetBrains Mono', monospace; font-size: 13px; color: var(--accent-blue); }
+        .time-stamp { color: #fff; background: rgba(56, 189, 248, 0.2); padding: 2px 8px; border-radius: 4px; font-weight: bold; }
 
-        .header-meta { text-align: right; font-size: 12px; color: var(--accent-blue); font-family: monospace; line-height: 1.5; }
-        .time-stamp { color: #f8fafc; font-weight: bold; background: rgba(56, 189, 248, 0.2); padding: 2px 6px; border-radius: 4px; }
-
+        .section-group { margin-bottom: 60px; }
+        .section-header {
+            display: flex; align-items: center; gap: 15px; margin-bottom: 25px;
+        }
         .section-title {
-            font-size: 14px; color: var(--accent-blue); text-transform: uppercase; letter-spacing: 2px;
-            margin: 50px 0 15px 0; border-left: 3px solid var(--accent-blue); padding-left: 10px; font-weight: 600;
+            font-size: 18px; font-weight: 700; color: var(--text-heading);
+            text-transform: uppercase; letter-spacing: 2px;
         }
-        .section-title:first-of-type { margin-top: 0; }
+        .section-line { flex: 1; height: 1px; background: linear-gradient(to right, var(--accent-blue), transparent); }
 
+        /* 主題卡片優化 */
         .topic-card {
-            background: var(--card-bg); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
-            border: 1px solid var(--card-border); border-radius: 8px; margin-bottom: 18px;
-            display: flex; flex-direction: column; overflow: hidden;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+            background: var(--card-bg); backdrop-filter: blur(16px);
+            border: 1px solid var(--card-border); border-radius: 16px;
+            margin-bottom: 30px; overflow: hidden;
+            transition: border-color 0.3s ease, transform 0.3s ease;
+        }
+        .topic-card:hover { border-color: var(--card-border-hover); transform: translateY(-4px); }
+
+        .row-top { display: flex; flex-wrap: wrap; border-bottom: 1px solid var(--glass-border); }
+        .col-meta { flex: 0 0 300px; padding: 24px; border-right: 1px solid var(--glass-border); }
+        .col-summary { flex: 1; padding: 24px; min-width: 400px; border-right: 1px solid var(--glass-border); }
+        .col-more { flex: 0 0 150px; padding: 24px; display: flex; align-items: center; justify-content: center; }
+
+        .risk-badge {
+            display: inline-block; padding: 4px 10px; border-radius: 6px; font-size: 11px; font-weight: 700;
+            text-transform: uppercase; margin-bottom: 12px; color: #fff;
+        }
+        .topic-title { margin: 0 0 12px 0; font-size: 20px; font-weight: 700; color: #fff; }
+        .risk-reason { font-size: 13px; color: var(--text-muted); }
+        .summary-text { font-size: 15px; color: var(--text-main); margin: 0; }
+
+        /* 文章網格 */
+        .row-bottom { padding: 20px; background: rgba(0, 0, 0, 0.2); }
+        .sources-grid {
+            display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 20px;
         }
 
-        .row-top { display: flex; border-bottom: 1px dashed rgba(255, 255, 255, 0.1); align-items: stretch; }
-        .col-meta { flex: 0 0 28%; padding: 12px 18px; border-right: 1px solid rgba(255, 255, 255, 0.05); display: flex; flex-direction: column; }
-        .col-summary { flex: 1; padding: 12px 18px; display: flex; align-items: center; border-right: 1px solid rgba(255, 255, 255, 0.05); }
-        .col-more { flex: 0 0 12%; padding: 12px 15px; display: flex; align-items: center; justify-content: center; }
-        
-        .btn-search {
-            background: rgba(56, 189, 248, 0.05); color: #38bdf8; text-decoration: none;
-            padding: 12px 0; border-radius: 6px; font-size: 11px; font-weight: bold;
-            border: 1px solid rgba(56, 189, 248, 0.3); transition: all 0.2s ease; cursor: pointer;
-            text-align: center; width: 100%; display: flex; flex-direction: column; gap: 4px; line-height: 1.2;
-            letter-spacing: 1px;
+        .source-item {
+            height: 220px; perspective: 1000px; cursor: pointer;
         }
-        .btn-search span { font-size: 16px; margin-bottom: 2px; }
-        .btn-search:hover { background: #38bdf8; color: #0f172a; box-shadow: 0 0 12px rgba(56, 189, 248, 0.6); transform: translateY(-1px); }
-
-        .row-bottom { padding: 14px 18px; background: rgba(0, 0, 0, 0.3); display: flex; flex-direction: column; }
-        
-        .sources-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; width: 100%; perspective: 1000px; }
-        .sources-grid.six-cols { grid-template-columns: repeat(3, 1fr); }
-
-        .source-item { background: transparent; border: none; padding: 0; margin: 0; cursor: pointer; display: block; }
-        .flip-inner { display: grid; width: 100%; height: 100%; transition: transform 0.6s cubic-bezier(0.4, 0.2, 0.2, 1); transform-style: preserve-3d; }
+        .flip-inner {
+            position: relative; width: 100%; height: 100%; transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            transform-style: preserve-3d;
+        }
         .source-item.flipped .flip-inner { transform: rotateY(180deg); }
 
         .flip-front, .flip-back {
-            grid-area: 1 / 1; width: 100%; height: 100%; backface-visibility: hidden; 
-            border-radius: 6px; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.05); 
-            display: flex; flex-direction: column;
+            position: absolute; width: 100%; height: 100%; backface-visibility: hidden;
+            border-radius: 12px; overflow: hidden; border: 1px solid var(--glass-border);
         }
 
-        .flip-front { background: rgba(255, 255, 255, 0.02); z-index: 2; }
-        .source-item:hover .flip-front { border-color: rgba(56, 189, 248, 0.3); background: rgba(255, 255, 255, 0.05); }
+        .flip-front { background: rgba(255, 255, 255, 0.03); display: flex; flex-direction: column; }
+        .source-img {
+            width: 100%; height: 60%; background-size: cover; background-position: center;
+            border-bottom: 1px solid var(--glass-border); position: relative;
+        }
+        .source-img::after {
+            content: ""; position: absolute; inset: 0; background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.4));
+        }
+        .source-text-box { padding: 12px; flex: 1; }
+        .source-tag { font-family: monospace; font-size: 10px; color: var(--accent-blue); font-weight: bold; }
+        .source-title { font-size: 13px; font-weight: 600; color: #fff; margin-top: 4px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
 
         .flip-back {
-            background: #0f172a; transform: rotateY(180deg); padding: 16px; 
-            border-color: rgba(56, 189, 248, 0.5); box-shadow: 0 0 15px rgba(56, 189, 248, 0.1);
+            background: #0f172a; transform: rotateY(180deg); padding: 16px;
+            display: flex; flex-direction: column; border-color: var(--accent-blue);
         }
-
-        .source-img {
-            width: 100%; aspect-ratio: 16 / 9; background: rgba(0, 0, 0, 0.5);
-            display: flex; align-items: center; justify-content: center; border-bottom: 1px solid rgba(255, 255, 255, 0.05); flex-shrink: 0;
-        }
-        .source-img::before { content: "📷 NEWS PREVIEW"; color: rgba(255, 255, 255, 0.1); font-family: monospace; font-size: 10px; }
+        .back-title { font-size: 13px; font-weight: 700; color: var(--accent-blue); margin-bottom: 10px; border-bottom: 1px solid rgba(56, 189, 248, 0.2); padding-bottom: 5px; }
+        .back-summary { font-size: 12px; color: #cbd5e1; flex: 1; overflow-y: auto; margin-bottom: 12px; }
         
-        .source-text-box { padding: 12px; display: flex; flex-direction: column; flex: 1; justify-content: flex-start; }
-        .source-tag { color: var(--accent-blue); font-family: monospace; font-size: 11px; margin-bottom: 6px; font-weight: bold; }
-        .source-title { font-size: 13.5px; color: var(--text-heading); line-height: 1.4; font-weight: bold; text-shadow: 0 1px 2px rgba(0,0,0,0.5); }
-
-        .back-title {
-            font-size: 13.5px; color: var(--accent-blue); font-weight: bold; line-height: 1.4;
-            margin-bottom: 12px; padding-bottom: 8px; border-bottom: 1px solid rgba(56, 189, 248, 0.2); flex-shrink: 0; 
-        }
-        .back-summary { font-size: 12.5px; color: #cbd5e1; line-height: 1.6; text-align: justify; flex: 1; margin-bottom: 14px; }
-        .back-action { display: flex; justify-content: space-between; align-items: flex-end; margin-top: auto; flex-shrink: 0; }
-        .back-hint { font-size: 10px; color: rgba(255,255,255,0.3); font-family: monospace; }
-        
-        .action-buttons { display: flex; gap: 8px; }
+        .action-buttons { display: flex; gap: 8px; margin-top: auto; }
         .btn-link {
-            background: rgba(56, 189, 248, 0.1); color: #38bdf8; text-decoration: none; padding: 8px 14px; border-radius: 4px; 
-            font-size: 12px; font-weight: bold; border: 1px solid rgba(56, 189, 248, 0.3); transition: all 0.2s ease; cursor: pointer;
+            flex: 1; text-align: center; padding: 6px; border-radius: 6px; font-size: 11px; font-weight: bold;
+            text-decoration: none; transition: all 0.2s;
         }
-        .btn-link:hover { background: #38bdf8; color: #0f172a; box-shadow: 0 0 10px rgba(56, 189, 248, 0.5); }
-        .btn-link.alt { background: transparent; border-color: rgba(148, 163, 184, 0.4); color: #94a3b8; }
-        .btn-link.alt:hover { background: rgba(148, 163, 184, 0.2); color: #f8fafc; border-color: #f8fafc; box-shadow: none; }
+        .btn-primary { background: var(--accent-blue); color: #020617; }
+        .btn-outline { border: 1px solid var(--glass-border); color: var(--text-muted); }
+        .btn-link:hover { transform: translateY(-2px); filter: brightness(1.2); }
 
-        .risk-badge { display: inline-block; padding: 3px 6px; border-radius: 3px; font-size: 10px; font-weight: bold; color: #fff; text-transform: uppercase; margin-bottom: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.3); }
-        .bg-high { background: #ef4444; }
-        .bg-med-high { background: #f97316; }
-        .bg-med { background: #eab308; }
-        .bg-low { background: #10b981; }
-        .bg-info { background: #3b82f6; }
-        .bg-alert { background: #8b5cf6; }
+        .btn-search {
+            background: rgba(56, 189, 248, 0.1); border: 1px solid var(--accent-blue);
+            color: var(--accent-blue); padding: 10px 15px; border-radius: 8px;
+            text-decoration: none; font-size: 11px; font-weight: bold; text-align: center;
+            transition: all 0.3s;
+        }
+        .btn-search:hover { background: var(--accent-blue); color: #020617; box-shadow: 0 0 15px var(--accent-blue); }
 
-        footer { margin-top: 35px; text-align: center; font-size: 11px; color: rgba(255,255,255,0.2); font-family: monospace; letter-spacing: 2px; }
+        footer { margin-top: 60px; padding: 40px; text-align: center; border-top: 1px solid var(--glass-border); font-family: monospace; font-size: 11px; opacity: 0.4; letter-spacing: 4px; }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: var(--glass-border); border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: var(--accent-blue); }
+
+        @media (max-width: 768px) {
+            body { padding-left: 15px; }
+            .tactical-sidebar { display: none; }
+            .col-meta, .col-summary, .col-more { flex: 1 1 100%; border-right: none; border-bottom: 1px solid var(--glass-border); }
+        }
     </style>
 </head>
 <body>
 
 <div class="tactical-sidebar">
-    <button onclick="customSmoothScroll('sec-main')" class="nav-block nav-main" title="{{SEC1_TITLE}}"></button>
-    <button onclick="customSmoothScroll('sec-wild')" class="nav-block nav-wild" title="{{SEC2_TITLE}}"></button>
-    <button onclick="customSmoothScroll('sec-finance')" class="nav-block nav-finance" title="{{SEC3_TITLE}}"></button>
+    <div onclick="scrollToSection('sec-main')" class="nav-block nav-main" title="Mainstream Topics"></div>
+    <div onclick="scrollToSection('sec-wild')" class="nav-block nav-wild" title="Wildcard Topics"></div>
+    <div onclick="scrollToSection('sec-finance')" class="nav-block nav-finance" title="Business & Finance"></div>
 </div>
 
 <div class="dashboard-container">
     <header>
         <h1>Global Strategic Briefing</h1>
         <div class="header-meta">
-            DATE: {{DATE_TODAY}}<br>
-            LAST FETCH: <span class="time-stamp">{{TIME_NOW}}</span>
+            DATE: {{ date_today }}<br>
+            STAMP: <span class="time-stamp">{{ time_now }}</span>
         </div>
     </header>
 
-    <div class="section-title" id="sec-main">{{SEC1_TITLE}}</div>
-
-    <!-- MAIN_T1 -->
-    <div class="topic-card">
-        <div class="row-top">
-            <div class="col-meta"><span class="risk-badge {{MAIN_T1_BADGE}}">{{MAIN_T1_BADGE_TEXT}}</span><h2 class="topic-title">{{MAIN_T1_TITLE}}</h2><div class="risk-reason"><strong>分析：</strong>{{MAIN_T1_REASON}}</div></div>
-            <div class="col-summary"><p class="summary-text">{{MAIN_T1_SUMMARY}}</p></div>
-            <div class="col-more"><a href="{{MAIN_T1_GLOBAL_SEARCH}}" target="_blank" class="btn-search"><span>🔍</span>MORE INTEL<br>全局追蹤 ↗</a></div>
+    {% for section_id, section in [('sec-main', mainstream_topics), ('sec-wild', wildcard_topics), ('sec-finance-tw', business_finance_taiwan), ('sec-finance-gl', business_finance_global)] %}
+    <div class="section-group" id="{{ section_id }}">
+        <div class="section-header">
+            <div class="section-title">{{ section.section_title }}</div>
+            <div class="section-line"></div>
         </div>
-        <div class="row-bottom">
-            <div class="sources-grid">
-                <div class="source-item" onclick="this.classList.toggle('flipped')"><div class="flip-inner"><div class="flip-front"><div class="source-img" style="background-image: url('{{MAIN_T1_A1_IMG}}'); background-size: cover; background-position: center;"></div><div class="source-text-box"><span class="source-tag">[{{MAIN_T1_A1_TAG}}]</span><div class="source-title">{{MAIN_T1_A1_F_TITLE}}</div></div></div><div class="flip-back"><div class="back-title">{{MAIN_T1_A1_B_TITLE}}</div><div class="back-summary">{{MAIN_T1_A1_B_SUM}}</div><div class="back-action"><span class="back-hint">TAP TO FLIP</span><div class="action-buttons"><a href="https://www.google.com/search?q={{MAIN_T1_A1_SEARCH_QUERY}}" data-original-title="{{MAIN_T1_A1_O_TITLE}}" target="_blank" class="btn-link alt" onclick="event.stopPropagation()">🔍 搜尋</a><a href="{{MAIN_T1_A1_URL}}" target="_blank" class="btn-link" onclick="event.stopPropagation()">閱讀原文 ↗</a></div></div></div></div></div>
-                <div class="source-item" onclick="this.classList.toggle('flipped')"><div class="flip-inner"><div class="flip-front"><div class="source-img" style="background-image: url('{{MAIN_T1_A2_IMG}}'); background-size: cover; background-position: center;"></div><div class="source-text-box"><span class="source-tag">[{{MAIN_T1_A2_TAG}}]</span><div class="source-title">{{MAIN_T1_A2_F_TITLE}}</div></div></div><div class="flip-back"><div class="back-title">{{MAIN_T1_A2_B_TITLE}}</div><div class="back-summary">{{MAIN_T1_A2_B_SUM}}</div><div class="back-action"><span class="back-hint">TAP TO FLIP</span><div class="action-buttons"><a href="https://www.google.com/search?q={{MAIN_T1_A2_SEARCH_QUERY}}" data-original-title="{{MAIN_T1_A2_O_TITLE}}" target="_blank" class="btn-link alt" onclick="event.stopPropagation()">🔍 搜尋</a><a href="{{MAIN_T1_A2_URL}}" target="_blank" class="btn-link" onclick="event.stopPropagation()">閱讀原文 ↗</a></div></div></div></div></div>
-                <div class="source-item" onclick="this.classList.toggle('flipped')"><div class="flip-inner"><div class="flip-front"><div class="source-img" style="background-image: url('{{MAIN_T1_A3_IMG}}'); background-size: cover; background-position: center;"></div><div class="source-text-box"><span class="source-tag">[{{MAIN_T1_A3_TAG}}]</span><div class="source-title">{{MAIN_T1_A3_F_TITLE}}</div></div></div><div class="flip-back"><div class="back-title">{{MAIN_T1_A3_B_TITLE}}</div><div class="back-summary">{{MAIN_T1_A3_B_SUM}}</div><div class="back-action"><span class="back-hint">TAP TO FLIP</span><div class="action-buttons"><a href="https://www.google.com/search?q={{MAIN_T1_A3_SEARCH_QUERY}}" data-original-title="{{MAIN_T1_A3_O_TITLE}}" target="_blank" class="btn-link alt" onclick="event.stopPropagation()">🔍 搜尋</a><a href="{{MAIN_T1_A3_URL}}" target="_blank" class="btn-link" onclick="event.stopPropagation()">閱讀原文 ↗</a></div></div></div></div></div>
+
+        {% for topic in section.topics %}
+        <div class="topic-card">
+            <div class="row-top">
+                <div class="col-meta">
+                    <span class="risk-badge {{ topic.risk_badge }}">{{ topic.badge_text }}</span>
+                    <h2 class="topic-title">{{ topic.topic_title }}</h2>
+                    <div class="risk-reason"><strong>INTEL:</strong> {{ topic.risk_reason }}</div>
+                </div>
+                <div class="col-summary">
+                    <p class="summary-text">{{ topic.topic_summary }}</p>
+                </div>
+                <div class="col-more">
+                    <a href="{{ topic.global_search_url }}" target="_blank" class="btn-search">GLOBAL TRACKING ↗</a>
+                </div>
+            </div>
+            <div class="row-bottom">
+                <div class="sources-grid">
+                    {% for article in topic.articles %}
+                    <div class="source-item" onclick="this.classList.toggle('flipped')">
+                        <div class="flip-inner">
+                            <div class="flip-front">
+                                <div class="source-img" style="background-image: url('{{ article.image_url }}');"></div>
+                                <div class="source-text-box">
+                                    <span class="source-tag">[{{ article.source_tag }}]</span>
+                                    <div class="source-title">{{ article.front_title }}</div>
+                                </div>
+                            </div>
+                            <div class="flip-back">
+                                <div class="back-title">{{ article.back_title }}</div>
+                                <div class="back-summary">{{ article.back_summary }}</div>
+                                <div class="action-buttons">
+                                    <a href="https://www.google.com/search?q={{ article.original_title|urlencode }}" target="_blank" class="btn-link btn-outline" onclick="event.stopPropagation()">SEARCH</a>
+                                    <a href="{{ article.source_url }}" target="_blank" class="btn-link btn-primary" onclick="event.stopPropagation()">READ ↗</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
             </div>
         </div>
+        {% endfor %}
     </div>
-
-    <!-- MAIN_T2 -->
-    <div class="topic-card">
-        <div class="row-top">
-            <div class="col-meta"><span class="risk-badge {{MAIN_T2_BADGE}}">{{MAIN_T2_BADGE_TEXT}}</span><h2 class="topic-title">{{MAIN_T2_TITLE}}</h2><div class="risk-reason"><strong>分析：</strong>{{MAIN_T2_REASON}}</div></div>
-            <div class="col-summary"><p class="summary-text">{{MAIN_T2_SUMMARY}}</p></div>
-            <div class="col-more"><a href="{{MAIN_T2_GLOBAL_SEARCH}}" target="_blank" class="btn-search"><span>🔍</span>MORE INTEL<br>全局追蹤 ↗</a></div>
-        </div>
-        <div class="row-bottom">
-            <div class="sources-grid">
-                <div class="source-item" onclick="this.classList.toggle('flipped')"><div class="flip-inner"><div class="flip-front"><div class="source-img" style="background-image: url('{{MAIN_T2_A1_IMG}}'); background-size: cover; background-position: center;"></div><div class="source-text-box"><span class="source-tag">[{{MAIN_T2_A1_TAG}}]</span><div class="source-title">{{MAIN_T2_A1_F_TITLE}}</div></div></div><div class="flip-back"><div class="back-title">{{MAIN_T2_A1_B_TITLE}}</div><div class="back-summary">{{MAIN_T2_A1_B_SUM}}</div><div class="back-action"><span class="back-hint">TAP TO FLIP</span><div class="action-buttons"><a href="https://www.google.com/search?q={{MAIN_T2_A1_SEARCH_QUERY}}" data-original-title="{{MAIN_T2_A1_O_TITLE}}" target="_blank" class="btn-link alt" onclick="event.stopPropagation()">🔍 搜尋</a><a href="{{MAIN_T2_A1_URL}}" target="_blank" class="btn-link" onclick="event.stopPropagation()">閱讀原文 ↗</a></div></div></div></div></div>
-                <div class="source-item" onclick="this.classList.toggle('flipped')"><div class="flip-inner"><div class="flip-front"><div class="source-img" style="background-image: url('{{MAIN_T2_A2_IMG}}'); background-size: cover; background-position: center;"></div><div class="source-text-box"><span class="source-tag">[{{MAIN_T2_A2_TAG}}]</span><div class="source-title">{{MAIN_T2_A2_F_TITLE}}</div></div></div><div class="flip-back"><div class="back-title">{{MAIN_T2_A2_B_TITLE}}</div><div class="back-summary">{{MAIN_T2_A2_B_SUM}}</div><div class="back-action"><span class="back-hint">TAP TO FLIP</span><div class="action-buttons"><a href="https://www.google.com/search?q={{MAIN_T2_A2_SEARCH_QUERY}}" data-original-title="{{MAIN_T2_A2_O_TITLE}}" target="_blank" class="btn-link alt" onclick="event.stopPropagation()">🔍 搜尋</a><a href="{{MAIN_T2_A2_URL}}" target="_blank" class="btn-link" onclick="event.stopPropagation()">閱讀原文 ↗</a></div></div></div></div></div>
-                <div class="source-item" onclick="this.classList.toggle('flipped')"><div class="flip-inner"><div class="flip-front"><div class="source-img" style="background-image: url('{{MAIN_T2_A3_IMG}}'); background-size: cover; background-position: center;"></div><div class="source-text-box"><span class="source-tag">[{{MAIN_T2_A3_TAG}}]</span><div class="source-title">{{MAIN_T2_A3_F_TITLE}}</div></div></div><div class="flip-back"><div class="back-title">{{MAIN_T2_A3_B_TITLE}}</div><div class="back-summary">{{MAIN_T2_A3_B_SUM}}</div><div class="back-action"><span class="back-hint">TAP TO FLIP</span><div class="action-buttons"><a href="https://www.google.com/search?q={{MAIN_T2_A3_SEARCH_QUERY}}" data-original-title="{{MAIN_T2_A3_O_TITLE}}" target="_blank" class="btn-link alt" onclick="event.stopPropagation()">🔍 搜尋</a><a href="{{MAIN_T2_A3_URL}}" target="_blank" class="btn-link" onclick="event.stopPropagation()">閱讀原文 ↗</a></div></div></div></div></div>
-            </div>
-        </div>
-    </div>
-
-    <!-- MAIN_T3 -->
-    <div class="topic-card">
-        <div class="row-top">
-            <div class="col-meta"><span class="risk-badge {{MAIN_T3_BADGE}}">{{MAIN_T3_BADGE_TEXT}}</span><h2 class="topic-title">{{MAIN_T3_TITLE}}</h2><div class="risk-reason"><strong>分析：</strong>{{MAIN_T3_REASON}}</div></div>
-            <div class="col-summary"><p class="summary-text">{{MAIN_T3_SUMMARY}}</p></div>
-            <div class="col-more"><a href="{{MAIN_T3_GLOBAL_SEARCH}}" target="_blank" class="btn-search"><span>🔍</span>MORE INTEL<br>全局追蹤 ↗</a></div>
-        </div>
-        <div class="row-bottom">
-            <div class="sources-grid">
-                <div class="source-item" onclick="this.classList.toggle('flipped')"><div class="flip-inner"><div class="flip-front"><div class="source-img" style="background-image: url('{{MAIN_T3_A1_IMG}}'); background-size: cover; background-position: center;"></div><div class="source-text-box"><span class="source-tag">[{{MAIN_T3_A1_TAG}}]</span><div class="source-title">{{MAIN_T3_A1_F_TITLE}}</div></div></div><div class="flip-back"><div class="back-title">{{MAIN_T3_A1_B_TITLE}}</div><div class="back-summary">{{MAIN_T3_A1_B_SUM}}</div><div class="back-action"><span class="back-hint">TAP TO FLIP</span><div class="action-buttons"><a href="https://www.google.com/search?q={{MAIN_T3_A1_SEARCH_QUERY}}" data-original-title="{{MAIN_T3_A1_O_TITLE}}" target="_blank" class="btn-link alt" onclick="event.stopPropagation()">🔍 搜尋</a><a href="{{MAIN_T3_A1_URL}}" target="_blank" class="btn-link" onclick="event.stopPropagation()">閱讀原文 ↗</a></div></div></div></div></div>
-                <div class="source-item" onclick="this.classList.toggle('flipped')"><div class="flip-inner"><div class="flip-front"><div class="source-img" style="background-image: url('{{MAIN_T3_A2_IMG}}'); background-size: cover; background-position: center;"></div><div class="source-text-box"><span class="source-tag">[{{MAIN_T3_A2_TAG}}]</span><div class="source-title">{{MAIN_T3_A2_F_TITLE}}</div></div></div><div class="flip-back"><div class="back-title">{{MAIN_T3_A2_B_TITLE}}</div><div class="back-summary">{{MAIN_T3_A2_B_SUM}}</div><div class="back-action"><span class="back-hint">TAP TO FLIP</span><div class="action-buttons"><a href="https://www.google.com/search?q={{MAIN_T3_A2_SEARCH_QUERY}}" data-original-title="{{MAIN_T3_A2_O_TITLE}}" target="_blank" class="btn-link alt" onclick="event.stopPropagation()">🔍 搜尋</a><a href="{{MAIN_T3_A2_URL}}" target="_blank" class="btn-link" onclick="event.stopPropagation()">閱讀原文 ↗</a></div></div></div></div></div>
-                <div class="source-item" onclick="this.classList.toggle('flipped')"><div class="flip-inner"><div class="flip-front"><div class="source-img" style="background-image: url('{{MAIN_T3_A3_IMG}}'); background-size: cover; background-position: center;"></div><div class="source-text-box"><span class="source-tag">[{{MAIN_T3_A3_TAG}}]</span><div class="source-title">{{MAIN_T3_A3_F_TITLE}}</div></div></div><div class="flip-back"><div class="back-title">{{MAIN_T3_A3_B_TITLE}}</div><div class="back-summary">{{MAIN_T3_A3_B_SUM}}</div><div class="back-action"><span class="back-hint">TAP TO FLIP</span><div class="action-buttons"><a href="https://www.google.com/search?q={{MAIN_T3_A3_SEARCH_QUERY}}" data-original-title="{{MAIN_T3_A3_O_TITLE}}" target="_blank" class="btn-link alt" onclick="event.stopPropagation()">🔍 搜尋</a><a href="{{MAIN_T3_A3_URL}}" target="_blank" class="btn-link" onclick="event.stopPropagation()">閱讀原文 ↗</a></div></div></div></div></div>
-            </div>
-        </div>
-    </div>
-
-    <!-- MAIN_T4 -->
-    <div class="topic-card">
-        <div class="row-top">
-            <div class="col-meta"><span class="risk-badge {{MAIN_T4_BADGE}}">{{MAIN_T4_BADGE_TEXT}}</span><h2 class="topic-title">{{MAIN_T4_TITLE}}</h2><div class="risk-reason"><strong>分析：</strong>{{MAIN_T4_REASON}}</div></div>
-            <div class="col-summary"><p class="summary-text">{{MAIN_T4_SUMMARY}}</p></div>
-            <div class="col-more"><a href="{{MAIN_T4_GLOBAL_SEARCH}}" target="_blank" class="btn-search"><span>🔍</span>MORE INTEL<br>全局追蹤 ↗</a></div>
-        </div>
-        <div class="row-bottom">
-            <div class="sources-grid">
-                <div class="source-item" onclick="this.classList.toggle('flipped')"><div class="flip-inner"><div class="flip-front"><div class="source-img" style="background-image: url('{{MAIN_T4_A1_IMG}}'); background-size: cover; background-position: center;"></div><div class="source-text-box"><span class="source-tag">[{{MAIN_T4_A1_TAG}}]</span><div class="source-title">{{MAIN_T4_A1_F_TITLE}}</div></div></div><div class="flip-back"><div class="back-title">{{MAIN_T4_A1_B_TITLE}}</div><div class="back-summary">{{MAIN_T4_A1_B_SUM}}</div><div class="back-action"><span class="back-hint">TAP TO FLIP</span><div class="action-buttons"><a href="https://www.google.com/search?q={{MAIN_T4_A1_SEARCH_QUERY}}" data-original-title="{{MAIN_T4_A1_O_TITLE}}" target="_blank" class="btn-link alt" onclick="event.stopPropagation()">🔍 搜尋</a><a href="{{MAIN_T4_A1_URL}}" target="_blank" class="btn-link" onclick="event.stopPropagation()">閱讀原文 ↗</a></div></div></div></div></div>
-                <div class="source-item" onclick="this.classList.toggle('flipped')"><div class="flip-inner"><div class="flip-front"><div class="source-img" style="background-image: url('{{MAIN_T4_A2_IMG}}'); background-size: cover; background-position: center;"></div><div class="source-text-box"><span class="source-tag">[{{MAIN_T4_A2_TAG}}]</span><div class="source-title">{{MAIN_T4_A2_F_TITLE}}</div></div></div><div class="flip-back"><div class="back-title">{{MAIN_T4_A2_B_TITLE}}</div><div class="back-summary">{{MAIN_T4_A2_B_SUM}}</div><div class="back-action"><span class="back-hint">TAP TO FLIP</span><div class="action-buttons"><a href="https://www.google.com/search?q={{MAIN_T4_A2_SEARCH_QUERY}}" data-original-title="{{MAIN_T4_A2_O_TITLE}}" target="_blank" class="btn-link alt" onclick="event.stopPropagation()">🔍 搜尋</a><a href="{{MAIN_T4_A2_URL}}" target="_blank" class="btn-link" onclick="event.stopPropagation()">閱讀原文 ↗</a></div></div></div></div></div>
-                <div class="source-item" onclick="this.classList.toggle('flipped')"><div class="flip-inner"><div class="flip-front"><div class="source-img" style="background-image: url('{{MAIN_T4_A3_IMG}}'); background-size: cover; background-position: center;"></div><div class="source-text-box"><span class="source-tag">[{{MAIN_T4_A3_TAG}}]</span><div class="source-title">{{MAIN_T4_A3_F_TITLE}}</div></div></div><div class="flip-back"><div class="back-title">{{MAIN_T4_A3_B_TITLE}}</div><div class="back-summary">{{MAIN_T4_A3_B_SUM}}</div><div class="back-action"><span class="back-hint">TAP TO FLIP</span><div class="action-buttons"><a href="https://www.google.com/search?q={{MAIN_T4_A3_SEARCH_QUERY}}" data-original-title="{{MAIN_T4_A3_O_TITLE}}" target="_blank" class="btn-link alt" onclick="event.stopPropagation()">🔍 搜尋</a><a href="{{MAIN_T4_A3_URL}}" target="_blank" class="btn-link" onclick="event.stopPropagation()">閱讀原文 ↗</a></div></div></div></div></div>
-            </div>
-        </div>
-    </div>
-
-    <!-- MAIN_T5 -->
-    <div class="topic-card">
-        <div class="row-top">
-            <div class="col-meta"><span class="risk-badge {{MAIN_T5_BADGE}}">{{MAIN_T5_BADGE_TEXT}}</span><h2 class="topic-title">{{MAIN_T5_TITLE}}</h2><div class="risk-reason"><strong>分析：</strong>{{MAIN_T5_REASON}}</div></div>
-            <div class="col-summary"><p class="summary-text">{{MAIN_T5_SUMMARY}}</p></div>
-            <div class="col-more"><a href="{{MAIN_T5_GLOBAL_SEARCH}}" target="_blank" class="btn-search"><span>🔍</span>MORE INTEL<br>全局追蹤 ↗</a></div>
-        </div>
-        <div class="row-bottom">
-            <div class="sources-grid">
-                <div class="source-item" onclick="this.classList.toggle('flipped')"><div class="flip-inner"><div class="flip-front"><div class="source-img" style="background-image: url('{{MAIN_T5_A1_IMG}}'); background-size: cover; background-position: center;"></div><div class="source-text-box"><span class="source-tag">[{{MAIN_T5_A1_TAG}}]</span><div class="source-title">{{MAIN_T5_A1_F_TITLE}}</div></div></div><div class="flip-back"><div class="back-title">{{MAIN_T5_A1_B_TITLE}}</div><div class="back-summary">{{MAIN_T5_A1_B_SUM}}</div><div class="back-action"><span class="back-hint">TAP TO FLIP</span><div class="action-buttons"><a href="https://www.google.com/search?q={{MAIN_T5_A1_SEARCH_QUERY}}" data-original-title="{{MAIN_T5_A1_O_TITLE}}" target="_blank" class="btn-link alt" onclick="event.stopPropagation()">🔍 搜尋</a><a href="{{MAIN_T5_A1_URL}}" target="_blank" class="btn-link" onclick="event.stopPropagation()">閱讀原文 ↗</a></div></div></div></div></div>
-                <div class="source-item" onclick="this.classList.toggle('flipped')"><div class="flip-inner"><div class="flip-front"><div class="source-img" style="background-image: url('{{MAIN_T5_A2_IMG}}'); background-size: cover; background-position: center;"></div><div class="source-text-box"><span class="source-tag">[{{MAIN_T5_A2_TAG}}]</span><div class="source-title">{{MAIN_T5_A2_F_TITLE}}</div></div></div><div class="flip-back"><div class="back-title">{{MAIN_T5_A2_B_TITLE}}</div><div class="back-summary">{{MAIN_T5_A2_B_SUM}}</div><div class="back-action"><span class="back-hint">TAP TO FLIP</span><div class="action-buttons"><a href="https://www.google.com/search?q={{MAIN_T5_A2_SEARCH_QUERY}}" data-original-title="{{MAIN_T5_A2_O_TITLE}}" target="_blank" class="btn-link alt" onclick="event.stopPropagation()">🔍 搜尋</a><a href="{{MAIN_T5_A2_URL}}" target="_blank" class="btn-link" onclick="event.stopPropagation()">閱讀原文 ↗</a></div></div></div></div></div>
-                <div class="source-item" onclick="this.classList.toggle('flipped')"><div class="flip-inner"><div class="flip-front"><div class="source-img" style="background-image: url('{{MAIN_T5_A3_IMG}}'); background-size: cover; background-position: center;"></div><div class="source-text-box"><span class="source-tag">[{{MAIN_T5_A3_TAG}}]</span><div class="source-title">{{MAIN_T5_A3_F_TITLE}}</div></div></div><div class="flip-back"><div class="back-title">{{MAIN_T5_A3_B_TITLE}}</div><div class="back-summary">{{MAIN_T5_A3_B_SUM}}</div><div class="back-action"><span class="back-hint">TAP TO FLIP</span><div class="action-buttons"><a href="https://www.google.com/search?q={{MAIN_T5_A3_SEARCH_QUERY}}" data-original-title="{{MAIN_T5_A3_O_TITLE}}" target="_blank" class="btn-link alt" onclick="event.stopPropagation()">🔍 搜尋</a><a href="{{MAIN_T5_A3_URL}}" target="_blank" class="btn-link" onclick="event.stopPropagation()">閱讀原文 ↗</a></div></div></div></div></div>
-            </div>
-        </div>
-    </div>
-
-
-    <div class="section-title" id="sec-wild">{{SEC2_TITLE}}</div>
-
-    <!-- WILD_T1 -->
-    <div class="topic-card">
-        <div class="row-top">
-            <div class="col-meta"><span class="risk-badge {{WILD_T1_BADGE}}">{{WILD_T1_BADGE_TEXT}}</span><h2 class="topic-title">{{WILD_T1_TITLE}}</h2><div class="risk-reason"><strong>分析：</strong>{{WILD_T1_REASON}}</div></div>
-            <div class="col-summary"><p class="summary-text">{{WILD_T1_SUMMARY}}</p></div>
-            <div class="col-more"><a href="{{WILD_T1_GLOBAL_SEARCH}}" target="_blank" class="btn-search"><span>🔍</span>MORE INTEL<br>全局追蹤 ↗</a></div>
-        </div>
-        <div class="row-bottom">
-            <div class="sources-grid">
-                <div class="source-item" onclick="this.classList.toggle('flipped')"><div class="flip-inner"><div class="flip-front"><div class="source-img" style="background-image: url('{{WILD_T1_A1_IMG}}'); background-size: cover; background-position: center;"></div><div class="source-text-box"><span class="source-tag">[{{WILD_T1_A1_TAG}}]</span><div class="source-title">{{WILD_T1_A1_F_TITLE}}</div></div></div><div class="flip-back"><div class="back-title">{{WILD_T1_A1_B_TITLE}}</div><div class="back-summary">{{WILD_T1_A1_B_SUM}}</div><div class="back-action"><span class="back-hint">TAP TO FLIP</span><div class="action-buttons"><a href="https://www.google.com/search?q={{WILD_T1_A1_SEARCH_QUERY}}" data-original-title="{{WILD_T1_A1_O_TITLE}}" target="_blank" class="btn-link alt" onclick="event.stopPropagation()">🔍 搜尋</a><a href="{{WILD_T1_A1_URL}}" target="_blank" class="btn-link" onclick="event.stopPropagation()">閱讀原文 ↗</a></div></div></div></div></div>
-                <div class="source-item" onclick="this.classList.toggle('flipped')"><div class="flip-inner"><div class="flip-front"><div class="source-img" style="background-image: url('{{WILD_T1_A2_IMG}}'); background-size: cover; background-position: center;"></div><div class="source-text-box"><span class="source-tag">[{{WILD_T1_A2_TAG}}]</span><div class="source-title">{{WILD_T1_A2_F_TITLE}}</div></div></div><div class="flip-back"><div class="back-title">{{WILD_T1_A2_B_TITLE}}</div><div class="back-summary">{{WILD_T1_A2_B_SUM}}</div><div class="back-action"><span class="back-hint">TAP TO FLIP</span><div class="action-buttons"><a href="https://www.google.com/search?q={{WILD_T1_A2_SEARCH_QUERY}}" data-original-title="{{WILD_T1_A2_O_TITLE}}" target="_blank" class="btn-link alt" onclick="event.stopPropagation()">🔍 搜尋</a><a href="{{WILD_T1_A2_URL}}" target="_blank" class="btn-link" onclick="event.stopPropagation()">閱讀原文 ↗</a></div></div></div></div></div>
-                <div class="source-item" onclick="this.classList.toggle('flipped')"><div class="flip-inner"><div class="flip-front"><div class="source-img" style="background-image: url('{{WILD_T1_A3_IMG}}'); background-size: cover; background-position: center;"></div><div class="source-text-box"><span class="source-tag">[{{WILD_T1_A3_TAG}}]</span><div class="source-title">{{WILD_T1_A3_F_TITLE}}</div></div></div><div class="flip-back"><div class="back-title">{{WILD_T1_A3_B_TITLE}}</div><div class="back-summary">{{WILD_T1_A3_B_SUM}}</div><div class="back-action"><span class="back-hint">TAP TO FLIP</span><div class="action-buttons"><a href="https://www.google.com/search?q={{WILD_T1_A3_SEARCH_QUERY}}" data-original-title="{{WILD_T1_A3_O_TITLE}}" target="_blank" class="btn-link alt" onclick="event.stopPropagation()">🔍 搜尋</a><a href="{{WILD_T1_A3_URL}}" target="_blank" class="btn-link" onclick="event.stopPropagation()">閱讀原文 ↗</a></div></div></div></div></div>
-            </div>
-        </div>
-    </div>
-
-    <!-- WILD_T2 -->
-    <div class="topic-card">
-        <div class="row-top">
-            <div class="col-meta"><span class="risk-badge {{WILD_T2_BADGE}}">{{WILD_T2_BADGE_TEXT}}</span><h2 class="topic-title">{{WILD_T2_TITLE}}</h2><div class="risk-reason"><strong>分析：</strong>{{WILD_T2_REASON}}</div></div>
-            <div class="col-summary"><p class="summary-text">{{WILD_T2_SUMMARY}}</p></div>
-            <div class="col-more"><a href="{{WILD_T2_GLOBAL_SEARCH}}" target="_blank" class="btn-search"><span>🔍</span>MORE INTEL<br>全局追蹤 ↗</a></div>
-        </div>
-        <div class="row-bottom">
-            <div class="sources-grid">
-                <div class="source-item" onclick="this.classList.toggle('flipped')"><div class="flip-inner"><div class="flip-front"><div class="source-img" style="background-image: url('{{WILD_T2_A1_IMG}}'); background-size: cover; background-position: center;"></div><div class="source-text-box"><span class="source-tag">[{{WILD_T2_A1_TAG}}]</span><div class="source-title">{{WILD_T2_A1_F_TITLE}}</div></div></div><div class="flip-back"><div class="back-title">{{WILD_T2_A1_B_TITLE}}</div><div class="back-summary">{{WILD_T2_A1_B_SUM}}</div><div class="back-action"><span class="back-hint">TAP TO FLIP</span><div class="action-buttons"><a href="https://www.google.com/search?q={{WILD_T2_A1_SEARCH_QUERY}}" data-original-title="{{WILD_T2_A1_O_TITLE}}" target="_blank" class="btn-link alt" onclick="event.stopPropagation()">🔍 搜尋</a><a href="{{WILD_T2_A1_URL}}" target="_blank" class="btn-link" onclick="event.stopPropagation()">閱讀原文 ↗</a></div></div></div></div></div>
-                <div class="source-item" onclick="this.classList.toggle('flipped')"><div class="flip-inner"><div class="flip-front"><div class="source-img" style="background-image: url('{{WILD_T2_A2_IMG}}'); background-size: cover; background-position: center;"></div><div class="source-text-box"><span class="source-tag">[{{WILD_T2_A2_TAG}}]</span><div class="source-title">{{WILD_T2_A2_F_TITLE}}</div></div></div><div class="flip-back"><div class="back-title">{{WILD_T2_A2_B_TITLE}}</div><div class="back-summary">{{WILD_T2_A2_B_SUM}}</div><div class="back-action"><span class="back-hint">TAP TO FLIP</span><div class="action-buttons"><a href="https://www.google.com/search?q={{WILD_T2_A2_SEARCH_QUERY}}" data-original-title="{{WILD_T2_A2_O_TITLE}}" target="_blank" class="btn-link alt" onclick="event.stopPropagation()">🔍 搜尋</a><a href="{{WILD_T2_A2_URL}}" target="_blank" class="btn-link" onclick="event.stopPropagation()">閱讀原文 ↗</a></div></div></div></div></div>
-                <div class="source-item" onclick="this.classList.toggle('flipped')"><div class="flip-inner"><div class="flip-front"><div class="source-img" style="background-image: url('{{WILD_T2_A3_IMG}}'); background-size: cover; background-position: center;"></div><div class="source-text-box"><span class="source-tag">[{{WILD_T2_A3_TAG}}]</span><div class="source-title">{{WILD_T2_A3_F_TITLE}}</div></div></div><div class="flip-back"><div class="back-title">{{WILD_T2_A3_B_TITLE}}</div><div class="back-summary">{{WILD_T2_A3_B_SUM}}</div><div class="back-action"><span class="back-hint">TAP TO FLIP</span><div class="action-buttons"><a href="https://www.google.com/search?q={{WILD_T2_A3_SEARCH_QUERY}}" data-original-title="{{WILD_T2_A3_O_TITLE}}" target="_blank" class="btn-link alt" onclick="event.stopPropagation()">🔍 搜尋</a><a href="{{WILD_T2_A3_URL}}" target="_blank" class="btn-link" onclick="event.stopPropagation()">閱讀原文 ↗</a></div></div></div></div></div>
-            </div>
-        </div>
-    </div>
-
-    <!-- WILD_T3 -->
-    <div class="topic-card">
-        <div class="row-top">
-            <div class="col-meta"><span class="risk-badge {{WILD_T3_BADGE}}">{{WILD_T3_BADGE_TEXT}}</span><h2 class="topic-title">{{WILD_T3_TITLE}}</h2><div class="risk-reason"><strong>分析：</strong>{{WILD_T3_REASON}}</div></div>
-            <div class="col-summary"><p class="summary-text">{{WILD_T3_SUMMARY}}</p></div>
-            <div class="col-more"><a href="{{WILD_T3_GLOBAL_SEARCH}}" target="_blank" class="btn-search"><span>🔍</span>MORE INTEL<br>全局追蹤 ↗</a></div>
-        </div>
-        <div class="row-bottom">
-            <div class="sources-grid">
-                <div class="source-item" onclick="this.classList.toggle('flipped')"><div class="flip-inner"><div class="flip-front"><div class="source-img" style="background-image: url('{{WILD_T3_A1_IMG}}'); background-size: cover; background-position: center;"></div><div class="source-text-box"><span class="source-tag">[{{WILD_T3_A1_TAG}}]</span><div class="source-title">{{WILD_T3_A1_F_TITLE}}</div></div></div><div class="flip-back"><div class="back-title">{{WILD_T3_A1_B_TITLE}}</div><div class="back-summary">{{WILD_T3_A1_B_SUM}}</div><div class="back-action"><span class="back-hint">TAP TO FLIP</span><div class="action-buttons"><a href="https://www.google.com/search?q={{WILD_T3_A1_SEARCH_QUERY}}" data-original-title="{{WILD_T3_A1_O_TITLE}}" target="_blank" class="btn-link alt" onclick="event.stopPropagation()">🔍 搜尋</a><a href="{{WILD_T3_A1_URL}}" target="_blank" class="btn-link" onclick="event.stopPropagation()">閱讀原文 ↗</a></div></div></div></div></div>
-                <div class="source-item" onclick="this.classList.toggle('flipped')"><div class="flip-inner"><div class="flip-front"><div class="source-img" style="background-image: url('{{WILD_T3_A2_IMG}}'); background-size: cover; background-position: center;"></div><div class="source-text-box"><span class="source-tag">[{{WILD_T3_A2_TAG}}]</span><div class="source-title">{{WILD_T3_A2_F_TITLE}}</div></div></div><div class="flip-back"><div class="back-title">{{WILD_T3_A2_B_TITLE}}</div><div class="back-summary">{{WILD_T3_A2_B_SUM}}</div><div class="back-action"><span class="back-hint">TAP TO FLIP</span><div class="action-buttons"><a href="https://www.google.com/search?q={{WILD_T3_A2_SEARCH_QUERY}}" data-original-title="{{WILD_T3_A2_O_TITLE}}" target="_blank" class="btn-link alt" onclick="event.stopPropagation()">🔍 搜尋</a><a href="{{WILD_T3_A2_URL}}" target="_blank" class="btn-link" onclick="event.stopPropagation()">閱讀原文 ↗</a></div></div></div></div></div>
-                <div class="source-item" onclick="this.classList.toggle('flipped')"><div class="flip-inner"><div class="flip-front"><div class="source-img" style="background-image: url('{{WILD_T3_A3_IMG}}'); background-size: cover; background-position: center;"></div><div class="source-text-box"><span class="source-tag">[{{WILD_T3_A3_TAG}}]</span><div class="source-title">{{WILD_T3_A3_F_TITLE}}</div></div></div><div class="flip-back"><div class="back-title">{{WILD_T3_A3_B_TITLE}}</div><div class="back-summary">{{WILD_T3_A3_B_SUM}}</div><div class="back-action"><span class="back-hint">TAP TO FLIP</span><div class="action-buttons"><a href="https://www.google.com/search?q={{WILD_T3_A3_SEARCH_QUERY}}" data-original-title="{{WILD_T3_A3_O_TITLE}}" target="_blank" class="btn-link alt" onclick="event.stopPropagation()">🔍 搜尋</a><a href="{{WILD_T3_A3_URL}}" target="_blank" class="btn-link" onclick="event.stopPropagation()">閱讀原文 ↗</a></div></div></div></div></div>
-            </div>
-        </div>
-    </div>
-
-
-    <div class="section-title" id="sec-finance">{{SEC3_TITLE}}</div>
-
-    <!-- FIN_TW -->
-    <div class="topic-card">
-        <div class="row-top">
-            <div class="col-meta"><span class="risk-badge {{FIN_TW_BADGE}}">{{FIN_TW_BADGE_TEXT}}</span><h2 class="topic-title">{{FIN_TW_TITLE}}</h2><div class="risk-reason"><strong>亮點：</strong>{{FIN_TW_REASON}}</div></div>
-            <div class="col-summary"><p class="summary-text">{{FIN_TW_SUMMARY}}</p></div>
-            <div class="col-more"><a href="{{FIN_TW_GLOBAL_SEARCH}}" target="_blank" class="btn-search"><span>⚡</span>LATEST 24H<br>即時追蹤 ↗</a></div>
-        </div>
-        <div class="row-bottom">
-            <div class="sources-grid six-cols">
-                <div class="source-item" onclick="this.classList.toggle('flipped')"><div class="flip-inner"><div class="flip-front"><div class="source-img" style="background-image: url('{{FIN_TW_A1_IMG}}'); background-size: cover; background-position: center;"></div><div class="source-text-box"><span class="source-tag">[{{FIN_TW_A1_TAG}}]</span><div class="source-title">{{FIN_TW_A1_F_TITLE}}</div></div></div><div class="flip-back"><div class="back-title">{{FIN_TW_A1_B_TITLE}}</div><div class="back-summary">{{FIN_TW_A1_B_SUM}}</div><div class="back-action"><span class="back-hint">TAP TO FLIP</span><div class="action-buttons"><a href="https://www.google.com/search?q={{FIN_TW_A1_SEARCH_QUERY}}" data-original-title="{{FIN_TW_A1_O_TITLE}}" target="_blank" class="btn-link alt" onclick="event.stopPropagation()">🔍 搜尋</a><a href="{{FIN_TW_A1_URL}}" target="_blank" class="btn-link" onclick="event.stopPropagation()">閱讀原文 ↗</a></div></div></div></div></div>
-                <div class="source-item" onclick="this.classList.toggle('flipped')"><div class="flip-inner"><div class="flip-front"><div class="source-img" style="background-image: url('{{FIN_TW_A2_IMG}}'); background-size: cover; background-position: center;"></div><div class="source-text-box"><span class="source-tag">[{{FIN_TW_A2_TAG}}]</span><div class="source-title">{{FIN_TW_A2_F_TITLE}}</div></div></div><div class="flip-back"><div class="back-title">{{FIN_TW_A2_B_TITLE}}</div><div class="back-summary">{{FIN_TW_A2_B_SUM}}</div><div class="back-action"><span class="back-hint">TAP TO FLIP</span><div class="action-buttons"><a href="https://www.google.com/search?q={{FIN_TW_A2_SEARCH_QUERY}}" data-original-title="{{FIN_TW_A2_O_TITLE}}" target="_blank" class="btn-link alt" onclick="event.stopPropagation()">🔍 搜尋</a><a href="{{FIN_TW_A2_URL}}" target="_blank" class="btn-link" onclick="event.stopPropagation()">閱讀原文 ↗</a></div></div></div></div></div>
-                <div class="source-item" onclick="this.classList.toggle('flipped')"><div class="flip-inner"><div class="flip-front"><div class="source-img" style="background-image: url('{{FIN_TW_A3_IMG}}'); background-size: cover; background-position: center;"></div><div class="source-text-box"><span class="source-tag">[{{FIN_TW_A3_TAG}}]</span><div class="source-title">{{FIN_TW_A3_F_TITLE}}</div></div></div><div class="flip-back"><div class="back-title">{{FIN_TW_A3_B_TITLE}}</div><div class="back-summary">{{FIN_TW_A3_B_SUM}}</div><div class="back-action"><span class="back-hint">TAP TO FLIP</span><div class="action-buttons"><a href="https://www.google.com/search?q={{FIN_TW_A3_SEARCH_QUERY}}" data-original-title="{{FIN_TW_A3_O_TITLE}}" target="_blank" class="btn-link alt" onclick="event.stopPropagation()">🔍 搜尋</a><a href="{{FIN_TW_A3_URL}}" target="_blank" class="btn-link" onclick="event.stopPropagation()">閱讀原文 ↗</a></div></div></div></div></div>
-                <div class="source-item" onclick="this.classList.toggle('flipped')"><div class="flip-inner"><div class="flip-front"><div class="source-img" style="background-image: url('{{FIN_TW_A4_IMG}}'); background-size: cover; background-position: center;"></div><div class="source-text-box"><span class="source-tag">[{{FIN_TW_A4_TAG}}]</span><div class="source-title">{{FIN_TW_A4_F_TITLE}}</div></div></div><div class="flip-back"><div class="back-title">{{FIN_TW_A4_B_TITLE}}</div><div class="back-summary">{{FIN_TW_A4_B_SUM}}</div><div class="back-action"><span class="back-hint">TAP TO FLIP</span><div class="action-buttons"><a href="https://www.google.com/search?q={{FIN_TW_A4_SEARCH_QUERY}}" data-original-title="{{FIN_TW_A4_O_TITLE}}" target="_blank" class="btn-link alt" onclick="event.stopPropagation()">🔍 搜尋</a><a href="{{FIN_TW_A4_URL}}" target="_blank" class="btn-link" onclick="event.stopPropagation()">閱讀原文 ↗</a></div></div></div></div></div>
-                <div class="source-item" onclick="this.classList.toggle('flipped')"><div class="flip-inner"><div class="flip-front"><div class="source-img" style="background-image: url('{{FIN_TW_A5_IMG}}'); background-size: cover; background-position: center;"></div><div class="source-text-box"><span class="source-tag">[{{FIN_TW_A5_TAG}}]</span><div class="source-title">{{FIN_TW_A5_F_TITLE}}</div></div></div><div class="flip-back"><div class="back-title">{{FIN_TW_A5_B_TITLE}}</div><div class="back-summary">{{FIN_TW_A5_B_SUM}}</div><div class="back-action"><span class="back-hint">TAP TO FLIP</span><div class="action-buttons"><a href="https://www.google.com/search?q={{FIN_TW_A5_SEARCH_QUERY}}" data-original-title="{{FIN_TW_A5_O_TITLE}}" target="_blank" class="btn-link alt" onclick="event.stopPropagation()">🔍 搜尋</a><a href="{{FIN_TW_A5_URL}}" target="_blank" class="btn-link" onclick="event.stopPropagation()">閱讀原文 ↗</a></div></div></div></div></div>
-                <div class="source-item" onclick="this.classList.toggle('flipped')"><div class="flip-inner"><div class="flip-front"><div class="source-img" style="background-image: url('{{FIN_TW_A6_IMG}}'); background-size: cover; background-position: center;"></div><div class="source-text-box"><span class="source-tag">[{{FIN_TW_A6_TAG}}]</span><div class="source-title">{{FIN_TW_A6_F_TITLE}}</div></div></div><div class="flip-back"><div class="back-title">{{FIN_TW_A6_B_TITLE}}</div><div class="back-summary">{{FIN_TW_A6_B_SUM}}</div><div class="back-action"><span class="back-hint">TAP TO FLIP</span><div class="action-buttons"><a href="https://www.google.com/search?q={{FIN_TW_A6_SEARCH_QUERY}}" data-original-title="{{FIN_TW_A6_O_TITLE}}" target="_blank" class="btn-link alt" onclick="event.stopPropagation()">🔍 搜尋</a><a href="{{FIN_TW_A6_URL}}" target="_blank" class="btn-link" onclick="event.stopPropagation()">閱讀原文 ↗</a></div></div></div></div></div>
-            </div>
-        </div>
-    </div>
-
-    <!-- FIN_GL -->
-    <div class="topic-card">
-        <div class="row-top">
-            <div class="col-meta"><span class="risk-badge {{FIN_GL_BADGE}}">{{FIN_GL_BADGE_TEXT}}</span><h2 class="topic-title">{{FIN_GL_TITLE}}</h2><div class="risk-reason"><strong>亮點：</strong>{{FIN_GL_REASON}}</div></div>
-            <div class="col-summary"><p class="summary-text">{{FIN_GL_SUMMARY}}</p></div>
-            <div class="col-more"><a href="{{FIN_GL_GLOBAL_SEARCH}}" target="_blank" class="btn-search"><span>⚡</span>LATEST 24H<br>即時追蹤 ↗</a></div>
-        </div>
-        <div class="row-bottom">
-            <div class="sources-grid six-cols">
-                <div class="source-item" onclick="this.classList.toggle('flipped')"><div class="flip-inner"><div class="flip-front"><div class="source-img" style="background-image: url('{{FIN_GL_A1_IMG}}'); background-size: cover; background-position: center;"></div><div class="source-text-box"><span class="source-tag">[{{FIN_GL_A1_TAG}}]</span><div class="source-title">{{FIN_GL_A1_F_TITLE}}</div></div></div><div class="flip-back"><div class="back-title">{{FIN_GL_A1_B_TITLE}}</div><div class="back-summary">{{FIN_GL_A1_B_SUM}}</div><div class="back-action"><span class="back-hint">TAP TO FLIP</span><div class="action-buttons"><a href="https://www.google.com/search?q={{FIN_GL_A1_SEARCH_QUERY}}" data-original-title="{{FIN_GL_A1_O_TITLE}}" target="_blank" class="btn-link alt" onclick="event.stopPropagation()">🔍 搜尋</a><a href="{{FIN_GL_A1_URL}}" target="_blank" class="btn-link" onclick="event.stopPropagation()">閱讀原文 ↗</a></div></div></div></div></div>
-                <div class="source-item" onclick="this.classList.toggle('flipped')"><div class="flip-inner"><div class="flip-front"><div class="source-img" style="background-image: url('{{FIN_GL_A2_IMG}}'); background-size: cover; background-position: center;"></div><div class="source-text-box"><span class="source-tag">[{{FIN_GL_A2_TAG}}]</span><div class="source-title">{{FIN_GL_A2_F_TITLE}}</div></div></div><div class="flip-back"><div class="back-title">{{FIN_GL_A2_B_TITLE}}</div><div class="back-summary">{{FIN_GL_A2_B_SUM}}</div><div class="back-action"><span class="back-hint">TAP TO FLIP</span><div class="action-buttons"><a href="https://www.google.com/search?q={{FIN_GL_A2_SEARCH_QUERY}}" data-original-title="{{FIN_GL_A2_O_TITLE}}" target="_blank" class="btn-link alt" onclick="event.stopPropagation()">🔍 搜尋</a><a href="{{FIN_GL_A2_URL}}" target="_blank" class="btn-link" onclick="event.stopPropagation()">閱讀原文 ↗</a></div></div></div></div></div>
-                <div class="source-item" onclick="this.classList.toggle('flipped')"><div class="flip-inner"><div class="flip-front"><div class="source-img" style="background-image: url('{{FIN_GL_A3_IMG}}'); background-size: cover; background-position: center;"></div><div class="source-text-box"><span class="source-tag">[{{FIN_GL_A3_TAG}}]</span><div class="source-title">{{FIN_GL_A3_F_TITLE}}</div></div></div><div class="flip-back"><div class="back-title">{{FIN_GL_A3_B_TITLE}}</div><div class="back-summary">{{FIN_GL_A3_B_SUM}}</div><div class="back-action"><span class="back-hint">TAP TO FLIP</span><div class="action-buttons"><a href="https://www.google.com/search?q={{FIN_GL_A3_SEARCH_QUERY}}" data-original-title="{{FIN_GL_A3_O_TITLE}}" target="_blank" class="btn-link alt" onclick="event.stopPropagation()">🔍 搜尋</a><a href="{{FIN_GL_A3_URL}}" target="_blank" class="btn-link" onclick="event.stopPropagation()">閱讀原文 ↗</a></div></div></div></div></div>
-                <div class="source-item" onclick="this.classList.toggle('flipped')"><div class="flip-inner"><div class="flip-front"><div class="source-img" style="background-image: url('{{FIN_GL_A4_IMG}}'); background-size: cover; background-position: center;"></div><div class="source-text-box"><span class="source-tag">[{{FIN_GL_A4_TAG}}]</span><div class="source-title">{{FIN_GL_A4_F_TITLE}}</div></div></div><div class="flip-back"><div class="back-title">{{FIN_GL_A4_B_TITLE}}</div><div class="back-summary">{{FIN_GL_A4_B_SUM}}</div><div class="back-action"><span class="back-hint">TAP TO FLIP</span><div class="action-buttons"><a href="https://www.google.com/search?q={{FIN_GL_A4_SEARCH_QUERY}}" data-original-title="{{FIN_GL_A4_O_TITLE}}" target="_blank" class="btn-link alt" onclick="event.stopPropagation()">🔍 搜尋</a><a href="{{FIN_GL_A4_URL}}" target="_blank" class="btn-link" onclick="event.stopPropagation()">閱讀原文 ↗</a></div></div></div></div></div>
-                <div class="source-item" onclick="this.classList.toggle('flipped')"><div class="flip-inner"><div class="flip-front"><div class="source-img" style="background-image: url('{{FIN_GL_A5_IMG}}'); background-size: cover; background-position: center;"></div><div class="source-text-box"><span class="source-tag">[{{FIN_GL_A5_TAG}}]</span><div class="source-title">{{FIN_GL_A5_F_TITLE}}</div></div></div><div class="flip-back"><div class="back-title">{{FIN_GL_A5_B_TITLE}}</div><div class="back-summary">{{FIN_GL_A5_B_SUM}}</div><div class="back-action"><span class="back-hint">TAP TO FLIP</span><div class="action-buttons"><a href="https://www.google.com/search?q={{FIN_GL_A5_SEARCH_QUERY}}" data-original-title="{{FIN_GL_A5_O_TITLE}}" target="_blank" class="btn-link alt" onclick="event.stopPropagation()">🔍 搜尋</a><a href="{{FIN_GL_A5_URL}}" target="_blank" class="btn-link" onclick="event.stopPropagation()">閱讀原文 ↗</a></div></div></div></div></div>
-                <div class="source-item" onclick="this.classList.toggle('flipped')"><div class="flip-inner"><div class="flip-front"><div class="source-img" style="background-image: url('{{FIN_GL_A6_IMG}}'); background-size: cover; background-position: center;"></div><div class="source-text-box"><span class="source-tag">[{{FIN_GL_A6_TAG}}]</span><div class="source-title">{{FIN_GL_A6_F_TITLE}}</div></div></div><div class="flip-back"><div class="back-title">{{FIN_GL_A6_B_TITLE}}</div><div class="back-summary">{{FIN_GL_A6_B_SUM}}</div><div class="back-action"><span class="back-hint">TAP TO FLIP</span><div class="action-buttons"><a href="https://www.google.com/search?q={{FIN_GL_A6_SEARCH_QUERY}}" data-original-title="{{FIN_GL_A6_O_TITLE}}" target="_blank" class="btn-link alt" onclick="event.stopPropagation()">🔍 搜尋</a><a href="{{FIN_GL_A6_URL}}" target="_blank" class="btn-link" onclick="event.stopPropagation()">閱讀原文 ↗</a></div></div></div></div></div>
-            </div>
-        </div>
-    </div>
+    {% endfor %}
 
     <footer>
-        GLOBAL INTELLIGENCE v8.13 // TEMPLATE EDITION // SECURED TRANSMISSION
+        STRATEGIC INTELLIGENCE SYSTEM v9.0 // PHASE 2 EVOLUTION // ENCRYPTED
     </footer>
 </div>
 
 <script>
-    function customSmoothScroll(targetId) {
-        const targetElement = document.getElementById(targetId);
-        if (!targetElement) return;
-        const startPosition = window.pageYOffset;
-        const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - 20; 
-        const distance = targetPosition - startPosition;
-        const duration = 800; 
-        let startTimestamp = null;
-
-        function step(timestamp) {
-            if (!startTimestamp) startTimestamp = timestamp;
-            const progress = timestamp - startTimestamp;
-            const currentProgress = Math.min(progress / duration, 1);
-            const easeInOutCubic = t => t < 0.5 
-                ? 4 * t * t * t 
-                : 1 - Math.pow(-2 * t + 2, 3) / 2;
-            const easeMultiplier = easeInOutCubic(currentProgress);
-            window.scrollTo(0, startPosition + (distance * easeMultiplier));
-            if (progress < duration) {
-                window.requestAnimationFrame(step);
-            }
-        }
-        window.requestAnimationFrame(step);
+    function scrollToSection(id) {
+        document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
     }
 </script>
 

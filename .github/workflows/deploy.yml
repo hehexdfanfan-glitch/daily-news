@@ -24,7 +24,7 @@ jobs:
       - name: Install Dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install google-genai requests beautifulsoup4 pydantic
+          pip install google-genai requests beautifulsoup4 pydantic jinja2
 
       - name: Weekly Topic Recommendation (Monday Only)
         env:

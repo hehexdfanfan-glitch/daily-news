@@ -27,38 +27,48 @@ def main():
         with open("topics.json", "r", encoding="utf-8") as f:
             fixed_topics = json.load(f)
     except FileNotFoundError:
-        print("❌ 錯誤：找不到 topics.json")
         fixed_topics = ["美中科技戰", "俄烏戰爭", "台海局勢", "AI 發展", "全球通膨"]
 
     prompt = f"""
-    請生成全球戰略情報儀表板的最新數據。所有顯示用的文字欄位（標題、摘要、分析、標籤文字）必須統一使用「繁體中文」。
-    包含 4 大區塊：
-    1. 主流議題（必須嚴格按照以下 5 個主題生成，每個主題 3 篇文章，且文章必須為最近 48 小時內的最新情報）：
-       - {fixed_topics[0]}
-       - {fixed_topics[1]}
-       - {fixed_topics[2]}
-       - {fixed_topics[3]}
-       - {fixed_topics[4]}
-    2. 潛在重大/冷門議題（主動挑選 3 個全新主題，各 3 篇文章）。
-    3. 台灣商業與金融趨勢（1 個主題，6 篇文章）。
-    4. 國際商業與金融趨勢（1 個主題，6 篇文章）。
+    今天是 {date_today}，現在時間是 {time_now} (UTC+8)。
+    你是一名配備「實時搜尋能力」的高級戰略情報分析師。
 
-    總共 36 篇深度情報。每篇文章摘要約 180 字。
-    關鍵要求：
-    - original_title 維持原文（通常是英文）。
-    - 欄位 front_title, back_title, back_summary, badge_text, topic_title, risk_reason, topic_summary 必須為繁體中文。
+    ### 任務指令：
+    請利用 Google Search 工具，針對以下主題搜尋並產出最新的全球情報。
+
+    ### 嚴格時效與內容要求：
+    1. **財金資訊 (Business & Finance)**：必須嚴格限制在 **{time_now} 往前推 24 小時內** 發表的文章。
+    2. **主流與潛在議題 (Strategic Intelligence)**：必須限制在 **{time_now} 往前推 48 小時內** 發表的文章。
+    3. **真實性驗證**：
+       - `source_url` 必須是搜尋結果中真實、可點擊的原文連結。
+       - `original_title` 必須與原文完全一致，嚴禁編造。
+       - 如果某個主題在規定時間內沒有足夠的新鮮資訊，請選擇該主題下最接近「今日」的重大進展，並在摘要中說明。
+
+    ### 主題架構：
+    1. 主流議題（必須包含）：{', '.join(fixed_topics)}。每個主題 3 篇文章。
+    2. 潛在重大議題：主動搜尋 3 個「今日」最受關注的非主流主題，各 3 篇文章。
+    3. 台灣/國際財金：各 1 個當日最火熱主題，各 6 篇文章（限 24H 內）。
+
+    ### 輸出格式：
+    必須符合 DashboardData Pydantic 模型，語言統一使用繁體中文（Original Title 除外）。
     """
 
     while True:
         try:
+            # 啟用 Google Search 搜尋工具
+            search_tool = types.Tool(google_search=types.GoogleSearch())
+
             response = client.models.generate_content(
-                model='gemini-2.5-flash',
+                model='models/gemini-3.1-flash-lite-preview', # 切換至 3.1 預覽版，通常具備獨立額度
                 contents=prompt,
                 config=types.GenerateContentConfig(
+                    tools=[search_tool],
                     response_mime_type="application/json",
                     response_schema=DashboardData,
                 ),
             )
+
+
             
             if not response.text:
                 print("⚠️ API 回傳空內容，3 秒後重試...")
@@ -74,8 +84,8 @@ def main():
                 print("🚧 Gemini 總部暫時通訊中斷 (503)，10 秒後重新連線...")
                 time.sleep(10)
             elif "429" in error_msg or "Quota" in error_msg:
-                print("⏳ 達到 API 配額上限 (429)，等待 30 秒後重試...")
-                time.sleep(30)
+                print("❌ 達到 API 配額上限 (429)，請檢查 Google AI Studio 剩餘額度。")
+                sys.exit(1) # 直接退出，不再重試
             else:
                 print(f"❌ Step 1 發生非預期錯誤：{e}")
                 sys.exit(1)

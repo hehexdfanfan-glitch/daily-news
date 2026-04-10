@@ -1,25 +1,49 @@
 import os
 import re
+import json
 from bs4 import BeautifulSoup
 from datetime import datetime
+from database import init_db, save_dashboard_data
+
+def archive_to_db():
+    """從 JSON 檔案將資料存入 SQLite 資料庫"""
+    try:
+        if os.path.exists("enriched_intelligence.json"):
+            with open("enriched_intelligence.json", "r", encoding="utf-8") as f:
+                data = json.load(f)
+        elif os.path.exists("raw_intelligence.json"):
+            with open("raw_intelligence.json", "r", encoding="utf-8") as f:
+                data = json.load(f)
+        else:
+            print("ℹ️ 找不到情報 JSON 檔案，跳過資料庫存檔。")
+            return
+
+        init_db()
+        save_dashboard_data(data)
+    except Exception as e:
+        print(f"❌ 資料庫存檔失敗：{e}")
 
 def archive_current_dashboard():
     target_file = "daily_dashboard_rendered.html"
     archive_dir = "archive"
     
     if not os.path.exists(target_file):
-        print("ℹ️ 找不到現有的報告檔案，跳過存檔。")
+        print("ℹ️ 找不到現有的報告檔案，跳過 TXT 存檔。")
         return
 
-    print(f"📦 Step 4: 正在提取舊報告摘要並存檔...")
+    print(f"📦 Step 4: 正在提取舊報告摘要並存檔 (TXT & DB)...構築長期情報庫...")
     
+    # 資料庫存檔
+    archive_to_db()
+    
+    # TXT 存檔 (原有邏輯)
     try:
         with open(target_file, "r", encoding="utf-8") as f:
             html_content = f.read()
         
         soup = BeautifulSoup(html_content, 'html.parser')
         
-        # 1. 提取日期 (從 HTML 中的 DATE: YYYY-MM-DD 結構中尋找)
+        # 1. 提取日期
         date_match = re.search(r"DATE: (\d{4}-\d{2}-\d{2})", html_content)
         if date_match:
             report_date = date_match.group(1)
@@ -46,25 +70,22 @@ def archive_current_dashboard():
                     out.write(f"📝 深度摘要: {summary.get_text(strip=True)}\n")
                     out.write("🔗 來源情資:\n")
                     
-                    # 尋找該主題下的所有來源連結與原始標題
-                    # 根據模板，來源連結位於 class="btn-link" 的 <a> 標籤，原始標題在 data-original-title 屬性
                     sources = topic.find_all("a", class_="btn-link", href=True)
                     for i, source in enumerate(sources, start=1):
-                        # 排除帶有 "alt" class 的搜尋按鈕，只抓取 "閱讀原文" 按鈕
                         if "alt" not in source.get("class", []):
-                            # 嘗試從同級的搜尋按鈕抓取原始標題 (或從資料庫/JSON 結構推斷，但這裡以解析 HTML 為主)
-                            # 在我們的模板中，搜尋按鈕就在閱讀原文按鈕旁邊
                             search_btn = source.find_previous_sibling("a", class_="alt")
                             original_title = search_btn.get("data-original-title") if search_btn else "未知原文標題"
-                            
                             out.write(f"   {i}. [{original_title}]({source['href']})\n")
                             
                     out.write("-" * 50 + "\n\n")
             
-        print(f"✅ 存檔完成！檔案位置：{archive_path}")
+        print(f"✅ TXT 存檔完成！檔案位置：{archive_path}")
         
     except Exception as e:
-        print(f"❌ 存檔失敗：{e}")
+        print(f"❌ TXT 存檔失敗：{e}")
+
+if __name__ == "__main__":
+    archive_current_dashboard()
 
 if __name__ == "__main__":
     archive_current_dashboard()
