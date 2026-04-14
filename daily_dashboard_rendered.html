@@ -4,8 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Global Strategic Intelligence Dashboard v2</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Strategic Intelligence Dashboard v2</title>
     <style>
         :root {
+            --bg-base-gradient: radial-gradient(circle at 50% 0%, #0f172a 0%, #020617 100%);
+            --card-bg: rgba(30, 41, 59, 0.7);
+            --card-border: rgba(255, 255, 255, 0.1);
+            --card-border-hover: rgba(56, 189, 248, 0.5);
+            --text-main: #cbd5e1;
             --bg-base-gradient: radial-gradient(circle at 50% 0%, #0f172a 0%, #020617 100%);
             --card-bg: rgba(30, 41, 59, 0.7);
             --card-border: rgba(255, 255, 255, 0.1);
@@ -19,10 +26,13 @@
             --risk-low: #10b981;     
             --glass-bg: rgba(15, 23, 42, 0.8);
             --glass-border: rgba(255, 255, 255, 0.05);
+            --glass-bg: rgba(15, 23, 42, 0.8);
+            --glass-border: rgba(255, 255, 255, 0.05);
         }
 
         * { box-sizing: border-box; }
         body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang TC", sans-serif;
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang TC", sans-serif;
             background: var(--bg-base-gradient);
             background-attachment: fixed;
@@ -31,10 +41,19 @@
             padding: 20px 20px 20px 80px;
             line-height: 1.6;
             overflow-x: hidden;
+            padding: 20px 20px 20px 80px;
+            line-height: 1.6;
+            overflow-x: hidden;
         }
 
         /* 導覽列優化 */
+        /* 導覽列優化 */
         .tactical-sidebar {
+            position: fixed; top: 0; left: 0; bottom: 0; width: 60px;
+            background: var(--glass-bg); backdrop-filter: blur(10px);
+            border-right: 1px solid var(--glass-border);
+            display: flex; flex-direction: column; align-items: center; justify-content: center;
+            gap: 20px; z-index: 1000;
             position: fixed; top: 0; left: 0; bottom: 0; width: 60px;
             background: var(--glass-bg); backdrop-filter: blur(10px);
             border-right: 1px solid var(--glass-border);
@@ -45,15 +64,26 @@
             width: 12px; height: 40px; border-radius: 6px;
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             cursor: pointer; opacity: 0.5;
+            width: 12px; height: 40px; border-radius: 6px;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            cursor: pointer; opacity: 0.5;
         }
+        .nav-block:hover { opacity: 1; transform: scaleX(1.5); box-shadow: 0 0 20px currentColor; }
+        .nav-main { background: var(--risk-high); color: var(--risk-high); }
+        .nav-wild { background: var(--risk-med); color: var(--risk-med); }
+        .nav-finance { background: var(--accent-blue); color: var(--accent-blue); }
         .nav-block:hover { opacity: 1; transform: scaleX(1.5); box-shadow: 0 0 20px currentColor; }
         .nav-main { background: var(--risk-high); color: var(--risk-high); }
         .nav-wild { background: var(--risk-med); color: var(--risk-med); }
         .nav-finance { background: var(--accent-blue); color: var(--accent-blue); }
 
         .dashboard-container { max-width: 1400px; margin: 0 auto; }
+        .dashboard-container { max-width: 1400px; margin: 0 auto; }
 
         header {
+            display: flex; justify-content: space-between; align-items: center;
+            padding-bottom: 20px; margin-bottom: 40px;
+            border-bottom: 1px solid var(--glass-border);
             display: flex; justify-content: space-between; align-items: center;
             padding-bottom: 20px; margin-bottom: 40px;
             border-bottom: 1px solid var(--glass-border);
@@ -62,7 +92,12 @@
             margin: 0; font-size: 28px; font-weight: 800; letter-spacing: -0.5px;
             background: linear-gradient(to right, #fff, var(--accent-blue));
             -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            margin: 0; font-size: 28px; font-weight: 800; letter-spacing: -0.5px;
+            background: linear-gradient(to right, #fff, var(--accent-blue));
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
         }
+        .header-meta { text-align: right; font-family: 'JetBrains Mono', monospace; font-size: 13px; color: var(--accent-blue); }
+        .time-stamp { color: #fff; background: rgba(56, 189, 248, 0.2); padding: 2px 8px; border-radius: 4px; font-weight: bold; }
         .header-meta { text-align: right; font-family: 'JetBrains Mono', monospace; font-size: 13px; color: var(--accent-blue); }
         .time-stamp { color: #fff; background: rgba(56, 189, 248, 0.2); padding: 2px 8px; border-radius: 4px; font-weight: bold; }
 
@@ -70,12 +105,20 @@
         .section-header {
             display: flex; align-items: center; gap: 15px; margin-bottom: 25px;
         }
+        .section-group { margin-bottom: 60px; }
+        .section-header {
+            display: flex; align-items: center; gap: 15px; margin-bottom: 25px;
+        }
         .section-title {
+            font-size: 18px; font-weight: 700; color: var(--text-heading);
+            text-transform: uppercase; letter-spacing: 2px;
             font-size: 18px; font-weight: 700; color: var(--text-heading);
             text-transform: uppercase; letter-spacing: 2px;
         }
         .section-line { flex: 1; height: 1px; background: linear-gradient(to right, var(--accent-blue), transparent); }
+        .section-line { flex: 1; height: 1px; background: linear-gradient(to right, var(--accent-blue), transparent); }
 
+        /* 主題卡片優化 */
         /* 主題卡片優化 */
         .topic-card {
             background: var(--card-bg); backdrop-filter: blur(16px);
@@ -84,7 +127,39 @@
             transition: border-color 0.3s ease, transform 0.3s ease;
         }
         .topic-card:hover { border-color: var(--card-border-hover); transform: translateY(-4px); }
+            background: var(--card-bg); backdrop-filter: blur(16px);
+            border: 1px solid var(--card-border); border-radius: 16px;
+            margin-bottom: 30px; overflow: hidden;
+            transition: border-color 0.3s ease, transform 0.3s ease;
+        }
+        .topic-card:hover { border-color: var(--card-border-hover); transform: translateY(-4px); }
 
+        .row-top { display: flex; flex-wrap: wrap; border-bottom: 1px solid var(--glass-border); }
+        .col-meta { flex: 0 0 300px; padding: 24px; border-right: 1px solid var(--glass-border); }
+        .col-summary { flex: 1; padding: 24px; min-width: 400px; border-right: 1px solid var(--glass-border); }
+        .col-more { flex: 0 0 150px; padding: 24px; display: flex; align-items: center; justify-content: center; }
+
+        .risk-badge {
+            display: inline-block; padding: 4px 10px; border-radius: 6px; font-size: 11px; font-weight: 700;
+            text-transform: uppercase; margin-bottom: 12px; color: #fff;
+        }
+        .topic-title { margin: 0 0 12px 0; font-size: 20px; font-weight: 700; color: #fff; }
+        .risk-reason { font-size: 13px; color: var(--text-muted); }
+        .summary-text { font-size: 15px; color: var(--text-main); margin: 0; }
+
+        /* 文章網格 */
+        .row-bottom { padding: 20px; background: rgba(0, 0, 0, 0.2); }
+        .sources-grid {
+            display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 20px;
+        }
+
+        .source-item {
+            height: 220px; perspective: 1000px; cursor: pointer;
+        }
+        .flip-inner {
+            position: relative; width: 100%; height: 100%; transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            transform-style: preserve-3d;
+        }
         .row-top { display: flex; flex-wrap: wrap; border-bottom: 1px solid var(--glass-border); }
         .col-meta { flex: 0 0 300px; padding: 24px; border-right: 1px solid var(--glass-border); }
         .col-summary { flex: 1; padding: 24px; min-width: 400px; border-right: 1px solid var(--glass-border); }
@@ -129,14 +204,47 @@
         .source-text-box { padding: 12px; flex: 1; }
         .source-tag { font-family: monospace; font-size: 10px; color: var(--accent-blue); font-weight: bold; }
         .source-title { font-size: 13px; font-weight: 600; color: #fff; margin-top: 4px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+            position: absolute; width: 100%; height: 100%; backface-visibility: hidden;
+            border-radius: 12px; overflow: hidden; border: 1px solid var(--glass-border);
+        }
+
+        .flip-front { background: rgba(255, 255, 255, 0.03); display: flex; flex-direction: column; }
+        .source-img {
+            width: 100%; height: 60%; background-size: cover; background-position: center;
+            border-bottom: 1px solid var(--glass-border); position: relative;
+        }
+        .source-img::after {
+            content: ""; position: absolute; inset: 0; background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.4));
+        }
+        .source-text-box { padding: 12px; flex: 1; }
+        .source-tag { font-family: monospace; font-size: 10px; color: var(--accent-blue); font-weight: bold; }
+        .source-title { font-size: 13px; font-weight: 600; color: #fff; margin-top: 4px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
 
         .flip-back {
+            background: #0f172a; transform: rotateY(180deg); padding: 16px;
+            display: flex; flex-direction: column; border-color: var(--accent-blue);
             background: #0f172a; transform: rotateY(180deg); padding: 16px;
             display: flex; flex-direction: column; border-color: var(--accent-blue);
         }
         .back-title { font-size: 13px; font-weight: 700; color: var(--accent-blue); margin-bottom: 10px; border-bottom: 1px solid rgba(56, 189, 248, 0.2); padding-bottom: 5px; }
         .back-summary { font-size: 12px; color: #cbd5e1; flex: 1; overflow-y: auto; margin-bottom: 12px; }
+        .back-title { font-size: 13px; font-weight: 700; color: var(--accent-blue); margin-bottom: 10px; border-bottom: 1px solid rgba(56, 189, 248, 0.2); padding-bottom: 5px; }
+        .back-summary { font-size: 12px; color: #cbd5e1; flex: 1; overflow-y: auto; margin-bottom: 12px; }
         
+        .action-buttons { display: flex; gap: 8px; margin-top: auto; }
+        .btn-link {
+            flex: 1; text-align: center; padding: 6px; border-radius: 6px; font-size: 11px; font-weight: bold;
+            text-decoration: none; transition: all 0.2s;
+        }
+        .btn-primary { background: var(--accent-blue); color: #020617; }
+        .btn-outline { border: 1px solid var(--glass-border); color: var(--text-muted); }
+        .btn-link:hover { transform: translateY(-2px); filter: brightness(1.2); }
+
+        .btn-search {
+            background: rgba(56, 189, 248, 0.1); border: 1px solid var(--accent-blue);
+            color: var(--accent-blue); padding: 10px 15px; border-radius: 8px;
+            text-decoration: none; font-size: 11px; font-weight: bold; text-align: center;
+            transition: all 0.3s;
         .action-buttons { display: flex; gap: 8px; margin-top: auto; }
         .btn-link {
             flex: 1; text-align: center; padding: 6px; border-radius: 6px; font-size: 11px; font-weight: bold;
@@ -167,6 +275,21 @@
             .tactical-sidebar { display: none; }
             .col-meta, .col-summary, .col-more { flex: 1 1 100%; border-right: none; border-bottom: 1px solid var(--glass-border); }
         }
+        .btn-search:hover { background: var(--accent-blue); color: #020617; box-shadow: 0 0 15px var(--accent-blue); }
+
+        footer { margin-top: 60px; padding: 40px; text-align: center; border-top: 1px solid var(--glass-border); font-family: monospace; font-size: 11px; opacity: 0.4; letter-spacing: 4px; }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: var(--glass-border); border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: var(--accent-blue); }
+
+        @media (max-width: 768px) {
+            body { padding-left: 15px; }
+            .tactical-sidebar { display: none; }
+            .col-meta, .col-summary, .col-more { flex: 1 1 100%; border-right: none; border-bottom: 1px solid var(--glass-border); }
+        }
     </style>
 </head>
 <body>
@@ -179,6 +302,12 @@
 
 <div class="dashboard-container">
     <header>
+        <div>
+            <h1>Global Strategic Briefing</h1>
+            <div style="font-family: monospace; font-size: 10px; color: var(--text-muted); margin-top: 4px;">
+                POWERED BY <span style="color: var(--accent-blue);">GEMINI GEMINI-3.1-PRO-PREVIEW</span> // GROUNDING ENABLED
+            </div>
+        </div>
         <div>
             <h1>Global Strategic Briefing</h1>
             <div style="font-family: monospace; font-size: 10px; color: var(--text-muted); margin-top: 4px;">
@@ -604,6 +733,7 @@
             </div>
         </div>
         
+        
     </div>
     
     <div class="section-group" id="sec-wild">
@@ -856,6 +986,7 @@
             </div>
         </div>
         
+        
     </div>
     
     <div class="section-group" id="sec-finance-tw">
@@ -1005,6 +1136,7 @@
                 </div>
             </div>
         </div>
+        
         
     </div>
     
@@ -1156,15 +1288,20 @@
             </div>
         </div>
         
+        
     </div>
+    
     
 
     <footer>
+        STRATEGIC INTELLIGENCE SYSTEM v9.1 // PHASE 3: MODEL PYRAMID ARCHITECTURE // POWERED BY GEMINI-3.1-PRO-PREVIEW
         STRATEGIC INTELLIGENCE SYSTEM v9.1 // PHASE 3: MODEL PYRAMID ARCHITECTURE // POWERED BY GEMINI-3.1-PRO-PREVIEW
     </footer>
 </div>
 
 <script>
+    function scrollToSection(id) {
+        document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
     function scrollToSection(id) {
         document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
     }

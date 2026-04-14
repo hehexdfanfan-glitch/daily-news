@@ -3,6 +3,7 @@
     "time_now": "12:12:41 CST",
     "generated_by": "gemini-3.1-pro-preview",
     "mainstream_topics": {
+        "section_title": "主流戰略情報",
         "section_title": "主流地緣政治與科技議題",
         "topics": [
             {
@@ -88,6 +89,13 @@
                 ]
             },
             {
+                "topic_id": "MAIN-003",
+                "risk_badge": "risk-medium",
+                "badge_text": "中風險",
+                "topic_title": "全球人工智慧監管與發展",
+                "risk_reason": "生成式AI展現出的網路攻防與意識形態影響力，已促使美歐政府加速監管，但遭遇科技巨頭在言論自由與創新發展上的強烈反彈。",
+                "topic_summary": "隨著AI模型的網路能力增強，美國聯準會與財政部等金融高層緊急會商，擔憂如Anthropic等新模型可能被駭客利用威脅金融安全。另一方面，馬斯克的xAI針對科羅拉多州的全面性AI監管法案提起違憲訴訟，顯示出公部門對於AI潛在意識形態操控的防範與科技界捍衛言論自由的嚴重衝突。",
+                "global_search_url": "https://news.google.com/search?q=%E4%BA%BA%E5%B7%A5%E6%99%BA%E6%85%A7+%E7%9B%A3%E7%AE%A1",
                 "topic_id": "main-03",
                 "risk_badge": "bg-blue-100 text-blue-800",
                 "badge_text": "法規與技術競局",
@@ -97,6 +105,14 @@
                 "global_search_url": "https://news.google.com/search?q=AI+Regulation+US+China+Model",
                 "articles": [
                     {
+                        "article_id": "M3-A1",
+                        "source_tag": "鏈新聞ABMedia",
+                        "front_title": "xAI起訴科羅拉多州AI監管法案",
+                        "back_title": "馬斯克xAI抗議AI監管，引發言論自由爭議",
+                        "back_summary": "馬斯克旗下xAI針對科羅拉多州的全面性AI監管法規提起訴訟，主張其違反言論自由。此案凸顯了州政府防範AI意識形態灌輸與科技巨頭捍衛模型發展之間的激烈角力。",
+                        "original_title": "xAI 起訴州政府AI 監管法案：科技巨頭正護航AI 灌輸意識形態與歧視嗎？ | 鏈新聞ABMedia",
+                        "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGVvX3PV_Wzr74loDtXQTd90s5lDxrylUn7cD8r1utLcCFIPu8ETQwY9GelcEgE1WxNxTxK9MTxACoZRQFyrHKtYtz8fk2NyP6KrYSFgTuUv44AohOq8VNNw0Y_JBCC2BY1tEW6NSsm9B-83w==",
+                        "image_url": "https://abmedia.io/wp-content/uploads/2026/04/elon-musk-xai-colorado-lawsuit.jpg"
                         "article_id": "art-main-3-1",
                         "source_tag": "Mondaq",
                         "front_title": "解析美總統AI行政命令對企業的衝擊",
@@ -107,6 +123,14 @@
                         "image_url": "http://www.mondaq.com/images/profile/companythumb/7032.webp?v=20241101121959"
                     },
                     {
+                        "article_id": "M3-A2",
+                        "source_tag": "The Guardian",
+                        "front_title": "馬斯克xAI控告科羅拉多州政府",
+                        "back_title": "xAI反對科羅拉多州新AI法案，指控違憲",
+                        "back_summary": "Elon Musk的xAI正式對科羅拉多州提起訴訟，指控該州即將生效的首部全面性AI監管法案侵犯了美國憲法第一修正案的權利。此舉將成為美國地方政府AI立法的關鍵考驗。",
+                        "original_title": "Elon Musk's xAI sues Colorado over new rules for artificial intelligence - The Guardian",
+                        "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG2F5TDjySc3ASqj6ocmSxQ6pivwh5IaYxvY1dOnrrsSgY7I4eNe6JFiFel4coZFDQhy4bA85jmP4tIT54ajPWIayz5xTohnfN7w7oyLVvw1FktHs76Kr-_AJHSnLrP0kenboOJGVrQxbWVK6FOCtB-C6I4NspcTS_ID2F5f6LWzGyO5fx4A_ACQU0f",
+                        "image_url": "https://i.guim.co.uk/img/media/e20e70df9bb493617db4cdf6e00620aa5201cfd3/588_0_5877_4702/master/5877.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&precrop=40:21,offset-x50,offset-y0&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctZGVmYXVsdC5wbmc&enable=upscale&s=319f4d42fd2662d05db61a74938bde39"
                         "article_id": "art-main-3-2",
                         "source_tag": "Baker Botts",
                         "front_title": "四月份AI法律觀察：白宮政策框架出爐",
@@ -117,6 +141,14 @@
                         "image_url": "https://bbt-prod-cd.azurewebsites.net/assets/src/images/logo-og.gif"
                     },
                     {
+                        "article_id": "M3-A3",
+                        "source_tag": "永豐金證券",
+                        "front_title": "美財金高層關注Anthropic模型資安風險",
+                        "back_title": "聯準會與財政部會商銀行巨頭防範AI駭客威脅",
+                        "back_summary": "美國聯準會主席鮑爾與財政部長召集大型銀行CEO，緊急討論Anthropic最新模型「Claude Mythos」可能遭駭客濫用的資安風險。美國政府正高度警戒AI技術對金融系統穩定性的潛在威脅。",
+                        "original_title": "AI太強反成威脅？鮑爾與貝森特會銀行巨頭聚焦Anthropic新模型資安風險 - 永豐金證券",
+                        "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEDNBCcMsHdt-p54adOyCxfurjoQMNCT0KxCa65A6FefPCiTgbH5OmX2PkZsa6_FxHSlh4NvMJ9LRexFwL881iMWzdYIsdmH_nS5nXh2eBMv72hgRHNKB0ts_0T0kDxeGwRCxlpw_yigmPRVteO4aSyLfY1CjwIBEvNNH8E5w==",
+                        "image_url": "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1000&auto=format&fit=crop"
                         "article_id": "art-main-3-3",
                         "source_tag": "MeriTalk",
                         "front_title": "報告指中美AI模型技術差距已實質弭平",
@@ -129,6 +161,13 @@
                 ]
             },
             {
+                "topic_id": "MAIN-004",
+                "risk_badge": "risk-high",
+                "badge_text": "高風險",
+                "topic_title": "台海地緣政治與安全",
+                "risk_reason": "台海衝突潛在威脅持續牽動全球神經，美國情報機構與科技界高度警覺，憂心未來數年內爆發衝突將對全球經濟造成毀滅性打擊。",
+                "topic_summary": "美中在台海的軍事與政治角力未見降溫，美國將其與貿易戰掛鉤視為戰略工具。根據外媒揭露的情報警告，若中國在2027年犯台，不僅全球半導體供應鏈將癱瘓，美國GDP更恐將面臨11%的倒退。金融界已開始借鑒烏克蘭經驗，推演台海斷網時加密貨幣等資產的戰時流動性與生存策略。",
+                "global_search_url": "https://news.google.com/search?q=%E5%8F%B0%E6%B5%B7%E5%B1%80%E5%8B%A2",
                 "topic_id": "main-04",
                 "risk_badge": "bg-yellow-100 text-yellow-800",
                 "badge_text": "地緣政治觀察",
@@ -138,6 +177,14 @@
                 "global_search_url": "https://news.google.com/search?q=Taiwan+Strait+Geopolitics",
                 "articles": [
                     {
+                        "article_id": "M4-A1",
+                        "source_tag": "大紀元",
+                        "front_title": "關稅戰與台海戰雲：美中戰略出路",
+                        "back_title": "美中地緣政治衝突未降溫，台海風險持續上升",
+                        "back_summary": "美中不僅在貿易與關稅體制上持續對抗，台海地緣政治衝突風險亦不斷升溫。美方將貿易戰視為重塑全球戰略格局的工具，雙方均在為台海潛在衝突進行全方位的軍事與戰略準備。",
+                        "original_title": "分析：關稅戰與台海戰雲美中對抗的戰略出路 - 大紀元",
+                        "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGuupSnLW8cXxHmYnh0_5sl23C9FZzbmx60Fw2OfiiTkl06WVCToiLi4FY2giOMWPzHYvB6DsO4MGc-KDzn5Kmm827NEFpMKEwEpMVeAx0vUi3AUdw_gpJS4yHe-NKbPswhHmAWXndyHDFE4GpqTw==",
+                        "image_url": "https://i.epochtimes.com/assets/uploads/2025/05/id14499030-americapresident-700x359.jpg"
                         "article_id": "art-main-4-1",
                         "source_tag": "National Maritime Foundation",
                         "front_title": "維持台海及周邊海域開放安全之迫切性",
@@ -148,6 +195,14 @@
                         "image_url": "https://maritimeindia.org/wp-content/uploads/2026/04/Photo-for-KKA-Article-scaled.png"
                     },
                     {
+                        "article_id": "M4-A2",
+                        "source_tag": "Substack",
+                        "front_title": "台海局勢下的戰時資產配置",
+                        "back_title": "參考烏克蘭經驗，探討台海斷網時的資產流動性",
+                        "back_summary": "隨著台海局勢緊繃，專家借鑑烏克蘭戰爭的實戰數據，分析極端環境下現金、黃金與加密貨幣的真實流動性，拆解台海衝突三階段的生存策略及基礎設施依賴問題。",
+                        "original_title": "斷網時比特幣還有用嗎？從烏克蘭經驗看台海局勢的「戰時資產配置」 - Substack",
+                        "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGL4is_hmcsRjI-pHEb9gMIIQLDi5B1sJwl-mld_k9ges8t-jzpEyda7Owz1WLrYu9kBEWn9nb4gKuveiVkwajXzvEzWz-V02Ybe8cSf-k-GHzI1R8zBbHsnsAeuqrKR8xJ8CPm",
+                        "image_url": "https://substackcdn.com/image/fetch/$s_!rQco!,w_1200,h_675,c_fill,f_jpg,q_auto:good,fl_progressive:steep,g_auto/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F454a935b-e598-4541-ae4e-efe9c5209e84_1235x795.png"
                         "article_id": "art-main-4-2",
                         "source_tag": "Modern Diplomacy",
                         "front_title": "北京、德黑蘭與華府：鄭麗文訪中的隱含戰略意義",
@@ -158,6 +213,14 @@
                         "image_url": "https://moderndiplomacy.eu/wp-content/uploads/2026/04/Cheng-Li-wun-1.jpg"
                     },
                     {
+                        "article_id": "M4-A3",
+                        "source_tag": "MEXC 新聞",
+                        "front_title": "美情報評估：台海衝突恐重創全球經濟",
+                        "back_title": "CIA警告台海風險，美國GDP面臨衰退危機",
+                        "back_summary": "外媒揭露CIA向科技巨頭警告中國可能在2027年犯台。若台海爆發衝突，除了半導體供應鏈斷鏈將重創科技股，美國GDP預估恐倒退11%，引發全球經濟與加密市場的大震盪。",
+                        "original_title": "紐時爆料CIA 密會黃仁勳、蘋果Tim Cook：中國2027攻打台灣，美國GDP將倒退11%",
+                        "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGi0dh56HZqGCnXT-Lakize9j0XBpRhbjXGoNxJS7g7O3SRI08Zgsd5xaU6WfIjIBWNlCAHCXAmKEIRbuLjEGaph3lU3GXT3QTUd3bxkMQo6PMFbXGGBGsOyLdoyfYYFXk=",
+                        "image_url": "https://static.mocortech.com/image-host/web/new_og/news_og_zh_TW.webp"
                         "article_id": "art-main-4-3",
                         "source_tag": "Japan Times",
                         "front_title": "台灣策劃軍演以突破潛在的海上能源封鎖",
@@ -170,6 +233,13 @@
                 ]
             },
             {
+                "topic_id": "MAIN-005",
+                "risk_badge": "risk-high",
+                "badge_text": "高風險",
+                "topic_title": "中東地緣政治衝突",
+                "risk_reason": "中東基礎設施遭到連環襲擊，大幅推升全球能源供應的斷鏈風險，但外交談判仍為市場保留一線生機。",
+                "topic_summary": "中東區域衝突導致煉油產能受損達每日240萬桶，重創能源基建並引發市場通膨與滯脹擔憂。然而，近期以色列與黎巴嫩之間的協議預期及美伊對話的空間，為市場帶來緊張趨緩的曙光，促使美股短暫回升，投資人正密切觀察後續談判進展。",
+                "global_search_url": "https://news.google.com/search?q=%E4%B8%AD%E6%9D%B1%E8%A1%9D%E7%AA%81",
                 "topic_id": "main-05",
                 "risk_badge": "bg-red-100 text-red-800",
                 "badge_text": "最高全球風險",
@@ -179,6 +249,14 @@
                 "global_search_url": "https://news.google.com/search?q=Middle+East+Conflict+Iran+US",
                 "articles": [
                     {
+                        "article_id": "M5-A1",
+                        "source_tag": "香港大紀元",
+                        "front_title": "以色列駐美大使：美伊談判仍有可能",
+                        "back_title": "中東局勢快速變化，美伊仍留對話空間",
+                        "back_summary": "儘管近期中東衝突加劇，以色列駐美大使受訪時表示，美國與伊朗之間仍有可能繼續就當前衝突展開談判。同時市場預估油價恐因中東局勢升溫而大幅上漲。",
+                        "original_title": "以色列駐美大使：美仍有可能與伊朗繼續談判 - 香港大紀元",
+                        "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGZcY3KU7bfOvKqiiNbUnQzRPIEtsMJ63Zb2x_acXAzrQWBhN2_23QLjViueiIMjVvvE6h3yH1eQWRZ9j30696V0UaTtCXLQiNjnrxcjYlnYnMliyyPupZ5yDABpB49JFqVhMmuh2sxRHdFPKE=",
+                        "image_url": "https://images1.epochhk.com/pictures/i-epochtimes-com/378a6e594d6cf5539cc7d16e048554b4@1200x630.jpg?url=https://i.epochtimes.com/assets/uploads/2026/03/id14713066-GettyImages-2219558656.jpg"
                         "article_id": "art-main-5-1",
                         "source_tag": "ReliefWeb",
                         "front_title": "中東軍事升級恐致全球超過3000萬人陷入貧窮",
@@ -189,6 +267,14 @@
                         "image_url": "https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?q=80&w=1000&auto=format&fit=crop"
                     },
                     {
+                        "article_id": "M5-A2",
+                        "source_tag": "moomoo Community",
+                        "front_title": "中東緊張有望緩和，市場避險情緒降溫",
+                        "back_title": "以色列與黎巴嫩協議期待升溫，美股迎來反彈",
+                        "back_summary": "中東局勢出現最壞劇本可望迴避的曙光，市場對於以色列與黎巴嫩達成協議抱持期待。隨避險情緒回落，美股出現反彈，投資人資金重回成長股與高風險資產。",
+                        "original_title": "米国株続伸、中東緊張緩和期待でリスクオン継続なるか？ - moomoo Community",
+                        "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF-bGwHm-iMeNfyyUdIWO9X5UmMXeWNmfTJf1pdaRk5xVjCasv0EJRxnATIXNOddSQX7g9YikTwQ_kjj5GxW0BpU6g7eF1GeaxhOxgDTVQeDWREl5kVRVSVIi3izwbjuQiE_xTmmlaj3c-kATqqNR__X1f44D980l_PZ4f_UeRaqbFGIOlJ7W_yFuotmTxWVJ4JJi1oQLUZWanNfCHtWAxLG1KS",
+                        "image_url": "https://cdn.futustatic.com/moomoo_common/images/mm_logo.png"
                         "article_id": "art-main-5-2",
                         "source_tag": "Morningstar",
                         "front_title": "美伊談判無果，全球股市下挫油價攀升",
@@ -199,6 +285,14 @@
                         "image_url": "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1000&auto=format&fit=crop"
                     },
                     {
+                        "article_id": "M5-A3",
+                        "source_tag": "Substack",
+                        "front_title": "中東衝突重創能源基建與煉油產能",
+                        "back_title": "摩根大通評估：中東煉油廠受損推升市場波動",
+                        "back_summary": "摩根大通的損害評估報告指出，中東衝突已導致區內約2.4百萬桶/日的煉油產能因襲擊或預防性措施而停擺，部分關鍵基礎設施（如巴林Sitra煉油廠）需要數月大修，供應鏈遭到嚴重破壞。",
+                        "original_title": "看圖說故事(@basm): \"$JPM：能源基建損害評估報告，中東衝突下的供應鏈重創真相(2) 煉油產能損害與修復時程深度分析煉油環節（下游）的產能停擺（Shut-in）對市場波動具有強大的驅動作用。目前約有2.4 mbd 的產能因受襲或預防性原因停工 - Substack",
+                        "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHDaomaVM83cRvntLW7A9GMz6VvgNJw3HuZtG-hBDa2C5tSDOgda_DwEgSUl-YrnzQXTTEnJQPlw3PuS1vPea5njR6_FHsaqPPf-3jqJ8TZhiI8WrdDFnDnEy_ZybLn6E_KwU1RNw==",
+                        "image_url": "https://substackcdn.com/image/fetch/$s_!Eyes!,w_40,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ff9111e81-1f5e-4800-8de4-4690c3e4e334_144x144.png"
                         "article_id": "art-main-5-3",
                         "source_tag": "Just Security",
                         "front_title": "4月13日新聞快遞：美伊和談與海峽封鎖進展",
@@ -337,6 +431,7 @@
                         "image_url": "https://images.unsplash.com/photo-1504711434969-e33886168f5c?q=80&w=1000&auto=format&fit=crop"
                     }
                 ]
+>>>>>>> Stashed changes
             }
         ]
     },
