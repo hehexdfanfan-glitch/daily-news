@@ -61,4 +61,4 @@ jobs:
         with:
           commit_message: "Auto-update: Global Strategic Briefing Dashboard & Archive"
           branch: main
-          file_pattern: '*.json *.html archive/*.txt *.md'
+          file_pattern: '*.json *.html intelligence.db *.md'
