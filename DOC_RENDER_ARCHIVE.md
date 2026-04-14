@@ -4,7 +4,7 @@
 系統目前全面採用 Jinja2 模板引擎取代傳統的字串替換邏輯。
 
 ### 優勢
-*   **動態循環**：使用 `{% for topic in section.topics %}` 語法，支援任意數量的議題產出。
+*   **動態循環**：使用 `{% raw %}{% for topic in section.topics %}{% endraw %}` 語法，支援任意數量的議題產出。
 *   **佈局解耦**：HTML 視覺設計 (`template.html`) 與 Python 邏輯 (`step3_render.py`) 完全分離。
 *   **自適應性**：渲染器會根據 Gemini 生成的文章數量自動調整網格佈局。
 
