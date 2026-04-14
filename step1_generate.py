@@ -81,8 +81,8 @@ def main():
         except Exception as e:
             error_msg = str(e)
             if "503" in error_msg or "Service Unavailable" in error_msg:
-                print("🚧 Gemini 總部暫時通訊中斷 (503)，10 秒後重新連線...")
-                time.sleep(10)
+                print("🚧 Gemini 總部暫時通訊中斷 (503)，60 秒後重新連線...")
+                time.sleep(60)
             elif "429" in error_msg or "Quota" in error_msg:
                 print("❌ 達到 API 配額上限 (429)，請檢查 Google AI Studio 剩餘額度。")
                 sys.exit(1) # 直接退出，不再重試
