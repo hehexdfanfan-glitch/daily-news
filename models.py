@@ -27,6 +27,7 @@ class Section(BaseModel):
 class DashboardData(BaseModel):
     date_today: str = Field(description="YYYY-MM-DD")
     time_now: str = Field(description="HH:MM:SS CST")
+    generated_by: str = Field(default="Unknown", description="生成該情報的模型名稱")
     mainstream_topics: Section
     wildcard_topics: Section
     business_finance_taiwan: Section

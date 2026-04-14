@@ -179,7 +179,12 @@
 
 <div class="dashboard-container">
     <header>
-        <h1>Global Strategic Briefing</h1>
+        <div>
+            <h1>Global Strategic Briefing</h1>
+            <div style="font-family: monospace; font-size: 10px; color: var(--text-muted); margin-top: 4px;">
+                POWERED BY <span style="color: var(--accent-blue);">GEMINI {{ generated_by | upper }}</span> // GROUNDING ENABLED
+            </div>
+        </div>
         <div class="header-meta">
             DATE: {{ date_today }}<br>
             STAMP: <span class="time-stamp">{{ time_now }}</span>
@@ -239,7 +244,7 @@
     {% endfor %}
 
     <footer>
-        STRATEGIC INTELLIGENCE SYSTEM v9.0 // PHASE 2 EVOLUTION // ENCRYPTED
+        STRATEGIC INTELLIGENCE SYSTEM v9.1 // PHASE 3: MODEL PYRAMID ARCHITECTURE // POWERED BY {{ generated_by | upper }}
     </footer>
 </div>
 

@@ -49,6 +49,7 @@ C:\Users\royma\CLI\daily-static-site\
 ├── step4_archive.py       # 自動存檔與資料庫同步
 ├── template.html          # Jinja2 佈局模板
 ├── legacy_and_tools/      # 過時腳本與本地工具 (排除同步)
+│   └── available_models.json  # 定期更新的模型清單 (核心配置參考)
 └── TODO.md                # 研發進度追蹤
 ```
 

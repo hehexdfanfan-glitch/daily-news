@@ -10,10 +10,10 @@ def build_html(data):
         template = env.get_template('template.html')
         
         # 準備渲染數據
-        # 由於 DashboardData 模型結構與 Jinja2 循環完全契合，直接傳入即可
         rendered_html = template.render(
             date_today=data.get("date_today"),
             time_now=data.get("time_now"),
+            generated_by=data.get("generated_by", "Legacy Engine"),
             mainstream_topics=data.get("mainstream_topics"),
             wildcard_topics=data.get("wildcard_topics"),
             business_finance_taiwan=data.get("business_finance_taiwan"),
