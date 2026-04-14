@@ -2,377 +2,1171 @@
 <html lang="zh-TW">
 <head>
     <meta charset="UTF-8">
-    <title>Global Strategic Intelligence Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Strategic Intelligence Dashboard v2</title>
     <style>
         :root {
-            --bg-base-gradient: radial-gradient(circle at 50% 0%, #152238 0%, #0b1120 60%, #05080f 100%);
-            --card-bg: rgba(22, 32, 50, 0.45);
-            --card-border: rgba(255, 255, 255, 0.08);
-            --card-border-hover: rgba(56, 189, 248, 0.4);
-            --text-main: #e2e8f0;
+            --bg-base-gradient: radial-gradient(circle at 50% 0%, #0f172a 0%, #020617 100%);
+            --card-bg: rgba(30, 41, 59, 0.7);
+            --card-border: rgba(255, 255, 255, 0.1);
+            --card-border-hover: rgba(56, 189, 248, 0.5);
+            --text-main: #cbd5e1;
             --text-muted: #94a3b8;
             --text-heading: #f8fafc;
             --accent-blue: #38bdf8;
             --risk-high: #ef4444;    
-            --risk-med-high: #f97316; 
             --risk-med: #eab308;     
             --risk-low: #10b981;     
+            --glass-bg: rgba(15, 23, 42, 0.8);
+            --glass-border: rgba(255, 255, 255, 0.05);
         }
 
         * { box-sizing: border-box; }
-
-        html { scroll-behavior: smooth; }
-
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang TC", sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang TC", sans-serif;
             background: var(--bg-base-gradient);
             background-attachment: fixed;
             color: var(--text-main);
             margin: 0;
-            padding: 25px 35px 25px 70px;
-            line-height: 1.4;
+            padding: 20px 20px 20px 80px;
+            line-height: 1.6;
+            overflow-x: hidden;
         }
 
+        /* 導覽列優化 */
         .tactical-sidebar {
-            position: fixed; top: 50%; left: 15px; transform: translateY(-50%);
-            display: flex; flex-direction: column; gap: 12px; z-index: 1000;
+            position: fixed; top: 0; left: 0; bottom: 0; width: 60px;
+            background: var(--glass-bg); backdrop-filter: blur(10px);
+            border-right: 1px solid var(--glass-border);
+            display: flex; flex-direction: column; align-items: center; justify-content: center;
+            gap: 20px; z-index: 1000;
         }
-
         .nav-block {
-            width: 10px; height: 40px; border-radius: 2px;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            cursor: pointer; border: none; opacity: 0.6; display: block;
+            width: 12px; height: 40px; border-radius: 6px;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            cursor: pointer; opacity: 0.5;
         }
+        .nav-block:hover { opacity: 1; transform: scaleX(1.5); box-shadow: 0 0 20px currentColor; }
+        .nav-main { background: var(--risk-high); color: var(--risk-high); }
+        .nav-wild { background: var(--risk-med); color: var(--risk-med); }
+        .nav-finance { background: var(--accent-blue); color: var(--accent-blue); }
 
-        .nav-block:hover { width: 18px; opacity: 1; box-shadow: 0 0 15px currentColor; }
-        .nav-main { background-color: var(--risk-high); color: var(--risk-high); }
-        .nav-wild { background-color: var(--risk-med); color: var(--risk-med); }
-        .nav-finance { background-color: var(--accent-blue); color: var(--accent-blue); }
-
-        .dashboard-container { max-width: 1300px; margin: 0 auto; }
+        .dashboard-container { max-width: 1400px; margin: 0 auto; }
 
         header {
-            display: flex; justify-content: space-between; align-items: flex-end;
-            border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 10px; margin-bottom: 20px;
+            display: flex; justify-content: space-between; align-items: center;
+            padding-bottom: 20px; margin-bottom: 40px;
+            border-bottom: 1px solid var(--glass-border);
         }
-
         header h1 {
-            margin: 0; font-size: 22px; font-weight: 600; letter-spacing: 2px;
-            color: var(--text-heading); text-transform: uppercase; text-shadow: 0 2px 8px rgba(56, 189, 248, 0.3);
+            margin: 0; font-size: 28px; font-weight: 800; letter-spacing: -0.5px;
+            background: linear-gradient(to right, #fff, var(--accent-blue));
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
         }
+        .header-meta { text-align: right; font-family: 'JetBrains Mono', monospace; font-size: 13px; color: var(--accent-blue); }
+        .time-stamp { color: #fff; background: rgba(56, 189, 248, 0.2); padding: 2px 8px; border-radius: 4px; font-weight: bold; }
 
-        .header-meta { text-align: right; font-size: 12px; color: var(--accent-blue); font-family: monospace; line-height: 1.5; }
-        .time-stamp { color: #f8fafc; font-weight: bold; background: rgba(56, 189, 248, 0.2); padding: 2px 6px; border-radius: 4px; }
-
+        .section-group { margin-bottom: 60px; }
+        .section-header {
+            display: flex; align-items: center; gap: 15px; margin-bottom: 25px;
+        }
         .section-title {
-            font-size: 14px; color: var(--accent-blue); text-transform: uppercase; letter-spacing: 2px;
-            margin: 50px 0 15px 0; border-left: 3px solid var(--accent-blue); padding-left: 10px; font-weight: 600;
+            font-size: 18px; font-weight: 700; color: var(--text-heading);
+            text-transform: uppercase; letter-spacing: 2px;
         }
-        .section-title:first-of-type { margin-top: 0; }
+        .section-line { flex: 1; height: 1px; background: linear-gradient(to right, var(--accent-blue), transparent); }
 
+        /* 主題卡片優化 */
         .topic-card {
-            background: var(--card-bg); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
-            border: 1px solid var(--card-border); border-radius: 8px; margin-bottom: 18px;
-            display: flex; flex-direction: column; overflow: hidden;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+            background: var(--card-bg); backdrop-filter: blur(16px);
+            border: 1px solid var(--card-border); border-radius: 16px;
+            margin-bottom: 30px; overflow: hidden;
+            transition: border-color 0.3s ease, transform 0.3s ease;
+        }
+        .topic-card:hover { border-color: var(--card-border-hover); transform: translateY(-4px); }
+
+        .row-top { display: flex; flex-wrap: wrap; border-bottom: 1px solid var(--glass-border); }
+        .col-meta { flex: 0 0 300px; padding: 24px; border-right: 1px solid var(--glass-border); }
+        .col-summary { flex: 1; padding: 24px; min-width: 400px; border-right: 1px solid var(--glass-border); }
+        .col-more { flex: 0 0 150px; padding: 24px; display: flex; align-items: center; justify-content: center; }
+
+        .risk-badge {
+            display: inline-block; padding: 4px 10px; border-radius: 6px; font-size: 11px; font-weight: 700;
+            text-transform: uppercase; margin-bottom: 12px; color: #fff;
+        }
+        .topic-title { margin: 0 0 12px 0; font-size: 20px; font-weight: 700; color: #fff; }
+        .risk-reason { font-size: 13px; color: var(--text-muted); }
+        .summary-text { font-size: 15px; color: var(--text-main); margin: 0; }
+
+        /* 文章網格 */
+        .row-bottom { padding: 20px; background: rgba(0, 0, 0, 0.2); }
+        .sources-grid {
+            display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 20px;
         }
 
-        .row-top { display: flex; border-bottom: 1px dashed rgba(255, 255, 255, 0.1); align-items: stretch; }
-        .col-meta { flex: 0 0 28%; padding: 12px 18px; border-right: 1px solid rgba(255, 255, 255, 0.05); display: flex; flex-direction: column; }
-        .col-summary { flex: 1; padding: 12px 18px; display: flex; align-items: center; border-right: 1px solid rgba(255, 255, 255, 0.05); }
-        .col-more { flex: 0 0 12%; padding: 12px 15px; display: flex; align-items: center; justify-content: center; }
-        
-        .btn-search {
-            background: rgba(56, 189, 248, 0.05); color: #38bdf8; text-decoration: none;
-            padding: 12px 0; border-radius: 6px; font-size: 11px; font-weight: bold;
-            border: 1px solid rgba(56, 189, 248, 0.3); transition: all 0.2s ease; cursor: pointer;
-            text-align: center; width: 100%; display: flex; flex-direction: column; gap: 4px; line-height: 1.2;
-            letter-spacing: 1px;
+        .source-item {
+            height: 220px; perspective: 1000px; cursor: pointer;
         }
-        .btn-search span { font-size: 16px; margin-bottom: 2px; }
-        .btn-search:hover { background: #38bdf8; color: #0f172a; box-shadow: 0 0 12px rgba(56, 189, 248, 0.6); transform: translateY(-1px); }
-
-        .row-bottom { padding: 14px 18px; background: rgba(0, 0, 0, 0.3); display: flex; flex-direction: column; }
-        
-        .sources-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; width: 100%; perspective: 1000px; }
-        .sources-grid.six-cols { grid-template-columns: repeat(3, 1fr); }
-
-        .source-item { background: transparent; border: none; padding: 0; margin: 0; cursor: pointer; display: block; }
-        .flip-inner { display: grid; width: 100%; height: 100%; transition: transform 0.6s cubic-bezier(0.4, 0.2, 0.2, 1); transform-style: preserve-3d; }
+        .flip-inner {
+            position: relative; width: 100%; height: 100%; transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            transform-style: preserve-3d;
+        }
         .source-item.flipped .flip-inner { transform: rotateY(180deg); }
 
         .flip-front, .flip-back {
-            grid-area: 1 / 1; width: 100%; height: 100%; backface-visibility: hidden; 
-            border-radius: 6px; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.05); 
-            display: flex; flex-direction: column;
+            position: absolute; width: 100%; height: 100%; backface-visibility: hidden;
+            border-radius: 12px; overflow: hidden; border: 1px solid var(--glass-border);
         }
 
-        .flip-front { background: rgba(255, 255, 255, 0.02); z-index: 2; }
-        .source-item:hover .flip-front { border-color: rgba(56, 189, 248, 0.3); background: rgba(255, 255, 255, 0.05); }
+        .flip-front { background: rgba(255, 255, 255, 0.03); display: flex; flex-direction: column; }
+        .source-img {
+            width: 100%; height: 60%; background-size: cover; background-position: center;
+            border-bottom: 1px solid var(--glass-border); position: relative;
+        }
+        .source-img::after {
+            content: ""; position: absolute; inset: 0; background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.4));
+        }
+        .source-text-box { padding: 12px; flex: 1; }
+        .source-tag { font-family: monospace; font-size: 10px; color: var(--accent-blue); font-weight: bold; }
+        .source-title { font-size: 13px; font-weight: 600; color: #fff; margin-top: 4px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
 
         .flip-back {
-            background: #0f172a; transform: rotateY(180deg); padding: 16px; 
-            border-color: rgba(56, 189, 248, 0.5); box-shadow: 0 0 15px rgba(56, 189, 248, 0.1);
+            background: #0f172a; transform: rotateY(180deg); padding: 16px;
+            display: flex; flex-direction: column; border-color: var(--accent-blue);
         }
-
-        .source-img {
-            width: 100%; aspect-ratio: 16 / 9; background: rgba(0, 0, 0, 0.5);
-            display: flex; align-items: center; justify-content: center; border-bottom: 1px solid rgba(255, 255, 255, 0.05); flex-shrink: 0;
-        }
-        .source-img::before { content: "📷 NEWS PREVIEW"; color: rgba(255, 255, 255, 0.1); font-family: monospace; font-size: 10px; }
+        .back-title { font-size: 13px; font-weight: 700; color: var(--accent-blue); margin-bottom: 10px; border-bottom: 1px solid rgba(56, 189, 248, 0.2); padding-bottom: 5px; }
+        .back-summary { font-size: 12px; color: #cbd5e1; flex: 1; overflow-y: auto; margin-bottom: 12px; }
         
-        .source-text-box { padding: 12px; display: flex; flex-direction: column; flex: 1; justify-content: flex-start; }
-        .source-tag { color: var(--accent-blue); font-family: monospace; font-size: 11px; margin-bottom: 6px; font-weight: bold; }
-        .source-title { font-size: 13.5px; color: var(--text-heading); line-height: 1.4; font-weight: bold; text-shadow: 0 1px 2px rgba(0,0,0,0.5); }
-
-        .back-title {
-            font-size: 13.5px; color: var(--accent-blue); font-weight: bold; line-height: 1.4;
-            margin-bottom: 12px; padding-bottom: 8px; border-bottom: 1px solid rgba(56, 189, 248, 0.2); flex-shrink: 0; 
-        }
-        .back-summary { font-size: 12.5px; color: #cbd5e1; line-height: 1.6; text-align: justify; flex: 1; margin-bottom: 14px; }
-        .back-action { display: flex; justify-content: space-between; align-items: flex-end; margin-top: auto; flex-shrink: 0; }
-        .back-hint { font-size: 10px; color: rgba(255,255,255,0.3); font-family: monospace; }
-        
-        .action-buttons { display: flex; gap: 8px; }
+        .action-buttons { display: flex; gap: 8px; margin-top: auto; }
         .btn-link {
-            background: rgba(56, 189, 248, 0.1); color: #38bdf8; text-decoration: none; padding: 8px 14px; border-radius: 4px; 
-            font-size: 12px; font-weight: bold; border: 1px solid rgba(56, 189, 248, 0.3); transition: all 0.2s ease; cursor: pointer;
+            flex: 1; text-align: center; padding: 6px; border-radius: 6px; font-size: 11px; font-weight: bold;
+            text-decoration: none; transition: all 0.2s;
         }
-        .btn-link:hover { background: #38bdf8; color: #0f172a; box-shadow: 0 0 10px rgba(56, 189, 248, 0.5); }
-        .btn-link.alt { background: transparent; border-color: rgba(148, 163, 184, 0.4); color: #94a3b8; }
-        .btn-link.alt:hover { background: rgba(148, 163, 184, 0.2); color: #f8fafc; border-color: #f8fafc; box-shadow: none; }
+        .btn-primary { background: var(--accent-blue); color: #020617; }
+        .btn-outline { border: 1px solid var(--glass-border); color: var(--text-muted); }
+        .btn-link:hover { transform: translateY(-2px); filter: brightness(1.2); }
 
-        .risk-badge { display: inline-block; padding: 3px 6px; border-radius: 3px; font-size: 10px; font-weight: bold; color: #fff; text-transform: uppercase; margin-bottom: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.3); }
-        .bg-high { background: #ef4444; }
-        .bg-med-high { background: #f97316; }
-        .bg-med { background: #eab308; }
-        .bg-low { background: #10b981; }
-        .bg-info { background: #3b82f6; }
-        .bg-alert { background: #8b5cf6; }
+        .btn-search {
+            background: rgba(56, 189, 248, 0.1); border: 1px solid var(--accent-blue);
+            color: var(--accent-blue); padding: 10px 15px; border-radius: 8px;
+            text-decoration: none; font-size: 11px; font-weight: bold; text-align: center;
+            transition: all 0.3s;
+        }
+        .btn-search:hover { background: var(--accent-blue); color: #020617; box-shadow: 0 0 15px var(--accent-blue); }
 
-        footer { margin-top: 35px; text-align: center; font-size: 11px; color: rgba(255,255,255,0.2); font-family: monospace; letter-spacing: 2px; }
+        footer { margin-top: 60px; padding: 40px; text-align: center; border-top: 1px solid var(--glass-border); font-family: monospace; font-size: 11px; opacity: 0.4; letter-spacing: 4px; }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: var(--glass-border); border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: var(--accent-blue); }
+
+        @media (max-width: 768px) {
+            body { padding-left: 15px; }
+            .tactical-sidebar { display: none; }
+            .col-meta, .col-summary, .col-more { flex: 1 1 100%; border-right: none; border-bottom: 1px solid var(--glass-border); }
+        }
     </style>
 </head>
 <body>
 
 <div class="tactical-sidebar">
-    <button onclick="customSmoothScroll('sec-main')" class="nav-block nav-main" title="Mainstream Topics // 主流戰略議題"></button>
-    <button onclick="customSmoothScroll('sec-wild')" class="nav-block nav-wild" title="Wildcard Topics // 潛在重大議題"></button>
-    <button onclick="customSmoothScroll('sec-finance')" class="nav-block nav-finance" title="Business & Finance // 全球商業與金融趨勢"></button>
+    <div onclick="scrollToSection('sec-main')" class="nav-block nav-main" title="Mainstream Topics"></div>
+    <div onclick="scrollToSection('sec-wild')" class="nav-block nav-wild" title="Wildcard Topics"></div>
+    <div onclick="scrollToSection('sec-finance')" class="nav-block nav-finance" title="Business & Finance"></div>
 </div>
 
 <div class="dashboard-container">
     <header>
-        <h1>Global Strategic Briefing</h1>
+        <div>
+            <h1>Global Strategic Briefing</h1>
+            <div style="font-family: monospace; font-size: 10px; color: var(--text-muted); margin-top: 4px;">
+                POWERED BY <span style="color: var(--accent-blue);">GEMINI GEMINI-3.1-PRO-PREVIEW</span> // GROUNDING ENABLED
+            </div>
+        </div>
         <div class="header-meta">
-            DATE: 2026-04-09<br>
-            LAST FETCH: <span class="time-stamp">18:45:22 CST</span>
+            DATE: 2026-04-14<br>
+            STAMP: <span class="time-stamp">12:12:41 CST</span>
         </div>
     </header>
 
-    <div class="section-title" id="sec-main">Mainstream Topics // 主流戰略議題</div>
-
-    <!-- MAIN_T1 -->
-    <div class="topic-card">
-        <div class="row-top">
-            <div class="col-meta"><span class="risk-badge badge-red">高度風險</span><h2 class="topic-title">美中科技與貿易戰</h2><div class="risk-reason"><strong>分析：</strong>持續的科技競爭與貿易限制影響全球供應鏈與經濟穩定，尤其在半導體、AI及關鍵技術領域。</div></div>
-            <div class="col-summary"><p class="summary-text">美國與中國在半導體、人工智慧及其他關鍵技術領域的競爭日益激烈，雙方互祭制裁措施與出口管制，對全球供應鏈產生深遠影響。華盛頓持續收緊對中國獲取先進晶片技術的限制，北京則加大對國內科技產業的投資，試圖實現技術自主。這場科技與貿易戰不僅重塑全球產業格局，也迫使各國企業重新評估其供應鏈韌性與地緣政治風險，對全球經濟穩定構成長期挑戰。</p></div>
-            <div class="col-more"><a href="https://news.google.com/search?q=%E7%BE%8E%E4%B8%AD%E7%A7%91%E6%8A%80%E8%88%87%E8%B2%BF%E6%98%93%E6%88%B0" target="_blank" class="btn-search"><span>🔍</span>MORE INTEL<br>全局追蹤 ↗</a></div>
+    
+    <div class="section-group" id="sec-main">
+        <div class="section-header">
+            <div class="section-title">主流地緣政治與科技議題</div>
+            <div class="section-line"></div>
         </div>
-        <div class="row-bottom">
-            <div class="sources-grid">
-                <div class="source-item" onclick="this.classList.toggle('flipped')"><div class="flip-inner"><div class="flip-front"><div class="source-img" style="background-image: url('https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1000&auto=format&fit=crop'); background-size: cover; background-position: center;"></div><div class="source-text-box"><span class="source-tag">[路透社]</span><div class="source-title">美對華祭出更多AI晶片出口管制，劍指數據中心</div></div></div><div class="flip-back"><div class="back-title">華盛頓擴大對中國AI晶片出口限制，目標鎖定高性能數據中心</div><div class="back-summary">美國商務部宣布實施新一輪針對人工智慧晶片的出口管制，旨在阻止中國軍事和情報機構獲取美國的尖端技術。新規定特別針對用於數據中心的高性能AI晶片，並涵蓋了設計這些晶片的軟體工具。此舉預計將進一步阻礙中國在AI領域的發展，但也可能促使北京加速國內晶片製造的自給自足，加劇全球科技供應鏈的緊張局勢。業界普遍預期，這將迫使美國晶片製造商調整其對華銷售策略。</div><div class="back-action"><span class="back-hint">TAP TO FLIP</span><div class="action-buttons"><a href="https://www.google.com/search?q=U.S.%20to%20tighten%20AI%20chip%20export%20controls%20on%20China%2C%20targeting%20data%20centers" data-original-title="U.S. to tighten AI chip export controls on China, targeting data centers" target="_blank" class="btn-link alt" onclick="event.stopPropagation()">🔍 搜尋</a><a href="https://www.reuters.com/technology/us-tighten-ai-chip-export-controls-china-targeting-data-centers-2024-05-15/" target="_blank" class="btn-link" onclick="event.stopPropagation()">閱讀原文 ↗</a></div></div></div></div></div>
-                <div class="source-item" onclick="this.classList.toggle('flipped')"><div class="flip-inner"><div class="flip-front"><div class="source-img" style="background-image: url('https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1000&auto=format&fit=crop'); background-size: cover; background-position: center;"></div><div class="source-text-box"><span class="source-tag">[彭博社]</span><div class="source-title">中國推動半導體自給自足，祭出巨額補貼</div></div></div><div class="flip-back"><div class="back-title">北京動用龐大資金扶持本土晶片業，以應對美國出口限制</div><div class="back-summary">為應對美國日益收緊的科技出口管制，中國政府正加大對本土半導體產業的財政支持，並推出一系列優惠政策，目標是實現關鍵技術的自給自足。消息指出，北京將注入數十億美元用於研發、人才培養和設備採購，以加速國內晶片製造能力。此舉旨在降低對外國技術的依賴，尤其是在先進製程領域。然而，分析師認為，中國在短期內仍難以完全擺脫對西方核心技術的依賴，科技戰將繼續推動全球半導體格局重組。</div><div class="back-action"><span class="back-hint">TAP TO FLIP</span><div class="action-buttons"><a href="https://www.google.com/search?q=China%20Ramps%20Up%20Chip%20Subsidies%20to%20Counter%20U.S.%20Tech%20War" data-original-title="China Ramps Up Chip Subsidies to Counter U.S. Tech War" target="_blank" class="btn-link alt" onclick="event.stopPropagation()">🔍 搜尋</a><a href="https://www.bloomberg.com/news/articles/2024-05-14/china-ramps-up-chip-subsidies-to-counter-u-s-tech-war-report" target="_blank" class="btn-link" onclick="event.stopPropagation()">閱讀原文 ↗</a></div></div></div></div></div>
-                <div class="source-item" onclick="this.classList.toggle('flipped')"><div class="flip-inner"><div class="flip-front"><div class="source-img" style="background-image: url('https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?q=80&w=1000&auto=format&fit=crop'); background-size: cover; background-position: center;"></div><div class="source-text-box"><span class="source-tag">[金融時報]</span><div class="source-title">台積電面臨雙重壓力：地緣政治與客戶去庫存</div></div></div><div class="flip-back"><div class="back-title">全球半導體巨頭台積電在地緣政治與市場需求雙重壓力下尋求平衡</div><div class="back-summary">全球最大晶圓代工廠台積電正努力應對地緣政治緊張局勢和客戶庫存調整帶來的雙重挑戰。儘管AI晶片需求強勁，但由於中美科技戰升級，供應鏈面臨不確定性。此外，全球經濟成長放緩導致部分終端市場需求疲軟，客戶去庫存化仍在持續。台積電已採取多元化生產基地策略，在美國、日本及德國設廠，以分散風險並更好地服務全球客戶。這顯示半導體產業在全球化與區域化之間尋求新的平衡點。</div><div class="back-action"><span class="back-hint">TAP TO FLIP</span><div class="action-buttons"><a href="https://www.google.com/search?q=TSMC%20navigates%20geopolitical%20pressures%20and%20customer%20inventory%20adjustments" data-original-title="TSMC navigates geopolitical pressures and customer inventory adjustments" target="_blank" class="btn-link alt" onclick="event.stopPropagation()">🔍 搜尋</a><a href="https://www.ft.com/content/12345678-abcd-efgh-ijkl-mnopqrstuvwx" target="_blank" class="btn-link" onclick="event.stopPropagation()">閱讀原文 ↗</a></div></div></div></div></div>
+
+        
+        <div class="topic-card">
+            <div class="row-top">
+                <div class="col-meta">
+                    <span class="risk-badge bg-red-100 text-red-800">地緣衝突與貿易戰</span>
+                    <h2 class="topic-title">美中科技與貿易戰：中東危機引發關稅新戰場</h2>
+                    <div class="risk-reason"><strong>INTEL:</strong> 美國考慮將中國對伊朗的潛在軍售與50%的高額貿易關稅掛鉤，雙邊地緣與貿易對立加劇，並對全球AI供應鏈產生結構性影響。</div>
+                </div>
+                <div class="col-summary">
+                    <p class="summary-text">隨著美伊關係惡化，美國指控中國意圖向伊朗提供防空武器等軍備，川普政府正研擬對中國祭出高達50%的新關稅。此舉不僅將區域衝突升級為大國博弈，也導致全球AI硬體新創企業面臨晶片及設備進口成本暴增的巨大壓力。儘管雙方原定於4月舉行峰會，但目前中美外交關係因關稅與地緣政治雙重陰霾而極具不確定性。</p>
+                </div>
+                <div class="col-more">
+                    <a href="https://news.google.com/search?q=US+China+Trade+War+OR+Tech+War" target="_blank" class="btn-search">GLOBAL TRACKING ↗</a>
+                </div>
+            </div>
+            <div class="row-bottom">
+                <div class="sources-grid">
+                    
+                    <div class="source-item" onclick="this.classList.toggle('flipped')">
+                        <div class="flip-inner">
+                            <div class="flip-front">
+                                <div class="source-img" style="background-image: url('https://d.ibtimes.co.uk/en/full/1738297/xi-jingping-donald-trump.jpg');"></div>
+                                <div class="source-text-box">
+                                    <span class="source-tag">[IBTimes]</span>
+                                    <div class="source-title">美擬對中加徵50%關稅以施壓伊朗局勢</div>
+                                </div>
+                            </div>
+                            <div class="flip-back">
+                                <div class="back-title">美國擴大關稅武器，防堵中伊軍事合作</div>
+                                <div class="back-summary">據報美國總統川普正考慮對中國商品加徵50%關稅，主因是白宮對中國可能向伊朗運送武器及防空系統感到擔憂。此舉使得即將到來的中美峰會蒙上陰影，並可能將中東危機演變為中美兩大經濟體的直接對抗[1.36]。</div>
+                                <div class="action-buttons">
+                                    <a href="https://www.google.com/search?q=Trump%20to%20Slap%2050%25%20Tariffs%20on%20China%20After%20Plot%20to%20Ship%20Weapons%20to%20Iran%20is%20Revealed" target="_blank" class="btn-link btn-outline" onclick="event.stopPropagation()">SEARCH</a>
+                                    <a href="https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFLWCeRgR3-XfMI_-4SXFRWrrG2oSm27U7cLheG2uuZvvEwnx53FmpWvkSuRlM_00TGxoOQHtz9vdTRnKsGHaBsJtBofwd7dXC4TM1I8_wM9sJcp3cKRh23P-lhH94DVIa6auzwjseWUWdGTg1rAN4sbfXiDSyvyovn7L_ZxfFHWfxl4m7-_pgNOvlrTVLzIt1--NVbCzuz4BwAgr3uWw==" target="_blank" class="btn-link btn-primary" onclick="event.stopPropagation()">READ ↗</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="source-item" onclick="this.classList.toggle('flipped')">
+                        <div class="flip-inner">
+                            <div class="flip-front">
+                                <div class="source-img" style="background-image: url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?q=80&w=1000&auto=format&fit=crop');"></div>
+                                <div class="source-text-box">
+                                    <span class="source-tag">[The National Interest]</span>
+                                    <div class="source-title">伊朗戰爭如何重塑美中關係</div>
+                                </div>
+                            </div>
+                            <div class="flip-back">
+                                <div class="back-title">大國角力：伊朗戰局下的中美博弈</div>
+                                <div class="back-summary">分析指出，中國正利用中東的動盪削弱美國在印太地區的資源，儘管這也威脅到中國在海灣國家的能源利益。同時，美國進一步鞏固與歐洲及亞洲夥伴的結盟，防堵中國在關鍵供應鏈中的滲透，中美關係在戰略佈局上正經歷深層次的轉變。</div>
+                                <div class="action-buttons">
+                                    <a href="https://www.google.com/search?q=How%20the%20Iran%20War%20Impacts%20US-China%20Relations%20-%20The%20National%20Interest" target="_blank" class="btn-link btn-outline" onclick="event.stopPropagation()">SEARCH</a>
+                                    <a href="https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFv5mh3Bv_iH6tT4NQE6yr7HRajRjHZ02emVVSXE_YSX31zeH5WwiFf8pvwqnqfPqh-X0_JnVDwLy9OJ_Xx_44Je44U2Qqm1CTUj__C1oBwvrBE0i9c9mIMZRAtqZPKoTqgfJXIFpHWkRbb_bPhoyFEtFfYSOwyLY7iU8EUsnkwvKpNRnz7F5TyUgnG" target="_blank" class="btn-link btn-primary" onclick="event.stopPropagation()">READ ↗</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="source-item" onclick="this.classList.toggle('flipped')">
+                        <div class="flip-inner">
+                            <div class="flip-front">
+                                <div class="source-img" style="background-image: url('https://startupfortune.com/wp-content/uploads/2026/04/sf-6599-1775976180410.jpg');"></div>
+                                <div class="source-text-box">
+                                    <span class="source-tag">[Startup Fortune]</span>
+                                    <div class="source-title">關稅戰悄悄重塑全球AI新創經濟圈</div>
+                                </div>
+                            </div>
+                            <div class="flip-back">
+                                <div class="back-title">硬體關稅推高成本，AI新創被迫調整供應鏈</div>
+                                <div class="back-summary">美國針對AI晶片及中國科技硬體實施25%的新關稅，對依賴海外設備訓練AI模型的新創公司造成重擊。不同於能吸收成本的大型科技巨頭，早期AI企業面臨嚴峻挑戰，部分歐洲創投甚至開始重新調整投資策略，避開高度依賴中國硬體製造的項目。</div>
+                                <div class="action-buttons">
+                                    <a href="https://www.google.com/search?q=How%20the%20Tariff%20War%20Is%20Quietly%20Rewiring%20the%20AI%20Startup%20Economy" target="_blank" class="btn-link btn-outline" onclick="event.stopPropagation()">SEARCH</a>
+                                    <a href="https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFcTdl-NsbVROWTFaFFedP4IdleYNgpCoKzsrUdqIBAyLKO-FT4SByxHWq6G34l0tpEaA3FYrzDpi-kjn5lkZt9ZIEmzolfT3nSp_kfTys5Fo3hN0Lu3wgiA_cBxh9XauVCVRhuksldMDF_5bynWDntQI-hcb3Gfsiagc4tAeScM5dBKpZ-jwYQxbObyAdSB7aoVKtb" target="_blank" class="btn-link btn-primary" onclick="event.stopPropagation()">READ ↗</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
             </div>
         </div>
-    </div>
-
-    <!-- MAIN_T2 -->
-    <div class="topic-card">
-        <div class="row-top">
-            <div class="col-meta"><span class="risk-badge badge-red">高度風險</span><h2 class="topic-title">俄烏戰爭局勢發展</h2><div class="risk-reason"><strong>分析：</strong>戰事持續對全球能源、糧食供應及國際關係造成巨大衝擊，加劇地緣政治不穩定。</div></div>
-            <div class="col-summary"><p class="summary-text">俄烏戰爭進入第三年，雙方在烏克蘭東部和南部戰線的戰鬥日益激烈。俄羅斯持續對烏克蘭基礎設施發動空襲，而烏克蘭則在西方國家援助下堅守陣地並嘗試反擊。國際社會對烏克蘭的軍事和財政支持力度不減，但也面臨供應鏈挑戰。這場衝突不僅導致大規模人道危機，更對全球能源市場、糧食安全以及歐洲安全格局產生深遠影響，長期解決方案仍未明朗。</p></div>
-            <div class="col-more"><a href="https://news.google.com/search?q=%E4%BF%84%E7%83%8F%E6%88%B0%E7%88%AD%E5%B1%80%E5%8B%A2%E7%99%BC%E5%B1%95" target="_blank" class="btn-search"><span>🔍</span>MORE INTEL<br>全局追蹤 ↗</a></div>
-        </div>
-        <div class="row-bottom">
-            <div class="sources-grid">
-                <div class="source-item" onclick="this.classList.toggle('flipped')"><div class="flip-inner"><div class="flip-front"><div class="source-img" style="background-image: url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=1000&auto=format&fit=crop'); background-size: cover; background-position: center;"></div><div class="source-text-box"><span class="source-tag">[CNN]</span><div class="source-title">烏克蘭東部戰線局勢緊張，俄羅斯攻勢加劇</div></div></div><div class="flip-back"><div class="back-title">俄軍在烏克蘭東部發動新一輪攻勢，戰況膠著</div><div class="back-summary">根據最新戰況報告，俄羅斯軍隊在烏克蘭東部頓巴斯地區加強攻勢，尤其是在哈爾科夫方向。烏克蘭軍方表示，俄軍正試圖突破防線，但烏克蘭部隊堅決抵抗，雙方戰事陷入拉鋸。這波攻勢旨在消耗烏克蘭資源並爭奪戰略要地。分析人士指出，俄羅斯此舉可能與其試圖在西方軍援抵達前取得更多戰果有關，導致東部戰線的局勢持續惡化，人道危機風險隨之升高。</div><div class="back-action"><span class="back-hint">TAP TO FLIP</span><div class="action-buttons"><a href="https://www.google.com/search?q=Ukraine%27s%20eastern%20front%20sees%20intense%20fighting%20as%20Russia%20escalates%20attacks" data-original-title="Ukraine's eastern front sees intense fighting as Russia escalates attacks" target="_blank" class="btn-link alt" onclick="event.stopPropagation()">🔍 搜尋</a><a href="https://edition.cnn.com/2024/05/15/europe/ukraine-eastern-front-russia-escalation-intl/index.html" target="_blank" class="btn-link" onclick="event.stopPropagation()">閱讀原文 ↗</a></div></div></div></div></div>
-                <div class="source-item" onclick="this.classList.toggle('flipped')"><div class="flip-inner"><div class="flip-front"><div class="source-img" style="background-image: url('https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1000&auto=format&fit=crop'); background-size: cover; background-position: center;"></div><div class="source-text-box"><span class="source-tag">[BBC News]</span><div class="source-title">歐盟通過新一輪對烏軍事援助計劃</div></div></div><div class="flip-back"><div class="back-title">歐盟批准數十億歐元軍援，強化烏克蘭防禦能力</div><div class="back-summary">歐盟各國外長達成協議，通過一項總額達數十億歐元的新軍事援助計劃，旨在進一步支援烏克蘭對抗俄羅斯的侵略。這筆資金將用於購買火砲彈藥、防空系統以及其他關鍵軍事裝備。此舉再次展現了歐盟對烏克蘭的堅定承諾，並試圖加速交付武器，以應對俄羅斯在戰場上的新攻勢。然而，援助的效率和速度仍是烏克蘭能否有效抵抗的關鍵因素，同時也考驗歐盟內部的團結。</div><div class="back-action"><span class="back-hint">TAP TO FLIP</span><div class="action-buttons"><a href="https://www.google.com/search?q=EU%20approves%20new%20multi-billion%20military%20aid%20package%20for%20Ukraine" data-original-title="EU approves new multi-billion military aid package for Ukraine" target="_blank" class="btn-link alt" onclick="event.stopPropagation()">🔍 搜尋</a><a href="https://www.bbc.com/news/world-europe-68999999" target="_blank" class="btn-link" onclick="event.stopPropagation()">閱讀原文 ↗</a></div></div></div></div></div>
-                <div class="source-item" onclick="this.classList.toggle('flipped')"><div class="flip-inner"><div class="flip-front"><div class="source-img" style="background-image: url('https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?q=80&w=1000&auto=format&fit=crop'); background-size: cover; background-position: center;"></div><div class="source-text-box"><span class="source-tag">[衛報]</span><div class="source-title">俄羅斯能源出口受衝擊，尋求亞洲新市場</div></div></div><div class="flip-back"><div class="back-title">西方制裁持續生效，俄羅斯轉向亞洲以維持其能源出口市場</div><div class="back-summary">西方國家對俄羅斯實施的能源制裁持續對其經濟造成壓力，促使莫斯科積極尋求新的出口市場，特別是亞洲國家。儘管俄羅斯透過打折出售原油和天然氣來吸引買家，但其能源收入仍受到一定影響。隨著制裁範圍擴大至航運和保險服務，俄羅斯面臨運輸成本增加和物流挑戰。此轉向亞洲的策略雖然有助於緩解部分壓力，但長期而言，俄羅斯經濟的轉型與多元化仍是其需要面對的課題。</div><div class="back-action"><span class="back-hint">TAP TO FLIP</span><div class="action-buttons"><a href="https://www.google.com/search?q=Russian%20energy%20exports%20hit%20by%20sanctions%2C%20seeks%20new%20markets%20in%20Asia" data-original-title="Russian energy exports hit by sanctions, seeks new markets in Asia" target="_blank" class="btn-link alt" onclick="event.stopPropagation()">🔍 搜尋</a><a href="https://www.theguardian.com/world/2024/may/13/russia-energy-exports-sanctions-asia" target="_blank" class="btn-link" onclick="event.stopPropagation()">閱讀原文 ↗</a></div></div></div></div></div>
+        
+        <div class="topic-card">
+            <div class="row-top">
+                <div class="col-meta">
+                    <span class="risk-badge bg-yellow-100 text-yellow-800">區域戰火持續</span>
+                    <h2 class="topic-title">俄烏戰爭局勢：復活節停火協議徹底破局</h2>
+                    <div class="risk-reason"><strong>INTEL:</strong> 由俄羅斯單方面宣佈的東正教復活節停火協議最終以雙方互相指控違約收場，戰鬥行動未見實質縮減，和平前景依然黯淡。</div>
+                </div>
+                <div class="col-summary">
+                    <p class="summary-text">由克里姆林宮宣佈的32小時東正教復活節停火協議已於4月13日結束。烏克蘭軍方指控俄軍在停火期間發動了超過7,600次的攻擊，包括無人機與火炮轟炸；而俄方則反控烏軍違反停火協定近2,000次。這次失敗的短暫停火凸顯了雙方在領土主權上的巨大分歧，也再次證明在缺乏實質政治讓步下，任何臨時和平倡議都難以維持。</p>
+                </div>
+                <div class="col-more">
+                    <a href="https://news.google.com/search?q=Russia+Ukraine+War" target="_blank" class="btn-search">GLOBAL TRACKING ↗</a>
+                </div>
+            </div>
+            <div class="row-bottom">
+                <div class="sources-grid">
+                    
+                    <div class="source-item" onclick="this.classList.toggle('flipped')">
+                        <div class="flip-inner">
+                            <div class="flip-front">
+                                <div class="source-img" style="background-image: url('https://understandingwar.org/wp-content/uploads/2025/08/Website-Featured-Image-2-scaled.webp');"></div>
+                                <div class="source-text-box">
+                                    <span class="source-tag">[ISW]</span>
+                                    <div class="source-title">俄烏戰場最新評估：前線交火未隨停火降溫</div>
+                                </div>
+                            </div>
+                            <div class="flip-back">
+                                <div class="back-title">智庫分析：俄軍持續在多條戰線進行地面推進</div>
+                                <div class="back-summary">美國戰爭研究所（ISW）的最新戰報指出，俄羅斯軍隊在哈爾科夫及扎波羅熱等方向持續進行攻勢，並未理會復活節停火。同時，匈牙利親俄總理奧班的敗選意味著俄羅斯在歐洲失去了一個關鍵盟友，俄軍的兵源招募也正面臨顯著挑戰[2.8]。</div>
+                                <div class="action-buttons">
+                                    <a href="https://www.google.com/search?q=Russian%20Offensive%20Campaign%20Assessment%2C%20April%2013%2C%202026%20%7C%20ISW" target="_blank" class="btn-link btn-outline" onclick="event.stopPropagation()">SEARCH</a>
+                                    <a href="https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFK4lkknSbRdkSppoVRcPQD5ewbiKSwkWiWOWjjh-CS5Eqazqfm5GVZ5YnllIFRZFoVKpTxBed-j9r4b2Vm_xaAJOBu_3AKNhEnChif1O-jeu9B-zedwQ6sgbWUCATpgWaDmWhbYKiJiipxy2M7-Zp29UBUaut1USJYELAIStDxijy5ANqd5z1J6GsZnMDImlsw9I7qdFqAsis-pr8GxdGaZ5CtSw==" target="_blank" class="btn-link btn-primary" onclick="event.stopPropagation()">READ ↗</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="source-item" onclick="this.classList.toggle('flipped')">
+                        <div class="flip-inner">
+                            <div class="flip-front">
+                                <div class="source-img" style="background-image: url('https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1000&auto=format&fit=crop');"></div>
+                                <div class="source-text-box">
+                                    <span class="source-tag">[AP]</span>
+                                    <div class="source-title">俄烏互控違反復活節停火協議</div>
+                                </div>
+                            </div>
+                            <div class="flip-back">
+                                <div class="back-title">復活節戰火未歇，雙方指控砲擊不斷</div>
+                                <div class="back-summary">儘管普丁宣佈了32小時的復活節停火，但烏克蘭參謀部記錄到俄軍在此期間進行了數千次的襲擊與無人機攻擊。烏克蘭總統澤倫斯基表示將對任何違約行為進行軍事反擊，這反映出雙方毫無互信基礎。</div>
+                                <div class="action-buttons">
+                                    <a href="https://www.google.com/search?q=Russia%20and%20Ukraine%20accuse%20each%20other%20of%20violating%20Putin%27s%20Easter%20ceasefire" target="_blank" class="btn-link btn-outline" onclick="event.stopPropagation()">SEARCH</a>
+                                    <a href="https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGzZwOBBsZsC9eXAo5cyTFnS8JeHSo4CvaLswTrSfb1TgzHEQFS09ShhwrIwEZpiTdPgMr2DuOeaxgrtGQymhUuAbhUBI1Z_KKQaeMujupTcSSdHqbDtEXMBdduoBx5QCrvw6zqEOIPtfjgIREZJek45jlSzUpDHVW9uhLRr_y4vCzazNAOSkWa5nPBUBsvGUt9Argxh5YlAQ0S7gA9cy1bQnPBGs5QQR__" target="_blank" class="btn-link btn-primary" onclick="event.stopPropagation()">READ ↗</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="source-item" onclick="this.classList.toggle('flipped')">
+                        <div class="flip-inner">
+                            <div class="flip-front">
+                                <div class="source-img" style="background-image: url('https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1000&auto=format&fit=crop');"></div>
+                                <div class="source-text-box">
+                                    <span class="source-tag">[Inquirer (AFP)]</span>
+                                    <div class="source-title">32小時停火正式結束，前線衝突如常</div>
+                                </div>
+                            </div>
+                            <div class="flip-back">
+                                <div class="back-title">停火協議落幕，和平進程依然遙遙無期</div>
+                                <div class="back-summary">隨著復活節假期結束，這場由俄方主導的短暫停火被證明無效。烏軍表示前線戰鬥仍在進行，包括無人機作戰未曾停止。雙方針對東部領土歸屬的核心矛盾未解，使戰事陷入長期消耗狀態。</div>
+                                <div class="action-buttons">
+                                    <a href="https://www.google.com/search?q=Easter%20truce%20between%20Ukraine%20and%20Russia%20ends%20-%20Global%20News" target="_blank" class="btn-link btn-outline" onclick="event.stopPropagation()">SEARCH</a>
+                                    <a href="https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEMAf4y-afcZmUVU0m3RkBbfvhfsh-LxiQ6U6OoN_I4mLFvj7g2zk4OgbNbyHyHofI_e1YK2oOYlmtfRXZr2NeWP8RKICjOw2htgK_G7yD9L3gwgMqsiAU8R96j_bKhYvMx2OmzN2L67OyQ1NMAgNYnIXmlJWk3YQfZzk0vtozfrXJFrCZzpnN9Yyc_NXPNIoc=" target="_blank" class="btn-link btn-primary" onclick="event.stopPropagation()">READ ↗</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
             </div>
         </div>
-    </div>
-
-    <!-- MAIN_T3 -->
-    <div class="topic-card">
-        <div class="row-top">
-            <div class="col-meta"><span class="risk-badge badge-orange">中度風險</span><h2 class="topic-title">全球人工智慧監管與發展</h2><div class="risk-reason"><strong>分析：</strong>人工智慧快速發展帶來倫理、安全與就業挑戰，各國急欲制定監管框架以平衡創新與風險。</div></div>
-            <div class="col-summary"><p class="summary-text">隨著生成式AI技術的突飛猛進，全球各國政府與國際組織正加速推進人工智慧的監管框架。從歐盟的AI法案到美國的行政命令，監管重點涵蓋數據隱私、演算法偏見、AI安全、著作權歸屬以及對勞動市場的影響。如何在促進技術創新與防範潛在風險之間取得平衡，成為各國共同面臨的課題。此趨勢預示著AI產業將步入一個更受規範的時代，對企業的研發、部署及商業模式都將產生重大影響。</p></div>
-            <div class="col-more"><a href="https://news.google.com/search?q=%E5%85%A8%E7%90%83%E4%BA%BA%E5%B7%A5%E6%99%BA%E6%85%A7%E7%9B%A3%E7%AE%A1%E8%88%87%E7%99%BC%E5%B1%95" target="_blank" class="btn-search"><span>🔍</span>MORE INTEL<br>全局追蹤 ↗</a></div>
-        </div>
-        <div class="row-bottom">
-            <div class="sources-grid">
-                <div class="source-item" onclick="this.classList.toggle('flipped')"><div class="flip-inner"><div class="flip-front"><div class="source-img" style="background-image: url('https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1000&auto=format&fit=crop'); background-size: cover; background-position: center;"></div><div class="source-text-box"><span class="source-tag">[華爾街日報]</span><div class="source-title">歐盟AI法案正式生效，開創全球AI監管先例</div></div></div><div class="flip-back"><div class="back-title">全球首部綜合性AI監管法案正式生效，對企業提出嚴格要求</div><div class="back-summary">歐盟人工智慧法案（EU AI Act）於近日正式生效，成為全球首部全面規範AI技術的法律。該法案根據AI系統的風險級別進行分類管理，對高風險AI應用實施嚴格的合規要求，包括數據治理、透明度、人類監督及風險評估等。此法案將對在歐盟營運的全球科技公司產生深遠影響，迫使企業在開發和部署AI產品時，必須將倫理和安全性納入考量。預計其他國家也將借鑒歐盟經驗，加速制定自身的AI監管框架。</div><div class="back-action"><span class="back-hint">TAP TO FLIP</span><div class="action-buttons"><a href="https://www.google.com/search?q=EU%20AI%20Act%20officially%20enters%20into%20force%2C%20setting%20global%20precedent" data-original-title="EU AI Act officially enters into force, setting global precedent" target="_blank" class="btn-link alt" onclick="event.stopPropagation()">🔍 搜尋</a><a href="https://www.wsj.com/tech/ai/eu-ai-act-officially-enters-into-force-setting-global-precedent-123456789" target="_blank" class="btn-link" onclick="event.stopPropagation()">閱讀原文 ↗</a></div></div></div></div></div>
-                <div class="source-item" onclick="this.classList.toggle('flipped')"><div class="flip-inner"><div class="flip-front"><div class="source-img" style="background-image: url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=1000&auto=format&fit=crop'); background-size: cover; background-position: center;"></div><div class="source-text-box"><span class="source-tag">[美聯社]</span><div class="source-title">G7呼籲制定可信賴AI國際準則，強調安全性</div></div></div><div class="flip-back"><div class="back-title">七大工業國集團強調AI安全性與風險管理，推動國際合作</div><div class="back-summary">七大工業國集團（G7）在最新會議中，再次強調了制定可信賴人工智慧國際準則的重要性。各國領導人呼籲加強在AI安全、風險管理和治理方面的國際合作，以應對AI技術快速發展帶來的潛在威脅。G7成員國承諾將共同努力，建立一個開放、安全、可靠且以人為中心的AI生態系統，並鼓勵私營部門在AI開發中納入倫理考量。此舉旨在協調全球對AI技術的監管方法，避免碎片化，並共同應對AI濫用等問題。</div><div class="back-action"><span class="back-hint">TAP TO FLIP</span><div class="action-buttons"><a href="https://www.google.com/search?q=G7%20calls%20for%20trustworthy%20AI%20international%20guidelines%2C%20emphasizes%20safety" data-original-title="G7 calls for trustworthy AI international guidelines, emphasizes safety" target="_blank" class="btn-link alt" onclick="event.stopPropagation()">🔍 搜尋</a><a href="https://apnews.com/article/g7-ai-guidelines-safety-trust-2024-05-14" target="_blank" class="btn-link" onclick="event.stopPropagation()">閱讀原文 ↗</a></div></div></div></div></div>
-                <div class="source-item" onclick="this.classList.toggle('flipped')"><div class="flip-inner"><div class="flip-front"><div class="source-img" style="background-image: url('https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1000&auto=format&fit=crop'); background-size: cover; background-position: center;"></div><div class="source-text-box"><span class="source-tag">[麻省理工科技評論]</span><div class="source-title">AI模型訓練數據版權爭議升溫，挑戰法律界線</div></div></div><div class="flip-back"><div class="back-title">生成式AI引發大規模版權侵權訴訟，法律與倫理挑戰浮現</div><div class="back-summary">隨著生成式人工智慧技術的普及，AI模型訓練數據的版權問題正成為全球關注的焦點。許多內容創作者和版權所有者指控AI公司未經許可使用其受版權保護的內容進行模型訓練，並提出大規模訴訟。這項爭議不僅挑戰了現有的著作權法框架，也促使各國政府和司法機構重新審視AI時代下的版權歸屬和合理使用原則。未來，如何平衡AI發展的自由與創作者的權益，將是各界亟需解決的複雜問題。</div><div class="back-action"><span class="back-hint">TAP TO FLIP</span><div class="action-buttons"><a href="https://www.google.com/search?q=AI%20model%20training%20data%20copyright%20disputes%20escalate%2C%20challenging%20legal%20boundaries" data-original-title="AI model training data copyright disputes escalate, challenging legal boundaries" target="_blank" class="btn-link alt" onclick="event.stopPropagation()">🔍 搜尋</a><a href="https://www.technologyreview.com/2024/05/13/ai-copyright-disputes-escalate/" target="_blank" class="btn-link" onclick="event.stopPropagation()">閱讀原文 ↗</a></div></div></div></div></div>
+        
+        <div class="topic-card">
+            <div class="row-top">
+                <div class="col-meta">
+                    <span class="risk-badge bg-blue-100 text-blue-800">法規與技術競局</span>
+                    <h2 class="topic-title">全球人工智慧監管與中美模型技術差距縮小</h2>
+                    <div class="risk-reason"><strong>INTEL:</strong> 美國政府加速透過行政命令推動全美統一的AI法規以牽制各州，同時史丹佛最新報告指出中美頂級AI模型的效能差距已實質性弭平。</div>
+                </div>
+                <div class="col-summary">
+                    <p class="summary-text">2026年4月，全球AI領域面臨法規與技術的雙重震撼。在法規方面，美國司法部與白宮發布了國家AI政策框架，試圖推翻各州零散的AI法律，建立統一且「輕度監管」的聯邦標準，以保護創新和國家競爭力。技術方面，史丹佛大學的最新報告顯示，儘管美國在資料中心數量（超過5,400座）與投資上遙遙領先，但中美兩國頂級AI模型的技術差距已「有效縮小」至不到3%。</p>
+                </div>
+                <div class="col-more">
+                    <a href="https://news.google.com/search?q=AI+Regulation+US+China+Model" target="_blank" class="btn-search">GLOBAL TRACKING ↗</a>
+                </div>
+            </div>
+            <div class="row-bottom">
+                <div class="sources-grid">
+                    
+                    <div class="source-item" onclick="this.classList.toggle('flipped')">
+                        <div class="flip-inner">
+                            <div class="flip-front">
+                                <div class="source-img" style="background-image: url('http://www.mondaq.com/images/profile/companythumb/7032.webp?v=20241101121959');"></div>
+                                <div class="source-text-box">
+                                    <span class="source-tag">[Mondaq]</span>
+                                    <div class="source-title">解析美總統AI行政命令對企業的衝擊</div>
+                                </div>
+                            </div>
+                            <div class="flip-back">
+                                <div class="back-title">聯邦對決州法：美國AI監管架構的重塑</div>
+                                <div class="back-summary">美國最新頒布的第14365號AI行政命令，要求聯邦機構制定統一政策框架，並授權司法部挑戰被視為阻礙創新或違憲的各州AI法規。此舉旨在避免企業陷入州級法律的混亂，卻也可能引發長期的法律訴訟[1.13]。</div>
+                                <div class="action-buttons">
+                                    <a href="https://www.google.com/search?q=What%20President%20Trump%27s%20AI%20Executive%20Order%2014365%20Means%20For%20Employers%20-%20New%20Technology%20-%20United%20States%20-%20Mondaq" target="_blank" class="btn-link btn-outline" onclick="event.stopPropagation()">SEARCH</a>
+                                    <a href="https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHl_zxhAT5z0HPrEicmGXRfViN_SbuRJArpBLpOU-xrSaLUMTF48Lv72g1mkWejElZYkicPCW8ghcJrfsH46nQKlmkdjpWs9Wur9Dh-HcK3rLrkeW5-JU6jGf9ZRg-oS_0Kf3ETp7oGCWlLUY4kUcrOSSHveMmqsBEzRyl2bze3nD6FXZqGCm3_7Pt6LlHtBAT5lEF6xHQb4KitiiN2RNoFH7jl6YqJb-7MnV78gCBFqEPWHoO4RRcu" target="_blank" class="btn-link btn-primary" onclick="event.stopPropagation()">READ ↗</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="source-item" onclick="this.classList.toggle('flipped')">
+                        <div class="flip-inner">
+                            <div class="flip-front">
+                                <div class="source-img" style="background-image: url('https://bbt-prod-cd.azurewebsites.net/assets/src/images/logo-og.gif');"></div>
+                                <div class="source-text-box">
+                                    <span class="source-tag">[Baker Botts]</span>
+                                    <div class="source-title">四月份AI法律觀察：白宮政策框架出爐</div>
+                                </div>
+                            </div>
+                            <div class="flip-back">
+                                <div class="back-title">知識產權與AI創新的微妙平衡</div>
+                                <div class="back-summary">白宮發布的《國家人工智慧政策框架》涵蓋保護兒童、智財權及推翻州級監管等七大核心。其中特別提及AI模型使用版權資料的問題，建議交由司法部門裁定是否屬於「合理使用」，為AI技術發展留出創新空間。</div>
+                                <div class="action-buttons">
+                                    <a href="https://www.google.com/search?q=AI%20Legal%20Watch%3A%20April%20%7C%20Thought%20Leadership%20%7C%20April%202026%20-%20Baker%20Botts" target="_blank" class="btn-link btn-outline" onclick="event.stopPropagation()">SEARCH</a>
+                                    <a href="https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFCku_hJVxYQHrUFNrDNFU_PkPs0lVICAAb9hUTHu3uzZ9ckuMlZnIF5QLWTlQ6mCN7ASsrrlAA2RX8RAAiXweQqZ5uAeFwBI5-MKwfqx5E22hCnMcP7fJFi0KnHnxhVcaK-anI8BNbDcSHiA7Nf9ksbmqLE2cspHwu7UQpQ97yZH_FltnYTvplMHTWyPq7KKD64yaZyXa0" target="_blank" class="btn-link btn-primary" onclick="event.stopPropagation()">READ ↗</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="source-item" onclick="this.classList.toggle('flipped')">
+                        <div class="flip-inner">
+                            <div class="flip-front">
+                                <div class="source-img" style="background-image: url('https://www.meritalk.com/wp-content/uploads/2025/06/Adobe-Express-file-1.jpg');"></div>
+                                <div class="source-text-box">
+                                    <span class="source-tag">[MeriTalk]</span>
+                                    <div class="source-title">報告指中美AI模型技術差距已實質弭平</div>
+                                </div>
+                            </div>
+                            <div class="flip-back">
+                                <div class="back-title">史丹佛AI指數報告：基建優勢與技術追趕</div>
+                                <div class="back-summary">史丹佛大學發布的最新AI指數報告顯示，儘管美國在資料中心基礎設施及高達2,859億美元的私人投資中佔據絕對主導，但中國在AI專利及論文發表上表現強勁，中美兩國頂級AI模型的效能差距目前僅剩約2.7%。</div>
+                                <div class="action-buttons">
+                                    <a href="https://www.google.com/search?q=US-China%20AI%20Model%20Gap%20Narrows%20as%20US%20Leads%20in%20Data%20Centers%20-%20MeriTalk" target="_blank" class="btn-link btn-outline" onclick="event.stopPropagation()">SEARCH</a>
+                                    <a href="https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEhRfW4IAtpqtXJUbNporCF0AtF2llhwJPyDU-jxht1B9ls8OzXQABouwI_-iNZPs2aa62oPEI4z53J6nXe5uqqK7kSKHpPGjfR-4Jz1RQzfERE_lncvmaKT1OMMEn7ybl1dOUSEAzsTQfj2hbTTz8TlGqmZPhGXbTqnIapy4Nkx9NzXT2UgeQKEAFT3i5iuYf4hwrjH2Th" target="_blank" class="btn-link btn-primary" onclick="event.stopPropagation()">READ ↗</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
             </div>
         </div>
-    </div>
-
-    <!-- MAIN_T4 -->
-    <div class="topic-card">
-        <div class="row-top">
-            <div class="col-meta"><span class="risk-badge badge-red">高度風險</span><h2 class="topic-title">台海地緣政治與安全</h2><div class="risk-reason"><strong>分析：</strong>台灣海峽的緊張局勢牽動全球產業供應鏈與區域穩定，任何衝突都將引發全球性衝擊。</div></div>
-            <div class="col-summary"><p class="summary-text">台灣海峽的戰略重要性日益凸顯，中國持續在區域內進行軍事演習和灰色地帶行動，對台灣構成潛在威脅。美國及其盟友則重申對台灣安全的支持，並加強在印太地區的軍事部署與合作。兩岸關係的任何變化都可能對全球半導體供應鏈、國際貿易航線以及印太地區的和平穩定產生巨大影響。國際社會密切關注情勢發展，以避免潛在衝突升級，並尋求維護區域現狀的途徑。</p></div>
-            <div class="col-more"><a href="https://news.google.com/search?q=%E5%8F%B0%E6%B5%B7%E5%9C%B0%E7%B7%A3%E6%94%BF%E6%B2%BB%E8%88%87%E5%AE%89%E5%85%A8" target="_blank" class="btn-search"><span>🔍</span>MORE INTEL<br>全局追蹤 ↗</a></div>
-        </div>
-        <div class="row-bottom">
-            <div class="sources-grid">
-                <div class="source-item" onclick="this.classList.toggle('flipped')"><div class="flip-inner"><div class="flip-front"><div class="source-img" style="background-image: url('https://imgcdn.cna.com.tw/www/webphotos/WebOg/600/20240515/1157x607_485435397013.jpg'); background-size: cover; background-position: center;"></div><div class="source-text-box"><span class="source-tag">[中央社]</span><div class="source-title">中國解放軍在台海周邊舉行例行性軍演</div></div></div><div class="flip-back"><div class="back-title">中國宣布在台灣海峽實施例行軍事演習，台灣軍方密切監控</div><div class="back-summary">中國人民解放軍東部戰區日前宣布，在台灣海峽周邊海空域舉行例行性戰備警巡和實戰化演練。此次演習涉及多兵種聯合作戰，旨在檢驗部隊聯合作戰能力。台灣國防部則表示，已全程掌握解放軍動態，並派遣兵力應對，確保台灣周邊海空域安全。此類演習被視為北京對台灣與美國及其他盟友互動的回應，加劇了台海區域的緊張氣氛，也讓國際社會更加關注該地區的和平穩定現狀。</div><div class="back-action"><span class="back-hint">TAP TO FLIP</span><div class="action-buttons"><a href="https://www.google.com/search?q=PLA%20conducts%20routine%20military%20drills%20around%20Taiwan%20Strait" data-original-title="PLA conducts routine military drills around Taiwan Strait" target="_blank" class="btn-link alt" onclick="event.stopPropagation()">🔍 搜尋</a><a href="https://www.cna.com.tw/news/aipl/202405150245.aspx" target="_blank" class="btn-link" onclick="event.stopPropagation()">閱讀原文 ↗</a></div></div></div></div></div>
-                <div class="source-item" onclick="this.classList.toggle('flipped')"><div class="flip-inner"><div class="flip-front"><div class="source-img" style="background-image: url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=1000&auto=format&fit=crop'); background-size: cover; background-position: center;"></div><div class="source-text-box"><span class="source-tag">[日本經濟新聞]</span><div class="source-title">美日峰會重申台海和平穩定重要性</div></div></div><div class="flip-back"><div class="back-title">美國與日本聯合聲明強調台海和平穩定，反對片面改變現狀</div><div class="back-summary">美國總統與日本首相在最新峰會後的聯合聲明中，再次重申維護台灣海峽和平穩定的重要性，並強調反對任何片面改變現狀的行為。兩國領導人指出，台海和平對印太地區乃至全球的繁榮至關重要，並承諾將加強雙邊與多邊合作，以應對區域挑戰。此聲明被視為對中國在台海地區活動的明確警告，也顯示美日同盟在區域安全議題上的高度共識與協調立場。</div><div class="back-action"><span class="back-hint">TAP TO FLIP</span><div class="action-buttons"><a href="https://www.google.com/search?q=US-Japan%20summit%20reaffirms%20importance%20of%20Taiwan%20Strait%20peace%20and%20stability" data-original-title="US-Japan summit reaffirms importance of Taiwan Strait peace and stability" target="_blank" class="btn-link alt" onclick="event.stopPropagation()">🔍 搜尋</a><a href="https://asia.nikkei.com/Politics/International-relations/US-Japan-summit-reaffirms-Taiwan-peace" target="_blank" class="btn-link" onclick="event.stopPropagation()">閱讀原文 ↗</a></div></div></div></div></div>
-                <div class="source-item" onclick="this.classList.toggle('flipped')"><div class="flip-inner"><div class="flip-front"><div class="source-img" style="background-image: url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=1000&auto=format&fit=crop'); background-size: cover; background-position: center;"></div><div class="source-text-box"><span class="source-tag">[自由時報]</span><div class="source-title">台灣發表國防報告書，強化不對稱戰力</div></div></div><div class="flip-back"><div class="back-title">台灣國防部發布最新國防報告書，強調提升不對稱作戰能力</div><div class="back-summary">台灣國防部發布了最新的國防報告書，詳細闡述了其應對潛在威脅的策略，特別強調了強化不對稱作戰能力的重要性。報告指出，台灣將持續發展具備機動性、精準打擊和難以偵測的武器系統，以有效嚇阻潛在侵略。此外，報告也強調了全民防衛理念和國際合作的重要性。此舉旨在向國際社會展現台灣自我防衛的決心與能力，並尋求建立更具韌性的國防體系以維護區域和平穩定。</div><div class="back-action"><span class="back-hint">TAP TO FLIP</span><div class="action-buttons"><a href="https://www.google.com/search?q=Taiwan%20releases%20defense%20report%2C%20strengthening%20asymmetric%20capabilities" data-original-title="Taiwan releases defense report, strengthening asymmetric capabilities" target="_blank" class="btn-link alt" onclick="event.stopPropagation()">🔍 搜尋</a><a href="https://news.ltn.com.tw/news/politics/breakingnews/4673333" target="_blank" class="btn-link" onclick="event.stopPropagation()">閱讀原文 ↗</a></div></div></div></div></div>
+        
+        <div class="topic-card">
+            <div class="row-top">
+                <div class="col-meta">
+                    <span class="risk-badge bg-yellow-100 text-yellow-800">地緣政治觀察</span>
+                    <h2 class="topic-title">台海地緣政治與安全：防範區域能源封鎖與兩岸交流並行</h2>
+                    <div class="risk-reason"><strong>INTEL:</strong> 台灣正積極籌備聯合演習以應對潛在的中國能源封鎖，同時國民黨主席結束訪中行程，凸顯台海在地緣軍事風險與政治交流間的複雜拉鋸。</div>
+                </div>
+                <div class="col-summary">
+                    <p class="summary-text">近期中東荷莫茲海峽的危機促使台灣政府高度警戒。台灣內部政軍界正借鏡中東局勢，著手規劃打破潛在海上能源封鎖的演練，確保天然氣與石油供應走廊的暢通。另一方面，國民黨主席鄭麗文剛結束其對中國大陸的訪問，並與中共領導人習近平會面，中方隨即宣布恢復部分兩岸航班與農漁產品進口。這種軍事防範與政治接觸雙軌並行的現象，成為近期台海局勢的顯著特徵。</p>
+                </div>
+                <div class="col-more">
+                    <a href="https://news.google.com/search?q=Taiwan+Strait+Geopolitics" target="_blank" class="btn-search">GLOBAL TRACKING ↗</a>
+                </div>
+            </div>
+            <div class="row-bottom">
+                <div class="sources-grid">
+                    
+                    <div class="source-item" onclick="this.classList.toggle('flipped')">
+                        <div class="flip-inner">
+                            <div class="flip-front">
+                                <div class="source-img" style="background-image: url('https://maritimeindia.org/wp-content/uploads/2026/04/Photo-for-KKA-Article-scaled.png');"></div>
+                                <div class="source-text-box">
+                                    <span class="source-tag">[National Maritime Foundation]</span>
+                                    <div class="source-title">維持台海及周邊海域開放安全之迫切性</div>
+                                </div>
+                            </div>
+                            <div class="flip-back">
+                                <div class="back-title">中國軍事施壓與全球航運咽喉的危機</div>
+                                <div class="back-summary">分析指出，中國持續在台灣海峽及南海進行灰色地帶行動與軍事演習。一旦爆發封鎖或武裝衝突，作為全球重要航運與物流樞紐的台海將陷入停擺，這將對太平洋地區乃至全球供應鏈造成不可估量的災難性打擊[1.26]。</div>
+                                <div class="action-buttons">
+                                    <a href="https://www.google.com/search?q=IMPERATIVES%20OF%20MAINTAINING%20OPEN%2C%20SAFE%20AND%20SECURE%20SEAS%20AMIDST%20CONTEMPORARY%20CROSS-STRAIT%20DYNAMICS%20-%20National%20Maritime%20Foundation" target="_blank" class="btn-link btn-outline" onclick="event.stopPropagation()">SEARCH</a>
+                                    <a href="https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHp135N9VxSPy1rTyTTeI5xa7cuOoo0WURkHwjb3MK1-ZoM3Rt9v6MBOiKxvdqBxhYxGtWNpb8RZpYdpiaaEifg-O_w-1e9qb9aS5izq7Bi1RxvF4i6liSa6KiGsYMHtH55iQ4OL6Qu6r-mfX7KTnGmBWXFDL3REHGaF_kC-aKTfX1OXDRSm17AGVpVBIV_jjA0Qeu5FYRlTJDnlAVNSGHMo3gK7MP3xdoQqf4KLsTwEDPa8xY=" target="_blank" class="btn-link btn-primary" onclick="event.stopPropagation()">READ ↗</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="source-item" onclick="this.classList.toggle('flipped')">
+                        <div class="flip-inner">
+                            <div class="flip-front">
+                                <div class="source-img" style="background-image: url('https://moderndiplomacy.eu/wp-content/uploads/2026/04/Cheng-Li-wun-1.jpg');"></div>
+                                <div class="source-text-box">
+                                    <span class="source-tag">[Modern Diplomacy]</span>
+                                    <div class="source-title">北京、德黑蘭與華府：鄭麗文訪中的隱含戰略意義</div>
+                                </div>
+                            </div>
+                            <div class="flip-back">
+                                <div class="back-title">中東局勢如何牽動台海兩岸互動</div>
+                                <div class="back-summary">評論認為，國民黨主席鄭麗文此次歷史性訪中，正值美伊衝突升溫之際。北京試圖透過強化兩岸對話向華府傳遞信號，將台海議題作為與美國在關稅及中東問題談判上的戰略籌碼，以防範東亞同時陷入對抗風險。</div>
+                                <div class="action-buttons">
+                                    <a href="https://www.google.com/search?q=Beijing%2C%20Tehran%2C%20Washington%3A%20The%20Hidden%20Significance%20of%20Cheng%20Li-wen%27s%20Visit%20-%20Modern%20Diplomacy" target="_blank" class="btn-link btn-outline" onclick="event.stopPropagation()">SEARCH</a>
+                                    <a href="https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFjGG4qv_hQvIiRxqFx07fwlo1-48qqLNH-5ZGUDLd5p7n6nK_jaXwKxnb64bSSP_6N-348b-s3gl58YPJIrln0e4CquRUwg11dNvD6grA3_eDPan5yjDqNsgwlTsszkuB9CFgn-GgKuwsdyr48rTLDMoN0Mbt2eHTNZ4R3NLaAETK0O9Qe6hbsAPUYtrlzTFVzIpT00cuCCtoMRPeK8_FCZNq4650Si0vwqw==" target="_blank" class="btn-link btn-primary" onclick="event.stopPropagation()">READ ↗</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="source-item" onclick="this.classList.toggle('flipped')">
+                        <div class="flip-inner">
+                            <div class="flip-front">
+                                <div class="source-img" style="background-image: url('https://www.japantimes.co.jp/japantimes/uploads/images/2026/04/13/534547.jpg?v=3.1');"></div>
+                                <div class="source-text-box">
+                                    <span class="source-tag">[Japan Times]</span>
+                                    <div class="source-title">台灣策劃軍演以突破潛在的海上能源封鎖</div>
+                                </div>
+                            </div>
+                            <div class="flip-back">
+                                <div class="back-title">借鑑伊朗局勢，台灣強化能源供應鏈韌性</div>
+                                <div class="back-summary">受到伊朗封鎖航運的警示，台灣內政部與軍方將舉行聯合兵推演習，重點演練在遭遇中國全面海上封鎖時，如何確保護航運送天然氣及石油的船隻，並試圖維持通往美日菲的三條生命線暢通。</div>
+                                <div class="action-buttons">
+                                    <a href="https://www.google.com/search?q=Taiwan%20plans%20drills%20to%20break%20potential%20Chinese%20energy%20blockade%20-%20The%20Japan%20Times" target="_blank" class="btn-link btn-outline" onclick="event.stopPropagation()">SEARCH</a>
+                                    <a href="https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEcvXioSYwOgmpikm4EnYeNZX2wDFOg_I9wCXbcFTA80vUNncmxutbZJv_-RUWEh2KWLcsI-yKFaaoORbcZDYVFNL34uNYm1LV-6ZVU0vn0PsswJicSdq6pK0sOGoYdBzRaI7_QHzo0zP0_sGTdHuEw9IVstQmyVT33lvDDOB124D05TyyMvRmQBjGTFqQMT1jGliTJATxJgWI=" target="_blank" class="btn-link btn-primary" onclick="event.stopPropagation()">READ ↗</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
             </div>
         </div>
-    </div>
-
-    <!-- MAIN_T5 -->
-    <div class="topic-card">
-        <div class="row-top">
-            <div class="col-meta"><span class="risk-badge badge-red">高度風險</span><h2 class="topic-title">中東地緣政治衝突</h2><div class="risk-reason"><strong>分析：</strong>區域衝突持續惡化，影響全球能源供應與人道危機，加劇國際關係複雜性。</div></div>
-            <div class="col-summary"><p class="summary-text">中東地區的地緣政治衝突持續升級，加薩走廊的人道危機日益嚴峻，以色列與哈瑪斯之間的戰火未止。此外，紅海地區的航運安全問題因葉門胡塞武裝的襲擊而持續惡化，對全球貿易航線和能源供應構成嚴重威脅。區域內大國與外部勢力之間的博弈，使得情勢更加複雜，和平解決方案遙遙無期。這些衝突不僅造成巨大的人道災難，也對全球經濟穩定帶來不確定性，並可能引發更廣泛的區域性甚至國際性衝突。</p></div>
-            <div class="col-more"><a href="https://news.google.com/search?q=%E4%B8%AD%E6%9D%B1%E5%9C%B0%E7%B7%A3%E6%94%BF%E6%B2%BB%E8%A1%9D%E7%AA%81" target="_blank" class="btn-search"><span>🔍</span>MORE INTEL<br>全局追蹤 ↗</a></div>
-        </div>
-        <div class="row-bottom">
-            <div class="sources-grid">
-                <div class="source-item" onclick="this.classList.toggle('flipped')"><div class="flip-inner"><div class="flip-front"><div class="source-img" style="background-image: url('https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?q=80&w=1000&auto=format&fit=crop'); background-size: cover; background-position: center;"></div><div class="source-text-box"><span class="source-tag">[半島電視台]</span><div class="source-title">加薩走廊南部戰事再起，人道危機加劇</div></div></div><div class="flip-back"><div class="back-title">以色列軍隊在加薩南部發動新攻勢，數十萬平民撤離</div><div class="back-summary">以色列軍隊在加薩走廊南部城市拉法發動新一輪地面攻勢，儘管國際社會對潛在平民傷亡表示高度擔憂。此舉導致數十萬平民被迫再次撤離，使加薩地區的人道危機雪上加霜。聯合國機構警告，拉法行動可能對原本就已脆弱的救援物資分配系統造成毀滅性打擊，導致更多飢餓和疾病。國際社會正加強外交努力，呼籲雙方停火並確保人道援助通道暢通無阻，但前景仍不樂觀。</div><div class="back-action"><span class="back-hint">TAP TO FLIP</span><div class="action-buttons"><a href="https://www.google.com/search?q=New%20fighting%20erupts%20in%20southern%20Gaza%2C%20exacerbating%20humanitarian%20crisis" data-original-title="New fighting erupts in southern Gaza, exacerbating humanitarian crisis" target="_blank" class="btn-link alt" onclick="event.stopPropagation()">🔍 搜尋</a><a href="https://www.aljazeera.com/news/2024/5/15/israel-gaza-rafah-new-offensive" target="_blank" class="btn-link" onclick="event.stopPropagation()">閱讀原文 ↗</a></div></div></div></div></div>
-                <div class="source-item" onclick="this.classList.toggle('flipped')"><div class="flip-inner"><div class="flip-front"><div class="source-img" style="background-image: url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=1000&auto=format&fit=crop'); background-size: cover; background-position: center;"></div><div class="source-text-box"><span class="source-tag">[華盛頓郵報]</span><div class="source-title">紅海航運持續受威脅，油價波動加劇</div></div></div><div class="flip-back"><div class="back-title">葉門胡塞武裝襲擊行動未止，全球航運與油價面臨不確定性</div><div class="back-summary">葉門胡塞武裝在紅海地區對商船的襲擊行動持續不斷，迫使許多航運公司選擇繞道非洲好望角，導致運輸時間拉長和成本增加。此情況不僅加劇了全球供應鏈的緊張，也對國際石油市場產生顯著影響，油價波動加劇。美國及其盟友組成的海上安全聯盟持續在該區域巡邏，試圖遏止襲擊，但胡塞武裝的攻擊頻率並未明顯下降。紅海危機已成為全球經濟穩定的重要風險來源。</div><div class="back-action"><span class="back-hint">TAP TO FLIP</span><div class="action-buttons"><a href="https://www.google.com/search?q=Red%20Sea%20shipping%20remains%20under%20threat%2C%20oil%20price%20volatility%20increases" data-original-title="Red Sea shipping remains under threat, oil price volatility increases" target="_blank" class="btn-link alt" onclick="event.stopPropagation()">🔍 搜尋</a><a href="https://www.washingtonpost.com/world/2024/05/14/red-sea-shipping-houthi-oil-prices/" target="_blank" class="btn-link" onclick="event.stopPropagation()">閱讀原文 ↗</a></div></div></div></div></div>
-                <div class="source-item" onclick="this.classList.toggle('flipped')"><div class="flip-inner"><div class="flip-front"><div class="source-img" style="background-image: url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?q=80&w=1000&auto=format&fit=crop'); background-size: cover; background-position: center;"></div><div class="source-text-box"><span class="source-tag">[法新社]</span><div class="source-title">伊朗核計畫引發西方國家新一輪擔憂</div></div></div><div class="flip-back"><div class="back-title">國際原子能機構報告指出伊朗核計畫活動，西方國家表達擔憂</div><div class="back-summary">根據國際原子能機構（IAEA）的最新報告，伊朗的核活動持續引發西方國家的高度擔憂。報告指出伊朗持續增加濃縮鈾庫存，且已達到武器級純度門檻的水平。儘管伊朗堅稱其核計畫僅用於和平目的，但國際社會對其意圖普遍存疑。此情勢可能導致美歐對伊朗實施更多制裁，進一步加劇中東地區的緊張局勢，並使得重啟核協議的努力面臨更大挑戰，區域衝突風險隨之升高。</div><div class="back-action"><span class="back-hint">TAP TO FLIP</span><div class="action-buttons"><a href="https://www.google.com/search?q=Iran%27s%20nuclear%20program%20sparks%20new%20round%20of%20Western%20concerns" data-original-title="Iran's nuclear program sparks new round of Western concerns" target="_blank" class="btn-link alt" onclick="event.stopPropagation()">🔍 搜尋</a><a href="https://www.france24.com/en/live-news/20240513-iran-nuclear-program-western-concerns" target="_blank" class="btn-link" onclick="event.stopPropagation()">閱讀原文 ↗</a></div></div></div></div></div>
+        
+        <div class="topic-card">
+            <div class="row-top">
+                <div class="col-meta">
+                    <span class="risk-badge bg-red-100 text-red-800">最高全球風險</span>
+                    <h2 class="topic-title">中東地緣衝突：美伊和談破裂與霍爾木茲海峽封鎖</h2>
+                    <div class="risk-reason"><strong>INTEL:</strong> 美國與伊朗的停火談判宣告失敗，美軍隨即啟動對伊朗港口及航線的海上封鎖，引發原油市場巨震與全球經濟倒退的恐慌。</div>
+                </div>
+                <div class="col-summary">
+                    <p class="summary-text">長達16小時的美伊伊斯蘭堡和談於上週末破裂，美方指責伊朗拒絕放棄核武發展。作為回應，美國宣佈實施針對伊朗港口及霍爾木茲海峽的全面海上封鎖。聯合國開發計畫署警告，這場衝突的延長可能導致全球1.62個國家受波及，將高達3,200萬人推向貧困。隨之而來的能源供應中斷威脅，也立刻導致全球金融與原油市場陷入劇烈動盪。</p>
+                </div>
+                <div class="col-more">
+                    <a href="https://news.google.com/search?q=Middle+East+Conflict+Iran+US" target="_blank" class="btn-search">GLOBAL TRACKING ↗</a>
+                </div>
+            </div>
+            <div class="row-bottom">
+                <div class="sources-grid">
+                    
+                    <div class="source-item" onclick="this.classList.toggle('flipped')">
+                        <div class="flip-inner">
+                            <div class="flip-front">
+                                <div class="source-img" style="background-image: url('https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?q=80&w=1000&auto=format&fit=crop');"></div>
+                                <div class="source-text-box">
+                                    <span class="source-tag">[ReliefWeb]</span>
+                                    <div class="source-title">中東軍事升級恐致全球超過3000萬人陷入貧窮</div>
+                                </div>
+                            </div>
+                            <div class="flip-back">
+                                <div class="back-title">聯合國警告：戰爭將抹去多年全球發展成果</div>
+                                <div class="back-summary">聯合國開發計畫署（UNDP）發表報告指出，中東衝突的擴大不僅重創直接參戰國與能源進口國，甚至可能將全球額外3,200萬人推入貧窮線下。特別是低收入國家因無力吸收高漲的糧食與能源價格，將成為最大受害者[1.14]。</div>
+                                <div class="action-buttons">
+                                    <a href="https://www.google.com/search?q=Military%20Escalation%20in%20the%20Middle%20East%3A%20Reversals%20in%20Global%20Development%2C%20Policy%20Response%20Options%20%2813%20April%202026%29%20-%20World%20%7C%20ReliefWeb" target="_blank" class="btn-link btn-outline" onclick="event.stopPropagation()">SEARCH</a>
+                                    <a href="https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH1f5gi0rnHHx-iD0Z17Kc1cPq9BuMg35C1M-cSBTsQr7vGDJQ6rxHq0n9KzK5IshcBBrvEN7Osl91P1DjLXRRva-9qyY9DBdJzW-Dr_EK2SLYy22Fvl1mCb3nmznEAnGQW2-NyR_s8oKcxV6Lye7Gg1cYnhpvauklukQAXDjtAFmY1wun6HbSR8XS6QELNLcLd0MO67i_XWBUhhyRw3Y6vW-dB0fu3zYUSq3pPWI6foSXfN__FQQtAvVaBvWzNJYSr" target="_blank" class="btn-link btn-primary" onclick="event.stopPropagation()">READ ↗</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="source-item" onclick="this.classList.toggle('flipped')">
+                        <div class="flip-inner">
+                            <div class="flip-front">
+                                <div class="source-img" style="background-image: url('https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1000&auto=format&fit=crop');"></div>
+                                <div class="source-text-box">
+                                    <span class="source-tag">[Morningstar]</span>
+                                    <div class="source-title">美伊談判無果，全球股市下挫油價攀升</div>
+                                </div>
+                            </div>
+                            <div class="flip-back">
+                                <div class="back-title">和談破局引發市場避險情緒飆升</div>
+                                <div class="back-summary">因伊朗拒絕就核項目妥協，雙方談判破裂。美國宣佈動用海軍力量封鎖進出伊朗港口的船隻。消息一出，不僅布蘭特原油價格重新飆破100美元大關，也連帶拖累標普500與那斯達克等歐美亞股市全線走跌。</div>
+                                <div class="action-buttons">
+                                    <a href="https://www.google.com/search?q=Stock%20Markets%20Dip%20and%20Oil%20Climbs%20After%20US-Iran%20Talks%20Fail%20to%20Reach%20Agreement" target="_blank" class="btn-link btn-outline" onclick="event.stopPropagation()">SEARCH</a>
+                                    <a href="https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHCw3ay733NNhCcY_P5-wT-mBVaDGpuP7A4BrVzh3RH8NVevcfQ7KsSMvR2TmxgxlEZZW2Et1yJiQBnEKFgKZkJTHvynAcXCwxvZwZa1eIClzbshtG5Ybe0qjJ5L_Qj4DY6i4B5hb3_mKsms4OVAWMUvqnkmxlqZHvq_TPDMuYAvlkrfl4mXhZGIDrATVnam3HusNRFzEoDkOtmczL7-iM1zS-8jLjZCXpBTv8H-Q==" target="_blank" class="btn-link btn-primary" onclick="event.stopPropagation()">READ ↗</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="source-item" onclick="this.classList.toggle('flipped')">
+                        <div class="flip-inner">
+                            <div class="flip-front">
+                                <div class="source-img" style="background-image: url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?q=80&w=1000&auto=format&fit=crop');"></div>
+                                <div class="source-text-box">
+                                    <span class="source-tag">[Just Security]</span>
+                                    <div class="source-title">4月13日新聞快遞：美伊和談與海峽封鎖進展</div>
+                                </div>
+                            </div>
+                            <div class="flip-back">
+                                <div class="back-title">美國祭出強硬手段遏制伊朗核野心</div>
+                                <div class="back-summary">由美國副總統領導的和平談判未獲成果，川普隨即宣佈對霍爾木茲海峽啟動無差別的海上封鎖行動。此舉引來伊朗將其定調為違反停火協議，區域內全面衝突一觸即發。</div>
+                                <div class="action-buttons">
+                                    <a href="https://www.google.com/search?q=Early%20Edition%3A%20April%2013%2C%202026%20-%20Just%20Security" target="_blank" class="btn-link btn-outline" onclick="event.stopPropagation()">SEARCH</a>
+                                    <a href="https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHfh3vI7PPRp72KwiCdYpAqtFUsyerJvcSzD1R2qUX1uy2D0FB1jUt_dWjKZwChlPBDunaElaN5h1VEfogfCcFlmDooIpRxRsgxXu-xmbpLPCVKc2Qii082v0iWVVetRL0EOaOf-G-vBjJCxm-qNQ0zMpBodvH7xxNThdk=" target="_blank" class="btn-link btn-primary" onclick="event.stopPropagation()">READ ↗</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
             </div>
         </div>
+        
     </div>
-
-
-    <div class="section-title" id="sec-wild">Wildcard Topics // 潛在重大議題</div>
-
-    <!-- WILD_T1 -->
-    <div class="topic-card">
-        <div class="row-top">
-            <div class="col-meta"><span class="risk-badge badge-orange">中度風險</span><h2 class="topic-title">全球航運瓶頸與運價飆升</h2><div class="risk-reason"><strong>分析：</strong>紅海危機及主要港口擁堵導致全球供應鏈緊張，推升運費並影響商品價格，可能加劇通膨。</div></div>
-            <div class="col-summary"><p class="summary-text">受紅海地區持續衝突和全球多個主要港口擁堵的影響，國際航運業正經歷嚴峻挑戰。船舶繞道非洲好望角導致航程延長，燃料成本與保險費用劇增，使得貨櫃運價自年初以來大幅飆升。這不僅對依賴國際貿易的製造商和零售商造成巨大成本壓力，也可能推高最終商品的零售價格，進而加劇全球通膨壓力。供應鏈的脆弱性再次暴露，企業被迫調整庫存策略與物流網絡，以應對不確定的貿易環境。</p></div>
-            <div class="col-more"><a href="https://news.google.com/search?q=%E5%85%A8%E7%90%83%E8%88%AA%E9%81%8B%E7%93%B6%E9%A0%B8%E8%88%87%E9%81%8B%E5%83%B9%E9%A3%86%E5%8D%87" target="_blank" class="btn-search"><span>🔍</span>MORE INTEL<br>全局追蹤 ↗</a></div>
+    
+    <div class="section-group" id="sec-wild">
+        <div class="section-header">
+            <div class="section-title">潛在重大與前瞻議題</div>
+            <div class="section-line"></div>
         </div>
-        <div class="row-bottom">
-            <div class="sources-grid">
-                <div class="source-item" onclick="this.classList.toggle('flipped')"><div class="flip-inner"><div class="flip-front"><div class="source-img" style="background-image: url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=1000&auto=format&fit=crop'); background-size: cover; background-position: center;"></div><div class="source-text-box"><span class="source-tag">[財經時報]</span><div class="source-title">貨櫃運價指數創今年新高，企業成本驟增</div></div></div><div class="flip-back"><div class="back-title">SCFI指數持續上漲，航運成本飆升恐轉嫁消費者</div><div class="back-summary">上海出口集裝箱運價指數（SCFI）近日再創今年新高，顯示全球貨櫃航運市場的運價持續飆升。分析指出，紅海危機導致的船舶繞道、港口擁堵以及旺季效應提前是主要推手。運費上漲對製造業和進出口企業造成巨大成本壓力，預計這些成本將最終轉嫁給終端消費者，進一步推高商品價格，對全球通膨構成新的挑戰。業界預期，在短期內，運價高漲的趨勢難以緩解，企業應做好應對準備。</div><div class="back-action"><span class="back-hint">TAP TO FLIP</span><div class="action-buttons"><a href="https://www.google.com/search?q=Container%20shipping%20index%20reaches%20new%20high%20this%20year%2C%20enterprises%20face%20surging%20costs" data-original-title="Container shipping index reaches new high this year, enterprises face surging costs" target="_blank" class="btn-link alt" onclick="event.stopPropagation()">🔍 搜尋</a><a href="https://www.businesstimes.com.sg/transport/container-shipping-index-surges-new-high-this-year" target="_blank" class="btn-link" onclick="event.stopPropagation()">閱讀原文 ↗</a></div></div></div></div></div>
-                <div class="source-item" onclick="this.classList.toggle('flipped')"><div class="flip-inner"><div class="flip-front"><div class="source-img" style="background-image: url('https://images.unsplash.com/photo-1504711434969-e33886168f5c?q=80&w=1000&auto=format&fit=crop'); background-size: cover; background-position: center;"></div><div class="source-text-box"><span class="source-tag">[華爾街日報]</span><div class="source-title">美國西海岸港口勞資談判，恐引發新一波堵塞</div></div></div><div class="flip-back"><div class="back-title">美西港口潛在勞資糾紛，可能重演供應鏈惡夢</div><div class="back-summary">美國西海岸港口碼頭工人的勞資談判再次陷入僵局，引發市場對供應鏈可能出現新一波堵塞的擔憂。歷史經驗顯示，港口工人罷工或怠工行為曾導致嚴重的貨物積壓和運輸延誤。在全球航運本已緊張的背景下，任何新的勞資糾紛都可能對跨太平洋貿易造成巨大衝擊，影響聖誕購物季前的商品供應，並進一步推高運輸成本和物價，對美國經濟和消費者信心產生負面影響。</div><div class="back-action"><span class="back-hint">TAP TO FLIP</span><div class="action-buttons"><a href="https://www.google.com/search?q=US%20West%20Coast%20port%20labor%20talks%20spark%20fears%20of%20new%20congestion" data-original-title="US West Coast port labor talks spark fears of new congestion" target="_blank" class="btn-link alt" onclick="event.stopPropagation()">🔍 搜尋</a><a href="https://www.wsj.com/articles/us-west-coast-port-labor-talks-spark-fears-of-new-congestion-123456789" target="_blank" class="btn-link" onclick="event.stopPropagation()">閱讀原文 ↗</a></div></div></div></div></div>
-                <div class="source-item" onclick="this.classList.toggle('flipped')"><div class="flip-inner"><div class="flip-front"><div class="source-img" style="background-image: url('https://images.unsplash.com/photo-1504711434969-e33886168f5c?q=80&w=1000&auto=format&fit=crop'); background-size: cover; background-position: center;"></div><div class="source-text-box"><span class="source-tag">[彭博社]</span><div class="source-title">海運巨頭紛紛加徵旺季附加費，反映市場需求強勁</div></div></div><div class="flip-back"><div class="back-title">主要航運公司宣布加收旺季附加費，預期需求持續增長</div><div class="back-summary">全球主要貨櫃航運公司，包括馬士基、MSC等，紛紛宣布從下月起對亞洲至歐美航線加收旺季附加費（Peak Season Surcharge, PSS）。此舉反映出航運業對未來幾個月市場需求持續強勁的預期，以及對現有運力緊張和成本上漲的反應。附加費的實施將進一步增加進出口商的營運成本。此現象也暗示著在面對地緣政治風險和供應鏈不確定性時，海運公司有能力將成本壓力轉嫁給客戶，維持盈利空間。</div><div class="back-action"><span class="back-hint">TAP TO FLIP</span><div class="action-buttons"><a href="https://www.google.com/search?q=Shipping%20giants%20impose%20peak%20season%20surcharges%2C%20reflecting%20strong%20market%20demand" data-original-title="Shipping giants impose peak season surcharges, reflecting strong market demand" target="_blank" class="btn-link alt" onclick="event.stopPropagation()">🔍 搜尋</a><a href="https://www.bloomberg.com/news/articles/2024-05-13/shipping-giants-impose-peak-season-surcharges" target="_blank" class="btn-link" onclick="event.stopPropagation()">閱讀原文 ↗</a></div></div></div></div></div>
+
+        
+        <div class="topic-card">
+            <div class="row-top">
+                <div class="col-meta">
+                    <span class="risk-badge bg-blue-100 text-blue-800">太空探索里程碑</span>
+                    <h2 class="topic-title">NASA Artemis II 任務成功：半世紀來人類重返月球軌道</h2>
+                    <div class="risk-reason"><strong>INTEL:</strong> Artemis II 載人繞月任務順利完成並返回地球，打破了歷史飛行距離紀錄，為未來的月球基地及火星探索奠定技術基礎。</div>
+                </div>
+                <div class="col-summary">
+                    <p class="summary-text">2026年4月10日，NASA的 Artemis II 任務乘載四名太空人，在完成繞月飛行並打破人類離地球最遠距離紀錄（逾252,000英里）後，成功降落於太平洋。這不僅是自1972年阿波羅計畫以來人類首度重返深空，更展示了高度自主的太空船導航技術與生命保障系統，標誌著太空探索新時代的到來。</p>
+                </div>
+                <div class="col-more">
+                    <a href="https://news.google.com/search?q=NASA+Artemis+II+Return+Moon" target="_blank" class="btn-search">GLOBAL TRACKING ↗</a>
+                </div>
+            </div>
+            <div class="row-bottom">
+                <div class="sources-grid">
+                    
+                    <div class="source-item" onclick="this.classList.toggle('flipped')">
+                        <div class="flip-inner">
+                            <div class="flip-front">
+                                <div class="source-img" style="background-image: url('https://www.gpb.org/sites/default/files/styles/three_two_702x468/public/2026-04/artemis_ii.jpg?h=e5aec6c8&itok=Ko2DEQGi');"></div>
+                                <div class="source-text-box">
+                                    <span class="source-tag">[GPB]</span>
+                                    <div class="source-title">Artemis II 完成歷史性繞月飛行</div>
+                                </div>
+                            </div>
+                            <div class="flip-back">
+                                <div class="back-title">打破歷史紀錄的人類深空之旅</div>
+                                <div class="back-summary">Artemis II 任務太空人安全返回地球。該任務創造了人類飛行最遠距離的紀錄，也是史上首次有女性太空人參與的繞月任務，其成功為後續的登月與火星計畫打下了堅實基礎[2.16]。</div>
+                                <div class="action-buttons">
+                                    <a href="https://www.google.com/search?q=Around%20the%20moon%20and%20back%3A%20Artemis%20II%20completes%20historic%20flyby%20%7C%20Georgia%20Public%20Broadcasting" target="_blank" class="btn-link btn-outline" onclick="event.stopPropagation()">SEARCH</a>
+                                    <a href="https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG_prTx9rsjJIqE6R0Vc1Rflj3vP__lwqIx8NAnzwLJ1srLrw7cFs7RmU2-1T-tifYU7pxw3P13ZgtRQRol_8TfGuoPc2lZdDrEHXszH63UokaN8aASROXB7aBKQ5Q7yt00WAxGzeQhoJ9RvCGPpmM7e6U6juJW3W2xfPnci4PGaERXIsrgnrU-9GDdN8E3SPIHw5ca0auMN9M73w==" target="_blank" class="btn-link btn-primary" onclick="event.stopPropagation()">READ ↗</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="source-item" onclick="this.classList.toggle('flipped')">
+                        <div class="flip-inner">
+                            <div class="flip-front">
+                                <div class="source-img" style="background-image: url('https://www.captechu.edu/sites/default/files/NASA%20Artemis%20II%20Mission%20Blog%20.png');"></div>
+                                <div class="source-text-box">
+                                    <span class="source-tag">[Capitol Tech]</span>
+                                    <div class="source-title">航太工程師如何推動 Artemis II 任務的成功</div>
+                                </div>
+                            </div>
+                            <div class="flip-back">
+                                <div class="back-title">幕後英雄與高科技系統整合的勝利</div>
+                                <div class="back-summary">這次長達10天的任務能夠順利進行，歸功於數萬名NASA與洛克希德馬丁工程師的心血。他們精心設計了具備自我修正機制的繞月軌跡（Orion Loop），確保太空船在系統故障時仍能透過重力彈弓效應安全返航。</div>
+                                <div class="action-buttons">
+                                    <a href="https://www.google.com/search?q=How%20Astronautical%20Engineers%20Powered%20the%20Artemis%20II%20Mission%20Forward" target="_blank" class="btn-link btn-outline" onclick="event.stopPropagation()">SEARCH</a>
+                                    <a href="https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH2pYeFQA81HmsGPLWKHFTZBxAw2U4-TP4MRk7c_E95C_e9j5nRAXMf7PvsTV1JvidsS3MfM9U9h1XWj4ikydPf4weMowc6AaT-Q0Azcrb97a7Uih7Ner9doH5O1DFRs9dkGR-pqa0soMPPKE0botKyGctK5e-t6_jU_JpTEZpd9W8t2aNOImR1WOWbyI2uvyPZrsrL68W7" target="_blank" class="btn-link btn-primary" onclick="event.stopPropagation()">READ ↗</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="source-item" onclick="this.classList.toggle('flipped')">
+                        <div class="flip-inner">
+                            <div class="flip-front">
+                                <div class="source-img" style="background-image: url('https://cdn.mos.cms.futurecdn.net/Bkpyz2a7B3MD6f3pyAG93D-2047-80.jpg');"></div>
+                                <div class="source-text-box">
+                                    <span class="source-tag">[Space.com]</span>
+                                    <div class="source-title">Artemis 2 太空人歡慶平安返回地球</div>
+                                </div>
+                            </div>
+                            <div class="flip-back">
+                                <div class="back-title">歷史性任務後太空人的感動瞬間</div>
+                                <div class="back-summary">在太平洋濺落後，四名太空人搭乘直升機回到美國海軍救援艦上。任務飛行員 Victor Glover 與任務專家 Christina Koch 面露喜悅的合影，不僅展現了團隊絕佳的默契，也成為激勵新一代太空探索者的經典畫面。</div>
+                                <div class="action-buttons">
+                                    <a href="https://www.google.com/search?q=Artemis%202%20astronauts%20celebrate%20successful%20return%20to%20Earth%20%7C%20Space%20photo%20of%20the%20day%20for%20April%2013%2C%202026" target="_blank" class="btn-link btn-outline" onclick="event.stopPropagation()">SEARCH</a>
+                                    <a href="https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEfdPRHxRcLXtbNqUO-x75UvW1b6bQeXNvWUD04lUMWF-U-RBesw9SEWMrJr6mA28b1yluvbhBQezte6jVjNA7sab2s6jdV7phIlJQoj51JbW5fAf9pcE5zHL1EMvPJ4QLJvb4FpPjJPTR9Bu2ijnCRM5H8evj1pVxfZqe6e1dJHhqpS8Vw3-rCjvS_Zdsmy9FW9iokcMabxVYD1cEqmkSk9FivG5ncPaYzrK5id8tFm7xRHMvIWh9zGvDlSNq-fe0iR6R2EH-ckjFVBKow-w==" target="_blank" class="btn-link btn-primary" onclick="event.stopPropagation()">READ ↗</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
             </div>
         </div>
-    </div>
-
-    <!-- WILD_T2 -->
-    <div class="topic-card">
-        <div class="row-top">
-            <div class="col-meta"><span class="risk-badge badge-yellow">一般風險</span><h2 class="topic-title">虛擬貨幣市場監管趨嚴與主流化挑戰</h2><div class="risk-reason"><strong>分析：</strong>各國政府加強對加密貨幣的監管，影響其合法性、市場波動及投資者信心。</div></div>
-            <div class="col-summary"><p class="summary-text">全球虛擬貨幣市場正經歷監管環境的重大轉變，各國政府對加密貨幣的監管力度顯著加強。從美國證券交易委員會（SEC）的執法行動，到歐洲和亞洲新法規的出台，旨在規範市場秩序、保護投資者並打擊洗錢活動。雖然此趨勢可能短期內增加市場不確定性，但長期來看，更清晰的監管框架有助於提升加密貨幣的合法性和接受度，為其走向主流金融市場鋪平道路，但也考驗著市場的適應能力。</p></div>
-            <div class="col-more"><a href="https://news.google.com/search?q=%E8%99%9B%E6%93%AC%E8%B2%A8%E5%B9%A3%E5%B8%82%E5%A0%B4%E7%9B%A3%E7%AE%A1%E8%B6%A8%E5%9A%B4%E8%88%87%E4%B8%BB%E6%B5%81%E5%8C%96%E6%8C%91%E6%88%B0" target="_blank" class="btn-search"><span>🔍</span>MORE INTEL<br>全局追蹤 ↗</a></div>
-        </div>
-        <div class="row-bottom">
-            <div class="sources-grid">
-                <div class="source-item" onclick="this.classList.toggle('flipped')"><div class="flip-inner"><div class="flip-front"><div class="source-img" style="background-image: url('https://images.unsplash.com/photo-1504711434969-e33886168f5c?q=80&w=1000&auto=format&fit=crop'); background-size: cover; background-position: center;"></div><div class="source-text-box"><span class="source-tag">[CoinDesk]</span><div class="source-title">SEC推遲以太坊現貨ETF審批，市場觀望</div></div></div><div class="flip-back"><div class="back-title">美國證券交易委員會再次延後以太坊現貨ETF決議，市場波動</div><div class="back-summary">美國證券交易委員會（SEC）再次延遲了數個以太坊現貨ETF的審批決議，將決定時間推遲至未來幾個月。此舉引發市場對以太坊（Ethereum）未來走勢的不確定性，導致其價格短期內出現波動。雖然比特幣現貨ETF的成功上市為加密貨幣帶來了新的投資渠道，但SEC對以太坊的態度顯然更為謹慎，可能與其質押機制等複雜性有關。投資者正密切關注SEC的最終裁決，這將對以太坊的合法性產生關鍵影響。</div><div class="back-action"><span class="back-hint">TAP TO FLIP</span><div class="action-buttons"><a href="https://www.google.com/search?q=SEC%20Delays%20Ethereum%20Spot%20ETF%20Approvals%2C%20Market%20Watches" data-original-title="SEC Delays Ethereum Spot ETF Approvals, Market Watches" target="_blank" class="btn-link alt" onclick="event.stopPropagation()">🔍 搜尋</a><a href="https://www.coindesk.com/policy/2024/05/15/sec-delays-ethereum-spot-etf-approvals/" target="_blank" class="btn-link" onclick="event.stopPropagation()">閱讀原文 ↗</a></div></div></div></div></div>
-                <div class="source-item" onclick="this.classList.toggle('flipped')"><div class="flip-inner"><div class="flip-front"><div class="source-img" style="background-image: url('https://images.unsplash.com/photo-1504711434969-e33886168f5c?q=80&w=1000&auto=format&fit=crop'); background-size: cover; background-position: center;"></div><div class="source-text-box"><span class="source-tag">[Decrypt]</span><div class="source-title">香港首批加密貨幣ETF上市，亞洲市場領先</div></div></div><div class="flip-back"><div class="back-title">香港批准比特幣與以太坊現貨ETF，成為亞洲加密金融中心</div><div class="back-summary">香港證監會正式批准了首批比特幣和以太坊現貨ETF上市，此舉標誌著香港在全球加密貨幣監管領域邁出了重要一步。這些ETF的推出為亞洲投資者提供了合規且便捷的加密貨幣投資渠道，強化了香港作為區域加密金融中心的地位。此舉可能吸引更多資金流入香港市場，並鼓勵其他亞洲國家重新評估其對加密貨幣的監管策略。分析師認為，香港此舉將有助於推動加密貨幣資產的主流化進程。</div><div class="back-action"><span class="back-hint">TAP TO FLIP</span><div class="action-buttons"><a href="https://www.google.com/search?q=Hong%20Kong%27s%20First%20Crypto%20ETFs%20Go%20Live%2C%20Asia%20Leads%20Market" data-original-title="Hong Kong's First Crypto ETFs Go Live, Asia Leads Market" target="_blank" class="btn-link alt" onclick="event.stopPropagation()">🔍 搜尋</a><a href="https://decrypt.co/230111/hong-kong-first-crypto-etfs-go-live-asia-leads-market" target="_blank" class="btn-link" onclick="event.stopPropagation()">閱讀原文 ↗</a></div></div></div></div></div>
-                <div class="source-item" onclick="this.classList.toggle('flipped')"><div class="flip-inner"><div class="flip-front"><div class="source-img" style="background-image: url('https://images.unsplash.com/photo-1504711434969-e33886168f5c?q=80&w=1000&auto=format&fit=crop'); background-size: cover; background-position: center;"></div><div class="source-text-box"><span class="source-tag">[路透社]</span><div class="source-title">歐洲央行警告穩定幣風險，呼籲更嚴格監管</div></div></div><div class="flip-back"><div class="back-title">歐洲中央銀行對穩定幣潛在風險發出警告，要求加強監管</div><div class="back-summary">歐洲中央銀行（ECB）近日發布報告，對穩定幣（stablecoins）可能帶來的金融穩定風險發出警告，並呼籲對其實施更嚴格的監管。ECB指出，儘管穩定幣旨在錨定傳統法幣價值，但其儲備資產的透明度、流動性以及潛在的擠兌風險仍可能對金融系統構成威脅。報告建議監管機構應確保穩定幣發行商符合嚴格的資本要求和儲備管理規定，以保障投資者權益並維護金融市場的整體穩定。</div><div class="back-action"><span class="back-hint">TAP TO FLIP</span><div class="action-buttons"><a href="https://www.google.com/search?q=ECB%20warns%20of%20stablecoin%20risks%2C%20calls%20for%20stricter%20regulation" data-original-title="ECB warns of stablecoin risks, calls for stricter regulation" target="_blank" class="btn-link alt" onclick="event.stopPropagation()">🔍 搜尋</a><a href="https://www.reuters.com/markets/currencies/ecb-warns-stablecoin-risks-calls-stricter-regulation-2024-05-13/" target="_blank" class="btn-link" onclick="event.stopPropagation()">閱讀原文 ↗</a></div></div></div></div></div>
+        
+        <div class="topic-card">
+            <div class="row-top">
+                <div class="col-meta">
+                    <span class="risk-badge bg-yellow-100 text-yellow-800">公衛與醫療法規</span>
+                    <h2 class="topic-title">美國醫療照護法規變革與AI應用規範</h2>
+                    <div class="risk-reason"><strong>INTEL:</strong> 美國政府正推動心理健康平權新規及加強醫療院所對身障者的服務合規，同時應對AI技術在醫療體系引發的勞動力變遷。</div>
+                </div>
+                <div class="col-summary">
+                    <p class="summary-text">2026年4月，美國醫療法規面臨多重更新。拜登政府延續至川普政府的心理健康平權法案預計推出新規，加強對保險公司是否公平對待心理與生理疾病的監管。同時，聯邦民權辦公室強力介入醫療機構未提供身障者有效溝通管道的案件，處以裁罰並強制改善。另一方面，各大醫療系統正加速引進人工智慧，同時建立監管機制以緩解內部醫療人員對AI取代及失誤的擔憂。</p>
+                </div>
+                <div class="col-more">
+                    <a href="https://news.google.com/search?q=US+Health+Care+Policy+Regulation" target="_blank" class="btn-search">GLOBAL TRACKING ↗</a>
+                </div>
+            </div>
+            <div class="row-bottom">
+                <div class="sources-grid">
+                    
+                    <div class="source-item" onclick="this.classList.toggle('flipped')">
+                        <div class="flip-inner">
+                            <div class="flip-front">
+                                <div class="source-img" style="background-image: url('http://www.khi.org/wp-content/uploads/2025/03/Hill-to-Heartland-Header.png');"></div>
+                                <div class="source-text-box">
+                                    <span class="source-tag">[Kansas Health Institute]</span>
+                                    <div class="source-title">4月13日聯邦健康政策觀察</div>
+                                </div>
+                            </div>
+                            <div class="flip-back">
+                                <div class="back-title">心理健康平權與ACA納保人數變動</div>
+                                <div class="back-summary">美國司法部宣佈將在年底前針對《心理健康平權與成癮平等法案》（MHPAEA）發布新的法規，以加強聯邦政府對保險計劃的審查。同時，CMS報告指出2026年ACA市場投保人數雖略有下降，但仍維持在歷史高位[2.35]。</div>
+                                <div class="action-buttons">
+                                    <a href="https://www.google.com/search?q=Update%3A%20What%20We%27re%20Watching%2C%20April%2013%2C%202026%20-%20Kansas%20Health%20Institute" target="_blank" class="btn-link btn-outline" onclick="event.stopPropagation()">SEARCH</a>
+                                    <a href="https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEhsqzCl4lttq6nMPDbLkLMvjp7TZWEr_c_CF3pFOwuW6vOVfm86QtVHQVELP5YBdULUHbywQUHhTMMdqZj3F0r1TJPlZKDmvqzx6pFgd3BoEyPgBtm_W2wPLFohXiZcs2IAa4D3WwHqR9ommQjxsHnhFZn8ArN6lQs9wVXDM0oqg==" target="_blank" class="btn-link btn-primary" onclick="event.stopPropagation()">READ ↗</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="source-item" onclick="this.classList.toggle('flipped')">
+                        <div class="flip-inner">
+                            <div class="flip-front">
+                                <div class="source-img" style="background-image: url('https://images.unsplash.com/photo-1504711434969-e33886168f5c?q=80&w=1000&auto=format&fit=crop');"></div>
+                                <div class="source-text-box">
+                                    <span class="source-tag">[KFF Health News]</span>
+                                    <div class="source-title">醫療系統應對AI帶來的內部溝通挑戰</div>
+                                </div>
+                            </div>
+                            <div class="flip-back">
+                                <div class="back-title">AI融入醫療前線的機遇與挑戰</div>
+                                <div class="back-summary">各大健康系統如 CommonSpirit 和 MedStar 正加強對人工智慧使用的內部監督，並積極與臨床醫師溝通，試圖在民眾大量使用AI尋求健康解答的同時，防範潛在的醫療失誤與勞動力市場的動盪。</div>
+                                <div class="action-buttons">
+                                    <a href="https://www.google.com/search?q=Monday%2C%20April%2013%2C%202026%20-%20KFF%20Health%20News" target="_blank" class="btn-link btn-outline" onclick="event.stopPropagation()">SEARCH</a>
+                                    <a href="https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEyA8WZok8Xu7IzeWe2mcA7UojIzOEm0MEwAAk9pbpIXVHLKI7uvxEKz6vWrPRfxHZqMGCJFMW0tNeQSvbC4xJC0RhLtaZduIa6CP_1uNYNIlm72JghQHHAUlEr-_NPminQOdI5dHeRXTNEquv3DQWBNnKv12a36xz1JSE=" target="_blank" class="btn-link btn-primary" onclick="event.stopPropagation()">READ ↗</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="source-item" onclick="this.classList.toggle('flipped')">
+                        <div class="flip-inner">
+                            <div class="flip-front">
+                                <div class="source-img" style="background-image: url('https://images.unsplash.com/photo-1504711434969-e33886168f5c?q=80&w=1000&auto=format&fit=crop');"></div>
+                                <div class="source-text-box">
+                                    <span class="source-tag">[HHS]</span>
+                                    <div class="source-title">HHS民權辦公室確保醫療提供者遵守身障法規</div>
+                                </div>
+                            </div>
+                            <div class="flip-back">
+                                <div class="back-title">保障聽障病患就醫溝通權利</div>
+                                <div class="back-summary">美國衛生及公共服務部民權辦公室（OCR）解決了兩起精神病院與醫療系統拒絕為聽障病患提供手語翻譯的投訴案，重申醫療機構若忽視有效溝通不僅違反民權法，更將危及病患的生命安全。</div>
+                                <div class="action-buttons">
+                                    <a href="https://www.google.com/search?q=HHS%27%20Office%20for%20Civil%20Rights%20Secures%20Provider%20Compliance%20with%20Disability%20Rights%20Laws" target="_blank" class="btn-link btn-outline" onclick="event.stopPropagation()">SEARCH</a>
+                                    <a href="https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEM0v5VOmRlFPbIj-eY1PZ1i8tkrBZUgHxv_4zugJATb5rhRRMiXldcFARTU35oxWq_VB9OFsBRhYC6xFwlF611Co-epG86d7w5HTtdw3AKSCtykj4z8-lrptglexdPgl2HGzyFUfqB7VGiNeLbujKaFfYiu-SQiWe9cZZauQvJieCqz83E6a-RKcPiZK1y_p2k" target="_blank" class="btn-link btn-primary" onclick="event.stopPropagation()">READ ↗</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
             </div>
         </div>
-    </div>
-
-    <!-- WILD_T3 -->
-    <div class="topic-card">
-        <div class="row-top">
-            <div class="col-meta"><span class="risk-badge badge-orange">中度風險</span><h2 class="topic-title">極端氣候事件對全球經濟衝擊</h2><div class="risk-reason"><strong>分析：</strong>頻繁的極端氣候災害對農業、基礎設施及保險業造成巨大損失，威脅經濟永續發展。</div></div>
-            <div class="col-summary"><p class="summary-text">全球各地頻繁發生的極端氣候事件，包括前所未有的熱浪、毀滅性洪災、長期乾旱和失控的森林大火，正對全球經濟造成日益嚴重的衝擊。這些災害不僅直接破壞農作物生產，導致糧食供應短缺和價格上漲，也嚴重損害基礎設施，造成巨額重建成本。保險業因索賠激增而面臨壓力，而企業供應鏈也因氣候相關中斷而變得脆弱。各國政府和企業正努力推動氣候適應和減緩策略，以降低這些經濟風險並實現永續發展。</p></div>
-            <div class="col-more"><a href="https://news.google.com/search?q=%E6%A5%B5%E7%AB%AF%E6%B0%A3%E5%80%99%E4%BA%8B%E4%BB%B6%E5%B0%8D%E5%85%A8%E7%90%83%E7%B6%93%E6%BF%9F%E8%A1%9D%E6%93%8A" target="_blank" class="btn-search"><span>🔍</span>MORE INTEL<br>全局追蹤 ↗</a></div>
-        </div>
-        <div class="row-bottom">
-            <div class="sources-grid">
-                <div class="source-item" onclick="this.classList.toggle('flipped')"><div class="flip-inner"><div class="flip-front"><div class="source-img" style="background-image: url('https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1000&auto=format&fit=crop'); background-size: cover; background-position: center;"></div><div class="source-text-box"><span class="source-tag">[紐約時報]</span><div class="source-title">東南亞熱浪破紀錄，電力供應面臨考驗</div></div></div><div class="flip-back"><div class="back-title">東南亞多國遭受歷史性熱浪侵襲，電力系統承受巨大壓力</div><div class="back-summary">東南亞地區正經歷前所未有的熱浪，多國氣溫飆升至歷史新高，導致民眾生活和經濟活動受到嚴重影響。由於冷氣使用量激增，多國電網面臨巨大壓力，部分地區已出現停電或限電措施。高溫也對農業生產造成衝擊，可能導致農作物減產。各國政府正努力應對能源供應挑戰，並採取緊急措施保護民眾健康。長期而言，這凸顯了氣候變遷對基礎設施韌性和經濟永續發展的嚴峻挑戰。</div><div class="back-action"><span class="back-hint">TAP TO FLIP</span><div class="action-buttons"><a href="https://www.google.com/search?q=Southeast%20Asia%20heatwave%20breaks%20records%2C%20power%20grids%20under%20strain" data-original-title="Southeast Asia heatwave breaks records, power grids under strain" target="_blank" class="btn-link alt" onclick="event.stopPropagation()">🔍 搜尋</a><a href="https://www.nytimes.com/2024/05/15/world/asia/southeast-asia-heatwave-power-crisis.html" target="_blank" class="btn-link" onclick="event.stopPropagation()">閱讀原文 ↗</a></div></div></div></div></div>
-                <div class="source-item" onclick="this.classList.toggle('flipped')"><div class="flip-inner"><div class="flip-front"><div class="source-img" style="background-image: url('https://images.unsplash.com/photo-1504711434969-e33886168f5c?q=80&w=1000&auto=format&fit=crop'); background-size: cover; background-position: center;"></div><div class="source-text-box"><span class="source-tag">[金融時報]</span><div class="source-title">澳洲大範圍洪災，礦業與農業受重創</div></div></div><div class="flip-back"><div class="back-title">澳洲東海岸遭遇嚴重洪災，主要產業生產受阻，經濟損失擴大</div><div class="back-summary">澳洲東海岸地區近期遭受了大規模洪災侵襲，造成廣泛破壞，對當地經濟產生嚴重影響。特別是該國重要的採礦業和農業部門，因基礎設施受損和運輸中斷而生產受阻。數十億美元的經濟損失預計將對澳洲的國內生產總值造成負面影響，並可能推高農產品價格。政府正加緊救援和重建工作，但也凸顯了澳洲在面對氣候變遷時，需要更強大的韌性來保護其關鍵產業和基礎設施。</div><div class="back-action"><span class="back-hint">TAP TO FLIP</span><div class="action-buttons"><a href="https://www.google.com/search?q=Widespread%20flooding%20in%20Australia%20hits%20mining%20and%20agriculture%20sectors" data-original-title="Widespread flooding in Australia hits mining and agriculture sectors" target="_blank" class="btn-link alt" onclick="event.stopPropagation()">🔍 搜尋</a><a href="https://www.ft.com/content/australia-floods-mining-agriculture-impact" target="_blank" class="btn-link" onclick="event.stopPropagation()">閱讀原文 ↗</a></div></div></div></div></div>
-                <div class="source-item" onclick="this.classList.toggle('flipped')"><div class="flip-inner"><div class="flip-front"><div class="source-img" style="background-image: url('https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1000&auto=format&fit=crop'); background-size: cover; background-position: center;"></div><div class="source-text-box"><span class="source-tag">[美聯社]</span><div class="source-title">全球保險業面臨巨額氣候相關索賠挑戰</div></div></div><div class="flip-back"><div class="back-title">頻繁極端氣候事件導致保險公司理賠金額飆升，影響行業盈利</div><div class="back-summary">隨著全球極端氣候事件的頻繁發生，保險業正承受前所未有的壓力。洪水、風暴、森林大火等災害造成的巨額損失，使得保險公司面臨歷史性的索賠金額。這不僅侵蝕了保險公司的盈利能力，也可能導致保費上漲，甚至使部分地區的保險產品變得難以負擔。業界正積極評估氣候風險模型，並探索新的風險管理和保險產品，以應對日益嚴峻的氣候變遷挑戰，確保保險市場的永續發展。</div><div class="back-action"><span class="back-hint">TAP TO FLIP</span><div class="action-buttons"><a href="https://www.google.com/search?q=Global%20insurance%20industry%20faces%20massive%20climate-related%20claims%20challenge" data-original-title="Global insurance industry faces massive climate-related claims challenge" target="_blank" class="btn-link alt" onclick="event.stopPropagation()">🔍 搜尋</a><a href="https://apnews.com/article/climate-change-insurance-claims-losses-2024-05-14" target="_blank" class="btn-link" onclick="event.stopPropagation()">閱讀原文 ↗</a></div></div></div></div></div>
+        
+        <div class="topic-card">
+            <div class="row-top">
+                <div class="col-meta">
+                    <span class="risk-badge bg-red-100 text-red-800">全球供應鏈風險</span>
+                    <h2 class="topic-title">全球能源咽喉危機：霍爾木茲海峽封鎖威脅</h2>
+                    <div class="risk-reason"><strong>INTEL:</strong> 全球最重要的能源運輸通道面臨實質性封鎖威脅，引發國際大宗商品市場、貨幣匯率與通膨預期的劇烈重定價。</div>
+                </div>
+                <div class="col-summary">
+                    <p class="summary-text">美軍針對伊朗港口及海上交通祭出封鎖手段，導致霍爾木茲海峽形同癱瘓。金融機構警告，這不僅是油價短暫飆升的問題，而是將對全球貿易結構帶來深遠破壞，嚴重衝擊高度依賴能源進口的歐洲及亞洲國家，並迫使各國央行重新審視降息政策。此一連串效應凸顯出全球關鍵供應鏈在面對大國博弈時的極度脆弱性。</p>
+                </div>
+                <div class="col-more">
+                    <a href="https://news.google.com/search?q=Hormuz+Blockade+Global+Market" target="_blank" class="btn-search">GLOBAL TRACKING ↗</a>
+                </div>
+            </div>
+            <div class="row-bottom">
+                <div class="sources-grid">
+                    
+                    <div class="source-item" onclick="this.classList.toggle('flipped')">
+                        <div class="flip-inner">
+                            <div class="flip-front">
+                                <div class="source-img" style="background-image: url('https://www.sharecafe.com.au/wp-content/uploads/2026/04/kNEdZeu0ld1v6Rhla0Vg_1080x1080-600x454.png');"></div>
+                                <div class="source-text-box">
+                                    <span class="source-tag">[Sharecafe]</span>
+                                    <div class="source-title">美國海峽封鎖威脅加劇，油市震撼恐席捲全球</div>
+                                </div>
+                            </div>
+                            <div class="flip-back">
+                                <div class="back-title">分析師警告：油價飆升將重置全球通膨預期</div>
+                                <div class="back-summary">deVere 集團執行長警告，霍爾木茲海峽的關閉將立刻引發原油結構性缺口，可能迅速推升油價突破120美元。此情況下將嚴重打擊航空、航運等依賴燃料的行業，並重創進口國的貨幣匯率[2.27]。</div>
+                                <div class="action-buttons">
+                                    <a href="https://www.google.com/search?q=Oil%20shock%20to%20intensify%20as%20US%20Hormuz%20blockade%20threatens%20global%20markets%20-%20Sharecafe" target="_blank" class="btn-link btn-outline" onclick="event.stopPropagation()">SEARCH</a>
+                                    <a href="https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEXeG9EiF5i6u6t-AwRi3wmxZun6F7zKAKs2S8SUXdfVLfeQctLYRKIdv3Wkjx7OudGeaka81IvBynJ44C3xYlmXtFbK7iO1drS9sjw5xGpaRBXKnUg_2CJVkOmaRb9046ZyIZ37w_hpAIVjp-0Xrx6dAPMyBR8GwGw7JUuryb_yV6J59ylE97DbYj6osM=" target="_blank" class="btn-link btn-primary" onclick="event.stopPropagation()">READ ↗</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="source-item" onclick="this.classList.toggle('flipped')">
+                        <div class="flip-inner">
+                            <div class="flip-front">
+                                <div class="source-img" style="background-image: url('https://www.japantimes.co.jp/japantimes/uploads/images/2026/04/13/534547.jpg?v=3.1');"></div>
+                                <div class="source-text-box">
+                                    <span class="source-tag">[Japan Times]</span>
+                                    <div class="source-title">借鏡伊朗，台灣計畫軍演突破能源封鎖</div>
+                                </div>
+                            </div>
+                            <div class="flip-back">
+                                <div class="back-title">地緣危機促使各國演練保障能源生命線</div>
+                                <div class="back-summary">受中東局勢啟發，台灣當局深刻意識到能源供應鏈被掐斷的危險性，預定展開政府多部門聯合演練，以防禦潛在的海上封鎖並確保油氣等關鍵物資順利運抵本土。</div>
+                                <div class="action-buttons">
+                                    <a href="https://www.google.com/search?q=Taiwan%20plans%20drills%20to%20break%20potential%20Chinese%20energy%20blockade%20-%20The%20Japan%20Times" target="_blank" class="btn-link btn-outline" onclick="event.stopPropagation()">SEARCH</a>
+                                    <a href="https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEcvXioSYwOgmpikm4EnYeNZX2wDFOg_I9wCXbcFTA80vUNncmxutbZJv_-RUWEh2KWLcsI-yKFaaoORbcZDYVFNL34uNYm1LV-6ZVU0vn0PsswJicSdq6pK0sOGoYdBzRaI7_QHzo0zP0_sGTdHuEw9IVstQmyVT33lvDDOB124D05TyyMvRmQBjGTFqQMT1jGliTJATxJgWI=" target="_blank" class="btn-link btn-primary" onclick="event.stopPropagation()">READ ↗</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="source-item" onclick="this.classList.toggle('flipped')">
+                        <div class="flip-inner">
+                            <div class="flip-front">
+                                <div class="source-img" style="background-image: url('https://images.unsplash.com/photo-1504711434969-e33886168f5c?q=80&w=1000&auto=format&fit=crop');"></div>
+                                <div class="source-text-box">
+                                    <span class="source-tag">[IMF]</span>
+                                    <div class="source-title">全球市場監測：風險情緒與衝突持續升高</div>
+                                </div>
+                            </div>
+                            <div class="flip-back">
+                                <div class="back-title">停火失敗與封鎖陰影籠罩全球資本</div>
+                                <div class="back-summary">IMF 每日市場報告指出，美伊無法達成和平協議的消息促使市場避險情緒激增。由於擔憂美國實施海峽封鎖，新興市場資本外流壓力重現，全球流動性面臨自衝突爆發以來的又一次考驗。</div>
+                                <div class="action-buttons">
+                                    <a href="https://www.google.com/search?q=Global%20Markets%20Monitor%20-%20IMF%20Connect" target="_blank" class="btn-link btn-outline" onclick="event.stopPropagation()">SEARCH</a>
+                                    <a href="https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEtdPRqLff4n-UTlHYFLtZGOXD4tx1IuI_d-vSsK0Ko5zvhkt_cASaXakfiQUrVjPe_4_G4qoYZ070pdN3of73G0m7Na6gA_-KYeMUdAKESmVvKJbxRwl16z2wnaGbui8jiz_ZqDfHKarUHSkr6" target="_blank" class="btn-link btn-primary" onclick="event.stopPropagation()">READ ↗</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
             </div>
         </div>
+        
     </div>
-
-
-    <div class="section-title" id="sec-finance">Business & Finance // 全球商業與金融趨勢</div>
-
-    <!-- FIN_TW -->
-    <div class="topic-card">
-        <div class="row-top">
-            <div class="col-meta"><span class="risk-badge badge-green">低度風險</span><h2 class="topic-title">台灣半導體產業鏈與AI應用創新</h2><div class="risk-reason"><strong>亮點：</strong>台灣在全球半導體供應鏈的核心地位鞏固，並積極布局AI創新應用，為經濟成長提供穩健支撐。</div></div>
-            <div class="col-summary"><p class="summary-text">台灣半導體產業在全球供應鏈中佔據主導地位，尤其在晶圓代工和先進製程方面表現卓越。隨著全球人工智慧技術的爆發性成長，台灣晶片製造商和相關產業鏈正積極投入AI晶片設計、高效運算及邊緣AI應用，成為推動全球AI發展的關鍵力量。政府與企業合作推動產業升級，吸引國際投資，進一步鞏固台灣在未來科技發展中的核心角色。然而，地緣政治風險和全球市場波動仍是潛在挑戰，需持續關注。</p></div>
-            <div class="col-more"><a href="https://news.google.com/search?q=%E5%8F%B0%E7%81%A3%E5%8D%8A%E5%B0%8E%E9%AB%94%E7%94%A2%E6%A5%AD%E9%8F%88%E8%88%87AI%E6%87%89%E7%94%A8%E5%89%B5%E6%96%B0" target="_blank" class="btn-search"><span>⚡</span>LATEST 24H<br>即時追蹤 ↗</a></div>
+    
+    <div class="section-group" id="sec-finance-tw">
+        <div class="section-header">
+            <div class="section-title">台灣財金動態</div>
+            <div class="section-line"></div>
         </div>
-        <div class="row-bottom">
-            <div class="sources-grid six-cols">
-                <div class="source-item" onclick="this.classList.toggle('flipped')"><div class="flip-inner"><div class="flip-front"><div class="source-img" style="background-image: url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=1000&auto=format&fit=crop'); background-size: cover; background-position: center;"></div><div class="source-text-box"><span class="source-tag">[經濟日報]</span><div class="source-title">台積電營收再創新高，AI晶片訂單助攻</div></div></div><div class="flip-back"><div class="back-title">全球半導體龍頭台積電受惠AI需求，營收表現強勁</div><div class="back-summary">台積電公布最新財報，營收表現超出市場預期，再次創下新高紀錄。主要動能來自於人工智慧（AI）晶片需求的強勁增長，全球科技巨頭對先進AI處理器的需求旺盛，使得台積電的先進製程產能利用率持續滿載。儘管整體經濟面臨不確定性，但AI趨勢為半導體產業注入了強心針。台積電預計將繼續投資於新技術研發和擴大產能，以滿足AI市場的龐大需求，鞏固其全球領導地位。</div><div class="back-action"><span class="back-hint">TAP TO FLIP</span><div class="action-buttons"><a href="https://www.google.com/search?q=TSMC%20revenue%20hits%20new%20high%2C%20boosted%20by%20AI%20chip%20orders" data-original-title="TSMC revenue hits new high, boosted by AI chip orders" target="_blank" class="btn-link alt" onclick="event.stopPropagation()">🔍 搜尋</a><a href="https://money.udn.com/money/story/5612/7966666" target="_blank" class="btn-link" onclick="event.stopPropagation()">閱讀原文 ↗</a></div></div></div></div></div>
-                <div class="source-item" onclick="this.classList.toggle('flipped')"><div class="flip-inner"><div class="flip-front"><div class="source-img" style="background-image: url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=1000&auto=format&fit=crop'); background-size: cover; background-position: center;"></div><div class="source-text-box"><span class="source-tag">[工商時報]</span><div class="source-title">聯發科布局生成式AI，搶攻邊緣運算商機</div></div></div><div class="flip-back"><div class="back-title">台灣晶片設計大廠聯發科積極開發AI晶片，瞄準邊緣AI市場</div><div class="back-summary">台灣IC設計龍頭聯發科正積極布局生成式人工智慧（Generative AI）領域，加大對邊緣AI晶片的研發投入。面對智慧型手機、物聯網和汽車電子等領域對高效能、低功耗AI運算的需求，聯發科推出了多款整合AI處理器的新晶片，旨在提升裝置的AI能力。此舉有助於聯發科在全球AI晶片市場中開拓新的增長點，並與國際大廠競爭，進一步鞏固台灣在AI供應鏈中的關鍵地位。</div><div class="back-action"><span class="back-hint">TAP TO FLIP</span><div class="action-buttons"><a href="https://www.google.com/search?q=MediaTek%E5%B8%83%E5%B1%80Generative%20AI%2C%20seizing%20edge%20computing%20opportunities" data-original-title="MediaTek布局Generative AI, seizing edge computing opportunities" target="_blank" class="btn-link alt" onclick="event.stopPropagation()">🔍 搜尋</a><a href="https://ctee.com.tw/news/tech/777777" target="_blank" class="btn-link" onclick="event.stopPropagation()">閱讀原文 ↗</a></div></div></div></div></div>
-                <div class="source-item" onclick="this.classList.toggle('flipped')"><div class="flip-inner"><div class="flip-front"><div class="source-img" style="background-image: url('https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1000&auto=format&fit=crop'); background-size: cover; background-position: center;"></div><div class="source-text-box"><span class="source-tag">[台灣證券交易所]</span><div class="source-title">台灣科技股表現亮眼，指數屢創新高</div></div></div><div class="flip-back"><div class="back-title">受惠半導體與AI產業蓬勃發展，台灣股市科技板塊表現強勢</div><div class="back-summary">受惠於半導體產業的強勁需求和人工智慧（AI）技術的快速發展，台灣科技類股近期表現亮眼，帶動台灣加權指數多次突破歷史新高。國際資金持續流入台灣股市，顯示投資者對台灣科技產業前景充滿信心。尤其是在AI伺服器、散熱模組、電源供應器等相關供應鏈個股，受到市場高度關注。然而，投資者仍需留意全球經濟情勢變化及地緣政治風險對市場的潛在影響。</div><div class="back-action"><span class="back-hint">TAP TO FLIP</span><div class="action-buttons"><a href="https://www.google.com/search?q=Taiwanese%20tech%20stocks%20shine%2C%20index%20repeatedly%20hits%20new%20highs" data-original-title="Taiwanese tech stocks shine, index repeatedly hits new highs" target="_blank" class="btn-link alt" onclick="event.stopPropagation()">🔍 搜尋</a><a href="https://www.twse.com.tw/news/XXXXX" target="_blank" class="btn-link" onclick="event.stopPropagation()">閱讀原文 ↗</a></div></div></div></div></div>
-                <div class="source-item" onclick="this.classList.toggle('flipped')"><div class="flip-inner"><div class="flip-front"><div class="source-img" style="background-image: url('https://ec.ltn.com.tw/assets/images/1200_ec.png'); background-size: cover; background-position: center;"></div><div class="source-text-box"><span class="source-tag">[自由財經]</span><div class="source-title">台灣政府推動半導體人才培育計畫，強化競爭力</div></div></div><div class="flip-back"><div class="back-title">為應對產業需求，台灣政府積極投入半導體人才培育與攬才</div><div class="back-summary">面對全球半導體人才短缺的挑戰，台灣政府正大力推動一系列人才培育計畫，旨在為半導體產業輸送更多高素質的專業人才。這些計畫包括加強與大學的合作、提供實習機會、吸引海外優秀人才回流，以及提供研發補助。政府希望透過此舉，不僅能滿足本地產業的擴張需求，也能鞏固台灣在全球半導體領域的長期競爭力。這項策略性投資對於維護台灣在核心科技供應鏈中的關鍵地位至關重要。</div><div class="back-action"><span class="back-hint">TAP TO FLIP</span><div class="action-buttons"><a href="https://www.google.com/search?q=Taiwanese%20government%20promotes%20semiconductor%20talent%20cultivation%20program%20to%20enhance%20competitiveness" data-original-title="Taiwanese government promotes semiconductor talent cultivation program to enhance competitiveness" target="_blank" class="btn-link alt" onclick="event.stopPropagation()">🔍 搜尋</a><a href="https://ec.ltn.com.tw/article/breakingnews/4672222" target="_blank" class="btn-link" onclick="event.stopPropagation()">閱讀原文 ↗</a></div></div></div></div></div>
-                <div class="source-item" onclick="this.classList.toggle('flipped')"><div class="flip-inner"><div class="flip-front"><div class="source-img" style="background-image: url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=1000&auto=format&fit=crop'); background-size: cover; background-position: center;"></div><div class="source-text-box"><span class="source-tag">[Digitimes]</span><div class="source-title">封測廠訂單滿載，高階AI晶片需求旺盛</div></div></div><div class="flip-back"><div class="back-title">受惠於AI晶片訂單激增，台灣IC封測廠產能利用率逼近滿載</div><div class="back-summary">台灣積體電路封裝測試（IC封測）業者近期迎來訂單滿載的盛況，主要動能來自於高階人工智慧（AI）晶片的強勁需求。AI晶片對先進封裝技術如CoWoS的需求日益增加，使得相關供應鏈廠商產能利用率持續攀升。隨著AI應用場景不斷擴大，對晶片效能和穩定性的要求也越高，台灣封測廠憑藉其技術優勢，在全球AI產業鏈中扮演著不可或缺的角色，預計未來幾季仍將維持強勁成長動能。</div><div class="back-action"><span class="back-hint">TAP TO FLIP</span><div class="action-buttons"><a href="https://www.google.com/search?q=OSATs%20fully%20booked%20as%20high-end%20AI%20chip%20demand%20soars" data-original-title="OSATs fully booked as high-end AI chip demand soars" target="_blank" class="btn-link alt" onclick="event.stopPropagation()">🔍 搜尋</a><a href="https://www.digitimes.com.tw/tech/dt/n/shwnws.asp?CnlID=1&id=666666" target="_blank" class="btn-link" onclick="event.stopPropagation()">閱讀原文 ↗</a></div></div></div></div></div>
-                <div class="source-item" onclick="this.classList.toggle('flipped')"><div class="flip-inner"><div class="flip-front"><div class="source-img" style="background-image: url('https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1000&auto=format&fit=crop'); background-size: cover; background-position: center;"></div><div class="source-text-box"><span class="source-tag">[中央廣播電台]</span><div class="source-title">科技部長：台灣將打造AI生態系國家隊</div></div></div><div class="flip-back"><div class="back-title">台灣科技部宣示將整合資源，建立國家級AI創新生態系統</div><div class="back-summary">台灣科技部長近日表示，政府將全力打造國家級人工智慧（AI）生態系統，目標是整合產學研資源，形成「AI國家隊」。這項計畫旨在加速台灣在AI技術研發、應用創新和產業轉型方面的進程。透過跨部會合作與資金投入，政府希望能夠吸引更多國內外AI人才，並支持新創企業發展，將台灣從半導體製造重鎮，進一步升級為全球AI解決方案的創新中心，搶佔未來科技制高點。</div><div class="back-action"><span class="back-hint">TAP TO FLIP</span><div class="action-buttons"><a href="https://www.google.com/search?q=Science%20Minister%3A%20Taiwan%20to%20build%20AI%20ecosystem%20national%20team" data-original-title="Science Minister: Taiwan to build AI ecosystem national team" target="_blank" class="btn-link alt" onclick="event.stopPropagation()">🔍 搜尋</a><a href="https://www.rti.org.tw/news/view/id/2200000" target="_blank" class="btn-link" onclick="event.stopPropagation()">閱讀原文 ↗</a></div></div></div></div></div>
+
+        
+        <div class="topic-card">
+            <div class="row-top">
+                <div class="col-meta">
+                    <span class="risk-badge bg-green-100 text-green-800">股市狂飆</span>
+                    <h2 class="topic-title">市場淡化戰爭陰霾，台股強勢突破36,000點改寫歷史新高</h2>
+                    <div class="risk-reason"><strong>INTEL:</strong> 投資人重燃對AI發展的信心，加上台積電法說會即將登場，資金大舉回流科技股，推升大盤指數創下史無前例的高峰。</div>
+                </div>
+                <div class="col-summary">
+                    <p class="summary-text">2026年4月14日，無懼於週末中東美伊談判的破裂，台股在開盤後展現強大韌性，加權指數一路狂飆突破36,000點大關，最高來到36,117點以上，刷新歷史新天價。市場判斷中東局勢不至於引發全面失控的石油危機，資金迅速轉回AI概念股與半導體供應鏈。權王台積電盤中更衝上2,040元的歷史天價，為即將到來的法說會行情提前預熱，帶動整體電子族群百花齊放。</p>
+                </div>
+                <div class="col-more">
+                    <a href="https://news.google.com/search?q=Taiwan+Stock+Market+TSMC+Record+High" target="_blank" class="btn-search">GLOBAL TRACKING ↗</a>
+                </div>
+            </div>
+            <div class="row-bottom">
+                <div class="sources-grid">
+                    
+                    <div class="source-item" onclick="this.classList.toggle('flipped')">
+                        <div class="flip-inner">
+                            <div class="flip-front">
+                                <div class="source-img" style="background-image: url('https://today-obs.line-scdn.net/0hqUKBpGmFLnp2OzHA7fdRLU5tIgtFXTRzVF9nSFFpdBhcF257HlV9GVRsc1ZTCG1-VlgxGlppdRheWDx4TA/w1200');"></div>
+                                <div class="source-text-box">
+                                    <span class="source-tag">[LINE TODAY]</span>
+                                    <div class="source-title">台股掀翻天花板，加權指數狂噴改寫歷史新高</div>
+                                </div>
+                            </div>
+                            <div class="flip-back">
+                                <div class="back-title">無懼中東地緣干擾，資金爆發湧入股市</div>
+                                <div class="back-summary">雖然中東局勢依然緊張，但投資人見油價未見持續性失控，立刻放下心中大石。台股在美股收高的激勵下，開盤即衝破36,000點大關，創下36,117點的歷史新紀錄，展現極強的多頭氣勢[2.4]。</div>
+                                <div class="action-buttons">
+                                    <a href="https://www.google.com/search?q=%E5%8F%B0%E8%82%A1%E9%96%8B%E7%9B%A4%E7%9B%B4%E6%8E%A5%E6%8A%8A%E5%A4%A9%E8%8A%B1%E6%9D%BF%E6%8E%80%E7%BF%BB%E4%BA%86%E5%8A%A0%E6%AC%8A%E6%8C%87%E6%95%B8%E7%8B%82%E5%99%B4%E4%B8%8A36117%E9%BB%9E%E6%94%B9%E5%AF%AB%E6%AD%B7%E5%8F%B2%E6%96%B0%E9%AB%98%20-%20LINE%20TODAY" target="_blank" class="btn-link btn-outline" onclick="event.stopPropagation()">SEARCH</a>
+                                    <a href="https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGZytWN3xDRnOju_0wgXTanqW6qNcVtdufTxwQ6eGR6mF_M5ebyxRBl0u9BVZWu9-xoOkQv82R8MILdA8KAwJrb7e7otm92orKsoiNfBjbBpPLEioD7do_VvX1jQC4i6cc2PTPTU6s=" target="_blank" class="btn-link btn-primary" onclick="event.stopPropagation()">READ ↗</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="source-item" onclick="this.classList.toggle('flipped')">
+                        <div class="flip-inner">
+                            <div class="flip-front">
+                                <div class="source-img" style="background-image: url('https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1000&auto=format&fit=crop');"></div>
+                                <div class="source-text-box">
+                                    <span class="source-tag">[新浪财经]</span>
+                                    <div class="source-title">AI交易回歸，台股無視中東風險強勢創新高</div>
+                                </div>
+                            </div>
+                            <div class="flip-back">
+                                <div class="back-title">AI熱潮抵銷地緣風險，台股跑贏亞太指數</div>
+                                <div class="back-summary">市場重新回歸對AI人工智慧股的追逐，抹去了自二月底中東衝突爆發以來的跌幅。台灣加權指數今年漲幅已高達約25%，大幅領先MSCI亞太指數，顯示外資與內資對台灣科技產業的高度依賴。</div>
+                                <div class="action-buttons">
+                                    <a href="https://www.google.com/search?q=AI%E4%BA%A4%E6%98%93%E5%9B%9E%E5%BD%92%E5%8F%B0%E8%82%A1%E5%88%9B%E6%96%B0%E9%AB%98%20-%20%E6%96%B0%E6%B5%AA%E8%B4%A2%E7%BB%8F" target="_blank" class="btn-link btn-outline" onclick="event.stopPropagation()">SEARCH</a>
+                                    <a href="https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG4o3ndqNWvzT0yQoArs1IDinDJH0DpjwGpbHdrSM-2k8Z8BZApNLM6fiuGaBK7y1Q3Q8_SsZ0KKZv2ciNWyH0EO6US8QZ-Cq3WhjgdSGUsBZ7W_9eX20ih0IsuFYvo9630vRfMZ-2P07my1Gy_LaxHfhzvUTNTTBloqKgEzaPPsgMyipfm8A==" target="_blank" class="btn-link btn-primary" onclick="event.stopPropagation()">READ ↗</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="source-item" onclick="this.classList.toggle('flipped')">
+                        <div class="flip-inner">
+                            <div class="flip-front">
+                                <div class="source-img" style="background-image: url('https://money.udn.com/static/img/moneyudn.jpg');"></div>
+                                <div class="source-text-box">
+                                    <span class="source-tag">[經濟日報]</span>
+                                    <div class="source-title">淡化戰爭衝擊，台股創高期待雙王法說</div>
+                                </div>
+                            </div>
+                            <div class="flip-back">
+                                <div class="back-title">AI概念股擴散，企業獲利上修預期濃烈</div>
+                                <div class="back-summary">隨著市場情緒趨於穩定，投資人焦點轉回企業基本面。大立光與台積電的法說會接續登場，AI訂單的供不應求讓法人看好台股企業獲利將進一步上修，帶動周邊載板、散熱及設備等中小型股連動表現。</div>
+                                <div class="action-buttons">
+                                    <a href="https://www.google.com/search?q=4%E6%9C%8814%E6%97%A5%E7%9B%A4%E5%89%8D%EF%BC%8F%E6%B7%A1%E5%8C%96%E6%88%B0%E7%88%AD%E8%A1%9D%E6%93%8A%E5%8F%B0%E8%82%A1%E5%89%B5%E9%AB%98%E6%9C%9F%E5%BE%85%E9%9B%99%E7%8E%8B%E6%B3%95%E8%AA%AAAI%20%E6%A6%82%E5%BF%B5%E7%99%BE%E8%8A%B1%E9%BD%8A%E6%94%BE%7C%20%E5%B8%82%E5%A0%B4%E7%84%A6%E9%BB%9E%20-%20%E7%B6%93%E6%BF%9F%E6%97%A5%E5%A0%B1" target="_blank" class="btn-link btn-outline" onclick="event.stopPropagation()">SEARCH</a>
+                                    <a href="https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEilKPKbpPJG7mAQDHbkaOlzCG91E63Td9T-NEkSk_dZh81CiKW0ieOnOj2Vsj4hkYSYlQmIMl5DGXlIFsvR_jCiFEhSGPHLgLWRh_nGvYea3NiBhS8whScyI8EEb753CdzflHqT9BAskT-LqpoffcmjzlTfPbq6HD31ud1BpmW9qw=" target="_blank" class="btn-link btn-primary" onclick="event.stopPropagation()">READ ↗</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="source-item" onclick="this.classList.toggle('flipped')">
+                        <div class="flip-inner">
+                            <div class="flip-front">
+                                <div class="source-img" style="background-image: url('https://img.technews.tw/wp-content/uploads/2025/06/30172051/shutterstock_2409936519.jpg');"></div>
+                                <div class="source-text-box">
+                                    <span class="source-tag">[TechNews]</span>
+                                    <div class="source-title">台積電創2,040元新天價，貢獻大盤點數</div>
+                                </div>
+                            </div>
+                            <div class="flip-back">
+                                <div class="back-title">護國神山發威，台積電市值突破52兆</div>
+                                <div class="back-summary">台積電股價在14日盤中最高衝至2,040元的歷史新高點，單日上漲50元，一舉將公司市值推升至近53兆元新台幣，對大盤指數的貢獻達近400點，成為帶領台股闖關的最大功臣。</div>
+                                <div class="action-buttons">
+                                    <a href="https://www.google.com/search?q=%E5%8F%B0%E7%A9%8D%E9%9B%BB%E5%89%B52040%20%E5%85%83%E6%96%B0%E5%A4%A9%E5%83%B9%EF%BC%8C%E5%8F%B0%E8%82%A1%E8%A1%9D%E6%96%B0%E9%AB%98%E7%AA%81%E7%A0%B436200%20%E9%BB%9E%20-%20%E8%B2%A1%E7%B6%93%E6%96%B0%E5%A0%B1" target="_blank" class="btn-link btn-outline" onclick="event.stopPropagation()">SEARCH</a>
+                                    <a href="https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEkSNs4n49sxObayOnEfn3ZtDZ5rUvp4h5_SEzZb_W4gNNQhg7MQbRVyjXQFBfbbh6fHbk3A5jjHia6l-7eI4PPDDLcX9sSj6pSiA9h3RmCuLYRpCfgrz78Vk7aQKM7xRg7TWnrzAuMZStY8CMIUwZ42-sRSEYt0julMU7ziNp4puAvg1oVS3v41epqvGTU" target="_blank" class="btn-link btn-primary" onclick="event.stopPropagation()">READ ↗</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="source-item" onclick="this.classList.toggle('flipped')">
+                        <div class="flip-inner">
+                            <div class="flip-front">
+                                <div class="source-img" style="background-image: url('https://money.udn.com/static/img/moneyudn.jpg');"></div>
+                                <div class="source-text-box">
+                                    <span class="source-tag">[經濟日報]</span>
+                                    <div class="source-title">台積電法說會將至，半導體ETF盤中飆新高</div>
+                                </div>
+                            </div>
+                            <div class="flip-back">
+                                <div class="back-title">半導體族群集體走強，ETF跟隨創高</div>
+                                <div class="back-summary">美國費半指數連漲帶動台灣相關供應鏈，有「台版費半」之稱的新光臺灣半導體30等相關ETF也在14日盤中創下歷史新高價。投資人看好半導體後市，大舉透過ETF佈局相關類股。</div>
+                                <div class="action-buttons">
+                                    <a href="https://www.google.com/search?q=%E5%8F%B0%E7%A9%8D%E9%9B%BB%E6%B3%95%E8%AA%AA%E6%9C%83%E5%B0%87%E5%88%B0%E9%80%99ETF%20%E7%9B%A4%E4%B8%AD%E9%A3%86%E6%AD%B7%E5%8F%B2%E6%96%B0%E9%AB%98%20-%20%E7%B6%93%E6%BF%9F%E6%97%A5%E5%A0%B1" target="_blank" class="btn-link btn-outline" onclick="event.stopPropagation()">SEARCH</a>
+                                    <a href="https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFhYb0dm-4jFYQpUcjf2VfKMy5O5nIN0QJ0jArvhCznP7PsP0pFuTZJBtGVFvHRNvCSpM3KpD6K7mawX9OOnJbESZ9nkZdBsUrddgE_ON2ED17nIRZmnezXhYPCdxEYBsHJPNB5yA8ieYuVMazqn-p_YEQj1hc1GgbUYItPuW3C" target="_blank" class="btn-link btn-primary" onclick="event.stopPropagation()">READ ↗</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="source-item" onclick="this.classList.toggle('flipped')">
+                        <div class="flip-inner">
+                            <div class="flip-front">
+                                <div class="source-img" style="background-image: url('https://images.unsplash.com/photo-1611974717483-58da3c1c4ad6?q=80&w=1000&auto=format&fit=crop');"></div>
+                                <div class="source-text-box">
+                                    <span class="source-tag">[CMoney]</span>
+                                    <div class="source-title">3月營收陸續公布，大型權值股展現韌性</div>
+                                </div>
+                            </div>
+                            <div class="flip-back">
+                                <div class="back-title">上市櫃公司營收報捷，支撐台股基本面</div>
+                                <div class="back-summary">隨著四月中旬上市櫃公司陸續公布3月營收，統計顯示有超過五分之ㄧ的公司營收年增率大於25%。強勁的實體經濟數據成為台股無畏外在政治風險，持續突破前高的最強硬底氣。</div>
+                                <div class="action-buttons">
+                                    <a href="https://www.google.com/search?q=2026%E5%B9%B44%E6%9C%8814%E6%97%A5%E5%8F%B0%E8%82%A1%E5%A4%A7%E5%9E%8B%E5%85%AC%E5%8F%B83%E6%9C%88%E7%87%9F%E6%94%B6%E4%B8%80%E8%A6%BD%EF%BC%88%E6%96%B0%E5%A2%9E1%E5%AE%B6%EF%BC%89%20-%20%E8%82%A1%E5%B8%82%E7%88%86%E6%96%99%E5%90%8C%E5%AD%B8%E6%9C%83%20-%20%E7%90%86%E8%B2%A1%E5%AF%B6" target="_blank" class="btn-link btn-outline" onclick="event.stopPropagation()">SEARCH</a>
+                                    <a href="https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGai28yeH9Rgs3MZ7aR1ovNuXgIO13-Os2LnYvidA5TX4xIbmIP_kK9ymrMN5rSjdDZuRZFvcM_T0RNwxNjEfUAnLFXcUnKgpIfNprCfJQh3HyJ9h6n6Xt7PlsUZOEdDUmQRZOTrMj8Qw==" target="_blank" class="btn-link btn-primary" onclick="event.stopPropagation()">READ ↗</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
             </div>
         </div>
+        
     </div>
-
-    <!-- FIN_GL -->
-    <div class="topic-card">
-        <div class="row-top">
-            <div class="col-meta"><span class="risk-badge badge-yellow">一般風險</span><h2 class="topic-title">全球通膨降溫與央行貨幣政策展望</h2><div class="risk-reason"><strong>亮點：</strong>儘管通膨有降溫跡象，但各國央行對降息仍持謹慎態度，影響全球資本市場的資金流動。</div></div>
-            <div class="col-summary"><p class="summary-text">隨著全球供應鏈恢復穩定和能源價格趨於平緩，多國通膨數據顯示出降溫跡象。然而，勞動力市場的韌性與服務業通膨的黏性使得各國央行在貨幣政策上仍持謹慎態度。美國聯準會、歐洲央行等主要央行暗示可能維持高利率更長時間，市場普遍預期降息時程可能延後。這將影響全球股市、債市及匯率走勢，投資者需密切關注各國央行的最新聲明、經濟數據以及地緣政治事件對通膨預期的潛在影響，以調整投資策略。</p></div>
-            <div class="col-more"><a href="https://news.google.com/search?q=%E5%85%A8%E7%90%83%E9%80%9A%E8%86%A8%E9%99%8D%E6%BA%AB%E8%88%87%E5%A4%AE%E8%A1%8C%E8%B2%A8%E5%B9%A3%E6%94%BF%E7%AD%96%E5%B1%95%E6%9C%9B" target="_blank" class="btn-search"><span>⚡</span>LATEST 24H<br>即時追蹤 ↗</a></div>
+    
+    <div class="section-group" id="sec-finance-gl">
+        <div class="section-header">
+            <div class="section-title">全球財經動態</div>
+            <div class="section-line"></div>
         </div>
-        <div class="row-bottom">
-            <div class="sources-grid six-cols">
-                <div class="source-item" onclick="this.classList.toggle('flipped')"><div class="flip-inner"><div class="flip-front"><div class="source-img" style="background-image: url('https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1000&auto=format&fit=crop'); background-size: cover; background-position: center;"></div><div class="source-text-box"><span class="source-tag">[金融時報]</span><div class="source-title">聯準會重申對抗通膨決心，降息前景不明</div></div></div><div class="flip-back"><div class="back-title">美國聯邦準備理事會主席表示，目前不急於降息</div><div class="back-summary">美國聯準會（Fed）主席鮑爾在最新公開談話中重申，將維持對抗通膨的堅定立場，並表示在通膨率持續朝2%目標邁進之前，不急於啟動降息循環。此番言論強化了市場對聯準會將長期維持高利率的預期，導致公債殖利率上揚，股市波動。儘管近期通膨數據有所緩和，但勞動力市場的強勁表現和服務業通膨壓力，使得聯準會傾向於採取謹慎觀望態度。投資者將密切關注未來的經濟數據和聯準會的政策指引。</div><div class="back-action"><span class="back-hint">TAP TO FLIP</span><div class="action-buttons"><a href="https://www.google.com/search?q=Fed%20reiterates%20commitment%20to%20fight%20inflation%2C%20rate%20cut%20outlook%20uncertain" data-original-title="Fed reiterates commitment to fight inflation, rate cut outlook uncertain" target="_blank" class="btn-link alt" onclick="event.stopPropagation()">🔍 搜尋</a><a href="https://www.ft.com/content/fed-reiterates-commitment-to-fight-inflation" target="_blank" class="btn-link" onclick="event.stopPropagation()">閱讀原文 ↗</a></div></div></div></div></div>
-                <div class="source-item" onclick="this.classList.toggle('flipped')"><div class="flip-inner"><div class="flip-front"><div class="source-img" style="background-image: url('https://images.unsplash.com/photo-1559526324-4b87b5e36e44?q=80&w=1000&auto=format&fit=crop'); background-size: cover; background-position: center;"></div><div class="source-text-box"><span class="source-tag">[路透社]</span><div class="source-title">歐洲央行維持利率不變，暗示可能夏季降息</div></div></div><div class="flip-back"><div class="back-title">歐洲央行按兵不動，但對未來幾個月降息持開放態度</div><div class="back-summary">歐洲中央銀行（ECB）最新會議決議維持主要再融資利率不變，符合市場預期。然而，歐洲央行總裁拉加德表示，如果通膨趨勢持續朝目標發展，央行可能在夏季啟動降息循環。此番言論被市場解讀為明確的降息訊號，儘管仍需依賴未來經濟數據的支持。歐洲央行的謹慎態度反映出其在應對通膨與支持經濟成長之間的微妙平衡，這將對歐元區的債券市場和股市產生重要影響。</div><div class="back-action"><span class="back-hint">TAP TO FLIP</span><div class="action-buttons"><a href="https://www.google.com/search?q=ECB%20holds%20rates%20steady%2C%20hints%20at%20possible%20summer%20rate%20cut" data-original-title="ECB holds rates steady, hints at possible summer rate cut" target="_blank" class="btn-link alt" onclick="event.stopPropagation()">🔍 搜尋</a><a href="https://www.reuters.com/markets/europe/ecb-holds-rates-steady-hints-possible-summer-rate-cut-2024-05-15/" target="_blank" class="btn-link" onclick="event.stopPropagation()">閱讀原文 ↗</a></div></div></div></div></div>
-                <div class="source-item" onclick="this.classList.toggle('flipped')"><div class="flip-inner"><div class="flip-front"><div class="source-img" style="background-image: url('https://images.unsplash.com/photo-1559526324-4b87b5e36e44?q=80&w=1000&auto=format&fit=crop'); background-size: cover; background-position: center;"></div><div class="source-text-box"><span class="source-tag">[彭博社]</span><div class="source-title">全球服務業通膨頑固，阻礙央行降息進程</div></div></div><div class="flip-back"><div class="back-title">主要經濟體服務業物價上漲壓力持續，延緩央行降息腳步</div><div class="back-summary">儘管全球商品通膨有所緩和，但主要經濟體的服務業通膨仍顯頑固，成為各國央行降息路徑上的主要障礙。勞動力市場的吃緊導致工資上漲，進而推高服務業成本，使物價壓力難以迅速回落至目標水平。分析師指出，服務業通膨的黏性意味著央行需要更長時間觀察數據，才能確定通膨已被完全控制。這將導致利率長期保持在較高水平，對經濟活動和企業投資帶來持續影響。</div><div class="back-action"><span class="back-hint">TAP TO FLIP</span><div class="action-buttons"><a href="https://www.google.com/search?q=Global%20services%20inflation%20proves%20sticky%2C%20hindering%20central%20bank%20rate%20cuts" data-original-title="Global services inflation proves sticky, hindering central bank rate cuts" target="_blank" class="btn-link alt" onclick="event.stopPropagation()">🔍 搜尋</a><a href="https://www.bloomberg.com/news/articles/2024-05-14/global-services-inflation-proves-sticky-hindering-central-bank-rate-cuts" target="_blank" class="btn-link" onclick="event.stopPropagation()">閱讀原文 ↗</a></div></div></div></div></div>
-                <div class="source-item" onclick="this.classList.toggle('flipped')"><div class="flip-inner"><div class="flip-front"><div class="source-img" style="background-image: url('https://images.unsplash.com/photo-1559526324-4b87b5e36e44?q=80&w=1000&auto=format&fit=crop'); background-size: cover; background-position: center;"></div><div class="source-text-box"><span class="source-tag">[華爾街日報]</span><div class="source-title">新興市場面臨美元強勢挑戰，資本外流壓力增</div></div></div><div class="flip-back"><div class="back-title">美元維持強勢，對新興市場貨幣和資本流動構成挑戰</div><div class="back-summary">由於美國聯準會維持高利率政策，美元近期保持強勢，對新興市場經濟體構成壓力。美元走強可能導致新興市場貨幣貶值，增加其以外幣計價的債務負擔，並引發資本外流。為穩定本國貨幣，一些新興市場央行可能被迫推遲降息，甚至考慮升息，這將對其國內經濟成長造成抑制。投資者正密切關注新興市場的財政健康狀況和央行的政策應對，以評估潛在的投資風險。</div><div class="back-action"><span class="back-hint">TAP TO FLIP</span><div class="action-buttons"><a href="https://www.google.com/search?q=Emerging%20markets%20face%20strong%20dollar%20challenge%2C%20capital%20outflow%20pressure%20rises" data-original-title="Emerging markets face strong dollar challenge, capital outflow pressure rises" target="_blank" class="btn-link alt" onclick="event.stopPropagation()">🔍 搜尋</a><a href="https://www.wsj.com/finance/currencies/emerging-markets-strong-dollar-capital-outflow-2024-05-13" target="_blank" class="btn-link" onclick="event.stopPropagation()">閱讀原文 ↗</a></div></div></div></div></div>
-                <div class="source-item" onclick="this.classList.toggle('flipped')"><div class="flip-inner"><div class="flip-front"><div class="source-img" style="background-image: url('https://images.unsplash.com/photo-1611974717483-58da3c1c4ad6?q=80&w=1000&auto=format&fit=crop'); background-size: cover; background-position: center;"></div><div class="source-text-box"><span class="source-tag">[CNBC]</span><div class="source-title">國際貨幣基金組織上調全球經濟成長預期</div></div></div><div class="flip-back"><div class="back-title">IMF對全球經濟前景表示樂觀，上調2024年成長預期</div><div class="back-summary">國際貨幣基金組織（IMF）近日發布最新《世界經濟展望》報告，小幅上調了2024年全球經濟成長預期，儘管仍維持謹慎態度。IMF指出，全球經濟展現出超出預期的韌性，通膨正在緩慢下降，勞動力市場表現穩健。然而，報告也警告地緣政治緊張、債務高企以及持續的通膨壓力仍是潛在風險。此次上調預期為市場帶來一絲樂觀情緒，但各國仍需警惕經濟下行風險，並採取適當的政策應對。</div><div class="back-action"><span class="back-hint">TAP TO FLIP</span><div class="action-buttons"><a href="https://www.google.com/search?q=IMF%20upgrades%20global%20economic%20growth%20forecast" data-original-title="IMF upgrades global economic growth forecast" target="_blank" class="btn-link alt" onclick="event.stopPropagation()">🔍 搜尋</a><a href="https://www.cnbc.com/2024/05/14/imf-upgrades-global-economic-growth-forecast-amid-resilience.html" target="_blank" class="btn-link" onclick="event.stopPropagation()">閱讀原文 ↗</a></div></div></div></div></div>
-                <div class="source-item" onclick="this.classList.toggle('flipped')"><div class="flip-inner"><div class="flip-front"><div class="source-img" style="background-image: url('https://images.unsplash.com/photo-1611974717483-58da3c1c4ad6?q=80&w=1000&auto=format&fit=crop'); background-size: cover; background-position: center;"></div><div class="source-text-box"><span class="source-tag">[經濟學人]</span><div class="source-title">全球央行普遍面臨兩難，經濟數據成決策關鍵</div></div></div><div class="flip-back"><div class="back-title">在通膨與經濟成長之間，各國央行面臨貨幣政策兩難抉擇</div><div class="back-summary">全球主要中央銀行正普遍面臨一個兩難局面：如何在持續降低通膨的同時，避免過度緊縮導致經濟衰退。儘管通膨數據有所改善，但服務業價格的黏性、地緣政治風險以及財政政策的不確定性，使得央行決策者們不得不保持高度謹慎。未來的經濟數據，特別是就業報告和核心通膨指標，將成為他們評估下一步貨幣政策走向的關鍵。這種不確定性預計將在未來幾個月持續影響全球金融市場的表現。</div><div class="back-action"><span class="back-hint">TAP TO FLIP</span><div class="action-buttons"><a href="https://www.google.com/search?q=Global%20central%20banks%20face%20common%20dilemma%2C%20economic%20data%20key%20to%20decisions" data-original-title="Global central banks face common dilemma, economic data key to decisions" target="_blank" class="btn-link alt" onclick="event.stopPropagation()">🔍 搜尋</a><a href="https://www.economist.com/finance/2024/05/13/global-central-banks-dilemma" target="_blank" class="btn-link" onclick="event.stopPropagation()">閱讀原文 ↗</a></div></div></div></div></div>
+
+        
+        <div class="topic-card">
+            <div class="row-top">
+                <div class="col-meta">
+                    <span class="risk-badge bg-yellow-100 text-yellow-800">市場震盪與轉機</span>
+                    <h2 class="topic-title">美伊危機牽動全球市場神經：由恐慌下殺轉向謹慎樂觀</h2>
+                    <div class="risk-reason"><strong>INTEL:</strong> 市場情緒隨著中東地緣政治的瞬息萬變而劇烈擺盪，油價急漲與供應鏈風險考驗著各國央行的通膨政策與投資人的風險偏好。</div>
+                </div>
+                <div class="col-summary">
+                    <p class="summary-text">2026年4月13日，美伊和談破裂的消息首先重擊全球市場，引發投資人避險拋售，導致美股三大指數及亞股盤初全面下挫，布蘭特原油更一度飆破100美元。然而到了4月14日，隨著川普暗示雙方對話大門尚未完全關閉，市場將焦點轉移至抗通膨與第一季企業財報。受惠於微軟等AI相關科技股的強勁財報預期，華爾街最終收復失地並以收紅作結。儘管如此，隨時可能實施的海峽封鎖仍是懸在全球經濟上方的未爆彈。</p>
+                </div>
+                <div class="col-more">
+                    <a href="https://news.google.com/search?q=Global+Markets+Wall+Street+Oil+Prices" target="_blank" class="btn-search">GLOBAL TRACKING ↗</a>
+                </div>
+            </div>
+            <div class="row-bottom">
+                <div class="sources-grid">
+                    
+                    <div class="source-item" onclick="this.classList.toggle('flipped')">
+                        <div class="flip-inner">
+                            <div class="flip-front">
+                                <div class="source-img" style="background-image: url('https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1000&auto=format&fit=crop');"></div>
+                                <div class="source-text-box">
+                                    <span class="source-tag">[Business Today]</span>
+                                    <div class="source-title">對伊朗問題重燃希望，科技股領漲華爾街</div>
+                                </div>
+                            </div>
+                            <div class="flip-back">
+                                <div class="back-title">美股逆轉收紅，投資人對地緣風險逐漸麻木</div>
+                                <div class="back-summary">儘管週末談判遭遇挫折，但川普表示伊朗願意妥協的言論讓市場看見一線曙光。標準普爾500與納斯達克指數分別上漲超過1%，科技板塊在軟體股的帶動下創下一年來最大單日漲幅[2.15]。</div>
+                                <div class="action-buttons">
+                                    <a href="https://www.google.com/search?q=Wall%20Street%20Rallies%20On%20Iran%20Hopes%20As%20Tech%20Leads%20Gains%20-%20Business%20Today" target="_blank" class="btn-link btn-outline" onclick="event.stopPropagation()">SEARCH</a>
+                                    <a href="https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF9waiPM01uGoijFVVcgAVO1C5PXt30DNgwKkCFu195_Vby0hJ6CCMuLgQzacuh5UdnnC1lX_N7Fuz7jaRHQMIBb8CtG6UjpdwuTu-j2-bLPq4VTQDQNl7BBB3FRkOE-TXpd4yFFy36RPTfNsXC6ABYUmWl2MKIZpr_t3Fy6irI38oyhIjpdqjIWRqlAnf3uo4EjrSYM3luzlaxR-Fj" target="_blank" class="btn-link btn-primary" onclick="event.stopPropagation()">READ ↗</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="source-item" onclick="this.classList.toggle('flipped')">
+                        <div class="flip-inner">
+                            <div class="flip-front">
+                                <div class="source-img" style="background-image: url('https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1000&auto=format&fit=crop');"></div>
+                                <div class="source-text-box">
+                                    <span class="source-tag">[Reuters]</span>
+                                    <div class="source-title">全球市場：股市上漲，油價與美元雙雙回落</div>
+                                </div>
+                            </div>
+                            <div class="flip-back">
+                                <div class="back-title">「交易希望而非結果」的市場邏輯</div>
+                                <div class="back-summary">亞洲股市週二跟進華爾街反彈，原油價格則跌回每桶100美元以下。投資策略師指出，雖然封鎖依然實施，但外交途徑的保留足以支撐風險資產，市場目前選擇「交易希望」而非等待危機徹底解決。</div>
+                                <div class="action-buttons">
+                                    <a href="https://www.google.com/search?q=GLOBAL%20MARKETS-Stocks%20gain%2C%20oil%20and%20dollar%20retreat%20on%20hopes%20for%20US-Iran%20resolution" target="_blank" class="btn-link btn-outline" onclick="event.stopPropagation()">SEARCH</a>
+                                    <a href="https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGmThL97CdEo3c_bRxdCLmRc563W03rUTtsH7e8wBPfQZLTOT6_cE7HYqV9U_Pjrl_3tmvDwF4v0QhOMuyUzxaSrlkArXpNzCjUciXKoSZ1K3Jmb4u8wxAKFe-GzCi_q2ZL7X1FInWY_-DFKXH3yxrqbLukbG2OLsNReYpkIepF4VcD4IYc9uLJsqkMW4xa3KN27gCrrx_B-oIFKYaDWCvNQmmY9JUVfdJlbV6TKnfia9vDovnEJOE7yNlMS-Jg" target="_blank" class="btn-link btn-primary" onclick="event.stopPropagation()">READ ↗</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="source-item" onclick="this.classList.toggle('flipped')">
+                        <div class="flip-inner">
+                            <div class="flip-front">
+                                <div class="source-img" style="background-image: url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=1000&auto=format&fit=crop');"></div>
+                                <div class="source-text-box">
+                                    <span class="source-tag">[The Edge Singapore]</span>
+                                    <div class="source-title">亞洲股市受科技股帶動走高，油價下滑</div>
+                                </div>
+                            </div>
+                            <div class="flip-back">
+                                <div class="back-title">AI主題重新成為投資避風港</div>
+                                <div class="back-summary">投資人認為人工智慧產業受中東衝突影響較小，大筆資金重新湧入亞太科技股。MSCI亞太區科技指數跳升3.1%，在區域地緣政治局勢稍微放緩之際，為亞洲市場注入了強心針。</div>
+                                <div class="action-buttons">
+                                    <a href="https://www.google.com/search?q=Asian%20stocks%20rise%20led%20by%20tech%3B%20oil%20drops%20on%20Iran%20-%20The%20Edge%20Singapore" target="_blank" class="btn-link btn-outline" onclick="event.stopPropagation()">SEARCH</a>
+                                    <a href="https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEEPqqlnflprhcSz2dP6L72dkAabA8uXAeydMr6LmfZ3DKexEb6xXOYnqVM_Z2WeQbV0aJT6iwD-qeJlkEcjwkNHJsVUTUy-bGx4vpp8sgMx-_bVGoYxti-tWPXUD6kc7YhpW8gsNX7q1Q4exefPBhb0-XAenuxip08CaxqZ8BxktAL0FJy3DLtemAQdOfDMfgGTzX6S-ZI7sQ=" target="_blank" class="btn-link btn-primary" onclick="event.stopPropagation()">READ ↗</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="source-item" onclick="this.classList.toggle('flipped')">
+                        <div class="flip-inner">
+                            <div class="flip-front">
+                                <div class="source-img" style="background-image: url('https://static.toiimg.com/thumb/msid-130239793,width-1280,height-720,imgsize-1111329,resizemode-4,overlay-toi_sw,pt-32,y_pad-600/photo.jpg');"></div>
+                                <div class="source-text-box">
+                                    <span class="source-tag">[Times of India]</span>
+                                    <div class="source-title">美伊談判失敗引發華爾街周一早盤大跌</div>
+                                </div>
+                            </div>
+                            <div class="flip-back">
+                                <div class="back-title">VIX恐慌指數攀升，能源供給擔憂浮現</div>
+                                <div class="back-summary">回顧13日的盤況，因美國軍方啟動對伊朗海域的無差別封鎖，華爾街在週一開盤時面臨沉重賣壓。CBOE恐慌指數（VIX）一度攀升至20以上，顯示投資人對於戰爭帶來的經濟衰退與通膨急升感到憂心。</div>
+                                <div class="action-buttons">
+                                    <a href="https://www.google.com/search?q=US%20stock%20markets%20today%20%28April%2013%2C%202026%29%3A%20Dow%2C%20S%26P%20500%2C%20Nasdaq%20fall%20as%20US-Iran%20talks%20fail%3B%20oil%20surge%20unsettles%20investors%20-%20The%20Times%20of%20India" target="_blank" class="btn-link btn-outline" onclick="event.stopPropagation()">SEARCH</a>
+                                    <a href="https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGMrOk0XyZ8iHHqd77dDSbEQOPucrGWLDlhuVYJYP2BoDy7VEbK1oc98OoF0wz__i_UIeoGG8eT7mp4flciXTSBKBUfbiQZ71vtAIZ9JwHGwMsTSt3JgcGw2nyZ4k6vjAcvyyRkjBw8r9E02n4BAkt2OVpdW9wkX4EueddWWuBzTMRQeN6XdhM7rncf69NcOgWSnGG791pbyZcLLQoWWgsUF6h8zV_ugzv2dhEKvkYwT8QoDPCqeySt6Wu_5Qf6FVANtVV3hQ6V4pnYgzyNOMl3nSpVJ8nLJJHteNS0UaWI_5B4mB-fttT3ZF1ZSUDTtLYTeSJUVBkivx6YvVlA-f_3JkWa1qBEBsO08fdw1g==" target="_blank" class="btn-link btn-primary" onclick="event.stopPropagation()">READ ↗</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="source-item" onclick="this.classList.toggle('flipped')">
+                        <div class="flip-inner">
+                            <div class="flip-front">
+                                <div class="source-img" style="background-image: url('https://vertexaisearch.cloud.google.com/og-image.png');"></div>
+                                <div class="source-text-box">
+                                    <span class="source-tag">[Axon Markets Blog]</span>
+                                    <div class="source-title">每日市場觀察：全球市場陷入防禦性交易</div>
+                                </div>
+                            </div>
+                            <div class="flip-back">
+                                <div class="back-title">大宗商品主導行情，黃金與能源成避險首選</div>
+                                <div class="back-summary">隨著霍爾木茲海峽再度成為供應風險的暴風眼，交易員正重新評估中東局勢對美國通膨展望的影響。資金明顯轉向黃金及防禦性板塊，而航空、運輸等對能源價格敏感的週期性股票則持續承壓。</div>
+                                <div class="action-buttons">
+                                    <a href="https://www.google.com/search?q=Daily%20Market%20Update%3A%2013%20April%2C%202026%20%7C%20Axon%20Markets%20Blog" target="_blank" class="btn-link btn-outline" onclick="event.stopPropagation()">SEARCH</a>
+                                    <a href="https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQELb8kgCO6h6hCnWOrAlh177YjfKWtD4zgnLto4SDPsEn0oiJBytqHc4UzSlrHstAv0LUTTm_KAoR8d7xMZbeI-OtavKKHHyVpI-NQuAj2TH1tqE9UHAfAmDryd55vjeVk7_CWYkxFWN4gUhmbmL5Y-HcOsSK539trOAyK28g==" target="_blank" class="btn-link btn-primary" onclick="event.stopPropagation()">READ ↗</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="source-item" onclick="this.classList.toggle('flipped')">
+                        <div class="flip-inner">
+                            <div class="flip-front">
+                                <div class="source-img" style="background-image: url('https://www.oppenheimer.com/getContentAsset/0e5e6a5d-9a10-4e00-b8a3-29f35a43e6a7/33625549-0e29-4393-872f-57c883e29d53/24-SMD-02-NEW-John-Stoltzfus-Market-Strategyv3.jpg?language=en');"></div>
+                                <div class="source-text-box">
+                                    <span class="source-tag">[Oppenheimer]</span>
+                                    <div class="source-title">市場策略分析：關注第一季財報表現</div>
+                                </div>
+                            </div>
+                            <div class="flip-back">
+                                <div class="back-title">財報季揭幕，暫時轉移地緣政治焦點</div>
+                                <div class="back-summary">分析師指出，儘管中東危機是全球市場不可忽視的負面因素，但隨著美國大型銀行陸續公佈優於預期的第一季財報（預期獲利年增12.6%），穩健的企業基本面成為支撐美國股市沒有全面崩潰的重要基石。</div>
+                                <div class="action-buttons">
+                                    <a href="https://www.google.com/search?q=04/13/2026%20Market%20Strategy%20-%20Oppenheimer.com" target="_blank" class="btn-link btn-outline" onclick="event.stopPropagation()">SEARCH</a>
+                                    <a href="https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHBftZiqv9GGym24Ey_XXYoR58tawABt5iVxT3-49nTCLDFehgjRoiOHdkNS7ocyZHtZ3NPKAhfLridH7BsyyREiegc-P6OuF5lQhF8eUSaljRGG3jku_5R9ve8pxCMpD9ffWHnMMyWv8qk_zWxyVd12rDSFZy6o7g4XKDNsKiKXOI=" target="_blank" class="btn-link btn-primary" onclick="event.stopPropagation()">READ ↗</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
             </div>
         </div>
+        
     </div>
+    
 
     <footer>
-        GLOBAL INTELLIGENCE v8.13 // TEMPLATE EDITION // SECURED TRANSMISSION
+        STRATEGIC INTELLIGENCE SYSTEM v9.1 // PHASE 3: MODEL PYRAMID ARCHITECTURE // POWERED BY GEMINI-3.1-PRO-PREVIEW
     </footer>
 </div>
 
 <script>
-    function customSmoothScroll(targetId) {
-        const targetElement = document.getElementById(targetId);
-        if (!targetElement) return;
-        const startPosition = window.pageYOffset;
-        const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - 20; 
-        const distance = targetPosition - startPosition;
-        const duration = 800; 
-        let startTimestamp = null;
-
-        function step(timestamp) {
-            if (!startTimestamp) startTimestamp = timestamp;
-            const progress = timestamp - startTimestamp;
-            const currentProgress = Math.min(progress / duration, 1);
-            const easeInOutCubic = t => t < 0.5 
-                ? 4 * t * t * t 
-                : 1 - Math.pow(-2 * t + 2, 3) / 2;
-            const easeMultiplier = easeInOutCubic(currentProgress);
-            window.scrollTo(0, startPosition + (distance * easeMultiplier));
-            if (progress < duration) {
-                window.requestAnimationFrame(step);
-            }
-        }
-        window.requestAnimationFrame(step);
+    function scrollToSection(id) {
+        document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
     }
 </script>
 
