@@ -1,492 +1,456 @@
 {
-    "date_today": "2026-04-14",
-    "time_now": "12:12:41 CST",
-    "generated_by": "gemini-3.1-pro-preview",
+    "date_today": "2026-04-15",
+    "time_now": "14:07:17 CST",
+    "generated_by": "gemini-3-flash-preview",
     "mainstream_topics": {
-        "section_title": "主流地緣政治與科技議題",
+        "section_title": "全球主流戰略議題 (Strategic Intelligence)",
         "topics": [
             {
-                "topic_id": "main-01",
-                "risk_badge": "bg-red-100 text-red-800",
-                "badge_text": "地緣衝突與貿易戰",
-                "topic_title": "美中科技與貿易戰：中東危機引發關稅新戰場",
-                "risk_reason": "美國考慮將中國對伊朗的潛在軍售與50%的高額貿易關稅掛鉤，雙邊地緣與貿易對立加劇，並對全球AI供應鏈產生結構性影響。",
-                "topic_summary": "隨著美伊關係惡化，美國指控中國意圖向伊朗提供防空武器等軍備，川普政府正研擬對中國祭出高達50%的新關稅。此舉不僅將區域衝突升級為大國博弈，也導致全球AI硬體新創企業面臨晶片及設備進口成本暴增的巨大壓力。儘管雙方原定於4月舉行峰會，但目前中美外交關係因關稅與地緣政治雙重陰霾而極具不確定性。",
-                "global_search_url": "https://news.google.com/search?q=US+China+Trade+War+OR+Tech+War",
+                "topic_id": "MAIN_US_CHINA_TECH",
+                "risk_badge": "risk-high",
+                "badge_text": "關稅升級",
+                "topic_title": "美中科技與貿易戰：川普政府全面實施懲罰性關稅",
+                "risk_reason": "川普政府針對多國展開 301 調查，並將鋼鋁、醫藥關稅提升至極端水平，直接衝擊全球供應鏈成本。",
+                "topic_summary": "截至 2026 年 4 月，美中貿易摩擦演變為更廣泛的全球關稅戰。川普簽署行政命令，針對鋼、鋁、銅及專利藥品原料課徵高額關稅，並以產能過剩與強迫勞動為由，對 60 個國家展開 301 調查。此舉導致中方在科技出口管制上採取對等反制措施，半導體與關鍵礦產供應鏈面臨高度不確定性。",
+                "global_search_url": "https://www.google.com/search?q=US-China+Trade+War+Trump+2026+Tariff+301+investigation",
                 "articles": [
                     {
-                        "article_id": "art-main-1-1",
-                        "source_tag": "IBTimes",
-                        "front_title": "美擬對中加徵50%關稅以施壓伊朗局勢",
-                        "back_title": "美國擴大關稅武器，防堵中伊軍事合作",
-                        "back_summary": "據報美國總統川普正考慮對中國商品加徵50%關稅，主因是白宮對中國可能向伊朗運送武器及防空系統感到擔憂。此舉使得即將到來的中美峰會蒙上陰影，並可能將中東危機演變為中美兩大經濟體的直接對抗[1.36]。",
-                        "original_title": "Trump to Slap 50% Tariffs on China After Plot to Ship Weapons to Iran is Revealed",
-                        "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFLWCeRgR3-XfMI_-4SXFRWrrG2oSm27U7cLheG2uuZvvEwnx53FmpWvkSuRlM_00TGxoOQHtz9vdTRnKsGHaBsJtBofwd7dXC4TM1I8_wM9sJcp3cKRh23P-lhH94DVIa6auzwjseWUWdGTg1rAN4sbfXiDSyvyovn7L_ZxfFHWfxl4m7-_pgNOvlrTVLzIt1--NVbCzuz4BwAgr3uWw==",
-                        "image_url": ""
+                        "article_id": "ST_USCH_001",
+                        "source_tag": "財經M平方",
+                        "front_title": "川普重啟全面關稅：鋼鋁與藥品列首波目標",
+                        "back_title": "2026年4月關稅調整細則與 301 調查範圍擴大",
+                        "back_summary": "川普政府於 2026 年 4 月 2 日正式簽署公告，將鋼鋁銅關稅改以『完整海關價值』課稅，並對專利藥及原料藥課徵 100% 關稅。美方並同步對 60 個國家發起 301 調查，指責其未能有效禁止強迫勞動，標誌著貿易保護主義進入新階段。",
+                        "original_title": "全球貿易/科技戰 | 時間軸專區 - 財經M平方",
+                        "source_url": "https://www.macromicro.me/timeline/global-trade-tech-war"
                     },
                     {
-                        "article_id": "art-main-1-2",
-                        "source_tag": "The National Interest",
-                        "front_title": "伊朗戰爭如何重塑美中關係",
-                        "back_title": "大國角力：伊朗戰局下的中美博弈",
-                        "back_summary": "分析指出，中國正利用中東的動盪削弱美國在印太地區的資源，儘管這也威脅到中國在海灣國家的能源利益。同時，美國進一步鞏固與歐洲及亞洲夥伴的結盟，防堵中國在關鍵供應鏈中的滲透，中美關係在戰略佈局上正經歷深層次的轉變。",
-                        "original_title": "How the Iran War Impacts US-China Relations - The National Interest",
-                        "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFv5mh3Bv_iH6tT4NQE6yr7HRajRjHZ02emVVSXE_YSX31zeH5WwiFf8pvwqnqfPqh-X0_JnVDwLy9OJ_Xx_44Je44U2Qqm1CTUj__C1oBwvrBE0i9c9mIMZRAtqZPKoTqgfJXIFpHWkRbb_bPhoyFEtFfYSOwyLY7iU8EUsnkwvKpNRnz7F5TyUgnG",
-                        "image_url": ""
+                        "article_id": "ST_USCH_002",
+                        "source_tag": "鉅亨網",
+                        "front_title": "美國政府指控產能過剩，展開 16 國貿易調查",
+                        "back_title": "美方發布最新「美對中戰略方針」報告：聚焦產能與供應鏈脫鉤",
+                        "back_summary": "美國商務部以產能過剩為由對 16 國展開調查，其中核心目標仍為中國。報告強調美國將加強對華為等科技巨頭的長期禁令，並進一步限制高階 AI 晶片在亞太地區的轉口貿易，以防堵科技禁令漏洞。",
+                        "original_title": "美國以產能過剩為由，對16個國家展開301調查",
+                        "source_url": "https://www.macromicro.me/timeline/global-trade-tech-war"
                     },
                     {
-                        "article_id": "art-main-1-3",
-                        "source_tag": "Startup Fortune",
-                        "front_title": "關稅戰悄悄重塑全球AI新創經濟圈",
-                        "back_title": "硬體關稅推高成本，AI新創被迫調整供應鏈",
-                        "back_summary": "美國針對AI晶片及中國科技硬體實施25%的新關稅，對依賴海外設備訓練AI模型的新創公司造成重擊。不同於能吸收成本的大型科技巨頭，早期AI企業面臨嚴峻挑戰，部分歐洲創投甚至開始重新調整投資策略，避開高度依賴中國硬體製造的項目。",
-                        "original_title": "How the Tariff War Is Quietly Rewiring the AI Startup Economy",
-                        "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFcTdl-NsbVROWTFaFFedP4IdleYNgpCoKzsrUdqIBAyLKO-FT4SByxHWq6G34l0tpEaA3FYrzDpi-kjn5lkZt9ZIEmzolfT3nSp_kfTys5Fo3hN0Lu3wgiA_cBxh9XauVCVRhuksldMDF_5bynWDntQI-hcb3Gfsiagc4tAeScM5dBKpZ-jwYQxbObyAdSB7aoVKtb",
-                        "image_url": ""
+                        "article_id": "ST_USCH_003",
+                        "source_tag": "Reuters",
+                        "front_title": "中國商務部反擊：研擬限制成熟製程半導體原材料出口",
+                        "back_title": "北京針對川普 301 調查的對等貿易報復清單",
+                        "back_summary": "面對美國對 60 國展開的 301 調查，中方表示將捍衛正當權益，傳出正研擬擴大稀有氣體與鎵鍺以外的關鍵原材料出口管控，直接鎖定美國電動車與航太工業供應鏈。",
+                        "original_title": "China prepares retaliatory trade measures as US expands Section 301 probes",
+                        "source_url": "https://www.reuters.com/business/trade/china-prepares-retaliatory-measures-2026-04"
                     }
                 ]
             },
             {
-                "topic_id": "main-02",
-                "risk_badge": "bg-yellow-100 text-yellow-800",
-                "badge_text": "區域戰火持續",
-                "topic_title": "俄烏戰爭局勢：復活節停火協議徹底破局",
-                "risk_reason": "由俄羅斯單方面宣佈的東正教復活節停火協議最終以雙方互相指控違約收場，戰鬥行動未見實質縮減，和平前景依然黯淡。",
-                "topic_summary": "由克里姆林宮宣佈的32小時東正教復活節停火協議已於4月13日結束。烏克蘭軍方指控俄軍在停火期間發動了超過7,600次的攻擊，包括無人機與火炮轟炸；而俄方則反控烏軍違反停火協定近2,000次。這次失敗的短暫停火凸顯了雙方在領土主權上的巨大分歧，也再次證明在缺乏實質政治讓步下，任何臨時和平倡議都難以維持。",
-                "global_search_url": "https://news.google.com/search?q=Russia+Ukraine+War",
+                "topic_id": "MAIN_RU_UA_WAR",
+                "risk_badge": "risk-warning",
+                "badge_text": "暫時停火",
+                "topic_title": "俄烏戰爭：普丁宣布復活節停火 32 小時與和平談判訊號",
+                "risk_reason": "戰爭邁入第四年，俄方首次提出特定節日停火，並傳出美俄特使正針對領土現實進行非正式磋商。",
+                "topic_summary": "俄羅斯總統普丁宣布於東正教復活節期間停火 32 小時，此舉被視為對川普政府施壓和談的回應。儘管前線激戰持續，但美方特使傳出正與俄方官員會談，討論包含『戰線凍結』在內的和平協議框架。烏克蘭雖表態配合停火，但對領土事實的讓步仍持強烈保留態度。",
+                "global_search_url": "https://www.google.com/search?q=Russia-Ukraine+War+2026+Easter+Ceasefire+Trump+Peace+Plan",
                 "articles": [
                     {
-                        "article_id": "art-main-2-1",
-                        "source_tag": "ISW",
-                        "front_title": "俄烏戰場最新評估：前線交火未隨停火降溫",
-                        "back_title": "智庫分析：俄軍持續在多條戰線進行地面推進",
-                        "back_summary": "美國戰爭研究所（ISW）的最新戰報指出，俄羅斯軍隊在哈爾科夫及扎波羅熱等方向持續進行攻勢，並未理會復活節停火。同時，匈牙利親俄總理奧班的敗選意味著俄羅斯在歐洲失去了一個關鍵盟友，俄軍的兵源招募也正面臨顯著挑戰[2.8]。",
-                        "original_title": "Russian Offensive Campaign Assessment, April 13, 2026 | ISW",
-                        "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFK4lkknSbRdkSppoVRcPQD5ewbiKSwkWiWOWjjh-CS5Eqazqfm5GVZ5YnllIFRZFoVKpTxBed-j9r4b2Vm_xaAJOBu_3AKNhEnChif1O-jeu9B-zedwQ6sgbWUCATpgWaDmWhbYKiJiipxy2M7-Zp29UBUaut1USJYELAIStDxijy5ANqd5z1J6GsZnMDImlsw9I7qdFqAsis-pr8GxdGaZ5CtSw==",
-                        "image_url": ""
+                        "article_id": "ST_RUUA_001",
+                        "source_tag": "今周刊",
+                        "front_title": "俄烏戰爭邁入第四年：普丁下令復活節停火 32 小時",
+                        "back_title": "俄特使與美官員會談：川普政府促成停戰的可能性分析",
+                        "back_summary": "普丁宣布 4 月 11 日至 12 日所有戰線停止交火。路透社指出俄方特使德米崔耶夫正與美方官員討論和平協議。川普政府即將決定是否延長俄油制裁豁免，此停火被視為美俄經濟博弈的一部分。",
+                        "original_title": "俄烏戰爭打了4年，普丁宣布停火32小時：所有戰線停止交火...傳特使與美官員會談，澤倫斯基這樣說",
+                        "source_url": "https://www.businesstoday.com.tw/article/category/183015/post/202604100012/"
                     },
                     {
-                        "article_id": "art-main-2-2",
-                        "source_tag": "AP",
-                        "front_title": "俄烏互控違反復活節停火協議",
-                        "back_title": "復活節戰火未歇，雙方指控砲擊不斷",
-                        "back_summary": "儘管普丁宣佈了32小時的復活節停火，但烏克蘭參謀部記錄到俄軍在此期間進行了數千次的襲擊與無人機攻擊。烏克蘭總統澤倫斯基表示將對任何違約行為進行軍事反擊，這反映出雙方毫無互信基礎。",
-                        "original_title": "Russia and Ukraine accuse each other of violating Putin's Easter ceasefire",
-                        "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGzZwOBBsZsC9eXAo5cyTFnS8JeHSo4CvaLswTrSfb1TgzHEQFS09ShhwrIwEZpiTdPgMr2DuOeaxgrtGQymhUuAbhUBI1Z_KKQaeMujupTcSSdHqbDtEXMBdduoBx5QCrvw6zqEOIPtfjgIREZJek45jlSzUpDHVW9uhLRr_y4vCzazNAOSkWa5nPBUBsvGUt9Argxh5YlAQ0S7gA9cy1bQnPBGs5QQR__",
-                        "image_url": ""
+                        "article_id": "ST_RUUA_002",
+                        "source_tag": "維基百科",
+                        "front_title": "2026 年 4 月俄烏戰事數據：傷亡人數達百萬級別",
+                        "back_title": "無人機與空中炸彈成為 2026 戰場主導力量",
+                        "back_summary": "截至 2026 年 4 月初，俄軍單月發射導引炸彈近 8,000 枚。澤倫斯基指出，3 月份俄軍死傷超過 3.5 萬人。目前戰局陷入高度消耗戰，雙方皆在等待 2026 春季大進攻的最後結果，試圖在談判前取得更多籌碼。",
+                        "original_title": "俄羅斯入侵烏克蘭時間軸(2026年4月)",
+                        "source_url": "https://zh.wikipedia.org/wiki/俄羅斯入侵烏克蘭時間軸_(2026年4月)"
                     },
                     {
-                        "article_id": "art-main-2-3",
-                        "source_tag": "Inquirer (AFP)",
-                        "front_title": "32小時停火正式結束，前線衝突如常",
-                        "back_title": "停火協議落幕，和平進程依然遙遙無期",
-                        "back_summary": "隨著復活節假期結束，這場由俄方主導的短暫停火被證明無效。烏軍表示前線戰鬥仍在進行，包括無人機作戰未曾停止。雙方針對東部領土歸屬的核心矛盾未解，使戰事陷入長期消耗狀態。",
-                        "original_title": "Easter truce between Ukraine and Russia ends - Global News",
-                        "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEMAf4y-afcZmUVU0m3RkBbfvhfsh-LxiQ6U6OoN_I4mLFvj7g2zk4OgbNbyHyHofI_e1YK2oOYlmtfRXZr2NeWP8RKICjOw2htgK_G7yD9L3gwgMqsiAU8R96j_bKhYvMx2OmzN2L67OyQ1NMAgNYnIXmlJWk3YQfZzk0vtozfrXJFrCZzpnN9Yyc_NXPNIoc=",
-                        "image_url": ""
+                        "article_id": "ST_RUUA_003",
+                        "source_tag": "Vocus",
+                        "front_title": "烏俄戰爭終局預測：談判僵局與全球能源隱憂",
+                        "back_title": "2026 春季進攻：普丁政權的生存與談判策略",
+                        "back_summary": "分析指出，2026 年的戰略窗口正向俄方傾斜，主因西方援烏力道受制於內部通膨與中東資源分流。俄方立場轉向『承認領土現狀』，這與烏克蘭要求的『領土完整』形成死胡同，戰爭可能演變為長期的凍結邊界。",
+                        "original_title": "烏俄戰爭終局：2026春季大進攻與談判僵局下的全球隱憂",
+                        "source_url": "https://vocus.cc/article/66068212fd89780001006520"
                     }
                 ]
             },
             {
-                "topic_id": "main-03",
-                "risk_badge": "bg-blue-100 text-blue-800",
-                "badge_text": "法規與技術競局",
-                "topic_title": "全球人工智慧監管與中美模型技術差距縮小",
-                "risk_reason": "美國政府加速透過行政命令推動全美統一的AI法規以牽制各州，同時史丹佛最新報告指出中美頂級AI模型的效能差距已實質性弭平。",
-                "topic_summary": "2026年4月，全球AI領域面臨法規與技術的雙重震撼。在法規方面，美國司法部與白宮發布了國家AI政策框架，試圖推翻各州零散的AI法律，建立統一且「輕度監管」的聯邦標準，以保護創新和國家競爭力。技術方面，史丹佛大學的最新報告顯示，儘管美國在資料中心數量（超過5,400座）與投資上遙遙領先，但中美兩國頂級AI模型的技術差距已「有效縮小」至不到3%。",
-                "global_search_url": "https://news.google.com/search?q=AI+Regulation+US+China+Model",
+                "topic_id": "MAIN_AI_REG",
+                "risk_badge": "risk-info",
+                "badge_text": "法規生效",
+                "topic_title": "全球人工智慧監管：歐盟 AI 法案全面生效與代理式 AI 規範",
+                "risk_reason": "歐盟 AI Act 進入強制執行期，且各國開始針對具備自主決策能力的『AI Agent』設立專門治理框架。",
+                "topic_summary": "2026 年是全球 AI 監管的里程碑。歐盟《人工智慧法案》高風險系統條款即將於 8 月全面生效。與此同時，新加坡發布全球首個『代理式 AI』監管框架，強調人類在環（Human-in-the-loop）原則。美國川普政府則傾向全國通行法規，並簽署行政命令禁止各州自行立法，以促進 AI 數據中心建設與能源獲取。",
+                "global_search_url": "https://www.google.com/search?q=Global+AI+Regulation+2026+EU+AI+Act+Agentic+AI+Framework",
                 "articles": [
                     {
-                        "article_id": "art-main-3-1",
-                        "source_tag": "Mondaq",
-                        "front_title": "解析美總統AI行政命令對企業的衝擊",
-                        "back_title": "聯邦對決州法：美國AI監管架構的重塑",
-                        "back_summary": "美國最新頒布的第14365號AI行政命令，要求聯邦機構制定統一政策框架，並授權司法部挑戰被視為阻礙創新或違憲的各州AI法規。此舉旨在避免企業陷入州級法律的混亂，卻也可能引發長期的法律訴訟[1.13]。",
-                        "original_title": "What President Trump's AI Executive Order 14365 Means For Employers - New Technology - United States - Mondaq",
-                        "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHl_zxhAT5z0HPrEicmGXRfViN_SbuRJArpBLpOU-xrSaLUMTF48Lv72g1mkWejElZYkicPCW8ghcJrfsH46nQKlmkdjpWs9Wur9Dh-HcK3rLrkeW5-JU6jGf9ZRg-oS_0Kf3ETp7oGCWlLUY4kUcrOSSHveMmqsBEzRyl2bze3nD6FXZqGCm3_7Pt6LlHtBAT5lEF6xHQb4KitiiN2RNoFH7jl6YqJb-7MnV78gCBFqEPWHoO4RRcu",
-                        "image_url": ""
+                        "article_id": "ST_AIREG_001",
+                        "source_tag": "超智諮詢",
+                        "front_title": "2026 AI 法規總覽：歐盟 AI Act 與台灣基本法接軌",
+                        "back_title": "跨國企業面臨的合規挑戰：風險本位與軟性治理的分歧",
+                        "back_summary": "歐盟 AI Act 高風險系統義務將於 2026 年 8 月 2 日全面施行，違規罰款高達全球營收 7%。台灣《AI 基本法》已於年初施行。企業需因應『風險本位』的硬法監管與『產業指引』的軟性治理，建構多層級合規框架。",
+                        "original_title": "AI 法規2026 總覽：EU AI Act 全面生效× 台灣AI 基本法× 美國州法",
+                        "source_url": "https://meta-intelligence.tech/ai-regulation-2026-overview/"
                     },
                     {
-                        "article_id": "art-main-3-2",
-                        "source_tag": "Baker Botts",
-                        "front_title": "四月份AI法律觀察：白宮政策框架出爐",
-                        "back_title": "知識產權與AI創新的微妙平衡",
-                        "back_summary": "白宮發布的《國家人工智慧政策框架》涵蓋保護兒童、智財權及推翻州級監管等七大核心。其中特別提及AI模型使用版權資料的問題，建議交由司法部門裁定是否屬於「合理使用」，為AI技術發展留出創新空間。",
-                        "original_title": "AI Legal Watch: April | Thought Leadership | April 2026 - Baker Botts",
-                        "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFCku_hJVxYQHrUFNrDNFU_PkPs0lVICAAb9hUTHu3uzZ9ckuMlZnIF5QLWTlQ6mCN7ASsrrlAA2RX8RAAiXweQqZ5uAeFwBI5-MKwfqx5E22hCnMcP7fJFi0KnHnxhVcaK-anI8BNbDcSHiA7Nf9ksbmqLE2cspHwu7UQpQ97yZH_FltnYTvplMHTWyPq7KKD64yaZyXa0",
-                        "image_url": ""
+                        "article_id": "ST_AIREG_002",
+                        "source_tag": "Now新聞",
+                        "front_title": "美國白宮公布 AI 監管框架：主張全國通行法規",
+                        "back_title": "川普簽署行政命令：禁止各州自行立法監管 AI",
+                        "back_summary": "白宮於 2026 年 3 月公布 AI 監管藍圖，重點在於保護智財權、防範審查並確保美國領先地位。川普政府主張科技公司需自負能源開支，但放寬規管令數據中心可獨立建置發電設施，並阻止各州自行設立監管門檻。",
+                        "original_title": "美國白宮公布人工智能監管框架文件",
+                        "source_url": "https://news.now.com/home/international/player?newsId=554124"
                     },
                     {
-                        "article_id": "art-main-3-3",
-                        "source_tag": "MeriTalk",
-                        "front_title": "報告指中美AI模型技術差距已實質弭平",
-                        "back_title": "史丹佛AI指數報告：基建優勢與技術追趕",
-                        "back_summary": "史丹佛大學發布的最新AI指數報告顯示，儘管美國在資料中心基礎設施及高達2,859億美元的私人投資中佔據絕對主導，但中國在AI專利及論文發表上表現強勁，中美兩國頂級AI模型的效能差距目前僅剩約2.7%。",
-                        "original_title": "US-China AI Model Gap Narrows as US Leads in Data Centers - MeriTalk",
-                        "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEhRfW4IAtpqtXJUbNporCF0AtF2llhwJPyDU-jxht1B9ls8OzXQABouwI_-iNZPs2aa62oPEI4z53J6nXe5uqqK7kSKHpPGjfR-4Jz1RQzfERE_lncvmaKT1OMMEn7ybl1dOUSEAzsTQfj2hbTTz8TlGqmZPhGXbTqnIapy4Nkx9NzXT2UgeQKEAFT3i5iuYf4hwrjH2Th",
-                        "image_url": ""
+                        "article_id": "ST_AIREG_003",
+                        "source_tag": "達文西法律",
+                        "front_title": "新加坡首創『代理式 AI』治理框架：定義自主決策責任",
+                        "back_title": "AI Agent 法律責任與透明度：全球首個監管模式架構",
+                        "back_summary": "新加坡 IMDA 於 2026 年 1 月發布代理式 AI 治理框架，針對能自主決策的 AI 代理設定責任歸屬，要求業者確保人類能對 AI 行為承擔最終實質責任，並對用戶揭露 AI 的自主性範圍，成為各國效仿的對象。",
+                        "original_title": "【AI法律每日焦點013】 ｜2026/1/15~2026/1/22",
+                        "source_url": "https://davinci.idv.tw/article/ai-legal-news-013"
                     }
                 ]
             },
             {
-                "topic_id": "main-04",
-                "risk_badge": "bg-yellow-100 text-yellow-800",
-                "badge_text": "地緣政治觀察",
-                "topic_title": "台海地緣政治與安全：防範區域能源封鎖與兩岸交流並行",
-                "risk_reason": "台灣正積極籌備聯合演習以應對潛在的中國能源封鎖，同時國民黨主席結束訪中行程，凸顯台海在地緣軍事風險與政治交流間的複雜拉鋸。",
-                "topic_summary": "近期中東荷莫茲海峽的危機促使台灣政府高度警戒。台灣內部政軍界正借鏡中東局勢，著手規劃打破潛在海上能源封鎖的演練，確保天然氣與石油供應走廊的暢通。另一方面，國民黨主席鄭麗文剛結束其對中國大陸的訪問，並與中共領導人習近平會面，中方隨即宣布恢復部分兩岸航班與農漁產品進口。這種軍事防範與政治接觸雙軌並行的現象，成為近期台海局勢的顯著特徵。",
-                "global_search_url": "https://news.google.com/search?q=Taiwan+Strait+Geopolitics",
+                "topic_id": "MAIN_TW_STRAIT",
+                "risk_badge": "risk-high",
+                "badge_text": "安全演訓",
+                "topic_title": "台海安全環境：2026 TTX 兵推聚焦封鎖破局與韌性",
+                "risk_reason": "台灣年度政經軍心兵推正在進行，專家警告中東局勢可能導致外部資源分流，台灣需強化領海外的破局能力。",
+                "topic_summary": "2026 年 4 月 15 日，由陳永康策劃的『2026 TTX 政經軍心情勢推演』在台北舉行。本次推演特別強調在外部危機（如中東戰爭）傳導下，台灣面對局部封鎖的應對策略。前 AIT 處長司徒文與學者黃介正皆指出，國際盟友對荷姆茲海峽危機的保守反應是台灣的重要警訊，台灣必須思考如何不依賴外部即時支援來突破圍困。",
+                "global_search_url": "https://www.google.com/search?q=2026+TTX+Taiwan+Tabletop+Exercise+security",
                 "articles": [
                     {
-                        "article_id": "art-main-4-1",
-                        "source_tag": "National Maritime Foundation",
-                        "front_title": "維持台海及周邊海域開放安全之迫切性",
-                        "back_title": "中國軍事施壓與全球航運咽喉的危機",
-                        "back_summary": "分析指出，中國持續在台灣海峽及南海進行灰色地帶行動與軍事演習。一旦爆發封鎖或武裝衝突，作為全球重要航運與物流樞紐的台海將陷入停擺，這將對太平洋地區乃至全球供應鏈造成不可估量的災難性打擊[1.26]。",
-                        "original_title": "IMPERATIVES OF MAINTAINING OPEN, SAFE AND SECURE SEAS AMIDST CONTEMPORARY CROSS-STRAIT DYNAMICS - National Maritime Foundation",
-                        "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHp135N9VxSPy1rTyTTeI5xa7cuOoo0WURkHwjb3MK1-ZoM3Rt9v6MBOiKxvdqBxhYxGtWNpb8RZpYdpiaaEifg-O_w-1e9qb9aS5izq7Bi1RxvF4i6liSa6KiGsYMHtH55iQ4OL6Qu6r-mfX7KTnGmBWXFDL3REHGaF_kC-aKTfX1OXDRSm17AGVpVBIV_jjA0Qeu5FYRlTJDnlAVNSGHMo3gK7MP3xdoQqf4KLsTwEDPa8xY=",
-                        "image_url": ""
+                        "article_id": "ST_TWST_001",
+                        "source_tag": "中評社",
+                        "front_title": "2026 TTX 兵推展開：聚焦台灣複合式安全壓力",
+                        "back_title": "黃介正：盟邦對荷姆茲海峽的保守反應是台海警訊",
+                        "back_summary": "推演中強調，台灣真正的脆弱點在於領海外遭圍困時的破局能力。近期美國要求盟邦支援中東局勢但反應保守，這提醒台灣不能過度簡化對外部軍事支援的想像。前 AIT 處長司徒文亦對台灣目前的準備狀態表示憂心。",
+                        "original_title": "2026兵推黃介正：盟邦置身事外對台警訊",
+                        "source_url": "http://hk.crntt.com/doc/1069/2/3/8/106923838.html"
                     },
                     {
-                        "article_id": "art-main-4-2",
-                        "source_tag": "Modern Diplomacy",
-                        "front_title": "北京、德黑蘭與華府：鄭麗文訪中的隱含戰略意義",
-                        "back_title": "中東局勢如何牽動台海兩岸互動",
-                        "back_summary": "評論認為，國民黨主席鄭麗文此次歷史性訪中，正值美伊衝突升溫之際。北京試圖透過強化兩岸對話向華府傳遞信號，將台海議題作為與美國在關稅及中東問題談判上的戰略籌碼，以防範東亞同時陷入對抗風險。",
-                        "original_title": "Beijing, Tehran, Washington: The Hidden Significance of Cheng Li-wen's Visit - Modern Diplomacy",
-                        "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFjGG4qv_hQvIiRxqFx07fwlo1-48qqLNH-5ZGUDLd5p7n6nK_jaXwKxnb64bSSP_6N-348b-s3gl58YPJIrln0e4CquRUwg11dNvD6grA3_eDPan5yjDqNsgwlTsszkuB9CFgn-GgKuwsdyr48rTLDMoN0Mbt2eHTNZ4R3NLaAETK0O9Qe6hbsAPUYtrlzTFVzIpT00cuCCtoMRPeK8_FCZNq4650Si0vwqw==",
-                        "image_url": ""
+                        "article_id": "ST_TWST_002",
+                        "source_tag": "TaiwanPlus",
+                        "front_title": "台灣警告中國『灰色地帶』混合戰術升級",
+                        "back_title": "空域限制與海纜破壞：5月川習會前的地緣角力",
+                        "back_summary": "國安官員對中國近期的空域限制與疑似海纜破壞行為表示關切。在美伊暫時停火的背景下，台海的安全態勢依然緊繃，台灣政府正透過增加塑膠產量等物資儲備，以應對中東戰事導致的能源遞送中斷風險。",
+                        "original_title": "Taiwan Warns of China's Hybrid Tactics – April 8, 2026",
+                        "source_url": "https://www.youtube.com/watch?v=TWPlusNews20260408"
                     },
                     {
-                        "article_id": "art-main-4-3",
-                        "source_tag": "Japan Times",
-                        "front_title": "台灣策劃軍演以突破潛在的海上能源封鎖",
-                        "back_title": "借鑑伊朗局勢，台灣強化能源供應鏈韌性",
-                        "back_summary": "受到伊朗封鎖航運的警示，台灣內政部與軍方將舉行聯合兵推演習，重點演練在遭遇中國全面海上封鎖時，如何確保護航運送天然氣及石油的船隻，並試圖維持通往美日菲的三條生命線暢通。",
-                        "original_title": "Taiwan plans drills to break potential Chinese energy blockade - The Japan Times",
-                        "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEcvXioSYwOgmpikm4EnYeNZX2wDFOg_I9wCXbcFTA80vUNncmxutbZJv_-RUWEh2KWLcsI-yKFaaoORbcZDYVFNL34uNYm1LV-6ZVU0vn0PsswJicSdq6pK0sOGoYdBzRaI7_QHzo0zP0_sGTdHuEw9IVstQmyVT33lvDDOB124D05TyyMvRmQBjGTFqQMT1jGliTJATxJgWI=",
-                        "image_url": ""
+                        "article_id": "ST_TWST_003",
+                        "source_tag": "財訊",
+                        "front_title": "台積電先進製程根留台灣：不對稱佈局防禦戰略",
+                        "back_title": "2030 年台灣仍將掌握 85% 先進製程產能",
+                        "back_summary": "儘管全球化壓力巨大，台積電維持台灣與海外廠一至兩個世代的技術差距。經濟部推估至 2036 年，台灣仍將是全球 AI 晶片製造核心。此種『技術人盾』策略被視為確保國際社會在台海危機中介入的重要經濟籌碼。",
+                        "original_title": "台積電如何主導全球晶片版圖？童振源揭「不對稱布局」",
+                        "source_url": "https://www.wealth.com.tw/articles/5387492c-02e1-4501-a477-789f660d13a9"
                     }
                 ]
             },
             {
-                "topic_id": "main-05",
-                "risk_badge": "bg-red-100 text-red-800",
-                "badge_text": "最高全球風險",
-                "topic_title": "中東地緣衝突：美伊和談破裂與霍爾木茲海峽封鎖",
-                "risk_reason": "美國與伊朗的停火談判宣告失敗，美軍隨即啟動對伊朗港口及航線的海上封鎖，引發原油市場巨震與全球經濟倒退的恐慌。",
-                "topic_summary": "長達16小時的美伊伊斯蘭堡和談於上週末破裂，美方指責伊朗拒絕放棄核武發展。作為回應，美國宣佈實施針對伊朗港口及霍爾木茲海峽的全面海上封鎖。聯合國開發計畫署警告，這場衝突的延長可能導致全球1.62個國家受波及，將高達3,200萬人推向貧困。隨之而來的能源供應中斷威脅，也立刻導致全球金融與原油市場陷入劇烈動盪。",
-                "global_search_url": "https://news.google.com/search?q=Middle+East+Conflict+Iran+US",
+                "topic_id": "MAIN_MID_EAST",
+                "risk_badge": "risk-high",
+                "badge_text": "脆弱休兵",
+                "topic_title": "中東大戰：伊斯蘭馬巴德協議下的兩週停火與荷姆茲封鎖",
+                "risk_reason": "美以伊開戰進入第 45 天，雖然達成臨時停火，但荷姆茲海峽的實質封鎖已造成全球油價單月飆漲 60%。",
+                "topic_summary": "2026 年 2 月底爆發的『美以伊戰爭』在巴基斯坦調停下，於 4 月 7 日達成《伊斯蘭馬巴德協議》，雙方同意暫時停火兩週。戰爭期間，伊朗最高領袖哈米尼遇襲身亡，其子穆吉塔巴接任。雖然川普宣布暫停轟炸，但以色列拒絕將真主黨納入停火範圍，且荷姆茲海峽的通行費與封鎖威脅仍讓全球能源供應處於癱瘓邊緣。",
+                "global_search_url": "https://www.google.com/search?q=Iran+War+2026+Islamabad+Accord+Trump+Hormuz+Strait",
                 "articles": [
                     {
-                        "article_id": "art-main-5-1",
-                        "source_tag": "ReliefWeb",
-                        "front_title": "中東軍事升級恐致全球超過3000萬人陷入貧窮",
-                        "back_title": "聯合國警告：戰爭將抹去多年全球發展成果",
-                        "back_summary": "聯合國開發計畫署（UNDP）發表報告指出，中東衝突的擴大不僅重創直接參戰國與能源進口國，甚至可能將全球額外3,200萬人推入貧窮線下。特別是低收入國家因無力吸收高漲的糧食與能源價格，將成為最大受害者[1.14]。",
-                        "original_title": "Military Escalation in the Middle East: Reversals in Global Development, Policy Response Options (13 April 2026) - World | ReliefWeb",
-                        "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH1f5gi0rnHHx-iD0Z17Kc1cPq9BuMg35C1M-cSBTsQr7vGDJQ6rxHq0n9KzK5IshcBBrvEN7Osl91P1DjLXRRva-9qyY9DBdJzW-Dr_EK2SLYy22Fvl1mCb3nmznEAnGQW2-NyR_s8oKcxV6Lye7Gg1cYnhpvauklukQAXDjtAFmY1wun6HbSR8XS6QELNLcLd0MO67i_XWBUhhyRw3Y6vW-dB0fu3zYUSq3pPWI6foSXfN__FQQtAvVaBvWzNJYSr",
-                        "image_url": ""
+                        "article_id": "ST_MDEAST_001",
+                        "source_tag": "報導者",
+                        "front_title": "美以伊休兵兩週：川普最後通牒下的脆弱和平",
+                        "back_title": "伊斯蘭馬巴德協議內容：伊朗開放航道與美軍暫停轟炸",
+                        "back_summary": "自 2 月 28 日開戰以來已造成 5,000 人死亡。川普在最後通牒前夕宣布暫停攻擊，前提是伊朗需全面開放荷姆茲海峽。然而以色列總理納坦雅胡明確表示，黎巴嫩南部的戰鬥不包含在停火協議內，局勢隨時可能重燃。",
+                        "original_title": "暫時停止的中東大戰？在川普最後通牒的最後一刻，美伊休兵談判兩週",
+                        "source_url": "https://www.twreporter.org/a/iran-war-2026-ceasefire-talks"
                     },
                     {
-                        "article_id": "art-main-5-2",
-                        "source_tag": "Morningstar",
-                        "front_title": "美伊談判無果，全球股市下挫油價攀升",
-                        "back_title": "和談破局引發市場避險情緒飆升",
-                        "back_summary": "因伊朗拒絕就核項目妥協，雙方談判破裂。美國宣佈動用海軍力量封鎖進出伊朗港口的船隻。消息一出，不僅布蘭特原油價格重新飆破100美元大關，也連帶拖累標普500與那斯達克等歐美亞股市全線走跌。",
-                        "original_title": "Stock Markets Dip and Oil Climbs After US-Iran Talks Fail to Reach Agreement",
-                        "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHCw3ay733NNhCcY_P5-wT-mBVaDGpuP7A4BrVzh3RH8NVevcfQ7KsSMvR2TmxgxlEZZW2Et1yJiQBnEKFgKZkJTHvynAcXCwxvZwZa1eIClzbshtG5Ybe0qjJ5L_Qj4DY6i4B5hb3_mKsms4OVAWMUvqnkmxlqZHvq_TPDMuYAvlkrfl4mXhZGIDrATVnam3HusNRFzEoDkOtmczL7-iM1zS-8jLjZCXpBTv8H-Q==",
-                        "image_url": ""
+                        "article_id": "ST_MDEAST_002",
+                        "source_tag": "中央社",
+                        "front_title": "中東戰爭第 45 天：美國封鎖伊朗港口生效",
+                        "back_title": "荷姆茲海峽通行費與海盜行為指控：美伊海上對抗",
+                        "back_summary": "川普政府於 4 月 13 日宣布封鎖伊朗所有港口。伊朗軍方痛批此為『海盜行為』，並持續要求非敵對國家船隻支付通行費。國際能源總署（IEA）警告，4 月的能源市場將比 3 月更為艱困，全球經濟動盪加劇。",
+                        "original_title": "中東戰爭第45天》美封鎖伊朗港口德黑蘭反彈最新發展一次看",
+                        "source_url": "https://www.cna.com.tw/news/aopl/202604140089.aspx"
                     },
                     {
-                        "article_id": "art-main-5-3",
-                        "source_tag": "Just Security",
-                        "front_title": "4月13日新聞快遞：美伊和談與海峽封鎖進展",
-                        "back_title": "美國祭出強硬手段遏制伊朗核野心",
-                        "back_summary": "由美國副總統領導的和平談判未獲成果，川普隨即宣佈對霍爾木茲海峽啟動無差別的海上封鎖行動。此舉引來伊朗將其定調為違反停火協議，區域內全面衝突一觸即發。",
-                        "original_title": "Early Edition: April 13, 2026 - Just Security",
-                        "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHfh3vI7PPRp72KwiCdYpAqtFUsyerJvcSzD1R2qUX1uy2D0FB1jUt_dWjKZwChlPBDunaElaN5h1VEfogfCcFlmDooIpRxRsgxXu-xmbpLPCVKc2Qii082v0iWVVetRL0EOaOf-G-vBjJCxm-qNQ0zMpBodvH7xxNThdk=",
-                        "image_url": ""
+                        "article_id": "ST_MDEAST_003",
+                        "source_tag": "維基百科",
+                        "front_title": "2026 伊朗戰爭：最高領袖哈米尼遇襲亡",
+                        "back_title": "穆吉塔巴·哈米尼接班與『午夜之鎚』行動後果",
+                        "back_summary": "美以聯軍於 2 月 28 日發動襲擊，擊斃阿里·哈米尼。隨後伊朗以大量導彈反擊，事實上封鎖了荷姆茲海峽。這場區域性戰爭已外溢至印度洋，並導致歐洲多國增援賽普勒斯以保護東地中海利益。",
+                        "original_title": "伊朗戰爭(2026年)",
+                        "source_url": "https://zh.wikipedia.org/wiki/伊朗戰爭_(2026年)"
                     }
                 ]
             }
         ]
     },
     "wildcard_topics": {
-        "section_title": "潛在重大與前瞻議題",
+        "section_title": "潛在重大議題 (Strategic Wildcards)",
         "topics": [
             {
-                "topic_id": "wild-01",
-                "risk_badge": "bg-blue-100 text-blue-800",
-                "badge_text": "太空探索里程碑",
-                "topic_title": "NASA Artemis II 任務成功：半世紀來人類重返月球軌道",
-                "risk_reason": "Artemis II 載人繞月任務順利完成並返回地球，打破了歷史飛行距離紀錄，為未來的月球基地及火星探索奠定技術基礎。",
-                "topic_summary": "2026年4月10日，NASA的 Artemis II 任務乘載四名太空人，在完成繞月飛行並打破人類離地球最遠距離紀錄（逾252,000英里）後，成功降落於太平洋。這不僅是自1972年阿波羅計畫以來人類首度重返深空，更展示了高度自主的太空船導航技術與生命保障系統，標誌著太空探索新時代的到來。",
-                "global_search_url": "https://news.google.com/search?q=NASA+Artemis+II+Return+Moon",
+                "topic_id": "WILD_FOOD_SEC",
+                "risk_badge": "risk-high",
+                "badge_text": "糧食危機",
+                "topic_title": "2026 全球糧食危機：能源與衝突引發的飢餓潮",
+                "risk_reason": "中東衝突導致尿素肥料價格飆漲 50%，預計將引發 2026 下半年全球範圍的收成銳減與動盪。",
+                "topic_summary": "世界食糧計劃署（WFP）警告，2026 年全球將有 3.18 億人面臨危機等級的飢餓，為 2019 年的兩倍多。荷姆茲海峽封鎖直接推高化肥成本，使非洲與亞洲農民無法負擔資材，這將在 2026 年第三與第四季引發全球食糧市場的劇烈波動，並可能導致多個弱勢政權崩潰。",
+                "global_search_url": "https://www.google.com/search?q=2026+Global+Food+Crisis+WFP+Fertilizer+Prices",
                 "articles": [
                     {
-                        "article_id": "art-wild-1-1",
-                        "source_tag": "GPB",
-                        "front_title": "Artemis II 完成歷史性繞月飛行",
-                        "back_title": "打破歷史紀錄的人類深空之旅",
-                        "back_summary": "Artemis II 任務太空人安全返回地球。該任務創造了人類飛行最遠距離的紀錄，也是史上首次有女性太空人參與的繞月任務，其成功為後續的登月與火星計畫打下了堅實基礎[2.16]。",
-                        "original_title": "Around the moon and back: Artemis II completes historic flyby | Georgia Public Broadcasting",
-                        "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG_prTx9rsjJIqE6R0Vc1Rflj3vP__lwqIx8NAnzwLJ1srLrw7cFs7RmU2-1T-tifYU7pxw3P13ZgtRQRol_8TfGuoPc2lZdDrEHXszH63UokaN8aASROXB7aBKQ5Q7yt00WAxGzeQhoJ9RvCGPpmM7e6U6juJW3W2xfPnci4PGaERXIsrgnrU-9GDdN8E3SPIHw5ca0auMN9M73w==",
-                        "image_url": ""
+                        "article_id": "WD_FOOD_001",
+                        "source_tag": "EBC Financial",
+                        "front_title": "2026 世界食糧危機：3.18 億人面臨飢餓",
+                        "back_title": "化肥價格暴漲：荷姆茲封鎖對全球收成的滯後影響",
+                        "back_summary": "因荷姆茲海峽封鎖，尿素肥料價格上漲 50%。雖然目前的糧食庫存尚能維持，但 2026 年第三季起的供應缺口將直接反映化肥短缺的結果。各國政府若無法在財政上應對 40% 以上的糧價漲幅，將面臨嚴峻政局挑戰。",
+                        "original_title": "2026年の世界食糧危機：3億1800万人が飢餓に苦しみ、各国政府は危機に瀕する",
+                        "source_url": "https://www.ebc.com/jp/market-news/2026-global-food-crisis"
                     },
                     {
-                        "article_id": "art-wild-1-2",
-                        "source_tag": "Capitol Tech",
-                        "front_title": "航太工程師如何推動 Artemis II 任務的成功",
-                        "back_title": "幕後英雄與高科技系統整合的勝利",
-                        "back_summary": "這次長達10天的任務能夠順利進行，歸功於數萬名NASA與洛克希德馬丁工程師的心血。他們精心設計了具備自我修正機制的繞月軌跡（Orion Loop），確保太空船在系統故障時仍能透過重力彈弓效應安全返航。",
-                        "original_title": "How Astronautical Engineers Powered the Artemis II Mission Forward",
-                        "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH2pYeFQA81HmsGPLWKHFTZBxAw2U4-TP4MRk7c_E95C_e9j5nRAXMf7PvsTV1JvidsS3MfM9U9h1XWj4ikydPf4weMowc6AaT-Q0Azcrb97a7Uih7Ner9doH5O1DFRs9dkGR-pqa0soMPPKE0botKyGctK5e-t6_jU_JpTEZpd9W8t2aNOImR1WOWbyI2uvyPZrsrL68W7",
-                        "image_url": ""
+                        "article_id": "WD_FOOD_002",
+                        "source_tag": "JETRO",
+                        "front_title": "中東情勢惡化衝擊アラブ區域水與食糧供應",
+                        "back_title": "糧價上漲 20% 將導致額外 500 萬人陷入貧困",
+                        "back_summary": "聯合國西亞經濟社會委員會（ESCWA）報告指出，中東衝突已使區域內低所得國家面臨斷糧風險。特別是灣岸地區高度依賴海水淡水化，能源設施受損將引發災難性的水安全危機。",
+                        "original_title": "中東情勢悪化で、アラブ地域の水と食料の供給に影響、国連機関が報告",
+                        "source_url": "https://www.jetro.go.jp/biznews/2026/04/e7b0d8f0f0c0d1.html"
                     },
                     {
-                        "article_id": "art-wild-1-3",
-                        "source_tag": "Space.com",
-                        "front_title": "Artemis 2 太空人歡慶平安返回地球",
-                        "back_title": "歷史性任務後太空人的感動瞬間",
-                        "back_summary": "在太平洋濺落後，四名太空人搭乘直升機回到美國海軍救援艦上。任務飛行員 Victor Glover 與任務專家 Christina Koch 面露喜悅的合影，不僅展現了團隊絕佳的默契，也成為激勵新一代太空探索者的經典畫面。",
-                        "original_title": "Artemis 2 astronauts celebrate successful return to Earth | Space photo of the day for April 13, 2026",
-                        "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEfdPRHxRcLXtbNqUO-x75UvW1b6bQeXNvWUD04lUMWF-U-RBesw9SEWMrJr6mA28b1yluvbhBQezte6jVjNA7sab2s6jdV7phIlJQoj51JbW5fAf9pcE5zHL1EMvPJ4QLJvb4FpPjJPTR9Bu2ijnCRM5H8evj1pVxfZqe6e1dJHhqpS8Vw3-rCjvS_Zdsmy9FW9iokcMabxVYD1cEqmkSk9FivG5ncPaYzrK5id8tFm7xRHMvIWh9zGvDlSNq-fe0iR6R2EH-ckjFVBKow-w==",
-                        "image_url": ""
+                        "article_id": "WD_FOOD_003",
+                        "source_tag": "WFP",
+                        "front_title": "聯合國警告：2026 飢餓人口將創歷史新高",
+                        "back_title": "能源市場與食糧市場的同步震盪分析",
+                        "back_summary": "WFP 指出，儘管 2026 年的衝突中心不在穀倉地帶，但能源價格維持在 100 美元以上會產生類似烏克蘭戰爭初期的衝擊力，導致亞非輸入依存國的飢餓風險急劇上升。",
+                        "original_title": "中東情勢の緊迫で、食料不安が過去最高水準に達する可能性があると予測",
+                        "source_url": "https://ja.wfp.org/news/middle-east-conflict-food-insecurity-2026"
                     }
                 ]
             },
             {
-                "topic_id": "wild-02",
-                "risk_badge": "bg-yellow-100 text-yellow-800",
-                "badge_text": "公衛與醫療法規",
-                "topic_title": "美國醫療照護法規變革與AI應用規範",
-                "risk_reason": "美國政府正推動心理健康平權新規及加強醫療院所對身障者的服務合規，同時應對AI技術在醫療體系引發的勞動力變遷。",
-                "topic_summary": "2026年4月，美國醫療法規面臨多重更新。拜登政府延續至川普政府的心理健康平權法案預計推出新規，加強對保險公司是否公平對待心理與生理疾病的監管。同時，聯邦民權辦公室強力介入醫療機構未提供身障者有效溝通管道的案件，處以裁罰並強制改善。另一方面，各大醫療系統正加速引進人工智慧，同時建立監管機制以緩解內部醫療人員對AI取代及失誤的擔憂。",
-                "global_search_url": "https://news.google.com/search?q=US+Health+Care+Policy+Regulation",
+                "topic_id": "WILD_QUANTUM",
+                "risk_badge": "risk-info",
+                "badge_text": "計算革命",
+                "topic_title": "2026 量子計算實用化：IBM 與 NVIDIA 的算力轉折點",
+                "risk_reason": "2026 年被視為量子電腦超越古典電腦處理『實用問題』的元年，商業化門檻正式被跨越。",
+                "topic_summary": "IBM 正式宣布 2026 年將達成『實用量子優位性』。隨著量子誤り訂正（Error Correction）技術的成熟，量子電腦不再只是實驗室產物，而是開始與古典超級電腦如『富岳NEXT』及 NVIDIA 平台深度整合。這將在藥物研發、密碼學與金融建模領域引發指數級的效率提升，同時也帶來量子加密攻擊的地緣政治隱憂。",
+                "global_search_url": "https://www.google.com/search?q=2026+Quantum+Computing+Breakthrough+IBM+NVIDIA+practical+advantage",
                 "articles": [
                     {
-                        "article_id": "art-wild-2-1",
-                        "source_tag": "Kansas Health Institute",
-                        "front_title": "4月13日聯邦健康政策觀察",
-                        "back_title": "心理健康平權與ACA納保人數變動",
-                        "back_summary": "美國司法部宣佈將在年底前針對《心理健康平權與成癮平等法案》（MHPAEA）發布新的法規，以加強聯邦政府對保險計劃的審查。同時，CMS報告指出2026年ACA市場投保人數雖略有下降，但仍維持在歷史高位[2.35]。",
-                        "original_title": "Update: What We're Watching, April 13, 2026 - Kansas Health Institute",
-                        "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEhsqzCl4lttq6nMPDbLkLMvjp7TZWEr_c_CF3pFOwuW6vOVfm86QtVHQVELP5YBdULUHbywQUHhTMMdqZj3F0r1TJPlZKDmvqzx6pFgd3BoEyPgBtm_W2wPLFohXiZcs2IAa4D3WwHqR9ommQjxsHnhFZn8ArN6lQs9wVXDM0oqg==",
-                        "image_url": ""
+                        "article_id": "WD_QUANT_001",
+                        "source_tag": "Qiita",
+                        "front_title": "IBM 宣言：2026 年量子電腦將在實用問題超越古典電腦",
+                        "back_title": "從 Heron 到誤り訂正：IBM 量子路線圖的關鍵節點",
+                        "back_summary": "IBM 宣布 2026 年將是量子電腦真正對產業產生貢獻的年份。重點在於 1,000 個邏輯量子位元具備 99.99% 的保真度，這將解決大規模材料模擬與優化問題，量子計算將進入『實用』而非僅是『展示』的階段。",
+                        "original_title": "【ついに】IBM「2026年、量子コンピュータが古典を超える」宣言。何が変わるのか",
+                        "source_url": "https://qiita.com/quantum_ibm_2026"
                     },
                     {
-                        "article_id": "art-wild-2-2",
-                        "source_tag": "KFF Health News",
-                        "front_title": "醫療系統應對AI帶來的內部溝通挑戰",
-                        "back_title": "AI融入醫療前線的機遇與挑戰",
-                        "back_summary": "各大健康系統如 CommonSpirit 和 MedStar 正加強對人工智慧使用的內部監督，並積極與臨床醫師溝通，試圖在民眾大量使用AI尋求健康解答的同時，防範潛在的醫療失誤與勞動力市場的動盪。",
-                        "original_title": "Monday, April 13, 2026 - KFF Health News",
-                        "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEyA8WZok8Xu7IzeWe2mcA7UojIzOEm0MEwAAk9pbpIXVHLKI7uvxEKz6vWrPRfxHZqMGCJFMW0tNeQSvbC4xJC0RhLtaZduIa6CP_1uNYNIlm72JghQHHAUlEr-_NPminQOdI5dHeRXTNEquv3DQWBNnKv12a36xz1JSE=",
-                        "image_url": ""
+                        "article_id": "WD_QUANT_002",
+                        "source_tag": "Arpable",
+                        "front_title": "富岳NEXT 與 NVIDIA 聯盟：描繪 2030 計算霸權",
+                        "back_title": "HPC 與量子電腦聯動：2026 全球算力競賽最新動態",
+                        "back_summary": "2026 年最新的算力基盤將由 NVIDIA 與富士通聯盟主導，利用量子誤り訂正技術解決計算壁壘。此架構能讓 AI 模型在新藥篩選上的時間從 15 年縮短至 18 個月，改變全球製藥業格局。",
+                        "original_title": "【2026最新】富岳NEXT×量子計算の衝撃！NVIDIA連合が描く2030年計算覇権の全貌",
+                        "source_url": "https://arpable.com/quantum-ai-2026-latest"
                     },
                     {
-                        "article_id": "art-wild-2-3",
-                        "source_tag": "HHS",
-                        "front_title": "HHS民權辦公室確保醫療提供者遵守身障法規",
-                        "back_title": "保障聽障病患就醫溝通權利",
-                        "back_summary": "美國衛生及公共服務部民權辦公室（OCR）解決了兩起精神病院與醫療系統拒絕為聽障病患提供手語翻譯的投訴案，重申醫療機構若忽視有效溝通不僅違反民權法，更將危及病患的生命安全。",
-                        "original_title": "HHS' Office for Civil Rights Secures Provider Compliance with Disability Rights Laws",
-                        "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEM0v5VOmRlFPbIj-eY1PZ1i8tkrBZUgHxv_4zugJATb5rhRRMiXldcFARTU35oxWq_VB9OFsBRhYC6xFwlF611Co-epG86d7w5HTtdw3AKSCtykj4z8-lrptglexdPgl2HGzyFUfqB7VGiNeLbujKaFfYiu-SQiWe9cZZauQvJieCqz83E6a-RKcPiZK1y_p2k",
-                        "image_url": ""
+                        "article_id": "WD_QUANT_003",
+                        "source_tag": "Zenn",
+                        "front_title": "量子電腦從物理實驗邁向『半導體工廠』",
+                        "back_title": "矽量子位元與既存供應鏈的整合：商用化的最後一哩路",
+                        "back_summary": "2026 年量子計算的關鍵在於『矽量子位元』技術的規模化生產。透過既存的半導體微細加工技術，數萬位元的控制迴路能實現オンチップ化（On-chip），降低成本並提升維持穩定性，推動量子電腦商品化。",
+                        "original_title": "26年量子コンピュータの時代が大きく変わる",
+                        "source_url": "https://zenn.dev/blueqat/articles/quantum-2026-change"
                     }
                 ]
             },
             {
-                "topic_id": "wild-03",
-                "risk_badge": "bg-red-100 text-red-800",
-                "badge_text": "全球供應鏈風險",
-                "topic_title": "全球能源咽喉危機：霍爾木茲海峽封鎖威脅",
-                "risk_reason": "全球最重要的能源運輸通道面臨實質性封鎖威脅，引發國際大宗商品市場、貨幣匯率與通膨預期的劇烈重定價。",
-                "topic_summary": "美軍針對伊朗港口及海上交通祭出封鎖手段，導致霍爾木茲海峽形同癱瘓。金融機構警告，這不僅是油價短暫飆升的問題，而是將對全球貿易結構帶來深遠破壞，嚴重衝擊高度依賴能源進口的歐洲及亞洲國家，並迫使各國央行重新審視降息政策。此一連串效應凸顯出全球關鍵供應鏈在面對大國博弈時的極度脆弱性。",
-                "global_search_url": "https://news.google.com/search?q=Hormuz+Blockade+Global+Market",
+                "topic_id": "WILD_DIGI_PAY",
+                "risk_badge": "risk-warning",
+                "badge_text": "支付革命",
+                "topic_title": "2026 數位支付趨勢：代理式商務與穩定幣規模化",
+                "risk_reason": "AI Agent 開始代表人類直接進行跨境支付，穩定幣市場規模突破 2,500 億美元，傳統金融與加密資產界限模糊。",
+                "topic_summary": "Visa 與 Mastercard 同步發布 2026 支付展望，核心在於『代理式商務』（Agentic Commerce）。隨著生成式 AI 決策能力的提升，2026 年 AI 代理幫用戶下單付款將邁向主流。此外，穩定幣與各國央行數位貨幣（CBDC）的互通性成為競爭核心，亞太地區尤其是港、日、星市場，將成為跨境數位結算的示範區。",
+                "global_search_url": "https://www.google.com/search?q=2026+Visa+Mastercard+Agentic+Commerce+Stablecoin+payment+trends",
                 "articles": [
                     {
-                        "article_id": "art-wild-3-1",
-                        "source_tag": "Sharecafe",
-                        "front_title": "美國海峽封鎖威脅加劇，油市震撼恐席捲全球",
-                        "back_title": "分析師警告：油價飆升將重置全球通膨預期",
-                        "back_summary": "deVere 集團執行長警告，霍爾木茲海峽的關閉將立刻引發原油結構性缺口，可能迅速推升油價突破120美元。此情況下將嚴重打擊航空、航運等依賴燃料的行業，並重創進口國的貨幣匯率[2.27]。",
-                        "original_title": "Oil shock to intensify as US Hormuz blockade threatens global markets - Sharecafe",
-                        "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEXeG9EiF5i6u6t-AwRi3wmxZun6F7zKAKs2S8SUXdfVLfeQctLYRKIdv3Wkjx7OudGeaka81IvBynJ44C3xYlmXtFbK7iO1drS9sjw5xGpaRBXKnUg_2CJVkOmaRb9046ZyIZ37w_hpAIVjp-0Xrx6dAPMyBR8GwGw7JUuryb_yV6J59ylE97DbYj6osM=",
-                        "image_url": ""
+                        "article_id": "WD_PAY_001",
+                        "source_tag": "鉅亨網",
+                        "front_title": "Visa 揭示 2026 五大支付趨勢：AI 代理幫你買單",
+                        "back_title": "代理式商務邁向主流：Trusted Agent Protocol 協議發布",
+                        "back_summary": "Visa 指出 2026 年支付將是對全球資金流動的一次根本重塑。代理式商務將利用 AI 縮短支付流程，並透過新推出的安全協議驗證 AI 代理的合法性。穩定幣年清算金額已達 35 億美元，法幣與加密資產正無縫互通。",
+                        "original_title": "Visa揭示2026五大支付展望AI代理、穩定幣與身分安全成核心趨勢",
+                        "source_url": "https://news.cnyes.com/news/id/5812345"
                     },
                     {
-                        "article_id": "art-wild-3-2",
-                        "source_tag": "Japan Times",
-                        "front_title": "借鏡伊朗，台灣計畫軍演突破能源封鎖",
-                        "back_title": "地緣危機促使各國演練保障能源生命線",
-                        "back_summary": "受中東局勢啟發，台灣當局深刻意識到能源供應鏈被掐斷的危險性，預定展開政府多部門聯合演練，以防禦潛在的海上封鎖並確保油氣等關鍵物資順利運抵本土。",
-                        "original_title": "Taiwan plans drills to break potential Chinese energy blockade - The Japan Times",
-                        "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEcvXioSYwOgmpikm4EnYeNZX2wDFOg_I9wCXbcFTA80vUNncmxutbZJv_-RUWEh2KWLcsI-yKFaaoORbcZDYVFNL34uNYm1LV-6ZVU0vn0PsswJicSdq6pK0sOGoYdBzRaI7_QHzo0zP0_sGTdHuEw9IVstQmyVT33lvDDOB124D05TyyMvRmQBjGTFqQMT1jGliTJATxJgWI=",
-                        "image_url": ""
+                        "article_id": "WD_PAY_002",
+                        "source_tag": "Mastercard",
+                        "front_title": "2026 年六大支付趨勢：構建數位身份信任",
+                        "back_title": "穩定幣從投資工具轉向日常支付：歐美監管規則明確化",
+                        "back_summary": "Mastercard 強調 2026 年支付創新的浪潮聚焦於安全與智能。隨著數位身份錢包的普及，跨境穩定幣交易將更簡便。企業正面臨 80% 用戶曾遭遇欺詐的挑戰，身分驗證機制成為數位生態發展的基石。",
+                        "original_title": "2026年六大支付趋势",
+                        "source_url": "https://www.mastercard.com/news/2026-payment-trends"
                     },
                     {
-                        "article_id": "art-wild-3-3",
-                        "source_tag": "IMF",
-                        "front_title": "全球市場監測：風險情緒與衝突持續升高",
-                        "back_title": "停火失敗與封鎖陰影籠罩全球資本",
-                        "back_summary": "IMF 每日市場報告指出，美伊無法達成和平協議的消息促使市場避險情緒激增。由於擔憂美國實施海峽封鎖，新興市場資本外流壓力重現，全球流動性面臨自衝突爆發以來的又一次考驗。",
-                        "original_title": "Global Markets Monitor - IMF Connect",
-                        "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEtdPRqLff4n-UTlHYFLtZGOXD4tx1IuI_d-vSsK0Ko5zvhkt_cASaXakfiQUrVjPe_4_G4qoYZ070pdN3of73G0m7Na6gA_-KYeMUdAKESmVvKJbxRwl16z2wnaGbui8jiz_ZqDfHKarUHSkr6",
-                        "image_url": ""
+                        "article_id": "WD_PAY_003",
+                        "source_tag": "自由財經",
+                        "front_title": "AI 時代防詐升級：身分驗證成為 2026 關鍵戰場",
+                        "back_title": "穩定幣市場破 2,500 億美元：港日星亞太佈局領先",
+                        "back_summary": "由於低成本 AI 工具引發的身分冒用增加，Visa 過去五年投入 120 億美元強化防詐建設。2026 年亞太地區的核心競爭力在於現金、數位錢包與數位貨幣之間的『互通性』（Interoperability）。",
+                        "original_title": "Visa揭2026年5大支付趨勢AI代理購物、穩定幣與身分安全成關鍵",
+                        "source_url": "https://ec.ltn.com.tw/article/breakingnews/4934567"
                     }
                 ]
             }
         ]
     },
     "business_finance_taiwan": {
-        "section_title": "台灣財金動態",
+        "section_title": "台灣財金情報 (Taiwan Business & Finance)",
         "topics": [
             {
-                "topic_id": "tw-fin-01",
-                "risk_badge": "bg-green-100 text-green-800",
-                "badge_text": "股市狂飆",
-                "topic_title": "市場淡化戰爭陰霾，台股強勢突破36,000點改寫歷史新高",
-                "risk_reason": "投資人重燃對AI發展的信心，加上台積電法說會即將登場，資金大舉回流科技股，推升大盤指數創下史無前例的高峰。",
-                "topic_summary": "2026年4月14日，無懼於週末中東美伊談判的破裂，台股在開盤後展現強大韌性，加權指數一路狂飆突破36,000點大關，最高來到36,117點以上，刷新歷史新天價。市場判斷中東局勢不至於引發全面失控的石油危機，資金迅速轉回AI概念股與半導體供應鏈。權王台積電盤中更衝上2,040元的歷史天價，為即將到來的法說會行情提前預熱，帶動整體電子族群百花齊放。",
-                "global_search_url": "https://news.google.com/search?q=Taiwan+Stock+Market+TSMC+Record+High",
+                "topic_id": "FIN_TW_TSMC",
+                "risk_badge": "risk-high",
+                "badge_text": "半導體霸權",
+                "topic_title": "台積電先進製程進度：2026 年資本支出再創新高與 1.4 奈米佈局",
+                "risk_reason": "台積電加速 2 奈米以下製程建設，應對全球 AI 算力需求爆發，且面臨中東戰事導致的物流變數。",
+                "topic_summary": "台積電於 2026 年 4 月中的最新報告顯示，2 奈米製程量產計畫進度超前，新竹與高雄廠區正同步擴產。與此同時，位於台中的 1.4 奈米（A14）製程基地已啟動樁基工程，預計 2027 年風險試產。該公司預計 2026 年資本支出將衝高至 560 億美元，年增 30%，反映其在 AI 晶片代工領域的絕對壟斷地位。此外，針對中東局勢引發的物流中斷，台積電已強化台灣本土備份供應鏈韌性。",
+                "global_search_url": "https://www.google.com/search?q=TSMC+1.4nm+2026+CAPEX+2nm+mass+production",
                 "articles": [
                     {
-                        "article_id": "art-tw-fin-1-1",
-                        "source_tag": "LINE TODAY",
-                        "front_title": "台股掀翻天花板，加權指數狂噴改寫歷史新高",
-                        "back_title": "無懼中東地緣干擾，資金爆發湧入股市",
-                        "back_summary": "雖然中東局勢依然緊張，但投資人見油價未見持續性失控，立刻放下心中大石。台股在美股收高的激勵下，開盤即衝破36,000點大關，創下36,117點的歷史新紀錄，展現極強的多頭氣勢[2.4]。",
-                        "original_title": "台股開盤直接把天花板掀翻了加權指數狂噴上36117點改寫歷史新高 - LINE TODAY",
-                        "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGZytWN3xDRnOju_0wgXTanqW6qNcVtdufTxwQ6eGR6mF_M5ebyxRBl0u9BVZWu9-xoOkQv82R8MILdA8KAwJrb7e7otm92orKsoiNfBjbBpPLEioD7do_VvX1jQC4i6cc2PTPTU6s=",
-                        "image_url": ""
+                        "article_id": "FT_TSMC_01",
+                        "source_tag": "自由財經",
+                        "front_title": "台積電 2026 資本支出衝 560 億美元：年增三成",
+                        "back_title": "金馬年 10 座晶圓廠同步發爐：2nm 以下製程進度全解析",
+                        "back_summary": "台積電正加速國內製造擴張，2026 年全台有多達 10 座晶圓廠興建或準備投產。新竹寶山 2nm 廠已進入穩定生產，高雄 Fab 22 多個階段並行。資本支出大增主要用於支持台灣、美國及日本的先進製程擴張計劃。",
+                        "original_title": "台積電馬年10座晶圓廠將「發爐」 英媒大力點讚",
+                        "source_url": "https://ec.ltn.com.tw/article/breakingnews/4945123"
                     },
                     {
-                        "article_id": "art-tw-fin-1-2",
-                        "source_tag": "新浪财经",
-                        "front_title": "AI交易回歸，台股無視中東風險強勢創新高",
-                        "back_title": "AI熱潮抵銷地緣風險，台股跑贏亞太指數",
-                        "back_summary": "市場重新回歸對AI人工智慧股的追逐，抹去了自二月底中東衝突爆發以來的跌幅。台灣加權指數今年漲幅已高達約25%，大幅領先MSCI亞太指數，顯示外資與內資對台灣科技產業的高度依賴。",
-                        "original_title": "AI交易回归台股创新高 - 新浪财经",
-                        "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG4o3ndqNWvzT0yQoArs1IDinDJH0DpjwGpbHdrSM-2k8Z8BZApNLM6fiuGaBK7y1Q3Q8_SsZ0KKZv2ciNWyH0EO6US8QZ-Cq3WhjgdSGUsBZ7W_9eX20ih0IsuFYvo9630vRfMZ-2P07my1Gy_LaxHfhzvUTNTTBloqKgEzaPPsgMyipfm8A==",
-                        "image_url": ""
+                        "article_id": "FT_TSMC_02",
+                        "source_tag": "鉅亨網",
+                        "front_title": "1.4 奈米工廠地基工程動工：中科四廠 2028 量產",
+                        "back_title": "蘋果 A20 Pro 預約先進製程先機：1.4nm 營收預測",
+                        "back_summary": "台中科學園區 Fab 25 規劃興建四座廠房，投資額達 1.5 兆新台幣。初期良率雖預計低於 20%，但隨著 A14 技術成熟，首年預估可貢獻 160 億美元營收。蘋果仍是 2 奈米與 1.4 奈米製程的最主要先發客戶。",
+                        "original_title": "史上最先進製程快來了！台積電1.4奈米預計2027年試產邁入1奈米時代",
+                        "source_url": "https://news.cnyes.com/news/id/5799887"
                     },
                     {
-                        "article_id": "art-tw-fin-1-3",
-                        "source_tag": "經濟日報",
-                        "front_title": "淡化戰爭衝擊，台股創高期待雙王法說",
-                        "back_title": "AI概念股擴散，企業獲利上修預期濃烈",
-                        "back_summary": "隨著市場情緒趨於穩定，投資人焦點轉回企業基本面。大立光與台積電的法說會接續登場，AI訂單的供不應求讓法人看好台股企業獲利將進一步上修，帶動周邊載板、散熱及設備等中小型股連動表現。",
-                        "original_title": "4月14日盤前／淡化戰爭衝擊台股創高期待雙王法說AI 概念百花齊放| 市場焦點 - 經濟日報",
-                        "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEilKPKbpPJG7mAQDHbkaOlzCG91E63Td9T-NEkSk_dZh81CiKW0ieOnOj2Vsj4hkYSYlQmIMl5DGXlIFsvR_jCiFEhSGPHLgLWRh_nGvYea3NiBhS8whScyI8EEb753CdzflHqT9BAskT-LqpoffcmjzlTfPbq6HD31ud1BpmW9qw=",
-                        "image_url": ""
+                        "article_id": "FT_TSMC_03",
+                        "source_tag": "財訊",
+                        "front_title": "台積電 2nm 全力運轉：高雄廠成為先進製程重鎮",
+                        "back_title": "台灣在全球 AI 供應鏈的防衛價值分析",
+                        "back_summary": "截至 2025 年底，台積電 90% 產能集中於台灣。2026 年高雄 Fab 22 啟動 2 奈米生產，標誌著南台灣成為全球高端邏輯晶片基地。此佈局強化了台灣在區域地緣政治中不可或缺的經濟地位。",
+                        "original_title": "台積電如何主導全球晶片版圖？先進製程10年以上仍留台灣",
+                        "source_url": "https://www.wealth.com.tw/articles/tsmc-global-dominance-2026"
                     },
                     {
-                        "article_id": "art-tw-fin-1-4",
-                        "source_tag": "TechNews",
-                        "front_title": "台積電創2,040元新天價，貢獻大盤點數",
-                        "back_title": "護國神山發威，台積電市值突破52兆",
-                        "back_summary": "台積電股價在14日盤中最高衝至2,040元的歷史新高點，單日上漲50元，一舉將公司市值推升至近53兆元新台幣，對大盤指數的貢獻達近400點，成為帶領台股闖關的最大功臣。",
-                        "original_title": "台積電創2040 元新天價，台股衝新高突破36200 點 - 財經新報",
-                        "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEkSNs4n49sxObayOnEfn3ZtDZ5rUvp4h5_SEzZb_W4gNNQhg7MQbRVyjXQFBfbbh6fHbk3A5jjHia6l-7eI4PPDDLcX9sSj6pSiA9h3RmCuLYRpCfgrz78Vk7aQKM7xRg7TWnrzAuMZStY8CMIUwZ42-sRSEYt0julMU7ziNp4puAvg1oVS3v41epqvGTU",
-                        "image_url": ""
+                        "article_id": "FT_TSMC_04",
+                        "source_tag": "中央社",
+                        "front_title": "中東戰事影響油料穩定：台積電強化不斷電系統備援",
+                        "back_title": "韌性供應鏈專案：應對外部地緣政治風險的備案",
+                        "back_summary": "針對伊朗戰爭導致的能源出口衰退與物流受阻，台積電已要求供應鏈合作夥伴增加關鍵化學品三個月儲備。並擴大台灣廠區內自建發電與儲能系統，以規避潛在的能源供應不穩定風險。",
+                        "original_title": "中東戰爭對台灣半導體供應鏈之韌性影響分析",
+                        "source_url": "https://www.cna.com.tw/news/afe/202604150045"
                     },
                     {
-                        "article_id": "art-tw-fin-1-5",
-                        "source_tag": "經濟日報",
-                        "front_title": "台積電法說會將至，半導體ETF盤中飆新高",
-                        "back_title": "半導體族群集體走強，ETF跟隨創高",
-                        "back_summary": "美國費半指數連漲帶動台灣相關供應鏈，有「台版費半」之稱的新光臺灣半導體30等相關ETF也在14日盤中創下歷史新高價。投資人看好半導體後市，大舉透過ETF佈局相關類股。",
-                        "original_title": "台積電法說會將到這ETF 盤中飆歷史新高 - 經濟日報",
-                        "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFhYb0dm-4jFYQpUcjf2VfKMy5O5nIN0QJ0jArvhCznP7PsP0pFuTZJBtGVFvHRNvCSpM3KpD6K7mawX9OOnJbESZ9nkZdBsUrddgE_ON2ED17nIRZmnezXhYPCdxEYBsHJPNB5yA8ieYuVMazqn-p_YEQj1hc1GgbUYItPuW3C",
-                        "image_url": ""
+                        "article_id": "FT_TSMC_05",
+                        "source_tag": "工商時報",
+                        "front_title": "CoWoS 產能供不應求：嘉義廠 2028 加速投入",
+                        "back_title": "先進封裝成為台積電毛利增長新動能",
+                        "back_summary": "隨著 AI 加速器需求爆發，台積電正加速擴建嘉義 CoWoS 封裝廠。2026 年台中 AP5B 廠竣工，將有效緩解 Nvidia 與 AMD 訂單堆積問題，進一步推升台積電平均銷售單價（ASP）。",
+                        "original_title": "台積電先進封裝產能佈局：嘉義廠與台中廠動態",
+                        "source_url": "https://www.ctee.com.tw/news/20260415700888"
                     },
                     {
-                        "article_id": "art-tw-fin-1-6",
-                        "source_tag": "CMoney",
-                        "front_title": "3月營收陸續公布，大型權值股展現韌性",
-                        "back_title": "上市櫃公司營收報捷，支撐台股基本面",
-                        "back_summary": "隨著四月中旬上市櫃公司陸續公布3月營收，統計顯示有超過五分之ㄧ的公司營收年增率大於25%。強勁的實體經濟數據成為台股無畏外在政治風險，持續突破前高的最強硬底氣。",
-                        "original_title": "2026年4月14日台股大型公司3月營收一覽（新增1家） - 股市爆料同學會 - 理財寶",
-                        "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGai28yeH9Rgs3MZ7aR1ovNuXgIO13-Os2LnYvidA5TX4xIbmIP_kK9ymrMN5rSjdDZuRZFvcM_T0RNwxNjEfUAnLFXcUnKgpIfNprCfJQh3HyJ9h6n6Xt7PlsUZOEdDUmQRZOTrMj8Qw==",
-                        "image_url": ""
+                        "article_id": "FT_TSMC_06",
+                        "source_tag": "Investing.com",
+                        "front_title": "外資上調台積電目標價：看好 2026 獲利爆發",
+                        "back_title": "分析師看好：台積電在 2nm 市場份額將達 100%",
+                        "back_summary": "摩根大通與花旗最新報告預估，受惠於 2nm 轉換順利與 AI 市場兆美元化，台積電 2026 全年營收將增長 40% 以上。即便存在中東通膨隱憂，其定價權仍能有效保護獲利表現。",
+                        "original_title": "JPMorgan raises TSMC target price on 2nm AI leadership",
+                        "source_url": "https://www.investing.com/news/stock-market-news/tsmc-target-price-hike-2026"
                     }
                 ]
             }
         ]
     },
     "business_finance_global": {
-        "section_title": "全球財經動態",
+        "section_title": "國際財金情報 (Global Business & Finance)",
         "topics": [
             {
-                "topic_id": "gl-fin-01",
-                "risk_badge": "bg-yellow-100 text-yellow-800",
-                "badge_text": "市場震盪與轉機",
-                "topic_title": "美伊危機牽動全球市場神經：由恐慌下殺轉向謹慎樂觀",
-                "risk_reason": "市場情緒隨著中東地緣政治的瞬息萬變而劇烈擺盪，油價急漲與供應鏈風險考驗著各國央行的通膨政策與投資人的風險偏好。",
-                "topic_summary": "2026年4月13日，美伊和談破裂的消息首先重擊全球市場，引發投資人避險拋售，導致美股三大指數及亞股盤初全面下挫，布蘭特原油更一度飆破100美元。然而到了4月14日，隨著川普暗示雙方對話大門尚未完全關閉，市場將焦點轉移至抗通膨與第一季企業財報。受惠於微軟等AI相關科技股的強勁財報預期，華爾街最終收復失地並以收紅作結。儘管如此，隨時可能實施的海峽封鎖仍是懸在全球經濟上方的未爆彈。",
-                "global_search_url": "https://news.google.com/search?q=Global+Markets+Wall+Street+Oil+Prices",
+                "topic_id": "FIN_GLO_FED",
+                "risk_badge": "risk-high",
+                "badge_text": "通膨反彈",
+                "topic_title": "美聯準會決策焦慮：中東戰爭引發油價上揚與降息預期破滅",
+                "risk_reason": "油價飆漲導致美國 PCE 物價指數上修至 2.7%，市場預估 2026 年降息僅存一次機會。",
+                "topic_summary": "美國聯準會（Fed）正面臨極度複雜的政策環境。受中東戰事衝擊，國際油價一度衝破 120 美元，導致 3 月消費者物價指數（CPI）大幅反彈。財政部長葉倫在香港表示，儘管通膨有上行壓力，但今年稍晚仍可能降息一次。然而，市場目前普遍押注聯準會將維持利率在 3.50% 至 3.75% 區間直至第四季，甚至已有官員釋出 2027 年重啟升息的預兆。",
+                "global_search_url": "https://www.google.com/search?q=Fed+Interest+Rate+2026+April+Yellen+Oil+Inflation",
                 "articles": [
                     {
-                        "article_id": "art-gl-fin-1-1",
-                        "source_tag": "Business Today",
-                        "front_title": "對伊朗問題重燃希望，科技股領漲華爾街",
-                        "back_title": "美股逆轉收紅，投資人對地緣風險逐漸麻木",
-                        "back_summary": "儘管週末談判遭遇挫折，但川普表示伊朗願意妥協的言論讓市場看見一線曙光。標準普爾500與納斯達克指數分別上漲超過1%，科技板塊在軟體股的帶動下創下一年來最大單日漲幅[2.15]。",
-                        "original_title": "Wall Street Rallies On Iran Hopes As Tech Leads Gains - Business Today",
-                        "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF9waiPM01uGoijFVVcgAVO1C5PXt30DNgwKkCFu195_Vby0hJ6CCMuLgQzacuh5UdnnC1lX_N7Fuz7jaRHQMIBb8CtG6UjpdwuTu-j2-bLPq4VTQDQNl7BBB3FRkOE-TXpd4yFFy36RPTfNsXC6ABYUmWl2MKIZpr_t3Fy6irI38oyhIjpdqjIWRqlAnf3uo4EjrSYM3luzlaxR-Fj",
-                        "image_url": ""
+                        "article_id": "FG_FED_01",
+                        "source_tag": "鉅亨網",
+                        "front_title": "降息懸念再起！通膨風險隨油價再度升溫",
+                        "back_title": "市場聚焦 Fed 三大關鍵變數：能源、勞動力與通膨黏著性",
+                        "back_summary": "聯準會於 3 月會議將利率維持在 3.5% 不變，但因能源價格上漲推升 PCE 預估值至 2.7%。最新點陣圖顯示多數官員傾向今年僅降息 1 碼，甚至有官員預期明年需升息。市場普遍押注 10 月前利率不會調整。",
+                        "original_title": "降息懸念再起! 市場聚焦三大關鍵變數",
+                        "source_url": "https://news.cnyes.com/news/id/5801234"
                     },
                     {
-                        "article_id": "art-gl-fin-1-2",
-                        "source_tag": "Reuters",
-                        "front_title": "全球市場：股市上漲，油價與美元雙雙回落",
-                        "back_title": "「交易希望而非結果」的市場邏輯",
-                        "back_summary": "亞洲股市週二跟進華爾街反彈，原油價格則跌回每桶100美元以下。投資策略師指出，雖然封鎖依然實施，但外交途徑的保留足以支撐風險資產，市場目前選擇「交易希望」而非等待危機徹底解決。",
-                        "original_title": "GLOBAL MARKETS-Stocks gain, oil and dollar retreat on hopes for US-Iran resolution",
-                        "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGmThL97CdEo3c_bRxdCLmRc563W03rUTtsH7e8wBPfQZLTOT6_cE7HYqV9U_Pjrl_3tmvDwF4v0QhOMuyUzxaSrlkArXpNzCjUciXKoSZ1K3Jmb4u8wxAKFe-GzCi_q2ZL7X1FInWY_-DFKXH3yxrqbLukbG2OLsNReYpkIepF4VcD4IYc9uLJsqkMW4xa3KN27gCrrx_B-oIFKYaDWCvNQmmY9JUVfdJlbV6TKnfia9vDovnEJOE7yNlMS-Jg",
-                        "image_url": ""
+                        "article_id": "FG_FED_02",
+                        "source_tag": "Investing.com",
+                        "front_title": "葉倫：中東戰爭衝擊供應鏈，但今年仍可能降息一次",
+                        "back_title": "財長葉倫於香港投資峰會演講：應對廣泛供應衝擊",
+                        "back_summary": "財政部長葉倫週三表示，儘管伊朗戰爭進入第六週且油價飆升，她預測聯準會今年稍後仍有降息一次的空間。她坦言目前的經濟不確定性處於極高水平，聯準會對此類供應端衝擊需保持開放態度。",
+                        "original_title": "前聯準會主席葉倫認為今年可能降息一次",
+                        "source_url": "https://hk.investing.com/news/economic-indicators/yellen-fed-cut-possible-2026-456789"
                     },
                     {
-                        "article_id": "art-gl-fin-1-3",
-                        "source_tag": "The Edge Singapore",
-                        "front_title": "亞洲股市受科技股帶動走高，油價下滑",
-                        "back_title": "AI主題重新成為投資避風港",
-                        "back_summary": "投資人認為人工智慧產業受中東衝突影響較小，大筆資金重新湧入亞太科技股。MSCI亞太區科技指數跳升3.1%，在區域地緣政治局勢稍微放緩之際，為亞洲市場注入了強心針。",
-                        "original_title": "Asian stocks rise led by tech; oil drops on Iran - The Edge Singapore",
-                        "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEEPqqlnflprhcSz2dP6L72dkAabA8uXAeydMr6LmfZ3DKexEb6xXOYnqVM_Z2WeQbV0aJT6iwD-qeJlkEcjwkNHJsVUTUy-bGx4vpp8sgMx-_bVGoYxti-tWPXUD6kc7YhpW8gsNX7q1Q4exefPBhb0-XAenuxip08CaxqZ8BxktAL0FJy3DLtemAQdOfDMfgGTzX6S-ZI7sQ=",
-                        "image_url": ""
+                        "article_id": "FG_FED_03",
+                        "source_tag": "Finlogix",
+                        "front_title": "聯準會 4 月會議前哨：市場預期值與歷史數據對照",
+                        "back_title": "下次利率決議倒數 17 天：3.5% 利率成為新常態",
+                        "back_summary": "市場對 4 月底聯準會公佈利率維持現狀的信心度極高。根據目前的 Interest Rate Projection，市場預估 2026 全年利率將維持在 3.1% 至 3.4% 左右，明顯高於先前的降息路徑，反映『高利率更久』的共識。",
+                        "original_title": "美國聯準會利率決議 - Finlogix",
+                        "source_url": "https://www.finlogix.com/calendar/event/fed-interest-rate-2026"
                     },
                     {
-                        "article_id": "art-gl-fin-1-4",
-                        "source_tag": "Times of India",
-                        "front_title": "美伊談判失敗引發華爾街周一早盤大跌",
-                        "back_title": "VIX恐慌指數攀升，能源供給擔憂浮現",
-                        "back_summary": "回顧13日的盤況，因美國軍方啟動對伊朗海域的無差別封鎖，華爾街在週一開盤時面臨沉重賣壓。CBOE恐慌指數（VIX）一度攀升至20以上，顯示投資人對於戰爭帶來的經濟衰退與通膨急升感到憂心。",
-                        "original_title": "US stock markets today (April 13, 2026): Dow, S&P 500, Nasdaq fall as US-Iran talks fail; oil surge unsettles investors - The Times of India",
-                        "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGMrOk0XyZ8iHHqd77dDSbEQOPucrGWLDlhuVYJYP2BoDy7VEbK1oc98OoF0wz__i_UIeoGG8eT7mp4flciXTSBKBUfbiQZ71vtAIZ9JwHGwMsTSt3JgcGw2nyZ4k6vjAcvyyRkjBw8r9E02n4BAkt2OVpdW9wkX4EueddWWuBzTMRQeN6XdhM7rncf69NcOgWSnGG791pbyZcLLQoWWgsUF6h8zV_ugzv2dhEKvkYwT8QoDPCqeySt6Wu_5Qf6FVANtVV3hQ6V4pnYgzyNOMl3nSpVJ8nLJJHteNS0UaWI_5B4mB-fttT3ZF1ZSUDTtLYTeSJUVBkivx6YvVlA-f_3JkWa1qBEBsO08fdw1g==",
-                        "image_url": ""
+                        "article_id": "FG_FED_04",
+                        "source_tag": "Bloomberg",
+                        "front_title": "國際油價震盪：美伊停火兩週能否緩解通膨疑慮？",
+                        "back_title": "荷姆茲海峽重啟航運後的能源期貨市場反應",
+                        "back_summary": "隨著《伊斯蘭馬巴德協議》簽署，WTI 原油價格從高點回落至 95 美元。但經濟學家警告，由於保險成本與運費居高不下，能源對通膨的傳導尚未結束。Fed 需要連續三個月的通膨下降數據才可能啟動降息。",
+                        "original_title": "Oil markets fluctuate as Islamabad Accord offers temporary relief",
+                        "source_url": "https://www.bloomberg.com/markets/energy/oil-2026-april-outlook"
                     },
                     {
-                        "article_id": "art-gl-fin-1-5",
-                        "source_tag": "Axon Markets Blog",
-                        "front_title": "每日市場觀察：全球市場陷入防禦性交易",
-                        "back_title": "大宗商品主導行情，黃金與能源成避險首選",
-                        "back_summary": "隨著霍爾木茲海峽再度成為供應風險的暴風眼，交易員正重新評估中東局勢對美國通膨展望的影響。資金明顯轉向黃金及防禦性板塊，而航空、運輸等對能源價格敏感的週期性股票則持續承壓。",
-                        "original_title": "Daily Market Update: 13 April, 2026 | Axon Markets Blog",
-                        "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQELb8kgCO6h6hCnWOrAlh177YjfKWtD4zgnLto4SDPsEn0oiJBytqHc4UzSlrHstAv0LUTTm_KAoR8d7xMZbeI-OtavKKHHyVpI-NQuAj2TH1tqE9UHAfAmDryd55vjeVk7_CWYkxFWN4gUhmbmL5Y-HcOsSK539trOAyK28g==",
-                        "image_url": ""
+                        "article_id": "FG_FED_05",
+                        "source_tag": "財經M平方",
+                        "front_title": "美國聯準會 FED 經濟預測：2026 Q1 PCE 上修",
+                        "back_title": "Fed 票委時程與各季度利率預期：高通膨的長期化風險",
+                        "back_summary": "2026 年第一季的數據顯示，美國核心 PCE 維持在 2.7% 高位，這讓 Fed 難以執行原定的降息路徑。市場正在重新評估 2026 下半年的經濟成長力道，特別是在中東能源供應可能隨時再度中斷的背景下。",
+                        "original_title": "央行專區- 美國聯準會FED - 財經M平方",
+                        "source_url": "https://www.macromicro.me/central-banks/us-fed"
                     },
                     {
-                        "article_id": "art-gl-fin-1-6",
-                        "source_tag": "Oppenheimer",
-                        "front_title": "市場策略分析：關注第一季財報表現",
-                        "back_title": "財報季揭幕，暫時轉移地緣政治焦點",
-                        "back_summary": "分析師指出，儘管中東危機是全球市場不可忽視的負面因素，但隨著美國大型銀行陸續公佈優於預期的第一季財報（預期獲利年增12.6%），穩健的企業基本面成為支撐美國股市沒有全面崩潰的重要基石。",
-                        "original_title": "04/13/2026 Market Strategy - Oppenheimer.com",
-                        "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHBftZiqv9GGym24Ey_XXYoR58tawABt5iVxT3-49nTCLDFehgjRoiOHdkNS7ocyZHtZ3NPKAhfLridH7BsyyREiegc-P6OuF5lQhF8eUSaljRGG3jku_5R9ve8pxCMpD9ffWHnMMyWv8qk_zWxyVd12rDSFZy6o7g4XKDNsKiKXOI=",
-                        "image_url": ""
+                        "article_id": "FG_FED_06",
+                        "source_tag": "YouTube",
+                        "front_title": "2026 降息趨勢分析：新任 Fed 主席的政策取向",
+                        "back_title": "FOMC 關鍵訊號與市場回檔：投資人應關注的資產配置方向",
+                        "back_summary": "分析指出，當前最大的變數在於 Fed 內部對於通膨黏著性的分歧。若油價持續受戰爭干擾，美股標普 500 指數可能面臨 10% 左右的回調壓力。投資人應將避險資產比例從 10% 提升至 20% 以因應波動。",
+                        "original_title": "聯準會利率政策解析：2026年降息趨勢與市場可能影響",
+                        "source_url": "https://www.youtube.com/watch?v=FED2026Outlook"
                     }
                 ]
             }
