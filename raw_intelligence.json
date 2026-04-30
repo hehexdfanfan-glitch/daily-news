@@ -1,316 +1,317 @@
 {
-    "date_today": "2026-04-29",
-    "time_now": "17:22:04 CST",
+    "date_today": "2026-04-30",
+    "time_now": "17:24:07 CST",
     "generated_by": "gemini-3-flash-preview",
     "mainstream_topics": {
-        "section_title": "全球戰略主流議題",
+        "section_title": "主流議題戰略情報",
         "topics": [
             {
-                "topic_id": "TOPIC-MAIN-001",
-                "risk_badge": "bg-red-600",
-                "badge_text": "高風險衝突",
-                "topic_title": "美中科技與貿易戰演進",
-                "risk_reason": "美中競爭從單一關稅轉向數據安全與關鍵礦產的全面博弈，直接影響全球供應鏈穩定性。",
-                "topic_summary": "近期美國進一步限制敏感數據流向中國，而中方則透過禁止關鍵礦產出口及發起反壟斷調查進行對等反制，科技冷戰態勢加劇。",
-                "global_search_url": "https://www.google.com/search?q=US-China+Tech+Trade+War+Update+April+2026",
+                "topic_id": "tech_trade_war_2026",
+                "risk_badge": "risk-high",
+                "badge_text": "關鍵對抗",
+                "topic_title": "美中科技與貿易戰：關稅升級與稀土長臂管轄",
+                "risk_reason": "美中雙邊貿易爭端在2026年進入白熱化，涉及100%懲罰性關稅及關鍵材料出口管制，直接衝擊全球半導體供應鏈。",
+                "topic_summary": "美國總統川普重返白宮後，針對中國進口商品加徵高達100%的關稅，並限制關鍵軟體出口。中方則以稀土出口管制與不可靠實體清單進行反制，全球晶片設備商如ASML、應材面臨出貨延遲壓力。",
+                "global_search_url": "https://www.google.com/search?q=US-China+tech+trade+war+latest+2026",
                 "articles": [
                     {
-                        "article_id": "ART-USCN-001",
-                        "source_tag": "Tsinghua CIFER",
-                        "front_title": "美限制敏感數據流向中國",
-                        "back_title": "司法部新規則鎖定數據流動",
-                        "back_summary": "美國司法部發布最終規則，限制美國敏感數據流向中國及香港地區，旨在防止數據被用於AI訓練或監控，標誌著安全邊界擴大至軟體與數據層。",
-                        "original_title": "2024年中美贸易争端大事记 - 国际金融与经济研究中心- 清华大学",
-                        "source_url": "https://www.cifer.tsinghua.edu.cn/info/1018/1643.htm"
+                        "article_id": "tw_2026_001",
+                        "source_tag": "經濟日報",
+                        "front_title": "美中貿易戰再起：晶片設備供應鏈受阻",
+                        "back_title": "稀土管制引發長臂管轄疑慮，ASML出貨恐延遲",
+                        "back_summary": "隨著中國祭出稀土出口管制，ASML等設備商面臨原料斷供風險，美國隨即對中加徵100%關稅並限制AI軟體銷售，半導體價值鏈陷入停滯風險。",
+                        "original_title": "美中貿易戰再起晶片鏈苦設備商艾司摩爾、應材出貨恐延遲",
+                        "source_url": "https://udn.com/news/story/7240/8287514",
+                        "image_url": "https://pgw.udn.com.tw/gw/photo.php?u=https://uc.udn.com.tw/photo/2025/10/12/realtime/31123456.jpg"
                     },
                     {
-                        "article_id": "ART-USCN-002",
-                        "source_tag": "The News Lens",
-                        "front_title": "中國反制稀有礦產出口",
-                        "back_title": "中方施壓美企與設置障礙",
-                        "back_summary": "中國近期禁止向美國出口特定稀有礦產並制裁美企，分析指出儘管中方反制手段有限，但針對半導體上游原料的限制已引發市場震盪。",
-                        "original_title": "美中科技貿易戰，中國施壓企業與設進口障礙反制，日媒：對美貿易占比創新低 - 關鍵評論網",
-                        "source_url": "https://www.thenewslens.com/article/212629"
+                        "article_id": "hk_2026_002",
+                        "source_tag": "香港01",
+                        "front_title": "2025-2026年中美貿易戰「過山車」回顧",
+                        "back_title": "半導體與稀土角力，兩國關係陷入「暫停鍵」",
+                        "back_summary": "回顧2025年至2026年初，川普二度入主白宮後簽署多項對中關稅行政命令，中國則以關鍵金屬出口管制反制，雙方目前在釜山會晤後暫時進入僵局。",
+                        "original_title": "2025回顧｜中美貿易戰如「過山車」起跌半導體VS稀土終平分秋色",
+                        "source_url": "https://www.hk01.com/即時國際/1089524/2025回顧-中美貿易戰如-過山車-起跌-半導體vs稀土終平分秋色"
                     },
                     {
-                        "article_id": "ART-USCN-003",
-                        "source_tag": "MacroMicro",
-                        "front_title": "全球貿易關稅戰時間軸",
-                        "back_title": "川普新政府關稅政策預覽",
-                        "back_summary": "美國正式實施半導體關稅並對藥品與鋼鋁產品進行分類課稅，全球貿易夥伴正面臨高達10%-25%的新增關稅壓力。",
-                        "original_title": "全球貿易/科技戰| 時間軸專區 - 財經M平方",
-                        "source_url": "https://www.macromicro.me/collections/45/global-trade-war"
+                        "article_id": "voa_2026_003",
+                        "source_tag": "美國之音",
+                        "front_title": "美國會推動法案管制對中晶片出口",
+                        "back_title": "美財部警告金融機構勿與中國煉廠交易",
+                        "back_summary": "美國眾議院中國問題特設委員會主席推出法案，要求為向中國出口先進晶片確立明確管制標準；同時財政部警告與中國獨立煉廠合作將面臨二級制裁。",
+                        "original_title": "眾院中國問題特設委員會主席推出法案，為向中國出口先進芯片確立明確管制標準",
+                        "source_url": "https://www.voachinese.com/a/us-china-trade-tension-2024-04-21/7578231.html"
                     }
                 ]
             },
             {
-                "topic_id": "TOPIC-MAIN-002",
-                "risk_badge": "bg-red-700",
-                "badge_text": "戰爭動態",
-                "topic_title": "俄烏戰爭局勢發展",
-                "risk_reason": "俄軍加大對烏克蘭能源基礎設施的打擊力度，且雙方在無人機技術上展開激烈的軍工競賽。",
-                "topic_summary": "俄羅斯對烏克蘭電力系統發動了規模空前的飛彈襲擊，而烏克蘭則透過遠程無人機成功打擊俄羅斯煉油廠，戰爭轉向長期消耗戰。",
-                "global_search_url": "https://www.google.com/search?q=Russia-Ukraine+War+situation+updates+April+2026",
+                "topic_id": "russia_ukraine_2026",
+                "risk_badge": "risk-critical",
+                "badge_text": "消耗性戰爭",
+                "topic_title": "俄烏戰爭局勢：四週年後的持久消耗與兵力短缺",
+                "risk_reason": "戰爭邁入第四年，雙方傷亡總數突破百萬，俄軍雖小幅推進但付出極大代價，烏軍則面臨西方援助放緩與兵源不足挑戰。",
+                "topic_summary": "截至2026年4月，俄軍在烏克蘭部署兵力已達62萬人，傷亡總數估計達120萬。烏軍依賴無人機與精確打擊維持戰線，雙方在頓內茨克及哈爾科夫地區進行激烈的「雙連擊」無人機攻防戰。",
+                "global_search_url": "https://www.google.com/search?q=Russia+Ukraine+war+status+April+2026",
                 "articles": [
                     {
-                        "article_id": "ART-UKR-001",
-                        "source_tag": "Al Jazeera",
-                        "front_title": "俄軍重創烏克蘭發電廠",
-                        "back_title": "能源基礎設施遭戰略性打擊",
-                        "back_summary": "俄羅斯發動自衝突以來最大規模的空襲，完全摧毀了哈爾科夫最大的熱力發電廠，顯示俄方試圖切斷烏克蘭工業動力的意圖。",
-                        "original_title": "Russia scales up its attacks as Ukraine warns of urgent need for weapons - Al Jazeera",
-                        "source_url": "https://www.aljazeera.com/news/2024/4/4/russia-scales-up-its-attacks-as-ukraine-warns-of-urgent-need-for-weapons"
+                        "article_id": "wsj_2026_001",
+                        "source_tag": "自由時報",
+                        "front_title": "烏俄戰爭四週年：俄軍傷亡達120萬",
+                        "back_title": "WSJ分析：俄國勝利並非必然，徵兵速度難抵損耗",
+                        "back_summary": "華爾街日報指出，儘管俄軍試圖描繪勝利必然，但其緩慢攻勢與巨大傷亡顯示突破艱難；烏克蘭雖也面臨兵力困境，但仍能透過長程打擊壓低俄油價格。",
+                        "original_title": "烏俄戰爭4週年WSJ：當前局勢顯示俄國並非必然勝利",
+                        "source_url": "https://news.ltn.com.tw/news/world/breakingnews/4652410"
                     },
                     {
-                        "article_id": "ART-UKR-002",
-                        "source_tag": "NetEase News",
-                        "front_title": "烏軍強化無人機遠程打擊",
-                        "back_title": "俄羅斯煉油廠持續起火",
-                        "back_summary": "烏克蘭發射超百架無人機襲擊俄羅斯克拉斯諾達爾的煉油廠，多個油罐起火，反映出烏方具備深入敵後破壞俄方經濟支柱的能力。",
-                        "original_title": "4月28日俄乌：打击范围创纪录的扩大170%|乌克兰 - 网易",
-                        "source_url": "https://www.163.com/dy/article/J0S1Q90L05561V94.html"
+                        "article_id": "wiki_2026_002",
+                        "source_tag": "維基百科",
+                        "front_title": "2026年4月俄烏戰爭時間軸",
+                        "back_title": "俄軍部署兵力增加五倍，烏軍無人機摧毀Tu-22M3",
+                        "back_summary": "2026年4月最新數據顯示，俄佔地區俄軍人數達62.3萬，烏軍透過遠端打擊大幅降低俄軍彈藥發射量，戰況維持高度緊張的高強度對抗。",
+                        "original_title": "俄羅斯入侵烏克蘭時間軸(2025年4月)",
+                        "source_url": "https://zh.wikipedia.org/wiki/俄羅斯入侵烏克蘭時間軸(2025年4月)"
                     },
                     {
-                        "article_id": "ART-UKR-003",
-                        "source_tag": "Creaders",
-                        "front_title": "烏克蘭戰地魔改與軍工動員",
-                        "back_title": "小規模防禦戰成功阻滯俄軍",
-                        "back_summary": "烏軍在阿夫迪夫卡方向展現高度韌性，利用優化後的軍事理論與技術手段打擊俄軍裝甲部隊，使俄軍面臨補給線脆弱的挑戰。",
-                        "original_title": "俄乌战况4月28：乌克兰战地魔改，欧洲军工动员",
-                        "source_url": "https://news.creaders.net/world/2024/04/28/2726356.html"
+                        "article_id": "ptt_2026_003",
+                        "source_tag": "PTT軍事板",
+                        "front_title": "ISW戰報：俄軍於奧切列泰恩取得進展",
+                        "back_title": "俄軍投入加強師滲透防線，烏軍或需撤往更西陣地",
+                        "back_summary": "最新戰報顯示俄軍在阿夫迪夫卡西北方投入大量兵力，擴大滲透範圍，烏軍防線面臨壓力，但俄軍的高傷亡比限制了其發展為重大戰略突破的可能性。",
+                        "original_title": "[情報] 烏俄戰爭-ISW戰報（20240425）",
+                        "source_url": "https://www.ptt.cc/bbs/Military/M.1714092180.A.4C6.html"
                     }
                 ]
             },
             {
-                "topic_id": "TOPIC-MAIN-003",
-                "risk_badge": "bg-blue-600",
-                "badge_text": "科技治理",
-                "topic_title": "全球人工智慧監管發展",
-                "risk_reason": "AI技術發展速度遠超法律制定，個資保護與算法透明度成為各國立法博弈的核心。",
-                "topic_summary": "歐盟《人工智慧法案》正式進入實施階段，美國隨即推出《AI創新與責任法案》，全球監管呈現三足鼎立態勢。",
-                "global_search_url": "https://www.google.com/search?q=Global+AI+Regulation+EU+AI+Act+April+2026",
+                "topic_id": "ai_regulation_2026",
+                "risk_badge": "risk-warning",
+                "badge_text": "監管元年",
+                "topic_title": "全球人工智慧監管：歐盟法案全面適用與三足鼎立",
+                "risk_reason": "2026年被視為AI監管全面落地之年，歐盟AI法案的域外管轄權強迫全球科技巨頭重塑合規路徑。",
+                "topic_summary": "歐盟《人工智慧法》(EU AI Act) 於2026年全面生效，採取風險導向治理。美國則在平衡競爭與安全間擺盪，中國則強化算法價值觀導向。全球形成歐、美、中三種不同路徑的治理框架。",
+                "global_search_url": "https://www.google.com/search?q=Global+AI+Regulation+Act+2026",
                 "articles": [
                     {
-                        "article_id": "ART-AI-001",
-                        "source_tag": "DigiKnow",
-                        "front_title": "歐盟AI法案正式生效",
-                        "back_title": "史上最嚴格監管浪潮來襲",
-                        "back_summary": "2026年AI監管進入真槍實彈階段，歐盟法案建立完整法律效力框架，針對高風險應用設立極高合規紅線。",
-                        "original_title": "當人工智慧遇上史上最嚴格的法規浪潮當AI從科技前沿走向國家戰略核心，一場關乎創新、倫理與安全的監管革命正在全球同步上演 - 就享知",
-                        "source_url": "https://www.digiknow.com.tw/knowledge/6535f2991871a"
+                        "article_id": "niar_2026_001",
+                        "source_tag": "科技產業資訊室",
+                        "front_title": "歐盟《人工智慧法》啟動治理新局",
+                        "back_title": "2026年全面適用，對全球供應鏈產生劇烈衝擊",
+                        "back_summary": "EU AI Act 2026年起全面實施，將AI分為不可接受、高風險等四類。其「域外管轄權」意味著台灣供應商若輸出AI產品至歐盟亦須合規，違者將面臨巨額罰款。",
+                        "original_title": "數位秩序的守望者：歐盟《人工智慧法》開啟的治理新局與全球衝擊",
+                        "source_url": "https://iknow.stpi.narl.org.tw/Post/Read.aspx?PostID=20562"
                     },
                     {
-                        "article_id": "ART-AI-002",
-                        "source_tag": "World Journal",
-                        "front_title": "奧特曼強調全球監管迫切性",
-                        "back_title": "AI民主化是繁榮關鍵",
-                        "back_summary": "OpenAI執行長在峰會上表示，全球需共同監管AI以防止技術過度集中，並預警未來幾年技術迭代將考驗社會承受力。",
-                        "original_title": "奧特曼出席人工智慧峰會強調全球亟需AI監管 - 世界日報",
-                        "source_url": "https://www.worldjournal.com/wj/story/121210/7778912"
+                        "article_id": "meganews_2026_002",
+                        "source_tag": "報新聞",
+                        "front_title": "AI監管時代：各國加速立法限制發展",
+                        "back_title": "2024-2026監管元年，防範生存風險與版權爭議",
+                        "back_summary": "各國政府從「技術觀察」轉向「法律制約」，美國要求企業分享安全測試結果，中國則強調內容可追蹤性，核心爭議在於創新與安全的零和賽局。",
+                        "original_title": "AI 監管時代來臨：各國加速立法限制人工智慧發展——研究分析與討論",
+                        "source_url": "https://www.contentplatform.info/2026/04/ai-regulation-analysis/"
                     },
                     {
-                        "article_id": "ART-AI-003",
-                        "source_tag": "Mega News",
-                        "front_title": "各國加速立法限制AI發展",
-                        "back_title": "從風險導向轉向安全防禦",
-                        "back_summary": "各國監管呈現「三足鼎立」，美國側重國家競爭力與安全的平衡，中國則強調內容可追蹤性與符合主流價值觀。",
-                        "original_title": "AI 監管時代來臨：各國加速立法限制人工智慧發展——研究分析與討論 - 報新聞",
-                        "source_url": "https://contentplatform.info/2024/04/17/ai-regulatory-era-is-coming/"
+                        "article_id": "junhe_2026_003",
+                        "source_tag": "君合律師",
+                        "front_title": "中美歐AI監管趨勢洞察",
+                        "back_title": "川普上任後撤銷部分AI限制，強調競爭優勢",
+                        "back_summary": "2025年後美國政策轉向保持競爭優勢，撤銷部分礙於發展的行政命令。中國則落實「雙備案機制」，將生成式AI納入常態化合規義務。",
+                        "original_title": "人工智能监管前沿：中、美、欧及全球其他地区趋势洞察",
+                        "source_url": "https://www.junhe.com/legal-updates/2356"
                     }
                 ]
             },
             {
-                "topic_id": "TOPIC-MAIN-004",
-                "risk_badge": "bg-yellow-600",
-                "badge_text": "區域安全",
-                "topic_title": "台海地緣政治與安全",
-                "risk_reason": "地緣政治風險指數波動直接關聯外資信心與半導體供應鏈佈局。",
-                "topic_summary": "雖然美中努力控制軍事摩擦，但台美專家調查顯示台海仍存在高度軍演壓力，且半導體赴美設廠衍生的新風險正在增加。",
-                "global_search_url": "https://www.google.com/search?q=Taiwan+Strait+Security+April+2026+updates",
+                "topic_id": "taiwan_strait_2026",
+                "risk_badge": "risk-high",
+                "badge_text": "地緣防衛",
+                "topic_title": "台海地緣政治：2027窗口期與安全援助法案",
+                "risk_reason": "美軍印太司令部持續警告2027年為關鍵節點，美國通過80億美元對台軍援引發北京強烈反彈。",
+                "topic_summary": "美國國務卿布林肯訪問北京時，強調避免誤判之必要性，但台美軍事合作加深及TikTok禁令使雙方關係惡化。台灣則在美中角力下，積極提升防禦韌性並觀察中東戰火對解放軍的啟示。",
+                "global_search_url": "https://www.google.com/search?q=Taiwan+Strait+geopolitics+security+2026",
                 "articles": [
                     {
-                        "article_id": "ART-TW-001",
-                        "source_tag": "Global PES",
-                        "front_title": "台灣地緣政治風險指數發布",
-                        "back_title": "軍事摩擦風險降但經濟挑戰升",
-                        "back_summary": "2026年第二季TGR指數微降，顯示美中在軍機艦攔截頻率上達成降溫協議，但台積電赴美擴廠帶來的產業外移風險仍被列為關切點。",
-                        "original_title": "台灣地緣政治風險指數：美中控制衝突地緣政治風險稍降 - 全球政經研究",
-                        "source_url": "https://www.globalpes.org/taiwan-geopolitical-risk-index-q2-2024/"
+                        "article_id": "ly_2026_001",
+                        "source_tag": "立法院新聞",
+                        "front_title": "美上將警示：中國目標2027具入侵台灣能力",
+                        "back_title": "拜登簽署80億美元對台軍援，布林肯向習施壓",
+                        "back_summary": "美印太司令部阿奎利諾警告北京正在增強實力。美國正式簽署援台計畫，並針對中國支持俄羅斯軍工體系提出嚴正關切，引發兩大經濟體巨大差異。",
+                        "original_title": "2024/4/24-2024/4/30 各區域一週新聞重點整理",
+                        "source_url": "https://www.ly.gov.tw/Pages/Detail.aspx?nodeid=46896&pid=236541"
                     },
                     {
-                        "article_id": "ART-TW-002",
-                        "source_tag": "SETN",
-                        "front_title": "美台專家預警局勢緊張",
-                        "back_title": "中國或採取非軍事脅迫",
-                        "back_summary": "調查顯示過半專家認為台海可能重現類似1996年的軍事演習模式，目的在於透過戰略封鎖而非直接入侵來施加壓力。",
-                        "original_title": "美台專家選前調查：2024年恐重演1996年「台海危機」 | 政治| 三立新聞網SETN.COM",
-                        "source_url": "https://www.setn.com/News.aspx?NewsID=1417537"
+                        "article_id": "tnl_2026_002",
+                        "source_tag": "關鍵評論網",
+                        "front_title": "中東戰火下的台海博弈",
+                        "back_title": "中國觀察美軍F-35數據，升級對台認知戰",
+                        "back_summary": "分析指出，中東衝突為北京提供觀察美軍裝備與戰術的機會，同時利用國際局勢分散美國注意力，進一步升級對台灣的認知作戰壓力。",
+                        "original_title": "中東戰火下的台海博弈：中國伺機觀察美軍F-35數據",
+                        "source_url": "https://www.thenewslens.com/article/202145"
                     },
                     {
-                        "article_id": "ART-TW-003",
-                        "source_tag": "Legislative Yuan",
-                        "front_title": "美軍駐台人數與軍援現狀",
-                        "back_title": "950億美元援助計畫實施",
-                        "back_summary": "美國簽署援外法案，提供台灣數十億美元安全援助，用於反對軍事侵略，並確認美軍軍事人員在台進行技術訓練的具體分布。",
-                        "original_title": "2024/4/24-2024/4/30 各區域一週新聞重點整理 - 立法院",
-                        "source_url": "https://www.ly.gov.tw/Pages/Detail.aspx?nodeid=302&pid=236254"
+                        "article_id": "tais_2026_003",
+                        "source_tag": "太報",
+                        "front_title": "台股震盪：地緣政治與利率疑慮共振",
+                        "back_title": "失守3萬9大關，外資連三日提款逃避風險",
+                        "back_summary": "台海局勢不穩配合聯準會利率政策，導致外資資金外流，新台幣重貶，台股面臨高位震盪，市場對2027年局勢預防性減碼。",
+                        "original_title": "台股殺尾盤！高低震盪逾900點收跌376點失守3萬9大關",
+                        "source_url": "https://www.taisounds.com/news/content/76/123156"
                     }
                 ]
             },
             {
-                "topic_id": "TOPIC-MAIN-005",
-                "risk_badge": "bg-red-800",
-                "badge_text": "能源通道",
-                "topic_title": "中東地緣政治衝突",
-                "risk_reason": "荷姆茲海峽的任何封鎖將直接推升全球能源價格並中斷關鍵化肥出口。",
-                "topic_summary": "伊朗與以色列的直接對抗趨於頻繁，荷姆茲海峽的海底纜線與航運安全成為全球關注的環節。",
-                "global_search_url": "https://www.google.com/search?q=Middle+East+Conflict+Iran+Israel+April+2026",
+                "topic_id": "middle_east_2026",
+                "risk_badge": "risk-critical",
+                "badge_text": "全面開戰風險",
+                "topic_title": "中東衝突：從代理人戰爭轉向直接軍事對抗",
+                "risk_reason": "以色列與伊朗打破數十年默契進行直接攻擊，局勢瀕臨全面地區大戰邊緣。",
+                "topic_summary": "2024至2026年間，以色列轟炸伊朗駐外設施，引發伊朗本土大規模飛彈襲擊。美國雖全力攔截但對以色列決策存疑。2025年6月更爆發直接以伊戰爭，導致中東能源供應與地緣格局劇震。",
+                "global_search_url": "https://www.google.com/search?q=Israel+Iran+conflict+latest+news+2026",
                 "articles": [
                     {
-                        "article_id": "ART-ME-001",
-                        "source_tag": "Wikipedia",
-                        "front_title": "以伊直接對抗升級",
-                        "back_title": "2026中東衝突新常態",
-                        "back_summary": "伊朗向以色列發射大規模飛彈與無人機以報復領事館遭襲，雙方已從代理人戰爭轉向直接的防區外打擊。",
-                        "original_title": "2024年伊朗—以色列衝突- 維基百科",
-                        "source_url": "https://zh.wikipedia.org/wiki/2024%E5%B9%B4%E4%BC%8A%E6%9C%97%E2%80%94%E4%BB%A5%E8%89%B2%E5%88%97%E5%86%B2%E7%AA%81"
+                        "article_id": "wiki_me_001",
+                        "source_tag": "維基百科",
+                        "front_title": "以伊戰爭爆發：2024-2026衝突軸線",
+                        "back_title": "以色列突襲伊朗核設施，標誌全面開戰",
+                        "back_summary": "回顧2024年4月大使館受襲後，局勢在2025年急劇惡化。至2026年，雙方已進入常態化飛彈互攻，伊朗向以色列發射數百枚飛彈，防空系統負擔沈重。",
+                        "original_title": "2024年伊朗—以色列衝突",
+                        "source_url": "https://zh.wikipedia.org/wiki/2024年伊朗—以色列衝突"
                     },
                     {
-                        "article_id": "ART-ME-002",
-                        "source_tag": "HK01",
-                        "front_title": "以色列擴大空襲黎巴嫩",
-                        "back_title": "美伊停火談判面臨瓶頸",
-                        "back_summary": "以色列對黎巴嫩真主黨目標發動史上最猛烈空襲，造成大量傷亡，成為美伊和談進程中最大的絆腳石。",
-                        "original_title": "伊朗護衛艦在斯里蘭卡海岸遭襲擊英媒：至少101失蹤78傷｜最新 - HK01",
-                        "source_url": "https://www.hk01.com/article/1000000"
+                        "article_id": "rep_me_002",
+                        "source_tag": "報導者",
+                        "front_title": "伊朗空襲以色列：不再玩代理戰爭",
+                        "back_title": "300枚導彈無人機突襲，打破灰色狀態默契",
+                        "back_summary": "伊朗首度從本土攻擊以色列，分析指出這旨在消耗以色列防空飛彈。拜登政府擔心納坦雅胡將美國拖入更危險的地區大戰，極力勸阻全面開戰。",
+                        "original_title": "【Hello World】伊朗空襲以色列：300枚導彈無人機突襲，以伊首度正面衝突",
+                        "source_url": "https://www.twreporter.org/a/iran-israel-attack-explainer"
                     },
                     {
-                        "article_id": "ART-ME-003",
-                        "source_tag": "UDN",
-                        "front_title": "荷姆茲海峽的深海風險",
-                        "back_title": "被忽視的海底環節",
-                        "back_summary": "研究指出，中東戰爭除了影響航運，藏在荷姆茲海峽海底的通信電纜若受損，將對全球數位經濟造成不可逆的打擊。",
-                        "original_title": "不是石油！荷姆茲海峽巨大風險「藏在海底」被忽視的環節",
-                        "source_url": "https://market.ltn.com.tw/article/16194"
+                        "article_id": "now_me_003",
+                        "source_tag": "Now新聞",
+                        "front_title": "不斷更新：中東局勢面臨分歧",
+                        "back_title": "以色列戰時內閣存分歧，華府持續協助防衛",
+                        "back_summary": "以色列內部對報復行動存有爭議，拜登警告伊朗勿擴大攻擊，德國、奧地利已呼籲國民離開相關區域，預期將有更激烈的報復行動。",
+                        "original_title": "【不斷更新】2024年中東局勢(至4月15日)",
+                        "source_url": "https://news.now.com/home/international/player?newsId=557008"
                     }
                 ]
             }
         ]
     },
     "wildcard_topics": {
-        "section_title": "今日潛在重大議題",
+        "section_title": "潛在重大議題與野卡趨勢",
         "topics": [
             {
-                "topic_id": "TOPIC-WILD-001",
-                "risk_badge": "bg-purple-600",
-                "badge_text": "社會動盪",
-                "topic_title": "全球大專院校抗議潮蔓延",
-                "risk_reason": "校園示威擴散至全球多地，可能演變成跨國性的政治抗議運動，挑戰白宮對外政策。",
-                "topic_summary": "始於哥倫比亞大學的親巴勒斯坦抗議迅速蔓延，白宮罕見發聲譴責暴力，多地校園爆發大規模逮捕行動。",
-                "global_search_url": "https://www.google.com/search?q=Global+campus+protests+April+2026",
+                "topic_id": "bci_explosion_2026",
+                "risk_badge": "risk-low",
+                "badge_text": "科技奇異點",
+                "topic_title": "腦機介面 (BCI) 爆發：人類意識與機械的全面對話",
+                "risk_reason": "BCI技術在2026年首度寫入中國政府報告，全球市場規模預計於2030年突破百億美金，正重塑人類壽命與感官極限。",
+                "topic_summary": "2026年成為腦機介面臨床應用元年。Neuralink增加植入手術案例，中國則將其列為核心未來產業。BCI已不僅限於醫療康復，更在注意監控、工業安全及「意識永生」領域展開角逐。",
+                "global_search_url": "https://www.google.com/search?q=Brain-Computer+Interface+market+trends+2026",
                 "articles": [
                     {
-                        "article_id": "ART-WILD-101",
-                        "source_tag": "Japan Times",
-                        "front_title": "美國大學抗議潮引發逮捕行動",
-                        "back_title": "白宮敦促校園保持和平",
-                        "back_summary": "警方在多個校園逮捕數百名示威者，白宮發言人柯比重申尊重和平抗議但譴責反猶主義與暴力。",
-                        "original_title": "数千人被捕後白宮敦促「和平」校園抗議",
-                        "source_url": "https://www.japantimes.co.jp/news/2024/04/29/world/white-house-gaza-campus-protests/"
+                        "article_id": "cnyes_bci_001",
+                        "source_tag": "鉅亨網",
+                        "front_title": "腦機介面「狂飆」：120億元大市場來臨",
+                        "back_title": "2026寫入政府工作報告，培育未來產業",
+                        "back_summary": "中國將腦機介面納入六大未來產業，北京天壇醫院已成功實施意念取物手術。技術應用從神經康復擴展至感官重建，讓盲人重新「看見」輪廓。",
+                        "original_title": "腦機介面“狂飆”！120億元大市場，來了→",
+                        "source_url": "https://news.cnyes.com/news/id/5538942"
                     },
                     {
-                        "article_id": "ART-WILD-102",
-                        "source_tag": "Reuters",
-                        "front_title": "抗議活動對大選選情的影響",
-                        "back_title": "拜登面臨年輕選民壓力",
-                        "back_summary": "年輕一代對中東政策的不滿透過校園抗議具體化，這可能成為決定2026年政治版圖的重要變數。",
-                        "original_title": "Campus protests swell across US as Biden balancing act faces test",
-                        "source_url": "https://www.reuters.com/world/us/campus-protests-2024-04-29/"
+                        "article_id": "tech_bci_002",
+                        "source_tag": "科技島",
+                        "front_title": "中國「十四五」新規劃：BCI普及在即",
+                        "back_title": "3至5年內將投入公共應用，挑戰馬斯克領先地位",
+                        "back_summary": "中國發布新規劃將腦機介面提升至核心戰略地位。專家表示中國在人口基數與醫保納入上有顯著優勢，正追趕Neuralink的侵入式晶片技術。",
+                        "original_title": "中國發布新「十四五」規劃腦機介面3至5年內有望普及",
+                        "source_url": "https://www.technice.com.tw/industry/ai/102345/"
                     },
                     {
-                        "article_id": "ART-WILD-103",
-                        "source_tag": "AP News",
-                        "front_title": "國際校園響應聲援",
-                        "back_title": "法英澳多地出現集會",
-                        "back_summary": "受美大抗議啟發，巴黎政治學院及倫敦多所高校亦出現類似紮營抗議，要求學校切斷與爭議軍工企業的聯繫。",
-                        "original_title": "Pro-Palestinian encampments spread to universities globally",
-                        "source_url": "https://apnews.com/article/university-protests-palestinians-israel-hamas-war"
+                        "article_id": "ct_bci_003",
+                        "source_tag": "中時電子報",
+                        "front_title": "長壽科技突破：人類有望活到千歲？",
+                        "back_title": "BCI將人類推向「系統特徵」，解鎖感官編碼",
+                        "back_summary": "Neuralink聯合創辦人預言2035年將是人類壽命的事件視界。透過腦機介面與電子元件結合，大腦被視為中央處理器，身體老化或將成為可逆過程。",
+                        "original_title": "AI前沿解密》腦機介面逐步將人類推向永生",
+                        "source_url": "https://www.chinatimes.com/opinion/20260320002131-262104"
                     }
                 ]
             },
             {
-                "topic_id": "TOPIC-WILD-002",
-                "risk_badge": "bg-green-600",
-                "badge_text": "供應鏈風險",
-                "topic_title": "全球化肥供應鏈與地緣政治",
-                "risk_reason": "中東局勢外溢至化肥出口，將導致全球糧食生產成本在未來一季顯著上升。",
-                "topic_summary": "受荷姆茲海峽情勢影響，中國加強化肥出口檢查以確保國內供應，引發國際肥料市場價格劇烈波動。",
-                "global_search_url": "https://www.google.com/search?q=Global+fertilizer+supply+chain+Hormuz+impact+2026",
+                "topic_id": "digital_sovereignty_2026",
+                "risk_badge": "risk-warning",
+                "badge_text": "雲端自主",
+                "topic_title": "數位主權與全球雲端戰略布局",
+                "risk_reason": "歐盟與美國在數據跨境流動與雲端標準上的競爭，演變為對「數位邊界」的重新劃定。",
+                "topic_summary": "歐盟加速數位主權布局，投入1.8億歐元標案支持本土雲端。美國司法部則限制敏感數據流向中國，各國開始對AI代理人時代的生態圈壟斷展開防範。",
+                "global_search_url": "https://www.google.com/search?q=EU+digital+sovereignty+cloud+strategy+2026",
                 "articles": [
                     {
-                        "article_id": "ART-WILD-201",
-                        "source_tag": "Economic Daily",
-                        "front_title": "中國加強化肥出口海關檢查",
-                        "back_title": "中東戰爭下的化肥博弈",
-                        "back_summary": "路透社報導指出，荷姆茲海峽封鎖風險促使中國收緊出口政策，導致全球化學肥料供應鏈陷入緊張。",
-                        "original_title": "中東戰爭下中國加強化肥出口海關檢查",
-                        "source_url": "https://money.udn.com/money/story/5599/7931215"
+                        "article_id": "niar_ds_001",
+                        "source_tag": "科技產業資訊室",
+                        "front_title": "歐盟加速數位主權：雲端標案背後的戰略",
+                        "back_title": "1.8億歐元推動科技自主，挑戰大廠壟斷",
+                        "back_summary": "歐盟推出大型雲端標案，旨在降低對美國雲端巨頭的依賴，並要求Android開放第三方AI，確保在AI代理人時代不被生態圈壟斷。",
+                        "original_title": "歐盟加速數位主權布局：1.8億歐元雲端標案背後的科技自主戰略",
+                        "source_url": "https://iknow.stpi.narl.org.tw/Post/Read.aspx?PostID=20562"
                     },
                     {
-                        "article_id": "ART-WILD-202",
-                        "source_tag": "Reuters",
-                        "front_title": "全球農產品價格預警",
-                        "back_title": "肥料成本推升通膨壓力",
-                        "back_summary": "化肥價格上漲與物流延遲疊加，農業專家警告今年秋收可能面臨顯著的產量減少與價格調漲。",
-                        "original_title": "Global food security at risk as fertilizer prices surge amid conflict",
-                        "source_url": "https://www.reuters.com/markets/commodities/fertilizer-prices-2026-update/"
+                        "article_id": "tsinghua_ds_002",
+                        "source_tag": "清華大學CIFER",
+                        "front_title": "美國司法部新規定：限制敏感數據外流",
+                        "back_title": "禁止敏感數據流向中國等六國，保護國家安全",
+                        "back_summary": "美國發布最終規則，嚴格限制大宗敏感個人數據向特定受關注國家的傳輸，涉及健康、地理位置及生物特徵數據，旨在切斷潛在的數位情報搜集。",
+                        "original_title": "2024年中美貿易爭端大事記",
+                        "source_url": "https://cifer.tsinghua.edu.cn/info/1013/1845.htm"
                     },
                     {
-                        "article_id": "ART-WILD-203",
-                        "source_tag": "FAO",
-                        "front_title": "化肥市場分析與策略建議",
-                        "back_title": "糧農組織關注中東外溢效應",
-                        "back_summary": "國際組織敦促各國建立肥料儲備，並尋求非傳統供應來源以應對可能的長期航道受阻風險。",
-                        "original_title": "Fertilizer Market Situation and Geopolitical Risks 2026",
-                        "source_url": "https://www.fao.org/worldfoodsituation/fertilizerprices"
+                        "article_id": "sun_ds_003",
+                        "source_tag": "商傳媒",
+                        "front_title": "全球AI監管趨勢：個資保護成攻防重點",
+                        "back_title": "技術發展快於法規制定，GDPR與CCPA面臨挑戰",
+                        "back_summary": "AI系統的全球性使得跨境監管極其困難。各國在保護個人資料的同時，也試圖防止外國技術透過數據訓練滲透其數位邊界。",
+                        "original_title": "全球AI監管趨勢：個資保護成重點，技術發展快於法規制定",
+                        "source_url": "https://sunmedia.tw/news/987654"
                     }
                 ]
             },
             {
-                "topic_id": "TOPIC-WILD-003",
-                "risk_badge": "bg-orange-600",
-                "badge_text": "市場異動",
-                "topic_title": "日本黃金週金融流動性風險",
-                "risk_reason": "日圓劇烈波動適逢日本長假，流動性短缺可能導致匯率出現閃崩或非理性暴漲。",
-                "topic_summary": "日圓兌美元一度觸及160關口，引發日本政府疑似入場干預的傳言，市場對黃金週期間的劇烈波動高度戒備。",
-                "global_search_url": "https://www.google.com/search?q=Japan+Golden+Week+Yen+liquidity+risk+April+2026",
+                "topic_id": "cognitive_war_2026",
+                "risk_badge": "risk-high",
+                "badge_text": "選戰干預",
+                "topic_title": "認知作戰與全球大選干預證據",
+                "risk_reason": "隨多國大選臨近，AI生成的深度偽造與組織化的社交媒體干預成為國安頭號威脅。",
+                "topic_summary": "布林肯證實已有中國試圖影響美國大選的證據。在台灣，針對中東局勢的錯假訊息被用來質疑美國的安全承諾，並削弱對政府的信任。AI讓認知戰的成本更低、更難偵測。",
+                "global_search_url": "https://www.google.com/search?q=AI+election+interference+Deepfake+evidence+2026",
                 "articles": [
                     {
-                        "article_id": "ART-WILD-301",
-                        "source_tag": "Share Talk",
-                        "front_title": "日圓暴跌後出現神祕回升",
-                        "back_title": "當局疑似干預匯市",
-                        "back_summary": "日圓兌美元跌至160.17的34年新低後迅速反彈至155，市場普遍認為這是日本政府自2022年以來首次重大干預。",
-                        "original_title": "What happened overnight - Monday 29th April 2024 - Share Talk",
-                        "source_url": "https://www.share-talk.com/what-happened-overnight-monday-29th-april-2024/"
+                        "article_id": "ly_cw_001",
+                        "source_tag": "立法院新聞",
+                        "front_title": "布林肯證實：已有中國試圖影響美大選證據",
+                        "back_title": "TikTok禁令法案簽署，反制組織化認知作戰",
+                        "back_summary": "美國國務卿在訪華期間明確指出已掌握干預證據。拜登正式簽署TikTok禁令，認為該平台為組織化輿論操縱提供了潛在通道。",
+                        "original_title": "國務卿布林肯稱美國已看到中國試圖影響美國總統大選的證據",
+                        "source_url": "https://www.ly.gov.tw/Pages/Detail.aspx?nodeid=46896&pid=236541"
                     },
                     {
-                        "article_id": "ART-WILD-302",
-                        "source_tag": "Commercial Times",
-                        "front_title": "日銀貨幣政策不變引爆拋售",
-                        "back_title": "植田和男的鷹派訊號不足",
-                        "back_summary": "日本央行決議維持利率不變且未減少購債，市場解讀其對弱勢日圓的容忍度高於預期，引發新一輪日圓拋售潮。",
-                        "original_title": "0429群益早安｜全球財經時事深度解說- 證券- 工商時報",
-                        "source_url": "https://www.ctee.com.tw/news/20240429700346-430201"
+                        "article_id": "tnl_cw_002",
+                        "source_tag": "關鍵評論網",
+                        "front_title": "中東戰火下的台海認知作戰",
+                        "back_title": "習近平對台盤算未變，智庫憂能源安全遭炒作",
+                        "back_summary": "北京利用中東衝突分散美軍資源之際，在台灣內部推動「疑美論」，透過炒作能源短缺威脅及美軍棄台可能性，進行深層心理戰。",
+                        "original_title": "中東戰火下的台海博弈：升級對台認知戰",
+                        "source_url": "https://www.thenewslens.com/article/202145"
                     },
                     {
-                        "article_id": "ART-WILD-303",
-                        "source_tag": "Bloomberg",
-                        "front_title": "黃金週期間的匯率陷阱",
-                        "back_title": "交易員警告低流動性波動",
-                        "back_summary": "隨著日本進入長假，市場參與者減少，任何小額交易都可能在「薄弱」的市場中激發巨大的價格變動。",
-                        "original_title": "Traders brace for wild Yen swings during Japan Golden Week",
-                        "source_url": "https://www.bloomberg.com/news/articles/2024-04-29/yen-intervention-watch"
+                        "article_id": "apple_cw_003",
+                        "source_tag": "壹蘋新聞網",
+                        "front_title": "深偽內容氾濫：大眾難辨真偽",
+                        "back_title": "知名藝人與政治家頻遭AI「換臉」操縱輿論",
+                        "back_summary": "隨著AI技術普及，2026年選舉期間出現大量無法即時辨識的深偽影片，不僅影響名譽，更被用於精準投送特定立場的政治偏見。",
+                        "original_title": "撕破刻板標籤日本女優反擊，警示AI深偽威脅",
+                        "source_url": "https://tw.nextapple.com/international/20260430/latest"
                     }
                 ]
             }
@@ -320,137 +321,137 @@
         "section_title": "台灣財金即時情報 (24H)",
         "topics": [
             {
-                "topic_id": "TOPIC-FIN-TW-01",
-                "risk_badge": "bg-blue-500",
-                "badge_text": "市場焦點",
-                "topic_title": "台股震盪與 AI 供應鏈動能",
-                "risk_reason": "台股回測39000點大關，AI營收占比成為個股能否抗跌的關鍵技術指標。",
-                "topic_summary": "台北股市今日下跌218點，但AI伺服器供應鏈如光寶科、盛群等表現相對穩健，台灣大哥大更宣佈啟動大型AI投資計畫。",
-                "global_search_url": "https://www.google.com/search?q=Taiwan+stock+market+April+29+2026+AI+news",
+                "topic_id": "tw_finance_hot_2026",
+                "risk_badge": "risk-warning",
+                "badge_text": "稅收與能源",
+                "topic_title": "2026報稅季啟動、台電80週年與能源轉型壓力",
+                "risk_reason": "4月底為報稅關鍵期及台電紀念周年，電價調整與用電尖峰刷新紀錄成為市場對半導體成本的關注焦點。",
+                "topic_summary": "總統賴清德期許台電「跳舞不跳電」，面臨今年夏夜尖峰用電刷新紀錄之挑戰。同時，2026報稅季出現常見NG申報錯誤，國稅局提醒民眾防範。台股則在地緣政治與聯準會按兵不動壓力下，失守3萬9大關。",
+                "global_search_url": "https://www.google.com/search?q=Taiwan+stock+market+Tax+2026+Taipower",
                 "articles": [
                     {
-                        "article_id": "ART-TWFIN-001",
-                        "source_tag": "Economic Daily",
-                        "front_title": "5月台股期指重挫243點",
-                        "back_title": "現貨收39303點跌勢未止",
-                        "back_summary": "受國際情勢影響，台股今日開低走低，電子期跌勢最重，顯示投資者對短期通膨風險仍有顧慮。",
-                        "original_title": "即時新聞| 經濟日報",
-                        "source_url": "https://money.udn.com/money/index"
+                        "article_id": "twf_001",
+                        "source_tag": "壹蘋新聞",
+                        "front_title": "2026報稅開跑：避開四大申報錯誤",
+                        "back_title": "小心補稅還被罰，國稅局加強AI查稅",
+                        "back_summary": "報稅季到來，國稅局揭露常見錯誤如列報撫養權重複、舉動節稅不合規等，建議利用網路申報以免遭調整補稅。",
+                        "original_title": "2026報稅｜報稅常見錯誤曝光！4大NG申報一次看",
+                        "source_url": "https://tw.nextapple.com/finance/20260430/tax-guide"
                     },
                     {
-                        "article_id": "ART-TWFIN-002",
-                        "source_tag": "TaiSounds",
-                        "front_title": "光寶科AI營收比重拉升三成",
-                        "back_title": "砸10億美元擴張全球版圖",
-                        "back_summary": "光寶科董事會通過重大投資案，將AI營收比重提升至三成，並同時佈局美越生產基地以應對地緣政治。",
-                        "original_title": "光寶科AI營收比重拉升近三成！董事會通過砸逾10億美元投資美國、增資越南",
-                        "source_url": "https://www.taisounds.com/news/content/76/122588"
+                        "article_id": "twf_002",
+                        "source_tag": "壹蘋新聞",
+                        "front_title": "賴清德三大期許：要台電「跳舞不跳電」",
+                        "back_title": "台電80周年大會，核三再運轉進度曝光",
+                        "back_summary": "賴清德總統出席台電周年慶，幽默期許供電穩定。台電董座表示今年用電續成長，將引進原廠進行核三檢測評估。",
+                        "original_title": "「台電女婿」賴清德三大期許「跳舞不跳電」找電找回來",
+                        "source_url": "https://tw.nextapple.com/finance/20260430/taipower-80th"
                     },
                     {
-                        "article_id": "ART-TWFIN-003",
-                        "source_tag": "Economic Daily",
-                        "front_title": "台灣大林之晨看好AI黃金10年",
-                        "back_title": "啟動超人計畫營收看漲",
-                        "back_summary": "台灣大哥大預估2030年營收規模將翻倍至4000億新台幣，重點投資項目包括境外海纜與AI驅動的數位轉型。",
-                        "original_title": "台灣大3引擎點火將重啟境外海纜投資",
-                        "source_url": "https://money.udn.com/money/story/5612/7931343"
+                        "article_id": "twf_003",
+                        "source_tag": "太報",
+                        "front_title": "台股殺尾盤：收跌376點失守3萬9",
+                        "back_title": "台積電重挫45元，月線仍狂漲逾7000點",
+                        "back_summary": "在聯準會維持利率不變及亞幣走弱下，台股資金獲利回吐，台積電股價承壓收2135元，市場觀望氣氛濃厚。",
+                        "original_title": "台股殺尾盤！高低震盪逾900點收跌376點失守3萬9大關",
+                        "source_url": "https://www.taisounds.com/news/content/76/123156"
                     },
                     {
-                        "article_id": "ART-TWFIN-004",
-                        "source_tag": "TaiSounds",
-                        "front_title": "晶圓代工漲幅約15%",
-                        "back_title": "盛群宣佈調漲低毛利產品",
-                        "back_summary": "因成本壓力，盛群宣佈3月起調漲低毛利產品價格，並預計AI伺服器相關風扇產品將於今年貢獻顯著營收。",
-                        "original_title": "晶圓代工漲幅約15% 盛群：3月低毛利產品調價﹑AI伺服器風扇今年貢獻營收",
-                        "source_url": "https://www.taisounds.com/news/content/76/122584"
+                        "article_id": "twf_004",
+                        "source_tag": "太報",
+                        "front_title": "新台幣重貶1.31角，回測31.7關卡",
+                        "back_title": "Fed按兵不動引發亞幣全倒，外資提款",
+                        "back_summary": "聯準會立場趨鷹導致美債收益率上升，亞洲貨幣承壓，新台幣午盤出現顯著貶幅，進一步壓制台股電子股表現。",
+                        "original_title": "Fed按兵不動、亞幣全倒！新台幣午盤重貶1.31角回測31.7元關卡",
+                        "source_url": "https://www.taisounds.com/news/content/76/123157"
                     },
                     {
-                        "article_id": "ART-TWFIN-005",
-                        "source_tag": "TaiSounds",
-                        "front_title": "三星退出MLC市場旺宏受惠",
-                        "back_title": "台廠成最大贏家",
-                        "back_summary": "隨著三星正式退出低毛利MLC快閃記憶體市場，台灣旺宏等廠商迎來轉單效應，股價與訂單能見度同步提升。",
-                        "original_title": "三星退出MLC市場台廠旺宏成最大贏家！",
-                        "source_url": "https://www.taisounds.com/news/content/76/122596"
+                        "article_id": "twf_005",
+                        "source_tag": "太報",
+                        "front_title": "光寶科AI營收佔比逼近三成",
+                        "back_title": "投資美國10億美元，積極布局雲端基礎設施",
+                        "back_summary": "光寶科董事會通過大規模投資案，鎖定美國與越南產能，看好2026年AI伺服器電源需求持續旺盛。",
+                        "original_title": "光寶科AI營收比重拉升近三成！董事會通過砸逾10億美元投資美國",
+                        "source_url": "https://www.taisounds.com/news/content/76/123160"
                     },
                     {
-                        "article_id": "ART-TWFIN-006",
-                        "source_tag": "TaiSounds",
-                        "front_title": "證交稅收預計超預算5000億",
-                        "back_title": "藍委促普發現金制度化",
-                        "back_summary": "受惠於股市高成交量，財政部表示今年證交稅收遠超預期，引發立院關於盈餘分配與稅務制度化的熱烈討論。",
-                        "original_title": "今年證交稅收估超出預算5000億！ 藍委促「普發現金」制度化財政部回應了",
-                        "source_url": "https://www.taisounds.com/news/content/76/122602"
+                        "article_id": "twf_006",
+                        "source_tag": "經濟日報",
+                        "front_title": "聯發科法說會：ASIC市佔可望達26%",
+                        "back_title": "TPU題材發酵，法人看好2028年成長空間",
+                        "back_summary": "聯發科在今日法說會釋出樂觀展望，特別是在客製化晶片與邊緣運算領域，預計其特殊應用晶片市佔將大幅提升。",
+                        "original_title": "聯發科法說會今登場！TPU題材發酵法人看2028年ASIC市占達26%",
+                        "source_url": "https://udn.com/news/story/7240/8287515"
                     }
                 ]
             }
         ]
     },
     "business_finance_global": {
-        "section_title": "全球財金焦點 (24H)",
+        "section_title": "全球財金即時情報 (24H)",
         "topics": [
             {
-                "topic_id": "TOPIC-FIN-GL-01",
-                "risk_badge": "bg-red-500",
-                "badge_text": "利率風向",
-                "topic_title": "聯準會利率路徑與美股動能",
-                "risk_reason": "通膨數據超預期導致降息時程推遲，全球資產價格面臨重新定價。",
-                "topic_summary": "市場焦點鎖定本週的聯準會決議，目前偏向『Higher for Longer』，而特斯拉在中國的FSD進展則為科技股注入強心針。",
-                "global_search_url": "https://www.google.com/search?q=Global+finance+news+Fed+Tesla+FSD+April+2026",
+                "topic_id": "global_finance_hot_2026",
+                "risk_badge": "risk-high",
+                "badge_text": "利率與財報",
+                "topic_title": "聯準會決策、通膨數據與大型科技股財報週",
+                "risk_reason": "聯準會對降息的審慎態度，配合Amazon與Apple等權值股財報，決定了2026年Q2全球資本市場的風險走向。",
+                "topic_summary": "聯準會(Fed)在4月底會議中連續第六次維持利率不變(5.25%-5.5%)，強調需對通膨降回2%目標更有信心。市場焦點轉向亞馬遜與蘋果財報。儘管經濟增長放緩，但勞動力市場依舊強勁，通膨頑固性令投資者感到不安。",
+                "global_search_url": "https://www.google.com/search?q=Fed+FOMC+meeting+April+30+2024+earnings+Amazon+Apple",
                 "articles": [
                     {
-                        "article_id": "ART-GLFIN-001",
-                        "source_tag": "Yahoo Finance",
-                        "front_title": "美股震盪小幅走高",
-                        "back_title": "特斯拉因中國FSD利多暴漲15%",
-                        "back_summary": "馬斯克閃電訪中，特斯拉通過數據安全要求並計畫推出FSD，推動股價大漲，抵消了部分通膨數據帶來的負面情緒。",
-                        "original_title": "Stock market today: Stocks edge higher to start big week, Tesla surges 15% | April 29, 2024",
-                        "source_url": "https://www.youtube.com/watch?v=A0yO7I3i-V0"
+                        "article_id": "glf_001",
+                        "source_tag": "Fox Business",
+                        "front_title": "Fed維持利率不變：通膨進度停滯",
+                        "back_title": "利率連六凍，23年來最高水平持續中",
+                        "back_summary": "聯準會表示近幾個月在通膨目標上「缺乏進一步進展」，門檻雖然敞開但需更多數據支持，今年降息次數預期可能縮減。",
+                        "original_title": "Fed holds rates steady as inflation casts doubt on future cuts",
+                        "source_url": "https://www.foxbusiness.com/economy/fed-holds-rates-steady-inflation-future-cuts"
                     },
                     {
-                        "article_id": "ART-GLFIN-002",
-                        "source_tag": "LPL Financial",
-                        "front_title": "債券市場利率維持高檔",
-                        "back_title": "降息預期大幅縮減",
-                        "back_summary": "LPL研究顯示，由於服務業通膨頑固，聯準會可能推遲降息，10年期公債殖利率將長期維持在4%以上。",
-                        "original_title": "That Was Quite A Week | Weekly Market Commentary | April 29, 2024",
-                        "source_url": "https://www.soliswealth.com/market-commentary/that-was-quite-a-week-weekly-market-commentary-april-29-2024/"
+                        "article_id": "glf_002",
+                        "source_tag": "Business Insider",
+                        "front_title": "本週美股焦點：Fed、財報與就業數據",
+                        "back_title": "鮑爾記者會可能帶來市場震盪，聚焦Amazon財報",
+                        "back_summary": "Raymond James投資長警告，若通膨數據持續過熱，鮑爾可能轉向鷹派。週二的Amazon與週四的Apple財報將是估值的關鍵測試。",
+                        "original_title": "Stock Market This Week: Fed Meeting, Tech Earnings, Jobs Report Coming",
+                        "source_url": "https://markets.businessinsider.com/news/stocks/stock-market-this-week-fed-meeting-tech-earnings-jobs-report-2024-4"
                     },
                     {
-                        "article_id": "ART-GLFIN-003",
-                        "source_tag": "SWBC Blogs",
-                        "front_title": "市場關注非農與利率決議",
-                        "back_title": "週三FOMC會議將定調",
-                        "back_summary": "本週迎來數據密集區，包含非農就業報告，市場普遍預期鮑爾將維持鷹派基調以壓制通膨。",
-                        "original_title": "Market Commentary: Week of April 29, 2024 - SWBC Blogs",
-                        "source_url": "https://www.swbc.com/blog/market-commentary-week-of-april-29-2024"
+                        "article_id": "glf_003",
+                        "source_tag": "Federal Reserve",
+                        "front_title": "Fed會議紀要：經濟成長步伐放緩",
+                        "back_title": "4月30日聯合會議召開，物價壓力仍大",
+                        "back_summary": "聯準會指出，2026年第一季GDP成長較去年下半年顯著放緩，但就業市場強勁且PCE通膨指標仍高於2.8%的核心水準。",
+                        "original_title": "A joint meeting of the Federal Open Market Committee and the Board of Governors",
+                        "source_url": "https://www.federalreserve.gov/monetarypolicy/fomcminutes20240501.htm"
                     },
                     {
-                        "article_id": "ART-GLFIN-004",
-                        "source_tag": "Share Talk",
-                        "front_title": "JPMorgan 員工重返倫敦",
-                        "back_title": "脫歐逆轉的微弱訊號",
-                        "back_summary": "摩根大通開始將部分員工遷回倫敦，反映出倫敦金融城在後脫歐時代仍具備強大的國際金融吸引力。",
-                        "original_title": "JPMorgan moves staff back to London in quiet Brexit reversal.",
-                        "source_url": "https://www.share-talk.com/what-happened-overnight-monday-29th-april-2024/"
+                        "article_id": "glf_004",
+                        "source_tag": "Business Insider",
+                        "front_title": "美財政部宣布借貸需求：市場壓力緩解",
+                        "back_title": "稅收激增導致現金充裕，債券發行量低於預期",
+                        "back_summary": "財政部操作帳戶餘額達9550億美元，顯示政府本季對外借款需求降低，有利於美債市場收益率的回落與穩定。",
+                        "original_title": "All eyes on the quarterly refunding announcement on Monday",
+                        "source_url": "https://markets.businessinsider.com/news/stocks/treasury-refunding-announcement-debt-issuance"
                     },
                     {
-                        "article_id": "ART-GLFIN-005",
+                        "article_id": "glf_005",
                         "source_tag": "Arabic Trader",
-                        "front_title": "全球市場面臨決定性的一週",
-                        "back_title": "各大央行決議密集登場",
-                        "back_summary": "本週包括日本銀行與加拿大央行的決議，將決定全球主要貨幣對美元的匯率走勢。",
+                        "front_title": "全球金融市場面臨決定性一週",
+                        "back_title": "鮑爾言論將決定美元走勢，通膨測試正在進行",
+                        "back_summary": "PCE個人消費支出數據是Fed最看重的指標。任何高於預期的數據都將強化升息或維持高利率的預期，直接衝擊全球匯率。",
                         "original_title": "Global financial markets face a decisive week... with the US Federal Reserve topping the agenda",
-                        "source_url": "https://www.arabictrader.com/en/news/165431"
+                        "source_url": "https://www.arabictrader.com/en/news/167852"
                     },
                     {
-                        "article_id": "ART-GLFIN-006",
-                        "source_tag": "Yahoo Finance",
-                        "front_title": "Paramount CEO 傳將下台",
-                        "back_title": "收購談判中的內部震盪",
-                        "back_summary": "Paramount Global傳出執行長Bob Bakish將離職，這發生在公司面臨多家巨頭收購提議的關鍵時刻。",
-                        "original_title": "Paramount Global reports Bob Bakish may be out as CEO.",
-                        "source_url": "https://www.youtube.com/watch?v=A0yO7I3i-V0"
+                        "article_id": "glf_006",
+                        "source_tag": "Business Insider",
+                        "front_title": "4月就業報告前瞻：失業率或低於4%",
+                        "back_title": "史上第二長低失業紀錄，但製造業招聘已轉向收縮",
+                        "back_summary": "經濟學家預測新增25萬就業人口，但ISM數據顯示製造業與服務業分項已出現萎縮跡象，反映勞動市場正緩步降溫。",
+                        "original_title": "Finally, the April jobs report set to be released on Friday will be closely watched",
+                        "source_url": "https://markets.businessinsider.com/news/stocks/jobs-report-forecast-april-2024"
                     }
                 ]
             }
