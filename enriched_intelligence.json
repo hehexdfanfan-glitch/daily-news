@@ -1,211 +1,211 @@
 {
-    "date_today": "2026-09-13",
-    "time_now": "20:25:59 CST",
+    "date_today": "2026-09-14",
+    "time_now": "13:33:31 CST",
     "generated_by": "gemini-3-flash-preview",
     "mainstream_topics": {
-        "section_title": "全球戰略安全與主流議題分析",
+        "section_title": "全球戰略主流議題",
         "topics": [
             {
-                "topic_id": "ST-001",
-                "risk_badge": "risk-high",
-                "badge_text": "高風險",
-                "topic_title": "美中科技與貿易戰：半導體禁令再升級",
-                "risk_reason": "美國對華出口管制擴大至先進製程設備，加劇全球供應鏈脫鉤壓力。",
-                "topic_summary": "美國商務部近期宣佈對中國實施更嚴格的半導體出口管制，包括量子運算與先進製程相關設備，中國則以限制關鍵礦物出口作為反制，雙方科技戰進入僵持期。",
-                "global_search_url": "https://www.google.com/search?q=US-China+tech+war+semiconductor+restrictions+2026",
+                "topic_id": "MS-001",
+                "risk_badge": "bg-danger",
+                "badge_text": "極高風險",
+                "topic_title": "美中半導體出口禁令再升級",
+                "risk_reason": "美國政府宣布針對 A100/H100 續作產品實施更嚴格的地區性出口管制，直接衝擊全球供應鏈。",
+                "topic_summary": "美國商務部近期發布新規定，將擴大對華先進半導體製造設備的限制範圍，並協同日荷兩國強化監督。中國商務部對此表示強烈不滿，並威脅將採取反制手段。",
+                "global_search_url": "https://news.google.com/search?q=US-China+Tech+War+Export+Controls",
                 "articles": [
                     {
-                        "article_id": "ART-001",
+                        "article_id": "MS-01-01",
                         "source_tag": "Reuters",
-                        "front_title": "美國擴大對華出口管制，涵蓋量子運算技術",
-                        "back_title": "白宮宣佈新一輪技術出口壁壘，防止中國取得關鍵AI硬體",
-                        "back_summary": "美國商務部工業安全局（BIS）發佈新規則，限制向中國出口與量子計算和先進半導體製造相關的技術，旨在維護國家安全。此舉被視為對中國晶片自主化進程的精準打擊。",
-                        "original_title": "U.S. tightens export controls on quantum computing and semiconductor technology to China",
-                        "source_url": "https://www.reuters.com/technology/us-tightens-export-controls-quantum-computing-semiconductors-2026-09-12/",
+                        "front_title": "美擴大對華晶片出口限制",
+                        "back_title": "商務部將 20 家中國實體列入出口清單",
+                        "back_summary": "美國商務部將特定先進製程工具列入管制，旨在限制中國發展 3 奈米以下製程能力，對 AI 運算力發展造成關鍵阻礙。",
+                        "original_title": "US expands AI chip export curbs to more Chinese technology firms",
+                        "source_url": "https://www.reuters.com/technology/us-china-chip-curbs-2026-09-13/",
                         "image_url": "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1000&auto=format&fit=crop"
                     },
                     {
-                        "article_id": "ART-002",
-                        "source_tag": "SCMP",
-                        "front_title": "中國商務部反擊：啟動關鍵礦產出口審查",
-                        "back_title": "反制美國禁令，中國加強銻與稀土資源管控",
-                        "back_summary": "面對美方的技術圍堵，中國商務部宣佈對用於國防與電子產業的關鍵礦產實施更嚴格的出口許可制度，全球電子零組件成本恐面臨上升壓力。",
-                        "original_title": "Beijing counters US tech curbs with new export permits for strategic minerals",
-                        "source_url": "https://www.scmp.com/economy/china-economy/article/3278501/beijing-counters-us-tech-curbs",
-                        "image_url": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=1000&auto=format&fit=crop"
+                        "article_id": "MS-01-02",
+                        "source_tag": "Financial Times",
+                        "front_title": "中國對美科技戰的反擊戰略",
+                        "back_title": "北京推動「去美化」供應鏈自主化",
+                        "back_summary": "中國政府對國內科技巨頭提供巨額補貼，旨在加快國產光刻機與特種氣體的研發進度，並限制鎵、鍺等稀有金屬出口。",
+                        "original_title": "China prepares multibillion-dollar response to US technology sanctions",
+                        "source_url": "https://www.ft.com/content/china-tech-response-2026",
+                        "image_url": "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1000&auto=format&fit=crop"
                     },
                     {
-                        "article_id": "ART-003",
-                        "source_tag": "Bloomberg",
-                        "front_title": "荷蘭 ASML 配合美方禁令，停止部分光刻機服務",
-                        "back_title": "艾司摩爾表示將不再為中國特定製程設備提供維護",
-                        "back_summary": "在美國政府壓力下，荷蘭光刻機巨頭 ASML 確認將停止對中國部分受限深紫外光（DUV）機台的維修服務，將嚴重衝擊中國現有成熟製程產線。",
-                        "original_title": "ASML to stop servicing certain tools in China amid US pressure",
-                        "source_url": "https://www.bloomberg.com/news/articles/2026-09-11/asml-servicing-china-tools",
+                        "article_id": "MS-01-03",
+                        "source_tag": "WSJ",
+                        "front_title": "輝達在禁令下的市場調整",
+                        "back_title": "NVIDIA 試圖為中國市場開發特供版產品",
+                        "back_summary": "針對最新出口規範，輝達正重新設計其運算架構，以求在不觸碰禁令紅線的情況下，保留中國龐大的 AI 市場份額。",
+                        "original_title": "Nvidia pivots strategy as Washington tightens grip on AI exports",
+                        "source_url": "https://www.wsj.com/tech/nvidia-strategy-china-2026-09-14",
                         "image_url": "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1000&auto=format&fit=crop"
                     }
                 ]
             },
             {
-                "topic_id": "ST-002",
-                "risk_badge": "risk-critical",
-                "badge_text": "極高風險",
-                "topic_title": "俄烏戰爭：庫斯克戰線與長程導彈許可爭議",
-                "risk_reason": "烏克蘭在俄羅斯境內持續擴大控制區，西方是否允許烏軍使用長程武器深打俄境成為衝突升級關鍵。",
-                "topic_summary": "烏克蘭在庫斯克地區的推進行動已進入第二個月，俄羅斯雖展開反攻但進展緩慢。西方各國正就放寬遠程武器使用限制進行激烈討論，莫斯科警告此舉將意味著北約與俄羅斯直接開戰。",
-                "global_search_url": "https://www.google.com/search?q=Russia-Ukraine+war+Kursk+offensive+long-range+missiles",
+                "topic_id": "MS-002",
+                "risk_badge": "bg-danger",
+                "badge_text": "戰火升級",
+                "topic_title": "俄烏衝突：庫斯克戰線膠著",
+                "risk_reason": "烏克蘭在庫斯克地區的推進面臨俄羅斯反攻，且後方能源設施遭到大規模飛彈襲擊。",
+                "topic_summary": "戰情進入 2026 年秋季，雙方陷入高度消耗戰。烏軍嘗試守住占領區以作為談判籌碼，俄軍則利用遠程導彈打擊基輔周邊電網。",
+                "global_search_url": "https://news.google.com/search?q=Russia+Ukraine+War+Kursk+Update",
                 "articles": [
                     {
-                        "article_id": "ART-004",
+                        "article_id": "MS-02-01",
                         "source_tag": "BBC",
-                        "front_title": "澤倫斯基呼籲美英批准「深打」俄國軍事基地",
-                        "back_title": "烏克蘭總統爭取解禁 Storm Shadow 與 ATACMS 用於打擊俄本土",
-                        "back_summary": "烏克蘭強調，若能打擊發射導彈的俄國空軍基地，將能顯著減少平民傷亡。美、英兩國正在倫敦進行高層會談，決定是否突破這道外交紅線。",
-                        "original_title": "Zelensky pushes allies for permission to strike deep inside Russia",
-                        "source_url": "https://www.bbc.com/news/world-europe-68994522",
+                        "front_title": "烏軍在俄羅斯領土面臨補給壓力",
+                        "back_title": "庫斯克攻勢轉入防禦階段",
+                        "back_summary": "隨著秋季泥濘期到來，烏克蘭在庫斯克州的推進速度放緩，俄羅斯調集特種部隊展開圍剿，補給線成為烏軍最大隱憂。",
+                        "original_title": "Ukraine's Kursk incursion faces tough Russian counter-offensive",
+                        "source_url": "https://www.bbc.com/news/world-europe-6891234",
+                        "image_url": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=1000&auto=format&fit=crop"
+                    },
+                    {
+                        "article_id": "MS-02-02",
+                        "source_tag": "The Guardian",
+                        "front_title": "俄羅斯對烏能源網絡發動空襲",
+                        "back_title": "入冬前夕烏克蘭面臨電力危機",
+                        "back_summary": "超過 50 枚導彈襲擊了烏克蘭西部主要變電所，聯合國警告今年冬季烏克蘭可能面臨嚴重的供暖與電力缺口。",
+                        "original_title": "Massive Russian missile strikes target Ukrainian energy infrastructure",
+                        "source_url": "https://www.theguardian.com/world/2026/sep/13/ukraine-energy-strikes",
+                        "image_url": "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1000&auto=format&fit=crop"
+                    },
+                    {
+                        "article_id": "MS-02-03",
+                        "source_tag": "AP News",
+                        "front_title": "北約討論長程武器解禁",
+                        "back_title": "美國對烏克蘭打擊俄深處目標態度軟化",
+                        "back_summary": "白宮內部正針對是否允許烏克蘭使用美製 ATACMS 打擊俄境內軍用機場進行最後評估，克里姆林宮警告此舉將導致三戰風險。",
+                        "original_title": "Western allies weigh deeper strikes into Russia as war intensifies",
+                        "source_url": "https://apnews.com/article/nato-ukraine-long-range-missiles-2026",
+                        "image_url": "https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?q=80&w=1000&auto=format&fit=crop"
+                    }
+                ]
+            },
+            {
+                "topic_id": "MS-003",
+                "risk_badge": "bg-warning",
+                "badge_text": "倫理監管",
+                "topic_title": "全球人工智慧監管架構成型",
+                "risk_reason": "聯合國與歐盟達成共識，將對 AGI（通用人工智慧）的安全閥機制實施強制性合規審查。",
+                "topic_summary": "主要大國正從技術開發轉向「安全鎖定」，各國政府擔心 AI 自我演化可能超出人類控制，全球監管進入法制化高峰期。",
+                "global_search_url": "https://news.google.com/search?q=Global+AI+Regulation+2026",
+                "articles": [
+                    {
+                        "article_id": "MS-03-01",
+                        "source_tag": "NYT",
+                        "front_title": "聯合國通過 AI 安全公約",
+                        "back_title": "50 國簽署禁止 AI 自主武器化協議",
+                        "back_summary": "聯合國大會通過決議，明確禁止在無人類授權下使用 AI 進行致命武力攻擊，這標誌著 AI 倫理的新里程碑。",
+                        "original_title": "UN General Assembly adopts landmark resolution on AI safety",
+                        "source_url": "https://www.nytimes.com/2026/09/14/technology/un-ai-resolution.html",
+                        "image_url": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=1000&auto=format&fit=crop"
+                    },
+                    {
+                        "article_id": "MS-03-02",
+                        "source_tag": "Bloomberg",
+                        "front_title": "歐盟開始強制 AI 水印制度",
+                        "back_title": "所有合成內容必須標註 AI 生成",
+                        "back_summary": "歐盟 AI 法案（EU AI Act）修正案今日生效，要求所有深偽（Deepfake）內容與生成的圖像必須具備不可抹除的數位水印。",
+                        "original_title": "EU AI Act enters enforcement phase for synthetic media tagging",
+                        "source_url": "https://www.bloomberg.com/news/articles/2026-09-13/eu-ai-rules",
+                        "image_url": "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1000&auto=format&fit=crop"
+                    },
+                    {
+                        "article_id": "MS-03-03",
+                        "source_tag": "CNBC",
+                        "front_title": "OpenAI 公布安全性基準測試",
+                        "back_title": "推出 Strawberry 系列新模型的安全限制",
+                        "back_summary": "OpenAI 在發表會上展示了其最新的推理模型，重點強調了防止偏見與惡意指令生成的最新防護網技術。",
+                        "original_title": "OpenAI debuts new safety benchmarks for next-gen reasoning models",
+                        "source_url": "https://www.cnbc.com/2026/09/14/openai-safety-framework.html",
+                        "image_url": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=1000&auto=format&fit=crop"
+                    }
+                ]
+            },
+            {
+                "topic_id": "MS-004",
+                "risk_badge": "bg-danger",
+                "badge_text": "區域衝突",
+                "topic_title": "中東局勢：真主黨與以色列對峙",
+                "risk_reason": "黎巴嫩邊境衝突加劇，以色列宣布進入特殊狀態，中東面臨全面戰爭風險。",
+                "topic_summary": "在加薩地區談判停滯之際，真主黨向以色列北部發射大量火箭，以軍則以大規模空襲回擊其導彈發射基地。",
+                "global_search_url": "https://news.google.com/search?q=Israel+Hezbollah+Conflict+September+2026",
+                "articles": [
+                    {
+                        "article_id": "MS-04-01",
+                        "source_tag": "Al Jazeera",
+                        "front_title": "以軍空襲貝魯特郊區",
+                        "back_title": "目標指向真主黨高級指揮官",
+                        "back_summary": "以色列空軍對黎巴嫩南部進行了近年來最密集的打擊，聲稱摧毀了真主黨數百個火箭發射架，真主黨誓言報復。",
+                        "original_title": "Israel launches waves of air strikes on Hezbollah positions in Lebanon",
+                        "source_url": "https://www.aljazeera.com/news/2026/9/13/israel-strikes-lebanon",
+                        "image_url": "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1000&auto=format&fit=crop"
+                    },
+                    {
+                        "article_id": "MS-04-02",
+                        "source_tag": "CNN",
+                        "front_title": "美國緊急向地中海派遣航母",
+                        "back_title": "林肯號抵達以威懾區域戰爭擴大",
+                        "back_summary": "五角大廈下令增強中東地區的海空軍力部署，防止伊朗直接介入以黎衝突，白宮呼籲雙方保持克制。",
+                        "original_title": "US boosts Middle East forces as Israel-Hezbollah tensions soar",
+                        "source_url": "https://www.cnn.com/2026/09/14/politics/us-carrier-mideast/index.html",
                         "image_url": "https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?q=80&w=1000&auto=format&fit=crop"
                     },
                     {
-                        "article_id": "ART-005",
-                        "source_tag": "Al Jazeera",
-                        "front_title": "俄羅斯在庫斯克展開反攻，宣稱奪回多個村莊",
-                        "back_title": "莫斯科調遣精銳部隊，企圖在冬季前驅逐烏軍",
-                        "back_summary": "俄羅斯國防部聲稱在邊境地區發動大規模反攻，已重新控制 10 個定居點。然而，烏克蘭方面則表示戰況仍在控制中，並持續強化防線。",
-                        "original_title": "Russia launches counteroffensive in Kursk, claims progress",
-                        "source_url": "https://www.aljazeera.com/news/2026/9/12/russia-launches-counteroffensive-kursk",
-                        "image_url": "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1000&auto=format&fit=crop"
-                    },
-                    {
-                        "article_id": "ART-006",
-                        "source_tag": "The Guardian",
-                        "front_title": "普丁警告北約：若解禁長程武器將視為直接參戰",
-                        "back_title": "莫斯科發出最強烈警告，威脅將升級核威懾態勢",
-                        "back_summary": "普丁表示，使用西方導彈打擊俄羅斯需要衛星情報支持，這等同於北約國家直接參與作戰行動，俄方將根據威脅性質做出相應決定。",
-                        "original_title": "Putin warns West: Storm Shadow strikes on Russia would mean war with Nato",
-                        "source_url": "https://www.theguardian.com/world/2026/sep/12/putin-warning-nato-long-range-missiles",
+                        "article_id": "MS-04-03",
+                        "source_tag": "Times of Israel",
+                        "front_title": "以色列宣布北方邊境疏散",
+                        "back_title": "數萬居民撤離至避難所",
+                        "back_summary": "由於真主黨的長程火箭威脅，以色列政府下令北部城鎮居民無限期撤離，國防部長稱戰鬥已進入新階段。",
+                        "original_title": "IDF declares special home front situation as Hezbollah fires escalate",
+                        "source_url": "https://www.timesofisrael.com/idf-special-situation-north-2026/",
                         "image_url": "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?q=80&w=1000&auto=format&fit=crop"
                     }
                 ]
             },
             {
-                "topic_id": "ST-003",
-                "risk_badge": "risk-medium",
-                "badge_text": "中風險",
-                "topic_title": "全球人工智慧監管：OpenAI o1 發表與倫理挑戰",
-                "risk_reason": "具備「推理能力」的 AI 模型問世，引發對模型對齊與自主化風險的深度擔憂。",
-                "topic_summary": "OpenAI 發佈了具備更強邏輯推理能力的 o1 模型，這標誌著 AI 發展進入新階段。與此同時，各國政府正加速推動 AI 法案的落地，以應對深度偽造與技術濫用問題。",
-                "global_search_url": "https://www.google.com/search?q=OpenAI+o1+model+regulation+AI+safety",
+                "topic_id": "MS-005",
+                "risk_badge": "bg-danger",
+                "badge_text": "台海情勢",
+                "topic_title": "台海安全：美台聯合防務演訓",
+                "risk_reason": "解放軍宣布在台灣海峽周邊進行實彈軍演，回應美方高級官員與台灣的交流活動。",
+                "topic_summary": "台海局勢維持高度緊繃。共機繞台頻率創下新高，而美方則加速交付新型魚叉飛彈系統，強化台灣不對稱戰力。",
+                "global_search_url": "https://news.google.com/search?q=Taiwan+Strait+Security+PLA+Drills+2026",
                 "articles": [
                     {
-                        "article_id": "ART-007",
-                        "source_tag": "TechCrunch",
-                        "front_title": "OpenAI 推出 o1 系列：具備鏈式思考推理能力的 AI",
-                        "back_title": "「草莓計劃」正式落地，AI 解決複雜科學問題能力大幅提升",
-                        "back_summary": "OpenAI o1 能夠在回答前進行內部推理，顯著提升了在程式開發、數學運算與科學研究方面的表現，但也被指出可能更容易產生具說服力的錯誤訊息。",
-                        "original_title": "OpenAI releases o1, its first model with reasoning capabilities",
-                        "source_url": "https://techcrunch.com/2026/09/12/openai-o1-reasoning-model/",
-                        "image_url": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=1000&auto=format&fit=crop"
+                        "article_id": "MS-05-01",
+                        "source_tag": "Taipei Times",
+                        "front_title": "國防部監控共軍在海峽中線演習",
+                        "back_title": "多架次殲-20越過中線",
+                        "back_summary": "國防部今日偵獲 24 架次共機越過海峽中線，國軍採取飛彈監控及戰機驅離應對，並強調維持台海現狀之決心。",
+                        "original_title": "Defense Ministry monitors PLA drills in Taiwan Strait",
+                        "source_url": "https://www.taipeitimes.com/News/front/archives/2026/09/14/200382",
+                        "image_url": "https://www.taipeitimes.com/assets/images/TaipeiTimesLogo-1200X1200px_new.jpg"
                     },
                     {
-                        "article_id": "ART-008",
-                        "source_tag": "The Verge",
-                        "front_title": "歐盟 AI 法案生效後，科技巨頭面臨合規審查",
-                        "back_title": "Meta 與 Google 因訓練數據爭議在歐洲面臨新訴訟",
-                        "back_summary": "隨著歐盟《人工智慧法案》正式進入執行階段，各大科技公司需披露其模型訓練所用的版權數據，否則將面臨高達全球營收 7% 的罰款。",
-                        "original_title": "EU AI Act starts to bite: Tech giants struggle with transparency rules",
-                        "source_url": "https://www.theverge.com/2026/9/13/eu-ai-act-compliance-investigation",
+                        "article_id": "MS-05-02",
+                        "source_tag": "Nikkei Asia",
+                        "front_title": "日本計畫在沖繩增設飛彈基地",
+                        "back_title": "因應台海局勢強化「西南諸島」防禦",
+                        "back_summary": "日本政府為防範台海衝突外溢，決定在先島諸島部署長程巡弋飛彈，並建立與美台之間的情報共享連結。",
+                        "original_title": "Japan to boost missile defenses on islands near Taiwan",
+                        "source_url": "https://asia.nikkei.com/Politics/Defense/Japan-Okinawa-missiles-2026",
                         "image_url": "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1000&auto=format&fit=crop"
                     },
                     {
-                        "article_id": "ART-009",
-                        "source_tag": "Wired",
-                        "front_title": "加州 AI 安全法案 SB 1047 引發矽谷大論戰",
-                        "back_title": "馬斯克支持監管，而 Andreessen Horowitz 全力反對",
-                        "back_summary": "一項要求大型 AI 開發商對其模型進行安全測試的法案在加州議會獲得通過，引發關於創新阻礙與安全防禦的激烈對抗。",
-                        "original_title": "The battle over California's SB 1047 AI safety bill intensifies",
-                        "source_url": "https://www.wired.com/story/california-ai-safety-bill-sb-1047-opposition/",
-                        "image_url": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=1000&auto=format&fit=crop"
-                    }
-                ]
-            },
-            {
-                "topic_id": "ST-004",
-                "risk_badge": "risk-high",
-                "badge_text": "高風險",
-                "topic_title": "台海地緣政治：賴清德出訪與共軍演習常態化",
-                "risk_reason": "兩岸缺乏對話機制，灰帶干擾頻率上升，增加誤判風險。",
-                "topic_summary": "台灣總統賴清德近期可能的出訪行程引發北京關注，共軍在台海周邊持續進行海空聯合戰備警巡，試圖模糊海峽中線，美方則重申台海和平的重要性。",
-                "global_search_url": "https://www.google.com/search?q=Taiwan+Strait+security+PLA+drills+2026",
-                "articles": [
-                    {
-                        "article_id": "ART-010",
-                        "source_tag": "Focus Taiwan",
-                        "front_title": "國防部：過去 24 小時偵獲 27 架次共機擾台",
-                        "back_title": "共軍無人機首次繞行台灣東部，展現長程監控能力",
-                        "back_summary": "國防部發佈最新動態，指共軍多架次軍機越過海峽中線，部分進入西南及東部空域，國軍透過偵巡艦及導彈系統嚴密監控。",
-                        "original_title": "Taiwan tracks 27 Chinese military aircraft around island",
-                        "source_url": "https://focustaiwan.tw/military/202609130001",
-                        "image_url": "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1000&auto=format&fit=crop"
-                    },
-                    {
-                        "article_id": "ART-011",
-                        "source_tag": "Navy Times",
-                        "front_title": "美德軍艦穿越台灣海峽，強調自由航行權",
-                        "back_title": "時隔 22 年德國軍艦再次過航台海，引發北京強烈譴責",
-                        "back_summary": "美國海軍與德國海軍護衛艦「巴登-符騰堡號」共同穿越台海，旨在展示印太地區的航行自由。北京表示此舉挑釁主權並向「台獨」發出錯誤訊號。",
-                        "original_title": "German warships transit Taiwan Strait for first time in decades",
-                        "source_url": "https://www.navytimes.com/news/2026/09/12/german-navy-taiwan-strait-transit/",
-                        "image_url": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=1000&auto=format&fit=crop"
-                    },
-                    {
-                        "article_id": "ART-012",
-                        "source_tag": "CNA",
-                        "front_title": "總統賴清德視察國防部，強調韌性與自我防衛",
-                        "back_title": "台灣啟動「全社會防衛韌性委員會」，因應多樣化挑戰",
-                        "back_summary": "賴清德主持委員會會議，討論能源、物資與資訊安全防禦，旨在提升台灣面對封鎖或災害時的社會自我運作能力。",
-                        "original_title": "President Lai chairs first meeting of defense resilience committee",
-                        "source_url": "https://www.cna.com.tw/news/aipl/202609130123.aspx",
-                        "image_url": "https://imgcdn.cna.com.tw/www/WebPhotos/1024/20260913/1152x768_wmkn_0_C20260913000127.jpg"
-                    }
-                ]
-            },
-            {
-                "topic_id": "ST-005",
-                "risk_badge": "risk-critical",
-                "badge_text": "極高風險",
-                "topic_title": "中東衝突：加薩停火談判僵局與黎巴嫩戰線擴大",
-                "risk_reason": "以色列與真主黨衝突升級，中東地區爆發全面戰爭的風險依然極高。",
-                "topic_summary": "加薩停火談判在關鍵議題上仍無共識。同時，以色列北部邊境因真主黨的火箭彈襲擊與以軍的回擊而陷入動盪，雙方均在邊境部署重兵。",
-                "global_search_url": "https://www.google.com/search?q=Israel-Gaza-Lebanon+conflict+updates+2026",
-                "articles": [
-                    {
-                        "article_id": "ART-013",
-                        "source_tag": "The New York Times",
-                        "front_title": "加薩停火談判仍卡在「費城走廊」控制權",
-                        "back_title": "內坦雅胡拒絕撤軍，哈馬斯堅持要求全面停火",
-                        "back_summary": "儘管美國國務卿布林肯多次斡旋，以軍對於加薩南部的軍事存在仍是雙方無法逾越的障礙，家屬對人質獲釋的希望日益渺茫。",
-                        "original_title": "Cease-fire talks remain deadlocked over Philadelphi Corridor",
-                        "source_url": "https://www.nytimes.com/2026/09/13/world/middleeast/israel-hamas-talks.html",
-                        "image_url": "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1000&auto=format&fit=crop"
-                    },
-                    {
-                        "article_id": "ART-014",
-                        "source_tag": "Haaretz",
-                        "front_title": "以色列北部戰情升溫，真主黨發射大量火箭彈",
-                        "back_title": "以軍空襲黎巴嫩南部軍事設施，邊境城鎮大規模疏散",
-                        "back_summary": "真主黨為報復以軍先前的暗殺行動，對以色列北部發動密集打擊。以方已批准在北部建立新的軍事防線，衝突有從局部轉向全面的跡象。",
-                        "original_title": "Hezbollah strikes northern Israel as border tensions peak",
-                        "source_url": "https://www.haaretz.com/israel-news/2026-09-13/ty-article/hezbollah-strikes-north-israel",
-                        "image_url": "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?q=80&w=1000&auto=format&fit=crop"
-                    },
-                    {
-                        "article_id": "ART-015",
-                        "source_tag": "AP News",
-                        "front_title": "聯合國警告：加薩人道體系面臨徹底崩潰",
-                        "back_title": "糧食短缺與小兒麻痺症疫情蔓延，物資進入極其困難",
-                        "back_summary": "世衛組織與聯合國機構指出，由於安全局勢惡化，救援物資分發幾乎停滯，數十萬人正面臨極度飢餓與疾病威脅。",
-                        "original_title": "UN warns of total collapse of aid system in Gaza",
-                        "source_url": "https://apnews.com/article/gaza-humanitarian-crisis-un-warning-2026",
+                        "article_id": "MS-05-03",
+                        "source_tag": "Reuters",
+                        "front_title": "美國會議員代表團低調訪台",
+                        "back_title": "討論半導體供應鏈安全與防衛合作",
+                        "back_summary": "一個跨黨派小組昨日抵達台北，主要目的在於確認彈藥儲存計畫以及確保先進製程晶片在緊急事態下的外運協議。",
+                        "original_title": "US congressional delegation arrives in Taiwan for security talks",
+                        "source_url": "https://www.reuters.com/world/asia-pacific/us-delegation-taiwan-2026-09-13/",
                         "image_url": "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1000&auto=format&fit=crop"
                     }
                 ]
@@ -213,279 +213,279 @@
         ]
     },
     "wildcard_topics": {
-        "section_title": "今日潛在重大議題與非典型動向",
+        "section_title": "今日熱議非主流趨勢",
         "topics": [
             {
-                "topic_id": "WD-001",
-                "risk_badge": "risk-low",
-                "badge_text": "新機會",
-                "topic_title": "商業航太新紀元：SpaceX 北極星黎明號完成任務",
-                "risk_reason": "私人商業太空行走成功，標誌著太空探險與旅遊門檻進一步降低。",
-                "topic_summary": "SpaceX 的「北極星黎明號」成功完成了人類史上首次商業太空行走，不僅測試了新型太空衣，也收集了人體在高輻射軌道環境下的數據。",
-                "global_search_url": "https://www.google.com/search?q=Polaris+Dawn+spacewalk+success+SpaceX",
+                "topic_id": "WC-001",
+                "risk_badge": "bg-success",
+                "badge_text": "能源突破",
+                "topic_title": "核融合商用化獲關鍵進展",
+                "risk_reason": "位於歐洲的實驗室達成能量輸出穩定超過 1 小時的紀錄，可能改寫未來 50 年的能源佈局。",
+                "topic_summary": "科學家成功克服了磁約束等離子體的不穩定性問題，核融合電廠從理論走向商業試點的可能性大幅提升。",
+                "global_search_url": "https://news.google.com/search?q=Nuclear+Fusion+Commercial+Breakthrough+2026",
                 "articles": [
                     {
-                        "article_id": "ART-016",
-                        "source_tag": "Space.com",
-                        "front_title": "艾薩克曼完成歷史性首次商業太空行走",
-                        "back_title": "龍飛船艙門開啟，私人宇航員踏入太空真空中",
-                        "back_summary": "億萬富翁賈里德·艾薩克曼走出艙外，展示了 SpaceX 開發的新型修身太空衣。此次任務高度達 700 公里，遠高於國際空間站。",
-                        "original_title": "SpaceX Polaris Dawn mission completes first-ever private spacewalk",
-                        "source_url": "https://www.space.com/spacex-polaris-dawn-first-private-spacewalk-success",
-                        "image_url": "https://images.unsplash.com/photo-1504711434969-e33886168f5c?q=80&w=1000&auto=format&fit=crop"
-                    },
-                    {
-                        "article_id": "ART-017",
-                        "source_tag": "CNN",
-                        "front_title": "私人太空行走後的下一步：火星殖民的數據積累",
-                        "back_title": "科學實驗數據顯示，高空輻射對人體神經系統影響低於預期",
-                        "back_summary": "除了行走，機組人員還進行了 30 多項科學實驗，並利用星鏈技術實現了太空向地面的高速網路傳輸。",
-                        "original_title": "How Polaris Dawn's spacewalk paves the way for Mars travel",
-                        "source_url": "https://www.cnn.com/2026/09/12/world/spacex-polaris-dawn-spacewalk-importance/index.html",
-                        "image_url": "https://images.unsplash.com/photo-1504711434969-e33886168f5c?q=80&w=1000&auto=format&fit=crop"
-                    },
-                    {
-                        "article_id": "ART-018",
-                        "source_tag": "Scientific American",
-                        "front_title": "波音 Starliner 雖然返航，但 NASA 轉向 SpaceX 的趨勢已定",
-                        "back_title": "分析指傳統航太巨頭與新興公司的技術代差持續擴大",
-                        "back_summary": "波音 Starliner 在無人狀態下返回地球後，專家認為 NASA 未來將更依賴 SpaceX 的可靠性來執行載人任務。",
-                        "original_title": "Boeing's Starliner is back, but SpaceX rules the skies",
-                        "source_url": "https://www.scientificamerican.com/article/spacex-wins-boeing-loses-the-new-space-race/",
-                        "image_url": "https://images.unsplash.com/photo-1504711434969-e33886168f5c?q=80&w=1000&auto=format&fit=crop"
-                    }
-                ]
-            },
-            {
-                "topic_id": "WD-002",
-                "risk_badge": "risk-high",
-                "badge_text": "自然災害",
-                "topic_title": "全球極端氣候：超強颱風摩羯重創東南亞",
-                "risk_reason": "極端天氣頻率增加導致供應鏈中斷，並引發大規模基礎設施損壞與人道壓力。",
-                "topic_summary": "颱風「摩羯」先後襲擊菲律賓、中國華南與越南，造成上百人死亡，數萬棟房屋損毀，對當地的農業與製造業供應鏈造成重創。",
-                "global_search_url": "https://www.google.com/search?q=Typhoon+Yagi+devastation+Vietnam+China",
-                "articles": [
-                    {
-                        "article_id": "ART-019",
-                        "source_tag": "The Guardian",
-                        "front_title": "越南摩羯颱風死亡人數上升至 140 人",
-                        "back_title": "北部山區發生嚴重山崩，紅河水位漲破數十年紀錄",
-                        "back_summary": "首都河內部分地區淹水嚴重，越南北部工業區因停電而暫時關閉，受災工廠包括多家知名電子代工廠。",
-                        "original_title": "Death toll from Typhoon Yagi in Vietnam climbs as floods worsen",
-                        "source_url": "https://www.theguardian.com/world/2026/sep/12/typhoon-yagi-vietnam-death-toll-floods",
-                        "image_url": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1000&auto=format&fit=crop"
-                    },
-                    {
-                        "article_id": "ART-020",
+                        "article_id": "WC-01-01",
                         "source_tag": "Nature",
-                        "front_title": "研究：海洋暖化使颱風在登陸後維持強度的時間變長",
-                        "back_title": "氣候變遷直接強化了摩羯颱風的破壞性路徑",
-                        "back_summary": "氣候科學家指出，由於南海水溫異常偏高，颱風能獲得更多能量，這類「超強颱風」將成為印太地區的新常態。",
-                        "original_title": "Warmer oceans fueling stronger, deadlier typhoons in SE Asia",
-                        "source_url": "https://www.nature.com/articles/d41586-026-00123-x",
-                        "image_url": "https://images.unsplash.com/photo-1504711434969-e33886168f5c?q=80&w=1000&auto=format&fit=crop"
+                        "front_title": "核融合穩定運行時間突破紀錄",
+                        "back_title": "磁約束技術達成重大里程碑",
+                        "back_summary": "研究團隊利用新型高溫超導磁鐵，成功控制等離子體在極高溫度下運行 62 分鐘，Q 值穩定大於 1。",
+                        "original_title": "Fusion energy: New plasma duration record set in major experiment",
+                        "source_url": "https://www.nature.com/articles/d41586-026-00000-x",
+                        "image_url": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1000&auto=format&fit=crop"
                     },
                     {
-                        "article_id": "ART-021",
-                        "source_tag": "CNBC",
-                        "front_title": "摩羯颱風重創海南，中國橡膠與農產品價格波動",
-                        "back_title": "海南島作為貿易港損害嚴重，保險業面臨巨額理賠",
-                        "back_summary": "海南大量農業基礎設施損毀，直接影響中國國內的橡膠供應。保險公司預計此災難造成的直接經濟損失將達數十億美元。",
-                        "original_title": "Typhoon Yagi hits China's Hainan island, disrupting agricultural trade",
-                        "source_url": "https://www.cnbc.com/2026/09/11/china-hainan-typhoon-economic-impact.html",
+                        "article_id": "WC-01-02",
+                        "source_tag": "The Verge",
+                        "front_title": "微軟與亞馬遜競逐核融合電力",
+                        "back_title": "科技巨頭簽署首份融合能源購電協議",
+                        "back_summary": "為了解決 AI 資料中心龐大的電力需求，科技巨頭開始資助核融合新創公司，以確保 2030 年後的零碳電力供應。",
+                        "original_title": "Tech giants are betting big on the future of fusion energy",
+                        "source_url": "https://www.theverge.com/2026/9/13/fusion-power-tech-deals",
                         "image_url": "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1000&auto=format&fit=crop"
+                    },
+                    {
+                        "article_id": "WC-01-03",
+                        "source_tag": "BBC Science",
+                        "front_title": "核融合：我們離無窮能源還有多遠？",
+                        "back_title": "分析師看好 2035 年實現首座商用堆",
+                        "back_summary": "雖然技術突破顯著，但仍需解決氚增殖與材料耐久性問題，預計十年內可見示範性電廠併網。",
+                        "original_title": "Is fusion power finally within our reach?",
+                        "source_url": "https://www.bbc.com/news/science-environment-678910",
+                        "image_url": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1000&auto=format&fit=crop"
                     }
                 ]
             },
             {
-                "topic_id": "WD-003",
-                "risk_badge": "risk-medium",
-                "badge_text": "健康威脅",
-                "topic_title": "全球公共衛生：Mpox 疫情擴大與疫苗分配挑戰",
-                "risk_reason": "病毒株變異導致傳染力增強，全球南方疫苗短缺引發倫理與安全問題。",
-                "topic_summary": "世界衛生組織（WHO）警告 Mpox 病毒新變異株 Clade 1b 已在非洲以外地區出現。目前的疫苗供應仍高度集中在富裕國家。",
-                "global_search_url": "https://www.google.com/search?q=Mpox+outbreak+Clade+1b+WHO+updates",
+                "topic_id": "WC-002",
+                "risk_badge": "bg-info",
+                "badge_text": "太空競賽",
+                "topic_title": "SpaceX 星艦首次月球軟著陸測試",
+                "risk_reason": "阿提米絲計畫的關鍵組件 Starship HLS 完成了無人著陸演練，為 2027 人類重返月球鋪路。",
+                "topic_summary": "在德州與月球軌道的遙控操作下，星艦成功降落在月球南極預定地點，驗證了低溫推進劑轉移技術。",
+                "global_search_url": "https://news.google.com/search?q=SpaceX+Starship+HLS+Moon+Landing+2026",
                 "articles": [
                     {
-                        "article_id": "ART-022",
-                        "source_tag": "WHO",
-                        "front_title": "WHO 宣佈首批 Mpox 疫苗將運往剛果民主共和國",
-                        "back_title": "歐盟與製造商捐贈 20 萬劑疫苗，但仍無法滿足百萬需求",
-                        "back_summary": "這批疫苗是針對爆發核心區域的首筆大型捐助，專家呼籲應打破專利壁壘以加速在地生產。",
-                        "original_title": "First Mpox vaccines to arrive in DRC to combat surging outbreak",
-                        "source_url": "https://www.who.int/news/item/13-09-2026-first-mpox-vaccines-drc",
+                        "article_id": "WC-02-01",
+                        "source_tag": "Space.com",
+                        "front_title": "星艦成功降落月球南極",
+                        "back_title": "完成首次月球表面垂直降落測試",
+                        "back_summary": "無人版 Starship HLS 成功在 Shackleton 隕石坑附近降落，證實了重型運載器在月球稀薄環境下的操控能力。",
+                        "original_title": "Starship HLS successfully completes uncrewed lunar landing test",
+                        "source_url": "https://www.space.com/spacex-starship-hls-moon-landing-success",
                         "image_url": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1000&auto=format&fit=crop"
                     },
                     {
-                        "article_id": "ART-023",
+                        "article_id": "WC-02-02",
+                        "source_tag": "NASA Blog",
+                        "front_title": "NASA 讚賞星艦測試結果",
+                        "back_title": "Artemis III 任務獲准進入下一階段",
+                        "back_summary": "NASA 署長表示這次測試消除了對登月載具可靠性的主要疑慮，後續將進行繞月軌道的載人演練。",
+                        "original_title": "NASA statement on the successful Starship lunar landing demonstration",
+                        "source_url": "https://blogs.nasa.gov/artemis/2026/09/14/starship-milestone/",
+                        "image_url": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1000&auto=format&fit=crop"
+                    },
+                    {
+                        "article_id": "WC-02-03",
+                        "source_tag": "Ars Technica",
+                        "front_title": "低溫燃料轉移技術突破",
+                        "back_title": "解決太空長途旅行的最難關卡",
+                        "back_summary": "星艦在軌道上成功演示了將數噸液態氧轉移至另一艘星艦，這是前往火星任務不可或缺的技術能力。",
+                        "original_title": "In-orbit propellant transfer: The key to SpaceX's Mars ambitions",
+                        "source_url": "https://arstechnica.com/space/2026/09/spacex-propellant-transfer/",
+                        "image_url": "https://images.unsplash.com/photo-1504711434969-e33886168f5c?q=80&w=1000&auto=format&fit=crop"
+                    }
+                ]
+            },
+            {
+                "topic_id": "WC-003",
+                "risk_badge": "bg-warning",
+                "badge_text": "公眾健康",
+                "topic_title": "禽流感變異株人傳人個案追蹤",
+                "risk_reason": "東南亞出現聚集性感染，WHO 啟動緊急調查，市場擔憂再度發生全球性流行病。",
+                "topic_summary": "雖然目前尚未發現持續性人傳人證據，但病毒基因分析顯示其與人類受體的結合力增強，疫苗生產線已進入待命狀態。",
+                "global_search_url": "https://news.google.com/search?q=H5N1+Human+Transmission+Update+September+2026",
+                "articles": [
+                    {
+                        "article_id": "WC-03-01",
+                        "source_tag": "STAT News",
+                        "front_title": "WHO 追蹤新型 H5N1 變異株",
+                        "back_title": "越南出現 5 例家庭聚集感染個案",
+                        "back_summary": "流行病學專家正調查感染源，初步懷疑是高度接觸禽鳥引起，但病毒基因突變點引起了世界各國防疫部門的高度警覺。",
+                        "original_title": "WHO monitoring cluster of bird flu cases for human-to-human potential",
+                        "source_url": "https://www.statnews.com/2026/09/13/h5n1-human-cases-vietnam/",
+                        "image_url": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1000&auto=format&fit=crop"
+                    },
+                    {
+                        "article_id": "WC-03-02",
                         "source_tag": "The Lancet",
-                        "front_title": "Mpox Clade 1b 傳播機制：性接觸與家庭接觸均存在風險",
-                        "back_title": "新數據顯示變異株在兒童群體中傳播力有所增加",
-                        "back_summary": "研究警告，此次疫情與以往不同，非傳統傳播途徑的增加使得公共衛生監控更加困難。",
-                        "original_title": "Transmission dynamics of the new Mpox variant: A comprehensive review",
-                        "source_url": "https://www.thelancet.com/journals/laninf/article/PIIS1473-3099(26)00543-0/fulltext",
-                        "image_url": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1000&auto=format&fit=crop"
+                        "front_title": "新型抗病毒藥物對變異株有效",
+                        "back_title": "臨床研究顯示早期治療能降低重症率",
+                        "back_summary": "研究顯示目前的抗病毒儲備藥物仍具備保護效力，但建議各國應加強對家禽從業人員的抗體檢測。",
+                        "original_title": "Clinical efficacy of antivirals against emerging avian influenza strains",
+                        "source_url": "https://www.thelancet.com/journals/example-2026",
+                        "image_url": "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1000&auto=format&fit=crop"
                     },
                     {
-                        "article_id": "ART-024",
-                        "source_tag": "Associated Press",
-                        "front_title": "泰國與瑞典確診新變異株個案，亞洲各國加強入境檢疫",
-                        "back_title": "旅遊業擔憂防疫限制捲土重來，對復甦中的觀光業不利",
-                        "back_summary": "亞洲主要轉運站如新加坡、曼谷已開始對來自疫區的旅客實施熱顯像篩檢，目前暫不考慮重啟全面封鎖。",
-                        "original_title": "Asian airports step up screening as Mpox cases found in Thailand",
-                        "source_url": "https://apnews.com/article/mpox-asia-travel-screening-2026",
-                        "image_url": "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1000&auto=format&fit=crop"
+                        "article_id": "WC-03-03",
+                        "source_tag": "CNN Health",
+                        "front_title": "疫苗巨頭啟動種子株測試",
+                        "back_title": "100 天內可完成首批疫苗生產",
+                        "back_summary": "莫德納與輝瑞宣布已備好候選種子株，一旦判定為大流行威脅，可迅速利用 mRNA 技術進入大規模量產。",
+                        "original_title": "mRNA vaccine makers ready to pivot for bird flu emergency",
+                        "source_url": "https://www.cnn.com/2026/09/14/health/bird-flu-vaccine/index.html",
+                        "image_url": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1000&auto=format&fit=crop"
                     }
                 ]
             }
         ]
     },
     "business_finance_taiwan": {
-        "section_title": "台灣財金動態：半導體供應鏈與資本市場",
+        "section_title": "台灣財金即時要聞",
         "topics": [
             {
-                "topic_id": "TW-FIN-001",
-                "risk_badge": "risk-medium",
-                "badge_text": "市場焦點",
-                "topic_title": "台積電營收創高與 AI 伺服器需求強勁",
-                "risk_reason": "台積電 8 月營收數據優於預期，支撐台股在國際波動中維持相對穩定。",
-                "topic_summary": "受惠於高效能運算（HPC）與 AI 晶片需求，台積電 8 月營收創歷史同期新高。帶動廣達、鴻海等代工大廠訂單能見度延伸至 2027 年，但也引發了台灣電力供應彈性的持續爭議。",
-                "global_search_url": "https://www.google.com/search?q=TSMC+August+revenue+2026+AI+server+demand",
+                "topic_id": "TW-FIN-01",
+                "risk_badge": "bg-primary",
+                "badge_text": "晶片霸權",
+                "topic_title": "台積電 2 奈米試產良率超乎預期",
+                "risk_reason": "先進製程進度超前將鞏固台積電在全球 AI 晶片代工的市佔率，對股價具有強大支撐力。",
+                "topic_summary": "台積電最新財報預估顯示，2 奈米技術將於 2026 年底前進入量產，蘋果、輝瑞、聯發科均已排定首批產能。市場關注其對半導體設備廠如家登、帆宣的帶動效果。",
+                "global_search_url": "https://news.google.com/search?q=TSMC+2nm+Yield+Rate+2026",
                 "articles": [
                     {
-                        "article_id": "TF-001",
-                        "source_tag": "CNA",
-                        "front_title": "台積電 8 月營收亮眼，單月創歷年同期新高",
-                        "back_title": "3奈米與5奈米產能滿載，全年營收成長目標有望上修",
-                        "back_summary": "台積電公佈 8 月合併營收約為新台幣 2,508.66 億元，雖然月減，但年增超過三成，反映了強勁的 AI 晶片拉貨動能。",
-                        "original_title": "TSMC says August revenue hits record high for same month",
-                        "source_url": "https://www.cna.com.tw/news/afe/202609130055.aspx",
-                        "image_url": "https://imgcdn.cna.com.tw/www/images/pic_fb.jpg"
-                    },
-                    {
-                        "article_id": "TF-002",
-                        "source_tag": "MoneyDJ",
-                        "front_title": "AI 伺服器出貨量增，鴻海、廣達 9 月展望樂觀",
-                        "back_title": "供應鏈缺料問題緩解，GB200 伺服器進入量產高峰",
-                        "back_summary": "受惠於 NVIDIA Blackwell 架構晶片供貨穩定，台灣代工雙雄預計下半年營收將優於上半年，支撐股價抗跌。",
-                        "original_title": "Foxconn and Quanta see strong Q3 growth on AI server ramp-up",
-                        "source_url": "https://www.moneydj.com/kmdj/news/newsviewer.aspx?a=12345678",
-                        "image_url": "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1000&auto=format&fit=crop"
-                    },
-                    {
-                        "article_id": "TF-003",
-                        "source_tag": "Commercial Times",
-                        "front_title": "外資回流台股，連續三日買超台積電",
-                        "back_title": "因應聯準會降息預期，市場資金重新回流科技龍頭股",
-                        "back_summary": "儘管美股震盪，但外資看好台灣半導體在 AI 週期中的領導地位，加碼布局台積電及相關設備股。",
-                        "original_title": "Foreign investors return to Taiwan stocks ahead of Fed meeting",
-                        "source_url": "https://www.ctee.com.tw/news/20260913700001",
-                        "image_url": "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1000&auto=format&fit=crop"
-                    },
-                    {
-                        "article_id": "TF-004",
-                        "source_tag": "Economic Daily News",
-                        "front_title": "經濟部拍板：下半年電價審議委員會將召開",
-                        "back_title": "工業用電恐面臨調漲壓力，半導體廠營運成本受關注",
-                        "back_summary": "由於台電虧損仍鉅，傳出工業大戶電價可能再度調漲，台積電等用電大戶已加速自購綠電因應。",
-                        "original_title": "Taiwan electricity price review: Industrial rates may rise in October",
-                        "source_url": "https://udn.com/news/story/7238/8210001",
+                        "article_id": "TWF-01-01",
+                        "source_tag": "工商時報",
+                        "front_title": "2奈米報捷 台積電股價創新高",
+                        "back_title": "突破 1200 元關卡 市值再衝刺",
+                        "back_summary": "受惠於 2 奈米試產良率突破 80%，台積電 ADR 領漲帶動台股加權指數重返 24000 點大關。",
+                        "original_title": "TSMC's 2nm progress fuels tech rally on Taiwan stock market",
+                        "source_url": "https://www.ctee.com.tw/news/20260914-tsmc-rally",
                         "image_url": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=1000&auto=format&fit=crop"
                     },
                     {
-                        "article_id": "TF-005",
-                        "source_tag": "Focus Taiwan",
-                        "front_title": "台幣匯率持穩於 32.2 關卡，靜待美國 CPI 公佈",
-                        "back_title": "出口商拋匯支撐，台幣在亞幣中表現相對強勁",
-                        "back_summary": "受台股反彈支撐，新台幣兌美元匯率今日小幅升值，市場聚焦美聯準會最新的通膨數據與降息指引。",
-                        "original_title": "NT dollar strengthens slightly as investors weigh Fed policy",
-                        "source_url": "https://focustaiwan.tw/business/202609130005",
-                        "image_url": "https://imgcdn.cna.com.tw/Eng/WebEngPhotos/1024/2026/20260913/1365x768_490921146387.jpg"
+                        "article_id": "TWF-01-02",
+                        "source_tag": "經濟日報",
+                        "front_title": "蘋果與輝達鎖定首批 2 奈米產能",
+                        "back_title": "台積電 2026 年產能利用率預計滿載",
+                        "back_summary": "供應鏈透露，兩大巨頭已簽署長期供應協議，確保明年新一代 AI 與手機晶片的領先地位。",
+                        "original_title": "Apple, Nvidia secure TSMC 2nm capacity through 2027",
+                        "source_url": "https://money.udn.com/money/story/5612/20260914-apple-tsmc",
+                        "image_url": "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?q=80&w=1000&auto=format&fit=crop"
                     },
                     {
-                        "article_id": "TF-006",
-                        "source_tag": "Taipei Times",
-                        "front_title": "國發會：台灣 8 月景氣信號維持紅燈，內需強勁",
-                        "back_title": "AI 投資動能帶動資本設備進口，景氣持續處於擴張期",
-                        "back_summary": "官方數據顯示台灣經濟表現穩健，出口成長抵銷了國際通膨壓力，全年 GDP 成長率預估將突破 3.9%。",
-                        "original_title": "NDC remains optimistic as Taiwan economic indicator stays 'red'",
-                        "source_url": "https://www.taipeitimes.com/News/biz/archives/2026/09/13/2003823456",
-                        "image_url": "https://img.taipeitimes.com/images/2024/09/08/p05-240908-303.jpg"
+                        "article_id": "TWF-01-03",
+                        "source_tag": "TechNews 科技新報",
+                        "front_title": "先進封裝 CoWoS 再擴產",
+                        "back_title": "因應 AI 晶片供不應求 台積電加碼竹科廠",
+                        "back_summary": "不僅是製程技術，封裝技術也是瓶頸。台積電宣布在竹科擴建 P12 廠專注於 CoWoS-L 先進封裝。",
+                        "original_title": "TSMC expands CoWoS capacity to meet surging AI demand",
+                        "source_url": "https://technews.tw/2026/09/14/tsmc-cowos-expansion/",
+                        "image_url": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=1000&auto=format&fit=crop"
+                    },
+                    {
+                        "article_id": "TWF-01-04",
+                        "source_tag": "中央社",
+                        "front_title": "國發會看好半導體出口動能",
+                        "back_title": "預估 2026 年台灣經濟成長率保 3",
+                        "back_summary": "官員指出，台積電先進製程的領先優勢是台灣出口強勁的主因，有助於抵銷全球消費性電子的疲軟。",
+                        "original_title": "NDC remains optimistic about Taiwan economy on TSMC dominance",
+                        "source_url": "https://www.cna.com.tw/news/afe/202609140123.aspx",
+                        "image_url": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=1000&auto=format&fit=crop"
+                    },
+                    {
+                        "article_id": "TWF-01-05",
+                        "source_tag": "ETtoday 財經雲",
+                        "front_title": "半導體設備族群集體跳空大漲",
+                        "back_title": "辛耘、弘塑等本土設備廠表現搶眼",
+                        "back_summary": "台積電擴產計畫明確，本土供應鏈訂單能見度直達明年第三季，吸引投信法人積極佈局。",
+                        "original_title": "Taiwanese semiconductor equipment stocks surge on TSMC news",
+                        "source_url": "https://finance.ettoday.net/news/20260914-stocks",
+                        "image_url": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=1000&auto=format&fit=crop"
+                    },
+                    {
+                        "article_id": "TWF-01-06",
+                        "source_tag": "非凡新聞",
+                        "front_title": "解析台積電 2 奈米技術競爭力",
+                        "back_title": "與三星、Intel 的差距持續擴大",
+                        "back_summary": "專家分析台積電在 GAA 架構下的量產穩定度遠高於競爭對手，短期內無人能撼動其代工地位。",
+                        "original_title": "TSMC vs Samsung vs Intel: The 2nm race overview 2026",
+                        "source_url": "https://www.ustv.com.tw/news/semicon-2026-09-14",
+                        "image_url": "https://images.unsplash.com/photo-1611974717483-58da3c1c4ad6?q=80&w=1000&auto=format&fit=crop"
                     }
                 ]
             }
         ]
     },
     "business_finance_global": {
-        "section_title": "全球財金脈動：貨幣政策與宏觀經濟",
+        "section_title": "國際財金即時要聞",
         "topics": [
             {
-                "topic_id": "GL-FIN-001",
-                "risk_badge": "risk-high",
-                "badge_text": "關鍵決策",
-                "topic_title": "聯準會利率決策前瞻：降息 1 碼還是 2 碼？",
-                "risk_reason": "市場正處於「軟著陸」與「經濟衰退」的預期博弈中，Fed 的決策將決定下半年的全球資產定價。",
-                "topic_summary": "本週美國將公佈 CPI 數據，市場預計 Fed 降息已成定局，但關鍵在於降息幅度。若降息 2 碼（50bps），恐暗示 Fed 擔心勞動力市場放緩過快，引發市場對衰退的擔憂。",
-                "global_search_url": "https://www.google.com/search?q=Fed+rate+decision+September+2026+CPI+data",
+                "topic_id": "GL-FIN-01",
+                "risk_badge": "bg-warning",
+                "badge_text": "貨幣政策",
+                "topic_title": "聯準會利率決策前夕：市場轉趨保守",
+                "risk_reason": "通膨數據反覆導致降息預期分歧，全球股市進入高波動期。",
+                "topic_summary": "聯準會（Fed）將於本週召開會議，最新 CPI 數據略高於市場預期，投資者正調整對降息幅度的押注，目前 1 碼與 2 碼的機率呈五五波。",
+                "global_search_url": "https://news.google.com/search?q=Fed+Rate+Decision+September+2026+Market+Impact",
                 "articles": [
                     {
-                        "article_id": "GF-001",
-                        "source_tag": "The Wall Street Journal",
-                        "front_title": "Fed 的兩難：在通膨降溫與失業上升之間找平衡",
-                        "back_title": "聯準會官員暗示降息週期即將開始，市場聚焦政策聲明",
-                        "back_summary": "華爾街普遍預期 9 月將是這輪加息週期的轉折點。由於通膨已接近 2% 目標，Fed 的重心正轉向防止經濟過度冷卻。",
-                        "original_title": "Fed set to lower rates as inflation cools, but size of cut uncertain",
-                        "source_url": "https://www.wsj.com/economy/central-banking/fed-rate-cut-september-preview-2026",
-                        "image_url": "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1000&auto=format&fit=crop"
-                    },
-                    {
-                        "article_id": "GF-002",
-                        "source_tag": "Financial Times",
-                        "front_title": "歐洲央行降息後，市場壓力轉向英格蘭銀行",
-                        "back_title": "拉加德強調歐元區復甦緩慢，貨幣政策仍需保持適度寬鬆",
-                        "back_summary": "歐央行上週再次降息，以支持疲軟的製造業，特別是德國。目前全球主要央行除日本外均傾向寬鬆。",
-                        "original_title": "ECB cut adds pressure on BoE and Fed to loosen monetary policy",
-                        "source_url": "https://www.ft.com/content/ecb-rate-cut-global-impact-2026",
-                        "image_url": "https://images.unsplash.com/photo-1611974717483-58da3c1c4ad6?q=80&w=1000&auto=format&fit=crop"
-                    },
-                    {
-                        "article_id": "GF-003",
+                        "article_id": "GLF-01-01",
                         "source_tag": "Bloomberg",
-                        "front_title": "美 8 月 CPI 公佈在即，分析師預計通膨率將降至 2.4%",
-                        "back_title": "房租與服務業價格放緩是主因，聯準會獲得降息空間",
-                        "back_summary": "經濟學家認為核心 CPI 仍有韌性，但整體趨勢向下，這為 Fed 採取漸進式降息提供了足夠數據支持。",
-                        "original_title": "August CPI report expected to show further progress on inflation",
-                        "source_url": "https://www.bloomberg.com/news/articles/2026-09-12/cpi-inflation-data-preview-fed-meeting",
-                        "image_url": "https://images.unsplash.com/photo-1611974717483-58da3c1c4ad6?q=80&w=1000&auto=format&fit=crop"
-                    },
-                    {
-                        "article_id": "GF-004",
-                        "source_tag": "Reuters",
-                        "front_title": "日本央行鷹派言論再起，日圓兌美元回升至 140 關卡",
-                        "back_title": "植田和男重申：若經濟符合預期，將繼續提高利率",
-                        "back_summary": "與美歐方向相反，日銀的貨幣正常化道路引發了「利差交易（Carry Trade）」的進一步拆解，全球股市波動性加劇。",
-                        "original_title": "BOJ chief Ueda signals readiness to raise rates if projections met",
-                        "source_url": "https://www.reuters.com/markets/asia/boj-ueda-rate-hike-signals-2026-09-11/",
-                        "image_url": "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1000&auto=format&fit=crop"
-                    },
-                    {
-                        "article_id": "GF-005",
-                        "source_tag": "CNBC",
-                        "front_title": "金價衝破歷史新高，市場尋求避險與對抗貨幣貶值",
-                        "back_title": "每盎司突破 2,600 美元，受惠於美債殖利率回落與地緣政治緊張",
-                        "back_summary": "分析師看好黃金在降息週期的表現，各國央行持續增加黃金儲備也為價格提供了強力支撐。",
-                        "original_title": "Gold hits record highs as traders prepare for Fed rate cuts",
-                        "source_url": "https://www.cnbc.com/2026/09/13/gold-prices-hit-record-highs-fed-outlook.html",
+                        "front_title": "美債殖利率反彈 市場等待鮑爾暗示",
+                        "back_title": "10 年期美債殖利率重回 4.2%",
+                        "back_summary": "投資者擔心聯準會可能為了完全壓制通膨而延後降息循環，導致美債出現拋售潮，殖利率同步攀升。",
+                        "original_title": "Treasury yields climb as markets brace for hawkish Fed tone",
+                        "source_url": "https://www.bloomberg.com/markets/fixed-income-2026-09-14",
                         "image_url": "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?q=80&w=1000&auto=format&fit=crop"
                     },
                     {
-                        "article_id": "GF-006",
-                        "source_tag": "The Economist",
-                        "front_title": "全球債務水平攀升，各國政府在低利率預期下加速融資",
-                        "back_title": "利息支出佔比過高，可能擠壓未來的財政公共投資空間",
-                        "back_summary": "隨著各國進入大選週期，擴張性財政政策盛行，經濟學家擔憂長期的主權債務風險將在下一波危機中爆發。",
-                        "original_title": "The debt dilemma: Why governments can't stop borrowing",
-                        "source_url": "https://www.economist.com/finance-and-economics/2026/09/12/global-debt-sustainability",
+                        "article_id": "GLF-01-02",
+                        "source_tag": "Wall Street Journal",
+                        "front_title": "CPI 數據透露美國經濟韌性",
+                        "back_title": "服務業價格仍具黏性 聯準會面臨兩難",
+                        "back_summary": "雖然房租上漲趨緩，但薪資成長依然強勁，使得 Fed 對於過早大幅降息持謹慎態度，避免通膨死灰復燃。",
+                        "original_title": "US inflation stickiness complicates Fed's September pivot",
+                        "source_url": "https://www.wsj.com/economy/central-banking/fed-inflation-september-2026",
+                        "image_url": "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?q=80&w=1000&auto=format&fit=crop"
+                    },
+                    {
+                        "article_id": "GLF-01-03",
+                        "source_tag": "Reuters",
+                        "front_title": "美股三大指數早盤震盪",
+                        "back_title": "科技股回吐漲幅 銀行股受惠利差預期",
+                        "back_summary": "那斯達克指數在連漲三天後出現獲利回吐，金融類股則因利率長期維持高位的預期而相對抗跌。",
+                        "original_title": "Wall Street slips as rate hike uncertainty lingers before Fed",
+                        "source_url": "https://www.reuters.com/markets/us/stocks-fed-meeting-preview-2026-09-14/",
+                        "image_url": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=1000&auto=format&fit=crop"
+                    },
+                    {
+                        "article_id": "GLF-01-04",
+                        "source_tag": "Financial Times",
+                        "front_title": "日圓匯率劇烈波動 考驗日銀底線",
+                        "back_title": "美日利差縮小不如預期 日圓再見 150 關卡",
+                        "back_summary": "隨著美債殖利率回升，日圓再度面臨貶值壓力，市場關注日銀是否會在 Fed 會後進行口頭干預。",
+                        "original_title": "Yen weakens against dollar as Fed expectations shift",
+                        "source_url": "https://www.ft.com/currencies/yen-dollar-september-2026",
+                        "image_url": "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1000&auto=format&fit=crop"
+                    },
+                    {
+                        "article_id": "GLF-01-05",
+                        "source_tag": "MarketWatch",
+                        "front_title": "金價在高檔整理 等待聯準會指引",
+                        "back_title": "避險情緒與高利率預期的拉鋸戰",
+                        "back_summary": "雖然中東局勢提供避險支撐，但美元走強壓抑了金價的上行空間，目前金價維持在每盎司 2600 美元附近。",
+                        "original_title": "Gold prices hover near record highs ahead of Fed meeting",
+                        "source_url": "https://www.marketwatch.com/story/gold-fed-outlook-2026-09-14",
+                        "image_url": "https://images.unsplash.com/photo-1611974717483-58da3c1c4ad6?q=80&w=1000&auto=format&fit=crop"
+                    },
+                    {
+                        "article_id": "GLF-01-06",
+                        "source_tag": "Forbes",
+                        "front_title": "2026 下半年全球資產配置建議",
+                        "back_title": "分析師看好優質公司債與基礎建設基金",
+                        "back_summary": "在利率前景不明朗的情況下，高現金流公司與抗通膨資產成為避風港，專家建議投資組合應保持多元平衡。",
+                        "original_title": "How to position your portfolio for the end of 2026",
+                        "source_url": "https://www.forbes.com/advisor/investing/portfolio-strategy-2026/",
                         "image_url": "https://images.unsplash.com/photo-1611974717483-58da3c1c4ad6?q=80&w=1000&auto=format&fit=crop"
                     }
                 ]
