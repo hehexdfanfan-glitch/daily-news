@@ -1,492 +1,470 @@
 {
     "date_today": "2026-09-30",
-    "time_now": "14:07:41 CST",
+    "time_now": "21:08:48 CST",
     "generated_by": "gemini-3.1-pro-preview",
     "mainstream_topics": {
-        "section_title": "主流議題 (Strategic Intelligence)",
+        "section_title": "主流議題",
         "topics": [
             {
-                "topic_id": "mainstream_1",
-                "risk_badge": "badge-danger",
-                "badge_text": "高度關注",
-                "topic_title": "美中科技與貿易戰",
-                "risk_reason": "川習會雖落幕，但美方對中晶片管制並未鬆綁，科技戰實質已升級為國安與政治角力，且川普明確拒絕在AI監管上與中方合作，凸顯雙方分歧加深。",
-                "topic_summary": "近日川習會中科技與晶片議題在官方聲明中「神隱」，專家分析這不代表科技戰降溫，而是爭議從商業談判轉為更高層級的國安競爭。同時，美國總統川普公開表示拒絕與中國在AI監管上合作，並召集黃仁勳、祖克柏等科技巨頭商討美國AI戰略，意圖維持對中國的絕對領先優勢，台海問題與技術封鎖仍是美中關係最敏感的界線。",
-                "global_search_url": "https://news.google.com/search?q=%E7%BE%8E%E4%B8%AD%E7%A7%91%E6%8A%80%E6%88%B0",
+                "topic_id": "main-1",
+                "risk_badge": "badge-critical",
+                "badge_text": "關鍵發展",
+                "topic_title": "美中科技與貿易戰：休兵僅延2個月",
+                "risk_reason": "貿易戰休兵不如預期，稀土與先進科技管制角力升溫，將影響全球供應鏈布局",
+                "topic_summary": "華府「川習會」落幕，雙方雖達成300億美元的部分關稅減免清單，但貿易休兵僅短暫延長兩個月至2027年1月。專家指出，中方未完全落實稀土出口承諾，導致美國不願大幅放寬技術出口管制。同時，美國加速自建稀土產業鏈，市場擔憂2027年美中恐爆發新一波高強度貿易與科技衝突。",
+                "global_search_url": "https://news.google.com/search?q=US+China+Trade+Tech+War",
                 "articles": [
                     {
-                        "article_id": "m1_a1",
-                        "source_tag": "聯合新聞網",
-                        "front_title": "川習會迴避晶片議題，科技戰升溫",
-                        "back_title": "專家解析：美中科技爭議升級至國安層級",
-                        "back_summary": "在近期的川習會中，輝達與超微執行長雖為座上賓，但官方清單完全未提半導體出口管制。智庫專家指出，這顯示科技戰已從商業談判轉變為國安競爭，雙方皆面臨龐大國內壓力，且美方並未鬆綁晶片限制。",
-                        "original_title": "科技战未降温…川习会成果芯片议题神隐分析：升级国安竞争",
-                        "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHHQBoj5LZizMf6KSC4FPews-9B6poRwmCluDgSxnf4vlOf-FvPemIbEhqPcCv7geeN0cwmNvfU2JNMofzHgTQoPLon4AR8iRTrSGoyRZRoQ9QRAvqX0h7e8lHiWcxnCeXqasvHwmGMKyZ5yyZyOkqJ",
-                        "image_url": ""
-                    },
-                    {
-                        "article_id": "m1_a2",
-                        "source_tag": "民視新聞網",
-                        "front_title": "川普拒與中國合作AI監管，召集科技巨頭",
-                        "back_title": "維護美國AI優勢，川普白宮會商黃仁勳等人",
-                        "back_summary": "美國總統川普公開表示，不想在AI技術治理上與中國國家主席習近平合作，以免削弱美企優勢。他於白宮召集黃仁勳、祖克柏等多位科技巨頭，討論AI創新與監管的平衡，力求在對中科技競賽中保持領先。",
-                        "original_title": "川普拒與習近平合作AI監管召集黃仁勳祖克柏白宮會談| 民視新聞網 - LINE TODAY",
-                        "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHoEpwHaoyMNZ_JuHrehhZDqtkdLt5Y7sHFEnxsTKo6Z-XesiEknKGtCY778lSR-yrzbJPrlu2ZP8VI6_D4BzAbIolmUwFIJcViOVfXmUCUBm4IEEEjz5pozbukNgtfmQt3",
-                        "image_url": ""
-                    },
-                    {
-                        "article_id": "m1_a3",
-                        "source_tag": "今周刊",
-                        "front_title": "川習會未提台灣，打破棄台論認知戰",
-                        "back_title": "美中競爭架構未變，學者戳破中國宣傳泡泡",
-                        "back_summary": "針對川習會，學者分析美方發布的事實清單與中方的八點共識落差極大，且兩份文本皆未提及台灣。美方未給予中國任何關於台灣議題的承諾，這戳破了部分輿論炒作的「棄台論」，美中結構性競爭仍將持續。",
-                        "original_title": "「棄台論」再度湧現...川習會文本沒提台灣！學者拆解如何戳破中國認知戰泡泡| 今周刊",
-                        "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGc3ZhuXflphX9-zVgDNPei2xHDgv2c85GOhGfr4m1v4EUa84lCp6GQTdDHQU_OO1wG_SjTaILQJtolbtYtm_JsMeHgAVUHnDAMZv2C7itkNjMZhjqdS0eD3KEYXZDu_HVU",
-                        "image_url": ""
-                    }
-                ]
-            },
-            {
-                "topic_id": "mainstream_2",
-                "risk_badge": "badge-warning",
-                "badge_text": "持續惡化",
-                "topic_title": "俄烏戰爭局勢發展",
-                "risk_reason": "俄羅斯擴大對歐洲企業在俄資產的控制與報復，同時針對基輔等地的無人機襲擊加劇，凸顯戰爭長期化並向經濟制裁戰線延燒。",
-                "topic_summary": "俄烏戰爭陷入焦土與經濟報復的長期戰。俄羅斯近日宣布將部分歐洲企業（如雀巢、麥德龍）的在俄資產置於臨時管理之下，以報復歐洲對烏克蘭的支持。同時，俄軍無人機持續猛烈轟炸基輔，甚至擊中烏克蘭國家科學院，雙方衝突強度不減，也引發外界對現代持久戰中能源、財政及供應鏈韌性的反思。",
-                "global_search_url": "https://news.google.com/search?q=%E4%BF%84%E7%83%8F%E6%88%B0%E7%88%AD",
-                "articles": [
-                    {
-                        "article_id": "m2_a1",
-                        "source_tag": "Newtalk新聞",
-                        "front_title": "莫斯科反制擴大，歐企在俄資產遭接管",
-                        "back_title": "俄羅斯針對西方制裁發動不對稱報復",
-                        "back_summary": "為報復歐盟對烏克蘭的持續軍事援助，俄羅斯將雀巢、麥德龍等歐洲巨頭的在俄資產置於臨時管理下。克里姆林宮官員更揚言「讓他們害怕吧」，暗示若歐洲不停止介入戰場，此類逆向制裁措施將進一步擴大。",
-                        "original_title": "「讓他們害怕吧！」 莫斯科宣布擴大對歐企業制裁力度削弱對基輔支持| Newtalk",
-                        "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQETYIAq0sTl6A3hmLrXY39D5B_EQEYp81Ic542qITTN_n-RmzzkZ1b4omQzUvrw_kAw1_-HHmg-pR-UR85e1-sdFBKiPhGt_9grpIuBQPwj4KlB4i-IRJndECExXNojtWOz",
-                        "image_url": ""
-                    },
-                    {
-                        "article_id": "m2_a2",
-                        "source_tag": "經濟日報",
-                        "front_title": "俄軍無人機猛轟，基輔國家科學院爆炸起火",
-                        "back_title": "俄羅斯空襲加劇，基輔基礎設施頻受創",
-                        "back_summary": "俄羅斯對烏克蘭首都基輔的無人機與飛彈攻擊頻率不斷上升。最新畫面顯示，一架高速無人機撞擊烏克蘭國家科學院後發生劇烈爆炸，不僅造成嚴重死傷，也顯示俄方正持續打擊烏國非軍事與科研基礎設施。",
-                        "original_title": "俄羅斯無人機猛轟基輔烏克蘭國家科學院陷火海 - 經濟日報- 聯合新聞網",
-                        "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHEcIYdt_fgyhLO0ggoapteO7c5gLyGSL5F97gK2Z6lXvxkt6GWZmhIx9PQreENy5dBG7-t5eNQhWZKchkfQQH9bxjnU0A3ROZLLrT4IZiI9tc48DOj4UKwY0wniBvbTYO3wjt7",
-                        "image_url": ""
-                    },
-                    {
-                        "article_id": "m2_a3",
-                        "source_tag": "ETtoday 雲論",
-                        "front_title": "從俄烏持久戰看現代國安防線",
-                        "back_title": "能源、財政與供應鏈韌性成為戰爭決勝關鍵",
-                        "back_summary": "俄烏戰爭邁入第四年，軍事防禦已非唯一重點。分析指出，能源基礎設施的維護、長期財政支撐能力，以及確保物流與零組件供應鏈運作，是決定國家能否承受長期消耗戰的核心，這為台灣防衛策略提供了重要借鏡。",
-                        "original_title": "從俄烏持久戰看台灣真正的防線能源、財政與供應鏈韌性 - 雲論",
-                        "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH8dcJWBTlsNJ-mLDsR-AgeGL_oJ1-CWJtFqoh5VGVkRPeFdXGHAr-msCYe_U-mCTXCR6pXLqGVLoU-q9rYy6FZ08M3jfq0fD48LNI9MZcZ1uQYSY3AhXO4XZnwJw==",
-                        "image_url": "https://cdn2.ettoday.net/images/6872/d6872835.jpg"
-                    }
-                ]
-            },
-            {
-                "topic_id": "mainstream_3",
-                "risk_badge": "badge-info",
-                "badge_text": "政策動態",
-                "topic_title": "全球人工智慧監管與發展",
-                "risk_reason": "AI技術發展過快引發失控隱憂，各國政府與地方議會（如紐約市）開始推動具體法規強制設置「緊急關停開關」，而華府則尋求在創新與安全間取得平衡。",
-                "topic_summary": "人工智慧監管在全球進入實質立法討論階段。紐約市議會提出具體法案，要求部署的AI模型必須配備人工可控的「緊急關停開關」並接受第三方安全驗證，違者將面臨重罰。同時，美國眾議院議長及總統川普近期密集會晤科技巨頭（如輝達、Meta、OpenAI），強調在防範AI失控風險的同時，需避免過度監管損害美國競爭力，主張採自願性安全機制。",
-                "global_search_url": "https://news.google.com/search?q=AI%E7%9B%A3%E7%AE%A1",
-                "articles": [
-                    {
-                        "article_id": "m3_a1",
-                        "source_tag": "鉅亨網",
-                        "front_title": "紐約推AI監管：強制設置「緊急關停開關」",
-                        "back_title": "紐約市議會開出重罰，嚴管AI模型安全",
-                        "back_summary": "紐約市議會公布最新AI監管提案，要求在市內運作的AI模型必須設有由人類控制的「kill switch（緊急關停開關）」，並須經過第三方安全驗證。未達標者每次違規最高可罰2.5萬美元，並已要求科技巨頭高層出席聽證。",
-                        "original_title": "紐約市議會提AI監管案！AI模型須設「關停開關」、違規最高罰2.5萬美元",
-                        "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEvSSGO_RuLp2PoEB6PsSzavrek-U0xWVc_caXDxUrTlXKyI7fwiAtFXF9txAJ1Q-89wC5uKjN1bMS6N8bfv_inbKuTARRdMoYyvDuzEebgcyHWC_u3L5B-S3EZfA==",
-                        "image_url": "https://cimg.cnyes.cool/prod/news/6617031/l/29a08b258996bfd25ea3cce4b3a1e435.jpg"
-                    },
-                    {
-                        "article_id": "m3_a2",
-                        "source_tag": "鉅亨網",
-                        "front_title": "川普會晤6大科技巨頭商議AI戰略",
-                        "back_title": "白宮AI午餐會，聚焦創新與監管平衡",
-                        "back_summary": "美國總統川普在白宮邀集輝達、Meta、OpenAI等6家科技巨頭CEO共進午餐。面對研究人員警告AI自動化恐引發失控風險，川普與國會高層強調需維持技術創新與對中競爭優勢，傾向避免實施過度嚴厲的監管框架。",
-                        "original_title": "川普將與6大科技巨頭談AI監管！輝達、Meta、Anthropic、OpenAI等高層齊聚白宮",
-                        "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG7mU4YV4VJBS0xuBVVA0QgIXwynUDLC-0724Xi1vSKaD3rGgUYJ4n1GW06kCcaclly3Mlt7qnLZIhlTB7WBmj-Xl1dzfL-CG0W18x5_BXAQ_4yWwZJBxxr4H5wrQ==",
-                        "image_url": "https://cimg.cnyes.cool/prod/news/6617645/l/f61fdbf2f0f3a8bb2d7545b5cf13f712.jpg"
-                    },
-                    {
-                        "article_id": "m3_a3",
-                        "source_tag": "即時新聞",
-                        "front_title": "美眾院議長定調：AI防護宜採「自願制」",
-                        "back_title": "防範災難性風險與維持技術領先間的拔河",
-                        "back_summary": "美國眾議院議長強生在會晤Meta、Google等高層前表示，政府應在技術發展上取得適當平衡，並期望AI防護措施維持自願性。儘管國會面臨立法壓力，但為了防止扼殺創新及輸掉對華科技戰，預期短期內不會推出強硬法案。",
-                        "original_title": "【即時新聞】最新AI監管發酵！眾院議長盼採自願制，將會晤Meta(META)等科技巨頭",
-                        "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE871Wrbyp3j0zUVhUm4DxmeM4O_YfqqdlaRqkKC10l9lyzqFljdF_hRiGsMh_3ylNeas1N1NfxEt0I4ymWFuLGpN05GB-GfPcNo6YE-GmgfsrX78UQc8PHrNcQmiiieOa2zFCppozbqcInShIhbxougJ1zisrW4N9aNTXcc2jRKqCUBygzhn-PQFcamMU=",
-                        "image_url": ""
-                    }
-                ]
-            },
-            {
-                "topic_id": "mainstream_4",
-                "risk_badge": "badge-danger",
-                "badge_text": "風險升溫",
-                "topic_title": "台海地緣政治與安全",
-                "risk_reason": "中國大陸推動修法以強化戰時對民間資源的接管能力，同時持續藉由外交敘事對台施壓；台美雙方則深化經貿與防衛合作，區域風險在暗中角力中持續升高。",
-                "topic_summary": "近期台海安全情勢依舊緊繃。陸委會強調台美雙方在高科技與地緣政治上利益高度一致，不會成為美中談判的籌碼。外媒與智庫則示警，中國政府正透過修法大幅強化全面戰爭時動員與接管民間資源的能力，被視為針對台海衝突的實質戰備部署。台灣民間防衛意識與演練也隨之悄悄常態化，應對複合性的認知戰與實體威脅。",
-                "global_search_url": "https://news.google.com/search?q=%E5%8F%B0%E6%B5%B7%E5%AE%89%E5%85%A8",
-                "articles": [
-                    {
-                        "article_id": "m4_a1",
-                        "source_tag": "大陸委員會",
-                        "front_title": "陸委會：台美共維現狀，台灣非交易籌碼",
-                        "back_title": "反制中共敘事，深化台美經貿與防衛合作",
-                        "back_summary": "針對川習二會，陸委會副主委沈有忠強調台美關係緊密，不會受美中對話影響，且絕對不是能被交易的籌碼。台灣將持續強化自我防衛力量，深化與美國在AI及半導體等領域的合作，確保台海與印太區域的和平現狀。",
-                        "original_title": "陸委會沈副主委強調，台美有地緣政治與經貿合作的共同利益，台灣將與美國和國際社會深化合作，共同維護台海和平穩定現狀 - 大陸委員會",
-                        "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGxU2m-D47j77okX_S4soSVqvaq-3qZHOb3rA9OSYPoioIDMlPZ_li877yNjLjpPVlD3GDYPCVmZ6SKJF_j_rdeb2etanpOI_uMgA45WceUVxtbWSE_ftEW9Ae9Olr0fnJ2gLg6cXXdclW5NvdvmZwf5A2gDh4cTdVlfdTWUVG1-mfR_VKCJmU31O39TaWD2K8Y0EJg2YOfGJU=",
-                        "image_url": "https://www.mac.gov.tw/images/logo_fb.jpg"
-                    },
-                    {
-                        "article_id": "m4_a2",
+                        "article_id": "m1-a1",
                         "source_tag": "大紀元",
-                        "front_title": "專家剖析川習會：美國對台政策未鬆動",
-                        "back_title": "美中缺乏戰略共識，台灣需警惕軟性統戰",
-                        "back_summary": "在台灣勵志協會舉辦的國際座談會上，專家指出川習二會的象徵意義大於實質，美中在重大議題上缺乏共識，美國基於《台灣關係法》的一中政策與對台保證未有改變。學者提醒，台灣需提防中共利用軟性交流包裝的認知作戰。",
-                        "original_title": "川習會落幕專家析美中互動及台美中關係",
-                        "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGb9Gh_ces72-YOZZH5XiPCt2otgPcQa-izscLtty9r2nq2yY3If7TwdArEIlRmFhPGfpEWRhFLGr4LoKfiWjTkyj-RUVKmf_mMHMEoK4fnmzybax527szWRnxCg_Q8DEMIfujBnWcT7GM=",
-                        "image_url": "https://www.epochtimes.com/_next/image?url=https%3A%2F%2Fi.epochtimes.com%2Fassets%2Fuploads%2F2026%2F09%2Fid14860268-2609292043282378.jpg&w=1200&q=75"
+                        "front_title": "美中貿易休兵僅延2個月",
+                        "back_title": "美施壓中國履行稀土承諾",
+                        "back_summary": "美國總統川普與中共黨魁習近平在華府舉行峰會，達成8項共識及部分商品降稅。然而，原定11月到期的貿易休戰期僅延長至2027年1月，低於外界預期。前商務部官員透露，主因是中方未完全履行稀土出口承諾，迫使美國維持壓力。",
+                        "original_title": "美中貿易休戰只延長2個月專家：施壓中國履行稀土承諾",
+                        "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGuGp_8errEhHM1cme7hp3KiI7ZF88Er1m1jw20zGovsN8pcdNYTzcbjwmC3VxQo11YM1VozLngkfaVVx0U9vpNYAj8l9DPGssC33JI_acxcX3q2G1SR2cm9ghZGniOZNvOCC8b5Hy7Liw=",
+                        "image_url": "https://i.epochtimes.com/assets/uploads/2026/09/id14859998-876242-600x400.jpg"
                     },
                     {
-                        "article_id": "m4_a3",
-                        "source_tag": "商傳媒",
-                        "front_title": "日媒爆料：中國修法強化戰備動員能量",
-                        "back_title": "鎖定接管民間資源，恐為台海衝突作準備",
-                        "back_summary": "《日經亞洲》報導指出，中國政府已透過法律修訂，大幅強化在全面戰爭狀態下接管民間資源與基礎設施的能力。國際分析認為，此舉是北京為了可能的台海衝突進行更全面的內部戰備整備，區域穩定面臨潛在挑戰。",
-                        "original_title": "中國修法強化戰備動員鎖定台灣民間資源應戰 - 商傳媒",
-                        "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEYzWABf6ql9pmaXuF1SSZr1x5DsWfgv4zvjDwEa_7973C-oEDzIy9GtUlriOzXashxxk4rDVH66a_JX1Qkzoo0UjBg2LrUaILCJHCaYgWUhtJbZ6w-niIoC4xs73Rb47G2V9qpTYd-_tLlT1UFYEuraFpMflEfTReq8kw_DihqB5rUtdBcXjWjEAqlVDflpF9amxqTu7SDeBK65zxnRrf22Q-_D2Oppqzgh09uL0M4JTtiD_x7oH2iUa9YNZXg0NxbkbiWhGya1nUhOoTBcQS_tGGTNEBqG6f7QgADz1O0wr6T9wvwd65VVf9YiFmdpU4rUaluIAKTGI25nz2-3qh_olBVfBmH0D_1CZmfzCPS-CUtSZKKmbiaXSAuvJDnAHeN_3SYHSlwaY8zpMnW",
-                        "image_url": ""
+                        "article_id": "m1-a2",
+                        "source_tag": "世界新聞網",
+                        "front_title": "2027美中恐重燃戰火",
+                        "back_title": "學者警告經貿成果有限",
+                        "back_summary": "學者指出，川習會經貿成果相當有限。美國正加速建立稀土自主生產能力，當美國在2027年實現初步量產後，預料美中之間的關稅戰與科技競爭將重新獲得啟動的動能，而中國產能過剩向外倒貨的問題，也將連帶引發歐美關稅圍堵。",
+                        "original_title": "學者：美中貿易戰休兵僅延2個月2027恐重燃戰火| 世界新聞網",
+                        "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH-xGpE9HYF64YjFhaH613Ht57CAB3PS9lF0bCv9AkL0o3XsnSMKE1YNg3cO1VHHPI9Br9gp8See_XJtI0p-HQloROmuq6-uofdhq8NEF_nhZgq6ylm54y_iLWhqbaQwFU4EKYiqwQM-Vxr",
+                        "image_url": "https://cdn.shopwith.network/posters/Dds7PvkiCTQ.webp"
+                    },
+                    {
+                        "article_id": "m1-a3",
+                        "source_tag": "DIGITIMES",
+                        "front_title": "非敏感產品訂單回流中國",
+                        "back_title": "休兵期牽動台廠接單與供應鏈重組",
+                        "back_summary": "在美中達成貿易休兵延長與非敏感產品關稅減免的協議後，部分日用品與消費性電子非敏感組件的訂單預期將短暫回流中國。然因AI與半導體等高階科技禁令未鬆動，台廠在先進製程與高階網通領域的轉單效應依然穩固。",
+                        "original_title": "美中貿易休兵延長非敏感產品訂單回流中國恐牽動台廠接單 - DIGITIMES",
+                        "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFl-XYPncOmMCK-0qRzWjtPZYdCvSsSvwiOVl8WyY-JMiqJm2YzrHZB0szjvkC32Op_f1ooK5ZOkZrilMmzKWnCCgSeFf5oLpdL1GAesRUMenagDhCaHwJAg8dTJkWJCEwF4cA1Y7P1GLM5q4pMlBki7tq3B3G2DOq4M7m9eJ68B-CqogyM2AbVoLVg",
+                        "image_url": "https://img.digitimes.com/newsimg/2026/0930/769879-1-vpcm2_l.jpg"
                     }
                 ]
             },
             {
-                "topic_id": "mainstream_5",
+                "topic_id": "main-2",
                 "risk_badge": "badge-warning",
-                "badge_text": "經濟波及",
-                "topic_title": "中東地緣政治衝突",
-                "risk_reason": "中東多線衝突不僅持續推升短期油價波動，更導致全球原油運輸咽喉（如紅海、霍爾木茲海峽）同時承壓，重塑全球能源供應與地緣政治版圖。",
-                "topic_summary": "中東地區戰火持續外溢，打破了傳統依賴單一航道的石油運輸模式。目前霍爾木茲海峽與紅海-曼德海峽雙雙面臨高度安全威脅，連帶可能影響到更遠的馬六甲海峽航運安全。專家指出，中東舊有由美國主導的秩序正在瓦解，而沙烏地阿拉伯則透過調整出口路徑並受惠於油價上漲，成為此波衝突中罕見的經濟贏家，年度石油收入大幅飆升。",
-                "global_search_url": "https://news.google.com/search?q=%E4%B8%AD%E6%9D%B1%E8%A1%9D%E7%AA%81",
+                "badge_text": "戰事升級",
+                "topic_title": "俄烏戰爭局勢發展：莫斯科擴大制裁與包圍圈",
+                "risk_reason": "俄羅斯在烏克蘭前線擴大包圍圈，同時對歐洲企業祭出反制裁，推升地緣政治外溢風險",
+                "topic_summary": "俄軍近期在哈爾科夫州成功收緊包圍圈，佔領多個居民點。同時，為反擊歐盟對烏克蘭的支持，俄羅斯宣布將包含雀巢等歐洲跨國企業的在俄資產實施臨時管理，展現強烈的不對稱制裁手段。此外，烏克蘭持續面臨密集的無人機與彈道飛彈攻擊，正積極尋求新一輪 NASAMS 防空系統援助。",
+                "global_search_url": "https://news.google.com/search?q=Russia+Ukraine+War",
                 "articles": [
                     {
-                        "article_id": "m5_a1",
-                        "source_tag": "綜合外電",
-                        "front_title": "中東多線衝突重塑石油安全版圖",
-                        "back_title": "雙海峽同時承壓，全球能源運輸風險飆升",
-                        "back_summary": "隨著美伊衝突與紅海危機的持續，全球石油市場正從「單一咽喉風險」演變為霍爾木茲海峽與曼德海峽同時承壓的局面。產油國被迫重新配置出口航線，高昂的戰爭保費與受限的物流能力嚴重考驗全球石油供應鏈的彈性。",
-                        "original_title": "双海峡制动，中东多线冲突正重新定义石油安全",
-                        "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF8uU_4VvO7Nj7NUntKliReygY81PowlghlcsoF__mLE-4mNBnCw5GjFUh9_zAkApKITU38_i_GpHrn-LDOsbhsAB7YQjZGaJV-SVOi0yPv_dOXal26VhiQ8BTw6zrY4gpHNlpLRxvx",
-                        "image_url": ""
+                        "article_id": "m2-a1",
+                        "source_tag": "网易",
+                        "front_title": "俄軍擴大哈爾科夫包圍圈",
+                        "back_title": "烏克蘭遭百架無人機夜襲",
+                        "back_summary": "俄軍「北部」集團軍近期在哈爾科夫州取得進展，解放克賴江卡居民點，並持續收緊包圍圈。同時，烏克蘭總統澤倫斯基表示，基輔在夜間遭受超過100架無人機及彈道飛彈攻擊，正緊急與夥伴國磋商以強化防空系統。",
+                        "original_title": "俄乌冲突最新进展：9月30日上午最新消息|乌克兰|伊朗|俄军 - 网易",
+                        "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFAcE0A2-XySHrRsKG_RbKcnjTqpVy2vWLIvYrANmuyZzMMsjk_rfXZiqx_w5KQCIopnV2XIHZcIulrBlfcNDTBlrGhbWESHM4i1V8XgYt1GKTcXIjm10HOKkqVB4oV2-HJffxzkyrQ-nu8"
                     },
                     {
-                        "article_id": "m5_a2",
-                        "source_tag": "凤凰网",
-                        "front_title": "中東衝突外溢，馬六甲海峽受波及？",
-                        "back_title": "地緣震盪蔓延，全球最繁忙航道引發擔憂",
-                        "back_summary": "中東局勢的不穩定引發了航運危機，外界開始擔憂風險是否會外溢至距離數千公里外的馬六甲海峽。作為連接印太與中東、支撐全球3萬億美元貿易的動脈，專家雖評估目前該區域相對穩定，但不排除未來遭域外力量施加影響的可能。",
-                        "original_title": "中东冲突如何外溢影响马六甲海峡？ - 凤凰网",
-                        "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH1GwJDHmc54V-sIZhW8bfDCXztbezmzP0PUtE7ZQv_8Sxf0eUye984EK02jvoy7o3SrwXzkrUbNS46HyS9Cqfkuy0QP90H22ZcBFhLolsfH8ulwmTYNIU-7A4=",
-                        "image_url": "https://x0.ifengimg.com/res/2026/D40C5B44CE58209519622039AFC6F1EF2052EC11_size390_w1024_h683.jpg"
+                        "article_id": "m2-a2",
+                        "source_tag": "Newtalk新聞",
+                        "front_title": "俄擴大制裁歐洲在俄企業",
+                        "back_title": "莫斯科強收跨國企業管理權",
+                        "back_summary": "為反擊歐洲國家對烏克蘭的軍事支持，俄羅斯當局宣布將雀巢、麥德龍及歐尚等歐洲跨國巨頭的在俄資產置於「臨時管理」之下。克里姆林宮高層匿名放話稱「讓他們害怕吧」，暗示報復範圍可能進一步擴及金融業。",
+                        "original_title": "「讓他們害怕吧！」 莫斯科宣布擴大對歐企業制裁力度削弱對基輔支持 - Newtalk新聞",
+                        "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHBLwA-KnxKtZIfJ6kq4dXrrbQbi-6qVOTQsIgo7DCo4imecKnvCG77PtPHyu_ZXQt8CaYNgqEoAmPeQ3Fv0p01UcNuugCSd6q2Trb4OWs8tKQssJPWYE2WXb8e7bXImGDUsdV35w=="
                     },
                     {
-                        "article_id": "m5_a3",
-                        "source_tag": "新浪財經",
-                        "front_title": "地緣動盪推升油價，沙烏地成最大贏家",
-                        "back_title": "石油出口收入暴增，年收飆升至2100億美元",
-                        "back_summary": "儘管中東戰火不斷，沙烏地阿拉伯卻因國際油價飆升而迎來收入大爆發。透過重啟繞過霍爾木茲海峽的紅海管線與調整出口策略，沙國今年的石油出口收入估計從衝突前的1500億美元躍升至2100億美元。",
-                        "original_title": "中东冲突唯一赢家？沙特年度石油出口收入飙升至2100亿美元 - 新浪",
-                        "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG0R0W-qg-L2HDZeGTV61-DSo2TeAkYxp1yuoT7ngHhNGdluaKzFTEBpAKk0xuc87DNZSlDMUOKYY0_rmqd5CCgcOgmmDZZT5WkSOfX8otWLa0tkqtdg6FETkvXtMiB4WrERffKgKyth4sm5oGSazEwpRCh0pcNJ-NypOiM94Fflhvh",
-                        "image_url": "https://n.sinaimg.cn/default/feedbackpics/transform/116/w550h366/20180418/ubGb-fzihnep5208613.png"
+                        "article_id": "m2-a3",
+                        "source_tag": "YouTube",
+                        "front_title": "烏克蘭多線清除俄軍滲透",
+                        "back_title": "戰場降維解放紮波羅熱村莊",
+                        "back_summary": "烏克蘭前線部隊在紮波羅熱地區發動多線反攻，成功清除了部分俄軍的滲透據點並解放當地村落。前線戰況激烈，雙方在無人機與火炮陣地的拉鋸戰持續消耗，烏軍正致力於穩定防線並推進反擊行動。",
+                        "original_title": "戰場取得大進展降維解放紮波羅熱村多線清除俄軍滲透據點｜俄烏戰爭最新消息 - YouTube",
+                        "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGSXQ9P5ag8BAIVfeA3FNAsYWEERjYGl3MoeoEfkRVGu2Pr7ClPgwXA3yD9YZIII9cjuaai-_fPOhgaJNNzxWBAXBEvKclOUputVmHawcaSX2Cpx4uzACfOErsUeltTliHd"
+                    }
+                ]
+            },
+            {
+                "topic_id": "main-3",
+                "risk_badge": "badge-info",
+                "badge_text": "政策與發展",
+                "topic_title": "全球人工智慧監管：美拒絕過度限制以應對競爭",
+                "risk_reason": "美國明確拒絕過度監管 AI，轉而要求企業「自我審查」，加深了全球各法域(如歐盟)之間的合規落差",
+                "topic_summary": "美國總統川普在白宮召集科技巨頭，明確表態拒絕限制 AI 發展，以免在與中國的科技競賽中落敗。雙方簽署了一項自願性「自我監管」協議。相比歐盟嚴格的《人工智慧法案》，美國轉向輕度監管的戰略，令全球 AI 治理制度正式步入「路線競爭」的分裂時代，企業未來面臨嚴峻的跨國合規挑戰。",
+                "global_search_url": "https://news.google.com/search?q=Global+AI+Regulation",
+                "articles": [
+                    {
+                        "article_id": "m3-a1",
+                        "source_tag": "星島日報",
+                        "front_title": "美總統簽AI自願協議",
+                        "back_title": "承諾自我審查不限制發展",
+                        "back_summary": "美國總統與黃仁勳、馬斯克等多位頂尖 AI 企業領袖在白宮簽署自願協議，承諾對 AI 系統進行內部及外部安全審查。官方強調，為應對激烈的國際科技競賽，美國不會限制 AI 技術的擴張，將此視為確保戰略優勢的核心。",
+                        "original_title": "特朗普與科技巨頭簽人工智能協議承諾「自我監管」 - 星島日報",
+                        "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG5TKUl3AHc41YGD_6_cHhXPIVaAGpHJv0zOdKstsJ69G4_t7ebetTgtKqbaw-ANFVLX4H4F9xbZ-tcFnalyrTJ4wnp0lyWKV5ZEFgtI5PfX_xfrCii6LxffsU4NYRHIO0fnimgPyGoDk7icZnmH1yYfuYc7a4quTs9xGMcVC96OxQ1IIQW3ENwvtknkajKwpTYHynoFRMruyK5HbCULvivT9EAlAJ0HcVRk02GtNGLPA=="
+                    },
+                    {
+                        "article_id": "m3-a2",
+                        "source_tag": "自由時報",
+                        "front_title": "美AI監管別管太多",
+                        "back_title": "避免在美中科技戰中落後",
+                        "back_summary": "在一場眾星雲集的白宮午餐會中，美國政府與科技界達成共識，認為應無限制地發展 AI (並擬正名為「超級智慧」)。儘管近期發生多起模型失控及資安入侵事件，當局依然駁斥了暫停研發的呼聲，主張過度監管將削弱美國的競爭力。",
+                        "original_title": "我們自己管！川普與科技巨頭有共識AI監管別管太多以免落後中國 - 自由時報",
+                        "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFkhhTbgv4VzpO3b8dCCb572oBPj7HnDXGk96J5WSnwJ89h4BagYzPSaNfu8t7Fq8OxayS6lLmdi2nnDhK-WjB-ynI-5FWdlecwATpFln1p4JvhdOvGlvG9z_z45o-x295bw_5bZpi3BwQH8eBC",
+                        "image_url": "https://img.ltn.com.tw/Upload/news/600/2026/09/30/5590121_1_1.jpg"
+                    },
+                    {
+                        "article_id": "m3-a3",
+                        "source_tag": "YouTube",
+                        "front_title": "OpenAI 尋求300億融資",
+                        "back_title": "估值達1.4兆美元推升AI狂潮",
+                        "back_summary": "在 AI 技術突飛猛進之際，OpenAI 傳出正計畫進行至少300億美元的新一輪融資，目標估值推升至驚人的1.4兆美元。然而，伴隨資金湧入，其模型安全性的疑慮以及基礎設施消耗問題也成為市場焦點，促使各界重新檢視 AI 長期發展的天花板。",
+                        "original_title": "2026年9月29日核心美股及科技巨头市场行情与重大事件总结一：美股三大指数连续第二个交易日回调 - YouTube",
+                        "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGeHqOE1usKrO6p6e84pFfsEELGQeK8l_SkjEnHm4tTT-98s1IrB2qJu0c3-MqWd4AkSj0xQxlZHpQiwNJ55Rzz5-v3oxKEeiLBW2VzZqpqp_IXqgtuou32sLJtikOBlg57-_B8sUfETsfLA3_ngkOZoDJk5mzwkA=="
+                    }
+                ]
+            },
+            {
+                "topic_id": "main-4",
+                "risk_badge": "badge-warning",
+                "badge_text": "地緣焦點",
+                "topic_title": "台海地緣政治與安全：成為大國博弈的核心議題",
+                "risk_reason": "台海議題不僅牽動美中戰略角力，在美國基層與國際政治談判中的能見度已達歷史新高",
+                "topic_summary": "台海安全已從區域性議題轉化為全球戰略焦點。赴美訪問學者指出，台灣的國際能見度大幅躍升，台海安全正式走入美國基層民眾視野。同時，中國官方再度重申「一中原則」為中美關係政治基礎，將「台獨」視為共同威脅；而在大國博弈背景下，中東與台海的聯動亦成為地緣政治風險評估的重要參數。",
+                "global_search_url": "https://news.google.com/search?q=Taiwan+Strait+Geopolitics+Security",
+                "articles": [
+                    {
+                        "article_id": "m4-a1",
+                        "source_tag": "大纪元",
+                        "front_title": "台灣議題走入美民眾日常",
+                        "back_title": "國際能見度與安全關切遽增",
+                        "back_summary": "前內政部長林右昌在美訪問期間指出，台灣的國際能見度不可同日而語，無論是美國大城市還是基層城鎮的民眾，皆高度關注台海安全與台灣的經濟發展，反映台海議題已深入美國社會的戰略認知中。",
+                        "original_title": "林右昌谈访美观察：台湾议题走入美民众日常 - 大纪元",
+                        "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE_kfiSHlcGRoPfQ2-ZpIMnMKelBleEWF2jMqpYU4N1lGs-g1MHIlYVEcHFLHDzpm2DKxaydtA2hjpMFxN6BtkE1lCDEAE6HzCKn7Iq6Kl3hn2BtJP_yZ1IcNFYUbxEf6piLzyp78T0DDw=",
+                        "image_url": "https://i.epochtimes.com/assets/uploads/2026/09/id14860222-e7f0f1bfef9766c79ad716c0b6c1f87d-450x338.jpg"
+                    },
+                    {
+                        "article_id": "m4-a2",
+                        "source_tag": "新闻频道",
+                        "front_title": "中方重申一中原則政治基礎",
+                        "back_title": "控管台獨為構建關係穩定關鍵",
+                        "back_summary": "中國國台辦在例行新聞發布會上強調，一個中國原則是中美關係不可動搖的政治基礎，並重申管控「台獨」分裂勢力是雙方構建建設性戰略穩定關係的關鍵，此宣示反映出北京在應對美方施壓時，持續將台海問題列為不容退讓的核心紅線。",
+                        "original_title": "一架飞往以色列的客机异常改道疑因飞行员争斗触发紧急代码 - 新闻频道",
+                        "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHHCBM9z3hsEZhCaXQlBhB1Ld80WZK6FnfVWjqZFfu0b4a4fu4lV5e1AJ384DdA_6JYjGG1d6LOphLUXgHCAXozMCATDW7bngM6Vi7Z_yCHrIiECsbCJFZi_pduIjMe1g9iLNhYRVdC68LO_qp-XxhreRAhribKhtBMNew="
+                    },
+                    {
+                        "article_id": "m4-a3",
+                        "source_tag": "露股go",
+                        "front_title": "川習會未取得實質性突破",
+                        "back_title": "大國地緣僵局牽動區域安全",
+                        "back_summary": "在全球宏觀經濟數據更新中，分析師指出甫落幕的中美領導人會晤未能取得突破性進展。美中在科技管制與區域安全議題上的持續僵局，加上中東原油供應危機，讓投資市場對包含台海在內的全球地緣政治風險維持高度警惕。",
+                        "original_title": "2026年9月30日國際焦點經濟數據＆台股最新動態",
+                        "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGT-e7HJk0fyLsAQPIqNsFR_qnJ_lKHX7mg8KLugAKAXA3zvLSY5_Ag9cucIQfi9hD8ePf63eQpHuNqXQqlXMZEnfuUw29-AX2KAzq4v3H_Kcsd_RMAEQ=="
+                    }
+                ]
+            },
+            {
+                "topic_id": "main-5",
+                "risk_badge": "badge-critical",
+                "badge_text": "危機警報",
+                "topic_title": "中東地緣政治衝突：客機警報虛驚與和談僵局",
+                "risk_reason": "中東衝突不僅牽動國際油價暴漲，亦引發區域領空高度警戒，威脅全球通膨與供應鏈穩定",
+                "topic_summary": "中東局勢持續緊張，一架飛往以色列特拉維夫的杜拜航空客機在沙烏地阿拉伯上空發出「7500」劫機警報並異常改道，迫使以色列戰機緊急升空，最終證實為機師肢體衝突虛驚。此外，美國拒絕了伊朗提出的停火與重開荷姆茲海峽方案，國際調停者正密集展開間接會談以避免戰火進一步失控。",
+                "global_search_url": "https://news.google.com/search?q=Middle+East+Conflict+Israel",
+                "articles": [
+                    {
+                        "article_id": "m5-a1",
+                        "source_tag": "文学城",
+                        "front_title": "飛特拉維夫客機爆劫機警報",
+                        "back_title": "以色列戰機升空應對",
+                        "back_summary": "一架載有174人的杜拜航空客機在飛往以色列途中發出劫機訊號，並偏離航線轉降沙烏地阿拉伯。以色列當局大為緊張並派戰機升空，後確認為機師內部發生肢體衝突觸發警報，有驚無險。",
+                        "original_title": "174人客机突发\"劫机警报\"，以色列战机紧急升空 - 文学城",
+                        "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFIl1aJkBbnoJyYe_ivrH1HFCVFrGvK3NLvhiSkb9Z_WtQqd6CMZOhAbvMQQ83pFHYOxX5Y--mT9k7KGKrySSOHgPlJ7KT7rJGCd5MEoGBDph2_wWKFFBWOWlwS1LYW-VMSx3nBUpPViRrQb59Mpzc=",
+                        "image_url": "https://www.wenxuecity.com/data/news/202609/30/730b6a78631e73551c23f43cb5cf4c15.webp"
+                    },
+                    {
+                        "article_id": "m5-a2",
+                        "source_tag": "世界新聞網",
+                        "front_title": "失聯客機轉降沙烏地",
+                        "back_title": "觸發最高級別安全應變",
+                        "back_summary": "客機進入約旦空域後接連發出7700及7500緊急代碼，以色列總理與國防部長緊急成立聯合指揮中心。事件凸顯在當前極端緊繃的中東衝突氛圍下，任何航空異常都極易觸發大規模的軍事防禦機制。",
+                        "original_title": "客機突發「疑似劫機警報」以色列戰機緊急升空機上174人現況曝光",
+                        "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHWbPS6NzHb8f0qTNhWorj-cw7yO-HuE3cT5jyhkJoCIye4a4NapJbjl18UAlEkW2OnHD4pPfXW0ACnhuTAjTJP1Z4ITIXH0ntFEjeD18YQ8a2yJjUFodfLdWdmKKUfkR-zY-n-5qpk3hl-",
+                        "image_url": "https://pgw.worldjournal.com/gw/photo.php?u=https://uc.udn.com.tw/photo/t3/2026/09/30/35377123.png&M=1&s=Y&x=0&y=0&sw=818&sh=533&sl=W&fw=800&exp=3600"
+                    },
+                    {
+                        "article_id": "m5-a3",
+                        "source_tag": "金十数据",
+                        "front_title": "美伊停火談判陷入僵局",
+                        "back_title": "卡達斡旋展開新一輪接觸",
+                        "back_summary": "美國拒絕了伊朗方面的提議，導致油價盤初跳漲。隨後傳出卡達等調停人將與美伊雙方展開新一輪間接會談，聚焦於修訂停火提案。中東危機未解促使避險資金劇烈波動，並對全球大宗商品市場帶來深遠衝擊。",
+                        "original_title": "金十数据全球财经早餐| 2026年9月29日-市场参考",
+                        "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF0fMrca8AwzbP87P54ldMXz0FYm5OESJT94FNFRGgi7c_-ZOYQV0B3l4GikPfBHk0AQIhCHBWRq4WcSvgOVuKB5v34cxPF4G7PcgDPNCmLNEI1f94YcKVMUHDC"
                     }
                 ]
             }
         ]
     },
     "wildcard_topics": {
-        "section_title": "潛在重大議題 (Trending Wildcards)",
+        "section_title": "潛在重大議題",
         "topics": [
             {
-                "topic_id": "wildcard_1",
-                "risk_badge": "badge-danger",
-                "badge_text": "極端氣候",
-                "topic_title": "全球極端氣候與災害",
-                "risk_reason": "史上最強的聖嬰現象發展迅速，已在全球多地引發打破百年紀錄的洪災與雪崩，將對今年秋冬的全球農業與基礎設施帶來嚴峻考驗。",
-                "topic_summary": "極端氣候正在全球範圍引發罕見災難。氣象專家警告，預計在11月達到高峰的聖嬰現象可能是史上最強，將嚴重擾亂全球氣候型態。近期已導致日本東京創下140年來連續34天下雨的紀錄，尼泊爾希姆隆峰甚至因異常強降雪發生嚴重雪崩，掩埋大本營並造成多人死傷，極端氣候常態化已成重大隱憂。",
-                "global_search_url": "https://news.google.com/search?q=%E6%A5%B5%E7%AB%AF%E6%B0%A3%E5%80%99",
-                "articles": [
-                    {
-                        "article_id": "w1_a1",
-                        "source_tag": "三立新聞",
-                        "front_title": "專家警告：史上最強聖嬰即將達高峰",
-                        "back_title": "海溫上升破紀錄，極端天氣風險大增",
-                        "back_summary": "氣候監測顯示，持續發展的聖嬰現象可能成為有紀錄以來最強的一次，海表溫度預計於11月突破攝氏3.2度。這將對今年秋冬的氣候造成劇烈影響，增加全球暴雨、洪患及熱浪等極端災害的發生機率。",
-                        "original_title": "史上最強聖嬰現象要來了！專家警告：「這時間」達高峰全球都會被影響 - 三立新聞",
-                        "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEjMxWodoJ98S_VrcAOpTza-bxtqaUJIGMJirJSRbxpRgmdINNYyD9ttYISK0iNYfVnrm2CdOaM3uII4bPyTxNT1MVZ3G7iC9gxRigOFaXDgHcv9cjKpqQ=",
-                        "image_url": "https://attach.setn.com/newsimages/2020/02/22/2420052-PH.jpg"
-                    },
-                    {
-                        "article_id": "w1_a2",
-                        "source_tag": "鏡報",
-                        "front_title": "東京暴雨破140年紀錄，連續34天降雨",
-                        "back_title": "超級聖嬰推波助瀾，大氣河流肆虐日本",
-                        "back_summary": "受到「超級聖嬰現象」與秋雨前線停滯影響，東京已連續34天降雨，打破了自1886年以來的最長連續降雨紀錄。巨量水氣形成「大氣河流」灌注日本，單月降雨量飆升至往年平均的5倍，嚴重影響當地民生與交通。",
-                        "original_title": "創140年紀錄！東京連續34天下雨恐一路降雨到10月- 鏡報",
-                        "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEanLM3wuDm9FNpYAtpMJ7WbATBYe2tUxVmG8hzbK5G86tBJ3LD416ArBWg6RiTW-hmwh9d5jLh5qN-8VAnjO8VmECHmpuAqL0AIE_P68PIhF4zqsNgT4ZkATMISpc3",
-                        "image_url": "https://statics-prod.mirrordaily.news/images/18d8d345-dadd-418d-8cb4-f434b948d08a-w1600.webP"
-                    },
-                    {
-                        "article_id": "w1_a3",
-                        "source_tag": "Fitz",
-                        "front_title": "氣候反常釀災，尼泊爾希姆隆峰爆發雪崩",
-                        "back_title": "大本營遭掩埋，至少2死14人失蹤",
-                        "back_summary": "受遲來季候風與極端強降雪影響，尼泊爾北部希姆隆峰發生大規模雪崩，直接吞沒登山大本營。雖然部分人員已提前撤離，但仍有後勤與留守人員遇難，目前證實至少2人死亡、10餘人失蹤，搜救面臨惡劣天氣挑戰。",
-                        "original_title": "尼泊爾極端氣候持續| Himlung Himal 希姆隆峰大本營遭雪崩掩埋至少2死14人失蹤 - Fitz",
-                        "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGRXgHi-9PtAtB0c_VAZGksRLCWSXmnAw-obafXHWl7WdRzcefQFI6A3fq9PSLLd_WI1cYkjU75bgTWFlyI2bYVmE8oJtW1WXusNchbCnyOempc8FKaHTOFbl5Z58k4-JmHj22GU8JXcl6PxkDapn-RBZxbWl2z57mkdlSzoYRicHOehjCUPaCXQHLcNg0kJU1wd9CbFK7e1GP66agr58YGlDDXGzVs0T3OrwDHOCvBmAvVYQOWTXC0RWKlOrIJSg0NEbPmUorGXC_wQNVsEETdzVUH7GR3h4P-_E5gNMg4mEODvYc8nSjqZjxaV3zcEosWTbSxXn-n3e1KCiudCEOTrqwoDS1Y",
-                        "image_url": "https://fitz.hk/wp-content/uploads/2026/09/Himlung-Himal-1.jpg"
-                    }
-                ]
-            },
-            {
-                "topic_id": "wildcard_2",
+                "topic_id": "wildcard-1",
                 "risk_badge": "badge-info",
-                "badge_text": "科技突破",
-                "topic_title": "太空探索與科技突破",
-                "risk_reason": "中美太空競賽在火星探測與商業運載火箭領域持續加速，將帶動深空探索技術及衛星通訊產業的革命性進展。",
-                "topic_summary": "太空探索領域傳出多項重大進展。中國宣布將於2028年底前繪製出新一代「全火星地質圖」，並納入祝融號關於火星古海洋的新發現，意圖使中國的地質年代劃分標準成為全球共識。同時，美國SpaceX的重型運載火箭「星艦」進行了驚險的第14次試飛，儘管一台發動機失效，仍首度成功進入地球軌道並部署星鏈衛星，展示了極強的容錯與運載能力。",
-                "global_search_url": "https://news.google.com/search?q=%E7%81%AB%E6%98%9F%E6%8E%A2%E7%B4%A2+SpaceX",
+                "badge_text": "航太創新",
+                "topic_title": "航太與太空科技新突破：商用化時代全面展開",
+                "risk_reason": "太空製藥與跨國合作建廠象徵太空經濟已從單純探索邁入高價值商業應用階段",
+                "topic_summary": "商業太空技術迎來重大突破。微重力生命科學公司 Varda 成功籌集 2.51 億美元，計畫在太空中大規模生產地球上難以結晶的新型藥物。同時，NASA 宣布推進波音 Starliner 載人太空船修正測試；而台灣綠能企業也積極佈局太空低軌衛星與鈣鈦礦材料市場，顯示太空商用化的多點開花。",
+                "global_search_url": "https://news.google.com/search?q=Space+Exploration+Commercial",
                 "articles": [
                     {
-                        "article_id": "w2_a1",
-                        "source_tag": "香港01",
-                        "front_title": "中國將繪製新一代火星地質圖",
-                        "back_title": "預計2028年完成，推動中國標準成全球共識",
-                        "back_summary": "中國科學院透露，將結合「祝融號」發現的35億年前火星古海洋證據，編製新一代全火星地質圖。該計畫預計於2028年底完成，將利用人工智慧深度參與地質解譯，並推動中國自主的火星年代劃分標準走向國際。",
-                        "original_title": "中国将绘制新一代火星地质图预计2028年底完成 - 香港01",
-                        "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG_hfzOYkIFzNcmJUEf9nf2F-tE8bMV_mkUZiKPl5sOWW_bouHKhcu9g1N89Aw0Jwohy2uslvNxCXxYQCQZ02MkKl0JxwXZHkVqPAc0GsY0UoJv6fiS_1XKbFW5ezlZ9s3zNF4WrmdO7locoVUPM6mHLNUfAqXvChqkHlHak9Vr8aTy8ZJERTtHoSQbtJ4CoUkXUdw8-itiIx4LtEsYQr3L5hv0YnoNGnkuXbobWBLcjIWffcaWzlrxkC2hRQA3oGmZR8-dzzoBwLXkx9CvMGCZdEkq7uELVqKBUqoQtCr7Gq8sMq64ikpjh_baYLdz1v17z7XpsAM_oNdRGfuhY5Hl2wqomVZ4hjSGCjPDloUqEaSlvsCq4ad5bHdpiLt9E1LF4Ohbqsh03A_6uao=",
-                        "image_url": ""
+                        "article_id": "wc1-a1",
+                        "source_tag": "动脉网",
+                        "front_title": "太空製藥獲2.51億美元融資",
+                        "back_title": "Varda擴大微重力生命科學規模",
+                        "back_summary": "Varda Space Industries 宣布完成D輪融資，總額達到5.98億美元。該公司致力於利用太空的無重力環境，改變活性藥物成分的結晶方式，製造出地球上無法合成的新型藥物，將太空製造正式納入醫藥研發供應鏈。",
+                        "original_title": "Varda宣布完成2.51亿美元D轮融资，以扩大太空制药加工规模 - 动脉网",
+                        "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFxGvZroec6XRDS4_HA0A0Xut56tzD5uq-Ep_69_eiFHyWMGK8QQAJqygqY58p9reSB7aE_ZONm_6lGiduz9wZirbi5Zc6uILGLiu1u7z2G1zFtubT8POG0C1Y036eW"
                     },
                     {
-                        "article_id": "w2_a2",
-                        "source_tag": "联合早报",
-                        "front_title": "祝融號新發現重塑火星歷史認知",
-                        "back_title": "天問三號擬於2031年實現火星取樣返回",
-                        "back_summary": "中國積極推進深空探測，除繪製火星地質圖外，其「天問三號」任務計畫於2028年實施發射，力求2031年將火星樣本帶回地球。這些舉措顯示中國在太空競賽中正試圖打破西方主導的科研標準與紀錄。",
-                        "original_title": "中国将绘新一代火星地质图推动年代划分标准成全球共识 - 联合早报",
-                        "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFv-cvpsk3grx0J9yJpLeZ-2IpMtK00oulIqdsw0tRGJ1kPBwl8oRGsLCqGD957fttXaGjt7xyHej0AhGj047fUyZ2rYneIcDCFBNh5r05_Ds78d94FgwUSdDTfEXjX9CTsTnUAbXTgNp0wItFV2tY=",
-                        "image_url": ""
+                        "article_id": "wc1-a2",
+                        "source_tag": "科技產業資訊室",
+                        "front_title": "Starliner載人任務延至2028",
+                        "back_title": "NASA推進波音太空船無人測試",
+                        "back_summary": "NASA公布波音 Starliner 的最新計畫，預計最快於2026年底先進行無人測試，以驗證推進系統的修正措施。由於先前的硬體與熱環境異常，實際載人任務將推遲至2028年，並改用 Vulcan 火箭執行任務。",
+                        "original_title": "NASA延續波音Starliner計畫，無人測試最快年底升空、載人任務延至2028年 - 科技產業資訊室",
+                        "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF9a84i0AvqBypv0y5Rs3YM_QuZfZp_HYa9vSz5RrZALEoLb3C_jkqq7Rca7gQBPTJM6YkO7Z6fEq0nX27mYagTrUgIh3Y4YS6P_ScDEM4r2Ly5NIvwkl75mzXSWUjgod-Gc08="
                     },
                     {
-                        "article_id": "w2_a3",
-                        "source_tag": "新浪科技",
-                        "front_title": "SpaceX星艦驚險升空，首度入軌",
-                        "back_title": "單引擎失效不阻任務，成功部署星鏈衛星",
-                        "back_summary": "馬斯克旗下的SpaceX進行星艦重型火箭試飛。儘管升空初期發生一台發動機失效的意外，工程師仍成功操控飛船進入地球軌道，並釋放26顆新一代星鏈衛星，證明了該火箭系統極強的容錯能力與商用潛力。",
-                        "original_title": "马斯克“星舰”惊险一幕：尽管一台发动机失效，仍首次成功进入轨道|spacex|重型运载火箭 - 新浪",
-                        "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEDPH42WH8-gg0OaYfPCOK5qe_vSXDTErQg_P0wJuB_SLSdli_t7cLK0t72LQ_BYaxkumeallH0Xz5ClKFX7OH2-bkhktVem7KG6Z3x65OTiDDWRSlTe0i85KSaX2EtRdBSxuw_y6bSntknyOHr4Of0AX1XS0UF_F9fhOJBEFbFenY=",
-                        "image_url": "http://k.sinaimg.cn/n/sinakd20260929s/48/w1056h592/20260929/602f-45362982f1e3be2fb082f10e0b90cda9.png/w700d1q75cms.jpg"
+                        "article_id": "wc1-a3",
+                        "source_tag": "鉅亨網",
+                        "front_title": "台廠佈局太空與鈣鈦礦材料",
+                        "back_title": "搶攻低軌衛星應用商機",
+                        "back_summary": "聯合再生除了在美國建置合資模組廠外，也積極將產品認證推向太空領域。公司鎖定低軌衛星應用，以成熟技術、高可靠性作為切入點，並結合前瞻的鈣鈦礦技術，為太陽能產業創造長線成長新動能。",
+                        "original_title": "聯合再生(3576)太空與鈣鈦礦布局醞釀，美國1GW合資廠2027年Q3點火| 鉅亨網",
+                        "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHuDlUsB75hdprrkv0MZia4t3amZAEEQ1VZfPn7WmMmcgTeOXTIBUQE-wPIkWymHhMJA3nh6rGy8AEf0ziz3FfBOxJu1lbQ4eDqG0aFsqtqrUZXBEB4HrSLDlnx",
+                        "image_url": "https://cimg.cnyes.cool/prod/news/6618457/o/c675dee5006e4d8f19d4819b400c58a4.jpg"
                     }
                 ]
             },
             {
-                "topic_id": "wildcard_3",
-                "risk_badge": "badge-warning",
-                "badge_text": "產業風險",
-                "topic_title": "科技產業勞資爭議與供應鏈風險",
-                "risk_reason": "台灣與國際科技材料供應鏈頻傳大規模罷工危機，從封測周邊到顯示玻璃、乃至上游原物料銅礦，恐對科技產能穩定構成連鎖衝擊。",
-                "topic_summary": "勞資糾紛成為近期科技供應鏈的新地雷。台灣知名老牌食品「乖乖」因中壢廠出售並將搬遷，引爆員工高達94.3%同意罷工，因其在台灣科技廠有「機台護身符」的特殊文化意義，甚至引起外媒關注。同時，顯示玻璃大廠艾杰旭（AGC）工會也因調薪破局預告罷工。在國際上，智利大型銅礦場工會亦以近99%同意率通過罷工，加劇了全球銅供應短缺的恐慌，推升原物料價格。",
-                "global_search_url": "https://news.google.com/search?q=%E7%BD%B7%E5%B7%A5+%E4%BE%9B%E6%87%89%E9%8F%88",
+                "topic_id": "wildcard-2",
+                "risk_badge": "badge-info",
+                "badge_text": "環境監測",
+                "topic_title": "環境監測與氣候追蹤：太空級遙測技術落地",
+                "risk_reason": "精確的溫室氣體監測是落實全球氣候治理的關鍵，新一代微型探測儀器展現了強大的數據捕捉能力",
+                "topic_summary": "為應對全球氣候變遷，學界與航太機構合作推進溫室氣體太空遙測。香港科技大學研發的「天韻相機」搭載於天宮太空站，首度回傳高精度的甲烷與二氧化碳濃度影像；同時，太空站內的機器人競賽也著重於精密探測，顯示運用太空科技解決地球環境危機已成為國際主流策略。",
+                "global_search_url": "https://news.google.com/search?q=Space+Environment+Monitoring+Climate",
                 "articles": [
                     {
-                        "article_id": "w3_a1",
-                        "source_tag": "聯合新聞網",
-                        "front_title": "綠色乖乖恐缺貨？員工94%挺罷工",
-                        "back_title": "機台護身符陷危機，外媒高度關注",
-                        "back_summary": "台灣科技業機房必備的「綠色乖乖」，因中壢廠出售給日月光引發勞資爭議，工會通過罷工投票。這起單純的勞資糾紛因其獨特的「科技業護身符」文化延燒至國外，被網友戲稱為足以動搖科技產線心理防線的「黑天鵝」。",
-                        "original_title": "乖乖94.3％員工挺罷工！網笑「晶片護身符」成AI產業鏈最大利空",
-                        "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFkZehQbSBjJ-ytw_dR8DiX38VudaQGNaeJNAceCeqsm9I_n0nt9hhssre56QIRJDXkilMc5OhJ8aQM2SVrDTv4u9lw-fVTlB-bF49ycp6hlom63s4q0wIyhfdYJTU=",
-                        "image_url": "https://pgw.udn.com.tw/gw/photo.php?u=https://uc.udn.com.tw/photo/t3/2026/09/29/35373497.jpg&M=1&s=Y&x=0&y=0&sw=1280&sh=961&sl=W&fw=930&exp=3600&w=930"
+                        "article_id": "wc2-a1",
+                        "source_tag": "HKUST",
+                        "front_title": "科大「天韻相機」回傳影像",
+                        "back_title": "探測高解析度溫室氣體分布",
+                        "back_summary": "香港科技大學牽頭研發的「天韻相機」成功在太空站軌道上拍攝香港的二氧化碳及甲烷分布影像。這款輕量化探測儀能以百米解析度精準捕捉溫室氣體數據，為未來的氣候監測與減排治理提供極具價值的參考資料。",
+                        "original_title": "HKUST Releases First Batch of Hong Kong Images Captured by \"MUSICO\" in Celebration of 77th Anniversary of Founding of the People's Republic of China (Chinese Version Only)",
+                        "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG_R85RQZ4897uLSGFtj8E78ihEOLjwpxQoGEujV39bFhmKClAdDoYZgXeV5fag9pnLuyyR85Fw93EOdxlIMVq2vOE2TBGRlqhLN1Nj46L0Y7QN1MfdOKqIJrdUSUR__uWDwCG7CdAxhcslpr0iB9M5EA__BUw3KaqGQYfudP2a66xNl5Pzk635X_1Zm1TzZ68bysIL87WYxpiLykA5EeE1nxaHMCpKkQ==",
+                        "image_url": "https://hkust.edu.hk/sites/default/files/news/30960/%E5%9C%96%E7%89%87%E4%BA%8C.png"
                     },
                     {
-                        "article_id": "w3_a2",
-                        "source_tag": "中央廣播電臺",
-                        "front_title": "顯示玻璃廠艾杰旭爆罷工危機",
-                        "back_title": "勞資調薪無共識，工會預告發動警告性罷工",
-                        "back_summary": "日資AGC集團旗下的顯示玻璃廠艾杰旭，因長期未建立調薪制度且取消實質久任獎勵，引發勞資爭議。工會赴勞動部陳情並宣布將於下週發動警告性罷工，勞動部已呼籲資方展現誠意，避免影響後續產線運作。",
-                        "original_title": "艾杰旭工會預告下週一罷工勞動部籲資方勿不利對待 - 中央廣播電臺",
-                        "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG6aDTs5tWph8T1sUxhhnE636L_rI9-l70HmQ8KMu_P4vCFDV62SxJd65vZFRs8kZgAS5K3gKLAiSE7d_7PGTKkY-i3b5BSnW3LoVDgADte10LnSSbDePwO0dqVpeH1c_Xs",
-                        "image_url": "https://d1qd3zoyy91a2c.cloudfront.net/image/rti/images/listimg/2026/9/large/1600abd5-6b7e-4a4c-ba2b-164d22d6f169.jpg"
+                        "article_id": "wc2-a2",
+                        "source_tag": "香港商報",
+                        "front_title": "太空之眼守護氣候治理",
+                        "back_title": "收集逾4.3TB遙感科學數據",
+                        "back_summary": "「天韻相機」正式進入常規科學運行階段，至今已獲取全球逾450個目標區域的影像，數據總量達4.3 TB。研究團隊目前正進行算法優化與數據反演，期望與國際機構合作以提升全球碳排放的追蹤精準度。",
+                        "original_title": "科大發布「天韻相機」首批香港影像慶祝中華人民共和國成立77-香港商報",
+                        "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHnJzGmAwrtg-2fOpVARJNUpVbTKizViLV06gtj8mugWmVV5dNwC5XdspQ_SokimHG-sixkdha1UvM-ULO6iXVZeJBAW_UlVaaULw3yuFkpfODPvRm6TwcOa2TF4l0EklIU4c1K8159AfaUW9XOzaA7JUs1WmU=",
+                        "image_url": "https://img.hkcd.com/hkcd_images/2026/09/30/1790752642657_nle50alq.jpg"
                     },
                     {
-                        "article_id": "w3_a3",
+                        "article_id": "wc2-a3",
+                        "source_tag": "TASA",
+                        "front_title": "太空機器人程式設計賽",
+                        "back_title": "解決太空站壓力異常危機",
+                        "back_summary": "結合教育與實境挑戰，國際太空站 KIBO 舉辦機器人程式設計挑戰賽，要求學生開發程式操控飛行機器人進行艙內精密巡檢，尋找氣壓異常洩漏點，透過科技培育新一代太空與工程人才。",
+                        "original_title": "國家太空中心「第七屆國際太空站KIBO 機器人程式設計挑戰賽」活動報名即日起至2026年09月30日止 - 臺中市北屯區東光國民小學",
+                        "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHFnuPeliBGjE5Dr-fBghkjEjoF-W5FhTJfUOMTLzzib5grgTmsBfi7Q43ZLaS1Y_7Qk_nJf10JtT8hCLynvyQ4siwkSmOKEZlJHeOJCmFU6OTcpuyk3o42HlAH_V3sYNHzeq40_GFVWMbN0gMyczbaakw="
+                    }
+                ]
+            },
+            {
+                "topic_id": "wildcard-3",
+                "risk_badge": "badge-warning",
+                "badge_text": "產業重組",
+                "topic_title": "矽谷AI併購與硬體競賽：巨頭的戰略擴張",
+                "risk_reason": "AI巨頭透過天價併購與庫藏股鞏固硬體與模型優勢，但也面臨模型安全性暫停與估值瓶頸",
+                "topic_summary": "矽谷科技巨頭的 AI 軍備競賽進入白熱化與整併期。AMD 斥資 82 億美元收購 AI 研發公司 World Labs 以抗衡輝達，而輝達則強勢拋出 2,350 億美元的股票回購計畫展示信心。與此同時，OpenAI 傳因安全疑慮取消新模型發布，凸顯在急速飆高的估值背後，底層技術的安全性與資本支出壓力正成為隱患。",
+                "global_search_url": "https://news.google.com/search?q=Silicon+Valley+AI+Mergers+Nvidia+AMD",
+                "articles": [
+                    {
+                        "article_id": "wc3-a1",
                         "source_tag": "鉅亨網",
-                        "front_title": "智利大型銅礦鬧罷工，全球銅價飆",
-                        "back_title": "談判破裂陰影籠罩，供應緊縮推升成本",
-                        "back_summary": "全球主要銅供應商智利Antofagasta旗下的Centinela銅礦場勞資談判破裂，工會以近99%壓倒性比例同意罷工。由於該礦場在全球銅產能中佔有重要地位，此舉立即推升了倫敦LME銅價，加劇了國際原物料緊縮的預期。",
-                        "original_title": "智利大型銅礦罷工陰影籠罩供應緊縮推升全球銅價逼近新高 - 鉅亨網",
-                        "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFfkM3WRffsCk9M2rqnEEZ01Sem5rNNLM_raRu3x0rfcqweT-8tJk3IKMI0zArkLwmCJ0nQ1Max3qVtfghPfXMqzaAqJVnYeNTdv4V1JfKkSn9m0G5s5SOilUwf",
-                        "image_url": "https://cimg.cnyes.cool/prod/news/6617757/l/950c1b1127603499716778e50f01274b.jpg"
+                        "front_title": "AMD 82億美元收購World Labs",
+                        "back_title": "提前布局下一代AI晶片研發",
+                        "back_summary": "超微 (AMD) 宣布以 82 億美元收購由 AI 先驅李飛飛創辦的 World Labs。該公司致力於開發能模擬 3D 環境的「世界模型」，此舉被視為 AMD 為在 AI 時代打破輝達壟斷所作的重大戰略投資。",
+                        "original_title": "美股重點新聞摘要2026年9月29日 - 鉅亨網",
+                        "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHZztWK7IMOHBe_j7jA2BfLEWkIsJRHpl4EOm6dHZB5-iPoC42CmQDZfT8iaGcdlf5z7C5zzXR5UlModWkRmPfoMDwgcpjkGolL5gTO1my0zKMVG5XU1zgnzw==",
+                        "image_url": "https://cimg.cnyes.cool/prod/news/6617250/l/faa06f258406e5903822e92c9b17a14f.jpg"
+                    },
+                    {
+                        "article_id": "wc3-a2",
+                        "source_tag": "露股go",
+                        "front_title": "OpenAI 暫緩發布新模型",
+                        "back_title": "引發市場對AI硬體需求擔憂",
+                        "back_summary": "市場傳出 OpenAI 放緩了升級版模型 GPT-6.1 Astra 的訓練與發布腳步，引發投資人重新檢視 AI 資料中心與算力硬體的極限。此消息拖累了雲端與晶片權值股表現，反映出過熱的 AI 基礎設施投資面臨冷靜期。",
+                        "original_title": "2026年9月29日國際焦點經濟數據＆台股最新動態",
+                        "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHyQthc93JUB9FWxeD8EEa4aZxaWj53NAUlr_QQqnT-Qj-ank9UkeeWyVyR5-4PYb_bypkZTIRXX1J9HQsbjZ1iNS_PB8rk8zkCSJg0P_ze4HQtADxtn4EStzG8TQ=="
+                    },
+                    {
+                        "article_id": "wc3-a3",
+                        "source_tag": "非小号",
+                        "front_title": "科技板塊強弱表現懸殊",
+                        "back_title": "輝達庫藏股逆勢突圍",
+                        "back_summary": "在美股科技板塊集體因高利率與宏觀風險回調之際，輝達憑藉龐大的 2,350 億美元庫藏股計畫向市場注入強心針，逆勢上漲。資金逐漸從單純的成長預期，轉向檢視個別企業的實質獲利能力與估值防禦力。",
+                        "original_title": "TEBBIT 美股永续市场日报｜2026年9月29日（周二） - 非小号",
+                        "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGCzfBAMqopsmqbVrKTCl8J4S92BFGEPZ5jWW9ls-hj9VLKKQa-cPdXw-8swE5Qo40WMQKCqVcDu917yWcO48FLm6gXYbAVPuDKqLXmpZ0zm73Ph8GSeaUdSvhrkjRwNX_jng=="
                     }
                 ]
             }
         ]
     },
     "business_finance_taiwan": {
-        "section_title": "台灣財金動態 (24H)",
+        "section_title": "台灣/區域財金",
         "topics": [
             {
-                "topic_id": "biz_tw_1",
+                "topic_id": "tw-fin-1",
                 "risk_badge": "badge-info",
-                "badge_text": "資金輪動",
-                "topic_title": "台股強勢反彈與AI權值股動態",
-                "risk_reason": "台股在美債殖利率攀升與外資連日提款的壓力下，依然靠著AI產業強勁基本面與特定題材發酵維持高檔震盪，投資人需留意法人資金板塊的快速移動。",
-                "topic_summary": "台股近24小時內上演多空拉鋸。大盤一度在台積電強彈帶動下大漲逾500點、重返48,000點大關。儘管外資連續兩日大賣並減碼台積電，但資金轉向具油價與防禦題材的傳產股，如大舉敲進南亞。同時，由於輝達傳出下一代AI晶片封裝將導入玻璃基板，帶動群創、友達等面板股強攻漲停，AI檢測新兵倍利科也一度閃見「千金股」榮景，顯示內資與特定題材熱度不減。",
-                "global_search_url": "https://news.google.com/search?q=%E5%8F%B0%E8%82%A1+%E5%8F%B0%E7%A9%8D%E9%9B%BB",
+                "badge_text": "強勢反彈",
+                "topic_title": "台股重返48,000點大關與Q4行情展望",
+                "risk_reason": "台股展現強大韌性，在玻璃基板、半導體設備與生醫題材帶動下突破高點，提振市場信心",
+                "topic_summary": "台股在第三季末迎來強勁反彈，加權指數大漲超過400點，成功重返48,000點大關並創下歷史新高。這波漲勢由台積電法說會行情、輝達玻璃基板新戰場，以及生醫族群(如睿生光電、禾榮科等)的強勢亮燈所帶動。9月份消費者信心指數(CCI)更創下一年半新高，投資股票時機指標大幅上升。外資回補與投信季底作帳同步點火，為即將到來的第四季台股行情奠定樂觀基調。",
+                "global_search_url": "https://news.google.com/search?q=Taiwan+Stock+Market+TSMC",
                 "articles": [
                     {
-                        "article_id": "bt1_a1",
-                        "source_tag": "中央廣播電臺",
-                        "front_title": "台積電衝上2505元，台股早盤大漲",
-                        "back_title": "站回4萬8千點，權值股領軍反攻",
-                        "back_summary": "受惠費半指數逆勢走揚激勵，台股30日早盤大漲逾500點，台積電股價最高衝上2505元。儘管面臨美債殖利率攀升與國際油價等外部變數，AI成長趨勢仍為台股提供強力支撐。",
-                        "original_title": "台積電衝上2505元台股早盤漲逾500點",
-                        "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGR-3jk5vvKdoEspL_M52HZj9-EEpI7bOYTt3XDbhc8ibfcDyHURhBcfHiVm0NhUgDw21rEB6HS8Otlpoi3TaN6QdNUIUEL4NdaQWKBwsNMBouv6ULVgjfxK50kYa8eB9sX",
-                        "image_url": "https://d1qd3zoyy91a2c.cloudfront.net/image/rti/images/listimg/2026/9/large/3771dd2b-b486-4921-b863-a0def73bd2a2.jpg"
+                        "article_id": "tw-f1-a1",
+                        "source_tag": "三立新聞網",
+                        "front_title": "AI基礎建設爆發帶動營收",
+                        "back_title": "台廠34強迎接光輝十月",
+                        "back_summary": "本土投顧報告指出，雖然消費性電子偏弱，但 AI 基礎建設、先進封裝及矽光子供不應求，帶動台達電、奇鋐、台光電等指標廠9月營收爆發。台積電外溢效應亦讓日月光等封測廠受惠，營建及金融股同樣展現強勁獲利動能。",
+                        "original_title": "9月營收誰最狂台廠34強出列| 財經| 三立新聞網SETN.COM",
+                        "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGyO-GvCCKLYwLDOOT_rIT2Pb8FzYUDpP3TXyAw5T1DWDAsskyFXjgIjlugjiPI7HjIV6Mccjs4WR2G7wsjtTfC_--nV4nxIvaKnMApSsYtB52WK2jpvZs="
                     },
                     {
-                        "article_id": "bt1_a2",
+                        "article_id": "tw-f1-a2",
+                        "source_tag": "YouTube",
+                        "front_title": "輝達點火玻璃基板新戰場",
+                        "back_title": "投信作帳點燃秋後行情",
+                        "back_summary": "隨著台積電擴產計畫與輝達加碼庫藏股，台股迎來「秋後行情」。市場資金聚焦於 CPO 矽光子及玻璃基板設備概念股，分析師看好第四季大盤有望挑戰4萬9千點，內資買盤及投信作帳成為關鍵推手。",
+                        "original_title": "輝達點火玻璃基板新戰場！ 台股「秋後行情」跟著投信走！ - 張甄薇蘇威元謝宗霖蔡侑達《股動錢潮》全集2026.09.29 - YouTube",
+                        "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEj2CicUHmyT0XdRJP3uLq87V_dyEsRLQO6xcbxs-Zap2IlbcQllgZIANv-nJ1zeKO4GaCvHqn94Wi7b9H9nFZLFDyFa967paqUKKLR6H8zGSoY706T-l3IrM0b-ueOxSXK"
+                    },
+                    {
+                        "article_id": "tw-f1-a3",
                         "source_tag": "經濟日報",
-                        "front_title": "外資連2賣提款632億，反手敲進南亞",
-                        "back_title": "減碼台積電，避險資金轉進傳產原物料",
-                        "back_summary": "台股震盪之際，外資連續兩日賣超達632億元，並減碼台積電、聯電等電子權值股。資金明顯轉向受惠油價上漲的傳產板塊，外資單日大舉買超塑化股南亞逾3萬張，顯示市場避險情緒升溫。",
-                        "original_title": "外資連2賣再砍632億減碼台積電反手敲進南亞逾3萬張| 市場焦點 - 經濟日報",
-                        "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHEdoNJ6VaoDbBDCnSh1i8aoBJYgyuzxk-Et4rTmAbcXNKKM1C_ekXn8bgbfc9zafUhioxV-QCBBDjwF7N5Gk7B-tzvHJ0hNJJ1Vq0_KUQaZIXz-UfXzaBt4-_P6pTSQ5xmVhg=",
-                        "image_url": "https://udn.com/upf/2017_news/noimg_cid1001_6.jpg"
+                        "front_title": "9月CCI創一年半新高",
+                        "back_title": "投資股票信心指標暴衝",
+                        "back_summary": "中央大學台經中心發布9月消費者信心指數(CCI)總指數為68.77點，創去年4月以來新高。其中「未來半年投資股票時機」上升幅度最大，增加7.7點，反映散戶與股民對現階段股市強勢創高抱持濃厚樂觀情緒。",
+                        "original_title": "台灣9月CCI 創一年半新高「投資股票時機」指標上升最多 - 經濟日報",
+                        "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG1QqmSepw_fabcsaJikloxRuaPjm-rf6ze-m6DUBuWYl8XXPTtjPvm35uKEVh4hBHRxGiyy61yqGrSWWlbvCOMYK8VpQiP9NLulLS978ptlLtgnAqlvHbzKro3HXzb2dFvH3P1uA=="
                     },
                     {
-                        "article_id": "bt1_a3",
-                        "source_tag": "工商時報",
-                        "front_title": "輝達傳導入玻璃基板，面板虎齊飆漲停",
-                        "back_title": "AI先進封裝掀革命，群創友達爆量上攻",
-                        "back_summary": "外媒披露輝達正評估將下一代AI晶片封裝導入玻璃基板技術，引爆台廠面板股轉型題材發酵。友達、群創及彩晶等面板類股在盤中齊奔漲停，成為台股當日最熱門的資金避風港與焦點板塊。",
-                        "original_title": "外媒報導輝達評估下一代AI晶片封裝導入玻璃基板，台廠面板股今（30）日歡聲雷動，友達（2409） - 證券- 工商時報",
-                        "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF4U7fGAd5HcXnB0g5CUvz12Wv5Qr0QhCAfxN3Num_v8DMptFhVMUgWgcynCf3wPgJkBDugxBo4TK7HYHWlApefED3BwdLaefSzOAOp9pxAX5QGww==",
-                        "image_url": "https://images.ctee.com.tw/newsphoto/2026-09-30/656/20260930700840.jpg"
+                        "article_id": "tw-f1-a4",
+                        "source_tag": "FTNN 新聞網",
+                        "front_title": "台股強彈492點重返48K",
+                        "back_title": "生醫族群買氣升溫鎖漲停",
+                        "back_summary": "台股30日盤中大漲逾492點，站回48K大關。生醫股成為盤面大黑馬，睿生光電與禾榮科亮燈漲停，泰福-KY與藥華藥同步走高。生技公司於CDMO業務與新興療法的實質進展，成為支撐股價爆發的關鍵題材。",
+                        "original_title": "台股大漲492點重返48K！生醫股同步狂飆「這2檔」直接鎖漲停 - FTNN 新聞網",
+                        "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEvX5Pnq3A_0GjAa4MN5EWclSY41kmrP6Bhs_Azvhee4chAmy9_w396LiydtfrwrsRRIc2WYA0qr7vaqECK7VGqgsnqINseLGONMH830rSpaFmD7vtSAGCdXw==",
+                        "image_url": "https://i01.ftnn.com.tw/a/26/272/262721146345454620f2f5.jpg"
                     },
                     {
-                        "article_id": "bt1_a4",
-                        "source_tag": "ETtoday財經雲",
-                        "front_title": "AI檢測新兵飆漲，台股閃見50千金",
-                        "back_title": "倍利科重返千元大關，先進封裝題材夯",
-                        "back_summary": "專攻半導體AI光學檢測的設備新兵倍利科，憑藉切入國內外一線晶圓製造及先進封裝供應鏈的利多，股價強攻站回千元大關，讓台股短暫重現「50檔千金股」盛況，隨後雖遇獲利了結，仍反映出AI設備的火熱。",
-                        "original_title": "台股閃見50千金AI「檢漏高手」倍利科再攻高",
-                        "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFpJMpW-5ureSIPXu50FK4ZG5G1X6IIx1DE6NL6b-MeQMYO1hzNluL1Zy-VxRL0l-RoBNHgCYV3C0E-lk5VrKiESEHhTz4HVrHFcoy5PkbaaWPdn5UsTR-Mdn2gCak=",
-                        "image_url": "https://cdn2.ettoday.net/images/8644/8644308.jpg"
+                        "article_id": "tw-f1-a5",
+                        "source_tag": "非凡新聞",
+                        "front_title": "9月台股大漲超過1800點",
+                        "back_title": "大型權值股與低基期股齊揚",
+                        "back_summary": "第三季最後一個交易日，台股在大型電子權值股與低基期的面板三虎帶動下大漲。法人評估，儘管歷經季中大震盪，但台灣經濟基本面與AI推升的企業獲利依舊強勁，為明年指數挑戰五萬點保留了多頭火種。",
+                        "original_title": "台股收月線一度站上4萬8 9月仍大漲1811點| 金融 - 非凡新聞",
+                        "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGB8gj-VldZapWjDuuICXQUezwTypo97m9I_W08sThbX6cg24ipIayadIHEcFBAF3lwYFWk1Rxnmtb7vqwsAI1b_jCP1uE-V60sCE8qlaGC96YnLr5JKdOhXLubzQi3e3uvvsxrCA=="
                     },
                     {
-                        "article_id": "bt1_a5",
-                        "source_tag": "PChome 股市",
-                        "front_title": "台股開盤重返48K，AI權值股領軍",
-                        "back_title": "台積電財測樂觀撐盤，無懼美股短線利空",
-                        "back_summary": "儘管前一日台股受到重挫，但在台積電與聯發科等電子巨頭穩健的基本面與買盤回補帶動下，加權指數早盤迅速收復失土並重返48,000點之上，突顯大型科技股在波動市況中的定海神針作用。",
-                        "original_title": "台積電(2330) 個股資訊- PChome 股市",
-                        "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFMiNxWpoQHBKQqT_Ipsow0891F5PIHdSiRlboBeMmjiPOgGSyF9CZ4zHcaiNrb2xFbI7YuUPYcsa-dsx3xxjJ6p5w2Wg3_tEd7l81x5zYEn99y94UUlW-Xibtu_RQogh1kAHxb1vs=",
-                        "image_url": "https://cs-c.ecimg.tw/items/DMBQ0OA900JTABO/000002_1773387173.jpg"
-                    },
-                    {
-                        "article_id": "bt1_a6",
-                        "source_tag": "民視新聞",
-                        "front_title": "名嘴看好台股上看13萬點，台積電看8000",
-                        "back_title": "長線護國神山效應不滅，外資極限推演引熱議",
-                        "back_summary": "儘管市場短線賣壓沉重，總經學者引述美系分析師的推算指出，隨著AI革命大爆發及新產能開出，台積電未來的長線估值充滿想像空間，樂觀情境下甚至喊出極度驚人的目標價，引發股民熱烈討論。",
-                        "original_title": "台積電股價「上看8000元」？吳嘉隆看好台股「上看13萬點」背後原因曝光 - 民視新聞",
-                        "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHxKCC6X9aGrLAxsCldlCfJBKpU3EGS1pQhPpPZKsXCLO6DiYnq8VQmOn_GsrAftAEcwO7sF-qC87R4e2huQYrWxjDnzx__yCcVRVRpOPATArrtpHbe85fur_ZRFdpUJEL--g27yIYYeA==",
-                        "image_url": ""
+                        "article_id": "tw-f1-a6",
+                        "source_tag": "NOWnews今日新聞",
+                        "front_title": "台股收盤創高47940點",
+                        "back_title": "台積電強勢穩盤收2480元",
+                        "back_summary": "台股在30日終場收於47,940.13點，成交量維持高檔。權王台積電穩步收漲在2,480元，展現出強大的資金吸納能力。市場樂觀期待10月中旬的法說會釋出更多先進製程與擴廠的正向展望。",
+                        "original_title": "台股9月大漲1811點創新高！今再漲308點收47940 台積電2480元| 財經 - NOWnews今日新聞",
+                        "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHxetnIdawcKx3ND9Fh1h6IbB3G_B1eeySe_BgDdD1e-6vgzLn3TKwD8f3_JvraD-_xfHh7FuZCL_ORUpRvwaIVHJyc-wvDjcHGu11RvP24PdnhctXroGOKxA=="
                     }
                 ]
             }
         ]
     },
     "business_finance_global": {
-        "section_title": "國際財金動態 (24H)",
+        "section_title": "國際財金",
         "topics": [
             {
-                "topic_id": "biz_gl_1",
+                "topic_id": "gl-fin-1",
                 "risk_badge": "badge-warning",
-                "badge_text": "市場波動",
-                "topic_title": "美聯儲政策預期與國際油價震盪",
-                "risk_reason": "美國通膨數據具黏性且中東地緣干擾油價，導致市場對美聯儲未來降息的預期快速降溫，推升美債殖利率並壓抑全球股市估值。",
-                "topic_summary": "國際金融市場面臨通膨與油價的雙重拉扯。最新發布的美國8月PCE數據顯示核心通脹仍顯頑固，打擊了降息預期；CME FedWatch顯示，10月再度加息的機率升至五成。為了平抑中東衝突帶來的油價飆漲及期中選舉壓力，拜登政府宣布釋放4000萬桶戰略儲備油並敦促歐洲跟進，甚至傳出考慮禁止柴油出口。油價短暫回落帶動了美股科技板塊及亞洲股市的小幅反彈，但美債殖利率居高不下仍是隱憂。",
-                "global_search_url": "https://news.google.com/search?q=%E7%BE%8E%E8%81%AF%E5%84%B2+%E6%B2%B9%E5%83%B9",
+                "badge_text": "風險升溫",
+                "topic_title": "美債拋售潮與高利率擔憂重擊美股",
+                "risk_reason": "美國長天期公債殖利率飆破5.2%創下多年新高，壓抑高估值科技股表現，引發股市資金輪動",
+                "topic_summary": "由於美國強勁的經濟數據(如超預期的PMI)與中東地緣政治推升油價，市場對通膨重燃及聯準會維持高利率的預期急速升溫。10年期與30年期美債殖利率雙雙突破5.2%防線，引發歷史性的公債拋售潮。美股三大指數連日承壓，高估值的大型科技股如蘋果、Meta與半導體板塊顯著回調；資金明顯從科技股撤出，流向防禦性資產與能源股。分析師警告，若利率居高不下，美股將面臨更深度的估值修正。",
+                "global_search_url": "https://news.google.com/search?q=US+Treasury+Yields+Stock+Market",
                 "articles": [
                     {
-                        "article_id": "bg1_a1",
+                        "article_id": "gl-f1-a1",
                         "source_tag": "群益期貨",
-                        "front_title": "8月PCE出爐，核心通膨依舊頑固",
-                        "back_title": "能源反彈撞上消費韌性，美聯儲難踩剎車",
-                        "back_summary": "美國最新PCE價格指數顯示通膨壓力並未明顯緩解，尤其剔除食品與能源的核心通脹數據仍高於2%目標。強勁的消費與近期能源價格上漲，讓美聯儲官員難以找到停止緊縮政策的充分理由。",
-                        "original_title": "8月PCE今晚揭曉！能源反彈撞上消費韌性，美聯儲難踩剎車？ - 群益期貨",
-                        "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH79MCetUlt_l3pAZmi5tjdRiTy6K6wYCghS_8uy83jWfUrbmk1LepLhj05S0frlWSe8NYugbwXhnsC6pZXlv2tkPWl14MEULLoxKCywULx1J--sopgqkMV_oUdhnII2RrppXVWRN722FAc1GDkjZbj_o4cIGRjWZl5s2jB4KE8kZ2P95gjMbKdGp2kO8NlCId7_6ZGeZc4_NE=",
-                        "image_url": "https://img.jin10.com/news/26/09/poaYcJnBzSdicvPFz4-OP.jpg"
-                    },
-                    {
-                        "article_id": "bg1_a2",
-                        "source_tag": "群益期貨",
-                        "front_title": "美聯儲10月降息無望？加息機率仍高",
-                        "back_title": "市場押注五五波，降息預期遭打擊",
-                        "back_summary": "據CME「美聯儲觀察」數據，市場目前預計美聯儲在10月會議維持利率不變的機率約為49.6%，而繼續加息一碼的機率則微幅領先達50.4%，這意味著投資人對於今年轉向實質寬鬆的期待正在快速冷卻。",
-                        "original_title": "【美聯儲10月加息的概率降至五成】9月30日訊，據CME“美 - 群益期貨",
-                        "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF4H4qYlu8fpuEmBKKNMeWEZFtyjRC59axyGasFe7GvlLEY8cPPbj-VZnei5_2aVrlLd5ogP1NeVW824uq-VT_engKnFiiad617-eBTztLphGy1hwCrVM2Lu02JySTqpZMtvhRUJzHfJgZ_I8pRryVhC5NMQdOrgRehuxeHf4Af0rdS8iUfsf99GBsM3nkotW0ddw==",
+                        "front_title": "美核心PCE創半年新低",
+                        "back_title": "消費者支出反彈但利率期貨走高",
+                        "back_summary": "美國最新經濟數據顯示消費者支出創下一年來最大增幅，同時核心 PCE 年率意外走低。儘管通膨數據短期放緩，但強韌的消費端數據讓市場對聯準會的大幅降息預期降溫，導致短期利率期貨依然攀升。",
+                        "original_title": "【整理：每日美股市場要聞速遞（2026-09-30）】重要新 - 群益期貨",
+                        "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGa0p4PfK7m1SXPLwWfCw0DAXeqU1dzXrCPVn2yv44od06wNBAWJhkT7cELMeqDRtEavHUOIK3b4rcrl-l7A1uRYRrFpWS3RRMZV0SSQDOHONmzdqFyl_C7CrlLKShNpRbhdRfNFlWH8jj6jc-OXA8oSz1dxKB4pxqHLDPIpPRSZo5m9gRdZEs-cLFT5l8HbH5KMw==",
                         "image_url": "https://www.capitalfutures.com.tw/images/ic_floatmenu_1.svg"
                     },
                     {
-                        "article_id": "bg1_a3",
-                        "source_tag": "鉅亨網",
-                        "front_title": "選前打擊油價，美國釋4千萬桶戰備儲油",
-                        "back_title": "庫存降至40年新低，白宮敦促歐洲跟進",
-                        "back_summary": "面對期中選舉倒數及高漲的燃油成本，美國能源部宣布釋放最後一批4,000萬桶戰略儲備原油，這讓美國SPR庫存降至1982年以來最低點。同時，美方嚴詞批評部分歐洲國家未落實釋油承諾。",
-                        "original_title": "美國選前再壓油價釋4000萬桶儲備油促歐洲跟進 - 鉅亨網",
-                        "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFbcwz_CrFNJz1PX3ASNqo41k8-usHqEiIdeuA6BUbUjZcTp_LsX5U0UxWjgLupvIFcOIm9eByEfHtM8WHSaIcd69-cDl4MjTiE95YUhZBEVZCFPSrhILLO4Kb-",
-                        "image_url": "https://cimg.cnyes.cool/prod/news/6618302/l/100cb6bc6574b1dc8e795f113b557377.jpg"
+                        "article_id": "gl-f1-a2",
+                        "source_tag": "moomoo 社区",
+                        "front_title": "美債殖利率創2007年新高",
+                        "back_title": "10年期殖利率逼近5.3%重壓股市",
+                        "back_summary": "受油價與中東緊張局勢推動，10年期美國國債殖利率飆升至5.293%，創下自2007年以來的新高。職缺數(JOLTS)顯示勞動力需求降溫但未崩盤。高利率環境下，華爾街股市普遍收低，半導體板塊表現出現分化。",
+                        "original_title": "美国市场收盘。2026年9月30日- moomoo 社区",
+                        "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFpj89WIoMXlz67APw5-K-aXmRLgp8SkgtY2ZEz0sqb5tfh7Mlyxe420VcB2SKv2fEUlNlHgiTdIvsmGuzl6weCFwqxc5fG1xK73XRwJ-sJUSfZVAY2OZSPqCz92s24vI6SxhuLZoKLZNd6paeyOmqGiY6OVvNp3QdQ7tnX912HF7Hv6O1_Ntdh_rGJh0apbgkG"
                     },
                     {
-                        "article_id": "bg1_a4",
-                        "source_tag": "Investing.com",
-                        "front_title": "抑制油價瘋漲，川普考慮禁運柴油",
-                        "back_title": "國內通膨壓力大，出口禁令成最後殺手鐧",
-                        "back_summary": "外媒引述消息指出，美國柴油價格持續飆漲對期中選舉選情構成威脅。為平抑國內物價，川普政府正積極討論禁止柴油出口的可能性，並已向盟友發布潛在的斷供預警，此舉在美國政商界引發激烈爭辯。",
-                        "original_title": "特朗普考慮禁止柴油出口以壓低美國油價",
-                        "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEfdhwupJSftWj9PP13T1ZAiRDUDsoWf0dMpDYettBcDV99QIvx8_lVOFFP7dnpE4JUCCHbmneonBTJNUqBoEuH3oK528d2-71S3O-dEjbPpyIBchy3jPzNK4EtgULyWuM-vai8dT0jyE3rpF9u6heY7Hi6",
-                        "image_url": "https://content-media.investing.com/news/LYNXMPEM2O1EU_1200_L.jpg"
+                        "article_id": "gl-f1-a3",
+                        "source_tag": "亚汇网",
+                        "front_title": "資金轉向防禦性資產",
+                        "back_title": "高估值科技板塊面臨拋售潮",
+                        "back_summary": "美股三大指數全線收跌，市場恐慌指數(VIX)抬升。資金從高估值的科技板塊(如ARM、高通、Meta、特斯拉)流出，轉向公用事業與必需消費品等防禦性資產。機構認為當前核心矛盾在於美國經濟韌性引發的長期高利率預期。",
+                        "original_title": "今日美股市场行情快报（2026年9月29日） - 亚汇网",
+                        "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGdqpBvNuZzmYtmFofamSbRU-XCTcqzz1IKK6-F9gYXd15PYSVVeOEXYMoPBA2gbDNEXc-d_R-4aMdxMpjIqvKTdFizSba-Fo42F3xhbpGeNmDTO3RV3ZiuqPi2ZyCE0eIfLwou"
                     },
                     {
-                        "article_id": "bg1_a5",
-                        "source_tag": "經濟日報",
-                        "front_title": "油價暫回落，科技股買氣提振美股",
-                        "back_title": "標普與那指開高，市場緊盯中東局勢",
-                        "back_summary": "受惠於美國釋放戰備儲油等干預手段發酵，國際油價出現短暫回落，舒緩了市場的部分通膨擔憂。加上AI新創企業即將公開上市的利多加持，華爾街標普500與那斯達克指數開盤順勢反彈。",
-                        "original_title": "油價回落、科技股樂觀情緒提振標普和那指開高| 美股動態 - 經濟日報",
-                        "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFo4TLlnWc4GjimmX-_urKSEgRJ3G69zp3FJFA8tQrzkAKjZIlWUQohgocNv0EauADKHfDu9FlDLFKg0RWe0zc_DIQWo8szPgQ5l3tn79bIE_xVcAWAje896ccCIZccnFXfxY9B5g==",
-                        "image_url": "https://pgw.udn.com.tw/gw/photo.php?u=https://uc.udn.com.tw/photo/t3/2026/09/25/35364666.jpg&M=1&s=Y&x=0&y=0&sw=1280&sh=853&sl=W&fw=640"
+                        "article_id": "gl-f1-a4",
+                        "source_tag": "Street Alpha",
+                        "front_title": "美股市場廣度惡化",
+                        "back_title": "指數靠龍頭撐住但多數個股慘跌",
+                        "back_summary": "高盛報告指出當前美股市場廣度是自互聯網泡沫以來最差的一次。標普500指數雖接近歷史高位，但中位數成分股已大跌16%。大型科技公司憑藉AI高回報與現金流抗衡高利率，而中小型企業則被沉重的資金成本壓垮。",
+                        "original_title": "美股市场广度的问题与后市判断（2026 年9 月29 日） - Street Alpha",
+                        "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFG_sLIWlkONpxjQ-jMj73TBefLlLkZiamwuBSt7Y32IyLIagIkM6A7GDnzDrwGlxFKgAq0aS7clO515iRe5HhSRNDWWya7FEHs4EKu1EnT9pZWFjNFvJy0fNgK6qb6viLz",
+                        "image_url": "https://substackcdn.com/image/fetch/$s_!X_CH!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F5804c9ce-a5ad-4b09-8fd4-d3f91097c71f_2423x1203.png"
                     },
                     {
-                        "article_id": "bg1_a6",
-                        "source_tag": "群益期貨",
-                        "front_title": "壓力緩解，亞洲股市隨油價回落反攻",
-                        "back_title": "地緣變數仍存，美國利率走向主導市場",
-                        "back_summary": "隨著國際油價走低，亞洲股市迎來普遍上漲的契機。分析師指出，半導體與AI概念股受惠於美政策利多而走揚，但中東衝突及其引發的長線通膨疑慮，仍將是主導美聯儲利率決策及未來宏觀市場的核心變數。",
-                        "original_title": "【油價回落緩解市場壓力亞洲股市有望普遍上漲】9月30日訊， - 群益期貨",
-                        "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG6SkgdeQzRdG_-y3b9lZ_KTbJSWWryhDhzDYzGDnPNjW9ZHgXVw-ggYkuVJYIhfI5jPwXYjo75fVqpiIA4V01v7zbGp80IsmcSpI6dpBrRmFVijVJpXgqdUlWm0UepGmqj0rwffpJPKdf1IXUPTg5Lcg-mASCrhXNyExhq22Jq-IFx0VoSiBrQu6KQRPGISVr2",
-                        "image_url": "https://www.capitalfutures.com.tw/images/ic_floatmenu_1.svg"
+                        "article_id": "gl-f1-a5",
+                        "source_tag": "moomoo 社区",
+                        "front_title": "科技股對利率敏感度升高",
+                        "back_title": "能源板塊與防禦股受青睞",
+                        "back_summary": "華爾街因美伊緊張局勢推升油價而收低。半導體族群普遍走弱，英特爾下跌5.6%、AMD下跌3.6%。這反映出在無風險殖利率突破5.2%後，市場資金正在重新定價高昂的AI硬體投資股，若殖利率持續上行，AI板塊將面臨更沉重的壓力。",
+                        "original_title": "美国市场于2026年9月29日收盘- moomoo 社区",
+                        "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEnRD1HLp8Sy2BN9ZUY8miEtXfyFqYT3zuWDZz9AmDU-6ye0TAmYudtWdFqmtgjaTiqzhLuPI6NS2KlDDvWcypzgyNnjVf27pwoc3qORSV86vilSJEVDdwzP3D7IuuNw2Ul1e_RlwhZONRMgK6wHLbA2QW6lJnBa-PVxH92_3LdYKSmUJ__YAUMwpv4DvjdfwHd"
+                    },
+                    {
+                        "article_id": "gl-f1-a6",
+                        "source_tag": "非小号",
+                        "front_title": "AI成長預期轉向宏觀風險",
+                        "back_title": "交易邏輯回歸估值與債券收益率",
+                        "back_summary": "美股永續市場數據顯示，投資人的短線交易邏輯已經從單純的「AI無上限成長預期」，迅速轉變為檢視企業資產負債表與估值的防禦性策略。中東局勢的不確定性與油價高企成為市場短期內無法忽視的「灰犀牛」。",
+                        "original_title": "TEBBIT 美股永续市场日报｜2026年9月29日（周二） - 非小号",
+                        "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGCzfBAMqopsmqbVrKTCl8J4S92BFGEPZ5jWW9ls-hj9VLKKQa-cPdXw-8swE5Qo40WMQKCqVcDu917yWcO48FLm6gXYbAVPuDKqLXmpZ0zm73Ph8GSeaUdSvhrkjRwNX_jng=="
                     }
                 ]
             }
